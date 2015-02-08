@@ -21,14 +21,14 @@ Once your Shrimp is blinking, you can then proceed through the following builds.
 1) Minimal Conductive Sensor
 - add a single 20 MegaOhm [pull up resistor](../topics/pullup.html), a ground wire and a sensor wire
 - upload code which reports the sensed voltage by sending number characters over the Serial link
-  - use the Serial Monitor within the Arduino IDE to monitor the numbers
-  - observe the effect on the numbers when the body of a human being connects the two wires.
-  - it's possible to plot the voltage signal by using Processing or Python.
+  - use the Serial Monitor feature within the Arduino IDE to monitor the numbers sent
+  - observe the effect on the numbers when a human body connects the two wires
+  - it's possible to plot the voltage signal by using Processing or Python
 
-2) Minimal USB Keyboard 
+2) Minimal USB Keyboard
 - add the minimum components for the circuit to be able to emulate a [USB keyboard](../topics/usb.html).
-- Upload code so that the circuit 'types' the phrase `Hello World!` every 10 seconds.
-  - plug the USB cable into a computer, launch a suitable application, and see the typing appear on the screen
+- upload code so that the circuit 'types' the phrase `Hello World!` every 10 seconds.
+  - plug the hacked USB cable into a computer, launch a suitable application, and see the typing appear on the screen
 
 3) Minimal Conductive USB Keyboard 
 - add a single [pull up resistor](../topics/pullup.html) a ground wire and a contact wire
