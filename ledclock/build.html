@@ -1,276 +1,696 @@
-Building the LED Clock
-======================
-
-This guide provides details for learners to wire, program and configure
-a @ShrimpingIt digital cloc<span style="color:red">Red</span>k project
-with ultrabright LEDs which can programmed as a Word Clock or a Unary
-Clock.
-
-For general orientation, see the [Alarm Clock](../clock/index.html)
-project page.
-
-Requirements
-------------
-
-The build assumes you have the following kits...
-
--   An [LED Clock Addon](../clock/index.html) kit
--   An [Alarm Clock Addon](../clock/index.html) kit
--   A [Shrimp Parts](../shrimp/index.html) kit
--   A [USB UART](../cp2102/index.html) kit
-
-For convenience, pre-bagged kits are available to order from
-[@ShrimpingIt](http://shrimping.it) online. If you do not wish to buy
-from us, information is provided for you to source commodity parts
-direct from electronics wholesalers.
-
-In addition you will need a Linux, Mac or Windows computer running the
-latest [Arduino IDE](../topics/ide.html).
-
-Mac and Windows computers need a [CP2102 driver](../cp2102/driver.html)
-to be installed for the USB Programmer to be recognised.
-
-Getting started
----------------
-
-Before embarking on the LED Clock, you should have successfully
-completed the [Alarm Clock build](../clock/build.html). This guide uses
-the Alarm Clock circuit configuration as its starting point.
-
-As before we'll be using 'battleship' numbering to indicate where
-components should be inserted, with numbers and letters indicating the
-rows and columns of the breadboard.
-
-### Step 1: Adding an extra breadboard
-
-<a href="sequence/01_second_breadboard.png"><img src="sequence/01_second_breadboard.png" style="height:250px"/></a>
-
-The 24 LEDs in the display will be laid out, with special chips to drive
-them, on an extra breadboard, which we will refer to as the LED Display
-breadboard.
-
-Later, this will be attached to the (previously constructed) Alarm Clock
-breadboard with just four wires, two for power (+5V and 0V) and two for
-receiving LED control data (Clock and Data).
-
-The breadboards can be oriented in various ways, as long as the four
-wires are attached. For example, the breadboards could be attached
-back-to-back to fit compactly inside a housing when the build is
-complete.
-
-However, to make the build simple, we will first attach the new
-breadboard to the right of the previous Alarm Clock breadboard, using
-the in-built docking mechanism.
-
--   \*\*\* Attach a new breadboard to the right of the Alarm Clock
-    breadboard. The new breadboard's lugs should slide into slots at the
-    rear of the old breadboard\*\*\*
-
-### Step 2: Connect the power rails of the new breadboard
-
-<a href="sequence/02_powerrails.png"><img src="sequence/02_powerrails.png" style="height:250px"/></a>
-
-Both power rails of the second breadboard will be heavily used, powering
-up the LED driver chips, and supplying each of the 24 LEDs.
-
-We therefore need to connect red and green wires across from the power
-rail of the Alarm Clock breadboard, and in turn wire the left and right
-power rails of the second breadboard together.
-
--   \*\*\* Attach a <span style="color:red">Red</span> wire from the
-    right-hand Red +ive column of the Alarm Clock breadboard to the
-    left-hand <span style="color:red">Red</span> +ive column of the LED
-    Display breadboard, roughly below the row numbered 15\*\*\*
--   \*\*\* Attach a <span style="color:green">Green</span> wire from the
-    right-hand <span style="color:blue">Blue</span> -ive column of the
-    Alarm Clock breadboard to the left-hand Blue -ive column of the LED
-    Display breadboard, roughly below the row numbered 16\*\*\*
--   \*\*\* Attach a <span style="color:red;">Red</span> wire from the
-    left-hand <span style="color:red;">Red</span> +ive column of the LED
-    Display breadboard to the right-hand <span
-    style="color:red;">Red</span> +ive column of the LED Display
-    breadboard, starting just above row 15, and finishing just below row
-    15.\*\*\*
--   \*\*\* Attach a <span style="color:green;">Green</span> wire from
-    the left-hand <span style="color:blue;">Blue</span> -ive column of
-    the LED Display breadboard to the right-hand <span
-    style="color:blue;">Blue</span> -ive column of the LED Display
-    breadboard, starting just above row 16, and finishing just below row
-    16.\*\*\*
-
-### Step 3: Attach the first WS2803D LED Driver chip
-
-<a href="sequence/03_first_ws2803d.png"><img src="sequence/03_first_ws2803d.png" style="height:250px"/></a>
-
-The WS2803D LED driver chip will be used to switch on and off the LEDs
-we're about to attach. Each chip is actually capable of controlling up
-to 18 LEDs, but we're only using 12 on each, for a total of 24 lights.
-
-The WS2803D chip will need a power connection, and wires to receive LED
-lighting commands from the Shrimp's microcontroller.
-
-Just like the ATMEGA328P-PU and the DS1307, the WS2803D chip has a
-half-moon stamped at one end. Pins are numbered anticlockwise, starting
-from the half-moon.
-
-The first driver chip should be placed in the same orientation as all
-the other chips, straddling the right-hand LED Display breadboard and
-positioned as far up as it can go, leaving just enough room for the
-power rail connections which should be running across the centre of the
-board.
-
--   \*\*\* Insert the first WS2803D chip with the half-moon shape at the
-    top of the breadboard. Pin 1 (the top-left pin, anticlockwise from
-    the half-moon) should be in row 1, and pin 14 (the bottom-left pin)
-    should be in row 14. \*\*\*
-
-### Step 4: Attach power to the WS2803D
-
-<a href="sequence/04_first_ws2803d_power.png"><img src="sequence/04_first_ws2803d_power.png" style="height:250px"/></a>
-
-Pin 1 needs a connection to ground and Pin 28 (all the way anticlockwise
-from the half-moon) needs a connection to the 5V supply.
-
--   \*\*\* Attach a <span style="color:green;">Green</span> wire from
-    <span style="color:gray">a1</span> to the (<span
-    style="color:blue;">Blue</span>) left-hand -ive power rail \*\*\*
--   \*\*\* Attach a <span style="color:red;">Red</span> wire from <span
-    style="color:gray;">g1</span> to the (<span
-    style="color:red;">Red</span>) right-hand +ive power rail \*\*\*
-
-### Step 5: Attach a resistor as a current reference
-
-<a href="sequence/05_first_ws2803d_resistor.png"><img src="sequence/05_first_ws2803d_resistor.png" style="height:250px"/></a>
-
-You may recall from the [Blink build](../shrimp/build.html) that
-attaching LEDs directly to 5V can make them burn out, so a
-current-limiting resistor was added between the LED and ground when
-attaching the Blink LED, to limit the flow of electricity.
-
-A WS2803D is known as a 'constant current' LED driver, and you can
-explicitly limit the current which flows through the LED pins. We simply
-have to attach a single current-limiting resistor to pin 2, to tell the
-WS2803D what the maximum current should be. This saves us attaching
-current-limiting resistors to every one of the 24 LEDs.
-
-The correct resistor value can be calculated according to the following
-formula; The resistance (in Ohms) is 27.5 divided by the desired current
-(in Amps). Our LEDs can handle a maximum of 20milliAmps which is the
-same as 0.020 Amps. The resistor should therefore be 27.5 / 0.020, which
-is 1375 Ohms or 1.375 kOhms.
-
-Unfortunately resistors are only available in a limited number of
-values, so we'll err on the side of caution and use a 1.5 kOhm resistor,
-limiting the current to 18.3 milliAmps instead.
-
--   \*\*\* Attach a 1.5kOhm resistor between <span
-    style="color:gray;">a2</span> and the (<span
-    style="color:blue;">Blue</span>) left-hand -ive power rail \*\*\*
-
-### Step 6: Add a decoupling capacitor
-
-<a href="sequence/06_first_ws2803d_capacitor.png"><img src="sequence/06_first_ws2803d_capacitor.png" style="height:250px"/></a>
-
-We'll add a small capacitor between the power lines of the WS2803D to
-smooth the supply in case the circuit experiences sudden power demands
-which cause the voltage to drop (e.g. turning on all the ultrabright
-LEDs at once!).
-
-We'll be using a capacitor marked 104, which indicates its capacitance
-in picoFarads. Because the last figure indicates the number of zeroes to
-add on the end, this means it's a 10(0000) picoFarad capacitor. Because
-there are 1000 picoFarads in a nanoFarad, it's also called a 100
-nanoFarad capacitor.
-
--   \*\*\* Attach a capacitor marked 104 between <span
-    style="color:gray;">d1</span> and <span
-    style="color:gray;">g1</span> \*\*\*
-
-### Step 7: Add the wires for receiving LED control instructions
-
-<a href="sequence/07_first_ws2803d_clock+data.png"><img src="sequence/07_first_ws2803d_clock+data.png" style="height:250px"/></a>
-
-The WS2803D can accept instructions to turn on and off specific LEDs
-over two wires. If the data wire is at 5V then a **one** is being sent.
-If the data wire is at 0V then a **zero** is being sent. The clock wire
-is pulsed to 5V when a new value on the data wire is ready to be read.
-Using this **clocked serial** data stream, a series of **ones** and
-**zeroes** is read into the WS2803, which determins whether individual
-LEDs are **on** or **off**.
-
-Once you have attached the clock and data lines the first WS2803D chip
-is fully wired up.
-
--   \*\*\* Attach a <span style="color:blue;">Blue</span> wire between
-    <span style="color:gray;">j5</span> on the left breadboard and <span
-    style="color:gray;">a4</span> on the right breadboard, connecting
-    the serial Clock line \*\*\*
--   \*\*\* Attach an <span style="color:orange;">Orange</span> wire
-    between <span style="color:gray;">j6</span> on the left breadboard
-    and <span style="color:gray;">a5</span> on the right breadboard,
-    connecting the serial Data line \*\*\*
-
-### Step 8: Now wire the second WS2803D chip
-
-<a href="sequence/08_second_ws2803d.png"><img src="sequence/08_second_ws2803d.png" style="height:250px"/></a>
-
-The second chip needs exactly the same connections, but it's upside down
-relative to the rest of the chips on the breadboard. So the half-moon
-shape is at the very bottom of the board, so Pin 1 (which is
-anticlockwise from the half-moon shape) should be inserted at the bottom
-row 30.
-
-The second chip accepts data not from the ATMEGA chip directly, but from
-the other WS2803D. When the ATMEGA sends more than 18 **ones** and
-**zeroes**, the extra information is passed on from the first WS2803D to
-the next one. Special pins on each WS2803D are available to pass on this
-overflowing data. WS2803D chips can therefore be chained, and they
-provide special serial and clock pins for the next chip in the chain.
-
--   \*\*\* Attach a <span style="color:green;">Green</span> wire from
-    <span style="color:gray;">j30</span> to the (<span
-    style="color:blue;">Blue</span>) right-hand -ive power rail,
-    (connects WS2803D Pin 1 to 0V ground).\*\*\*
--   \*\*\* Attach a <span style="color:red;">Red</span> wire between
-    <span style="color:gray;">a30</span> and the (<span
-    style="color:red;">Red</span>) left-hand -ive power rail,
-    (connecting the WS2803D Pin 28 to +5V power ).\*\*\*
--   \*\*\* Attach a capacitor marked 104 between <span
-    style="color:gray;">d30</span> and <span
-    style="color:gray;">g30</span> \*\*\*
--   \*\*\* Attach a 1.5kOhm resistor between <span
-    style="color:gray;">j29</span> and the (<span
-    style="color:blue;">Blue</span>) right-hand -ive power rail,
-    (providing Pin 2 with a constant current reference) \*\*\*
--   \*\*\* Attach a <span style="color:blue;">Blue</span> wire between
-    <span style="color:gray;">g2</span> and <span
-    style="color:gray;">g27</span>, (the serial Clock line) \*\*\*
--   \*\*\* Attach an <span style="color:orange;">Orange</span> wire
-    between <span style="color:gray;">g3</span> and <span
-    style="color:gray;">g26</span>, (the serial Data line) \*\*\*
-
-### Step 9: Add all the LEDs
-
-<a href="sequence/09_leds.png"><img src="sequence/09_leds.png" style="height:250px"/></a>
-
-There are a total of 24 LEDs to insert. Each one has one slightly longer
-leg - the positive leg, into which electrical charge flows to light it
-up. LED stands for "Light Emitting Diode", and a diode is equivalent to
-a valve - it only allows charge to flow one way. If you attach your LEDs
-the wrong way round, they will not light up.
-
-The long legs need to be attached to the +ive power rails down the sides
-of the LED display breadboard, and the short legs should be inserted
-either side of the WS2803D chips in breadboard rows 6,7,9,11,13,14 and
-17,18,20,22,24,25. The WS2803D will allow current to flow into the pins
-in these rows, or block current flow, depending on the instructions it
-receives from the Shrimp's microcontroller.
-
-Follow the pattern of LED wire locations in the diagram. These locations
-have been selected to allow enough space for the 5mm LEDs to lie next to
-each other.
-
-### Finished!
-
-<a href="sequence/10_final.png"><img src="sequence/10_final.png" style="height:250px"/></a>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+  /*
+      Buttondown
+      A Markdown/MultiMarkdown/Pandoc HTML output CSS stylesheet
+      Author: Ryan Gray
+      Date: 15 Feb 2011
+      Revised: 21 Feb 2012
+     
+      General style is clean, with minimal re-definition of the defaults. It also 
+      contains built-in print optimizations. 
+      
+      All elements that Pandoc and MultiMarkdown use should be listed here, even 
+      if the style is empty so you can easily add styling to anything.
+      
+      There are some elements in here for HTML5 output of Pandoc, but I have not 
+      gotten around to testing that yet.
+  */
+  
+  /* NOTES:
+  
+      Stuff tried and failed:
+      
+      It seems that specifying font-family:serif in Safari will always use 
+      Times New Roman rather than the user's preferences setting.
+      
+      Making the font size different or a fixed value for print in case the screen 
+      font size is making the print font too big: Making font-size different for 
+      print than for screen causes horizontal lines to disappear in math when using 
+      MathJax under Safari.
+  */
+  
+  /* ---- Front Matter ---- */
+  
+  /* Pandoc header DIV. Contains .title, .author and .date. Comes before div#TOC. 
+     Only appears if one of those three are in the document.
+  */
+  
+  div#header, header
+      {
+      /* Put border on bottom. Separates it from TOC or body that comes after it. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+      }
+  
+  .author, .date /* Pandoc author(s) and date headers (h2.author and h3.date) */
+      {
+      text-align: center;
+      }
+  
+  /* Pandoc table of contents DIV when using the --toc option.
+     NOTE: this doesn't support Pandoc's --id-prefix option for #TOC and #header. 
+     Probably would need to use div[id$='TOC'] and div[id$='header'] as selectors.
+  */
+  
+  div#TOC, nav#TOC
+      {
+      /* Put border on bottom to separate it from body. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  @media print
+      {
+      div#TOC, nav#TOC
+          {
+          /* Don't display TOC in print */
+          display: none;
+          }
+      }
+  
+  /* ---- Headers and sections ---- */
+  
+  h1, h2, h3, h4, h5, h6
+      {
+      font-family: "Helvetica Neue", Helvetica, "Liberation Sans", Calibri, Arial, sans-serif; /* Sans-serif headers */
+  
+      /* font-family: "Liberation Serif", "Georgia", "Times New Roman", serif; /* Serif headers */
+  
+      page-break-after: avoid; /* Firefox, Chrome, and Safari do not support the property value "avoid" */
+      }
+  
+  /* Pandoc with --section-divs option */
+  
+  div div, section section /* Nested sections */
+      {
+      margin-left: 1.5em; /* This will increasingly indent nested header sections. 1.5 Keep it in line with bullet indent of parent section */
+      }
+  
+  p {}
+  
+  blockquote
+      { 
+      font-style: italic;
+      }
+  
+  li /* All list items */
+      {
+      }
+  
+  li > p /* Loosely spaced list item */
+      {
+      margin-top: 1em; /* For IE's lack of space above a <li> when the item is inside a <p> */
+      }
+  
+  ul /* Whole unordered list */
+      {
+      }
+  
+  ul li /* Unordered list item */
+      {
+      }
+  
+  ol /* Whole ordered list */
+      {
+      }
+  
+  ol li /* Ordered list item */
+      {
+      }
+  
+  hr /* Simple line for normal rules */
+      {
+      border: none;
+      height: 1pt;
+      background: none;
+      border-top: 1pt solid #333;
+      }
+      
+  /* ---- Some span elements --- */
+  
+  sub /* Subscripts. Pandoc: H~2~O */
+      {
+      }
+  
+  sup /* Superscripts. Pandoc: The 2^nd^ try. */
+      {
+      }
+      
+  em /* Emphasis. Markdown: *emphasis* or _emphasis_ */
+      {
+      }
+      
+  em > em /* Emphasis within emphasis: *This is all *emphasized* except that* */
+      {
+      font-style: normal;
+      }
+  
+  strong /* Markdown **strong** or __strong__ */
+      {
+      }
+  
+  /* ---- Links (anchors) ---- */
+  
+  a /* All links */
+      {
+      /* Keep links clean. On screen, they are colored; in print, they do nothing anyway. */
+      text-decoration: none;
+      }
+  
+  @media screen
+      {
+      a:hover
+          {
+          /* On hover, we indicate a bit more that it is a link. */
+          text-decoration: underline;
+          }
+      }
+  
+  @media print
+      {
+      a   {
+          /* In print, a colored link is useless, so un-style it. */
+          color: black;
+          background: transparent;
+          }
+          
+      a[href^="http://"]:after, a[href^="https://"]:after
+          {
+          /* However, links that go somewhere else, might be useful to the reader,
+             so for http and https links, print the URL after what was the link 
+             text in parens
+          */
+          content: " (" attr(href) ") ";
+          font-size: 90%;
+          }
+      }
+  
+  /* ---- Images ---- */
+  
+  img
+      {
+      /* Let it be inline left/right where it wants to be, but verticality make 
+         it in the middle to look nicer, but opinions differ, and if in a multi-line 
+         paragraph, it might not be so great. 
+      */
+      vertical-align: middle;
+      }
+  
+  div.figure /* Pandoc figure-style image */
+      {
+      /* Center the image and caption */
+      margin-left:  auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      font-size:   small;
+      }
+  
+  p.caption /* Pandoc figure-style caption within div.figure */
+      {
+      /* Inherits div.figure props by default */
+      }
+  
+  /* ---- Code blocks and spans ---- */
+  
+  pre, code 
+      {
+      /* Preserve whitespace, but allow word wrapping */
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      }
+  
+  /* Coloring */
+  
+  /* This will be only for code spans */
+  code
+      {
+      background-color: #F4F4F4;
+      }
+      
+  /* This will be only for code blocks */
+  pre, pre > code
+      {
+      background-color: #F4F4F4;
+      }
+  
+  pre /* Code blocks */
+      {
+      /* Distinguish pre blocks from other text by more than the font with a background tint. */
+      padding: 0.5em; /* Since we have a background color */
+      border-radius: 5px; /* Softens it */
+      /* Give it a some definition, and if printing doesn't print the background */
+      border: 1px solid #aaa;
+      /* Set it off left and right, seems to look a bit nicer when we have a background */
+      margin-left:  0.5em;
+      margin-right: 0.5em;
+      }
+  
+  @media screen
+      {
+      pre
+          {
+          /* Shadow on screen instead of border */
+          border: none;
+          box-shadow: inset 1px 1px 3px #bbb;
+          }
+  
+      pre, pre > code
+          {
+          /* On screen, use an auto scroll box for long lines in a code block */
+          white-space: pre;
+          word-wrap: normal;
+          overflow: auto;
+          }
+      }
+  
+  code /* All inline code spans (applies to pre>code as well) */
+      {
+      /* Pad a little from adjacent text */
+      padding-left:  0.3em;
+      padding-right: 0.3em;
+      padding-top:    0.1em;
+      padding-bottom: 0.1em;
+      border-radius: 3px;
+      }
+  
+  @media screen
+      {
+      code
+          {
+          box-shadow: inset 0px 0px 2px #bbb;
+          }
+      }
+  
+  pre > code /* Code span in a code block */
+      {
+      /* Remove some styling on the span box */
+      padding: 0;
+      border: none;
+      border-radius: none;
+      background-color: inherit;
+      box-shadow: none;
+      }
+      
+  code.url /* Pandoc simple URLs */
+      {
+      background-color: inherit; /* Un-color from previous rules */
+      box-shadow: none;
+      }
+      
+  /* ---- Math ---- */
+  
+  span.math /* Pandoc inline math default and --jsmath inline math */
+      {
+      /* Tried font-style:italic here, and it messed up MathJax rendering in some browsers. Maybe don't mess with at all. */
+      }
+      
+  div.math /* Pandoc --jsmath display math */
+      {
+      }
+      
+  span.LaTeX /* Pandoc --latexmathml math */
+      {
+      } 
+  
+  eq /* Pandoc --gladtex math */
+      {
+      } 
+  
+  /* ---- Tables ---- */
+  
+  /*  A clean textbook-like style with horizontal lines above and below and under 
+      the header. Rows highlight on hover to help scanning the table on screen.
+  */
+  
+  table
+      {
+      border-collapse: collapse;
+      border-spacing: 0; /* IE 6 */
+  
+      border-top:    2pt solid #000; /* The caption on top will not have a bottom-border */
+      border-bottom: 2pt solid #000;
+  
+      /* Center */
+      margin-left:  auto;
+      margin-right: auto;
+      }
+      
+  thead, th /* Entire table header */
+      {
+      /* Well, we add th here since IE doesn't seem to respond to thead. 
+         This will work until we have multi-row headers.
+      */
+      border-bottom: 1pt solid #000;
+      background-color: #eee;
+      }
+  
+  tr.header /* Each header row */
+      {
+      } 
+  
+  tbody /* Entire table  body */
+      {
+      }
+  
+  /* Table body rows */
+  
+  tr  {
+      }
+  
+  /* Odd and even rows */
+  tr.odd  {}
+  tr.even {}
+  
+  tr.odd:hover, tr.even:hover /* Use .odd and .even classes to avoid styling rows in other tables */
+      {
+      background-color: #eee;
+      }
+      
+  td, th /* Table cells and table header cells */
+      { 
+      vertical-align: top; /* Word */
+      vertical-align: baseline; /* Others */
+      padding-left:   0.5em;
+      padding-right:  0.5em;
+      padding-top:    0.2em;
+      padding-bottom: 0.2em;
+      }
+      
+  /* Removes padding on left and right of table for a tight look. Good if thead has no background color*/
+  /*
+  tr td:last-child, tr th:last-child
+      {
+      padding-right: 0;
+      }
+  tr td:first-child, tr th:first-child 
+      {
+      padding-left: 0;
+      }
+  */
+  
+  th /* Table header cells */
+      {
+      font-weight: bold; 
+      }
+  
+  tfoot /* Table footer (what appears here if caption is on top?) */
+      {
+      }
+  
+  caption /* This is for a table caption tag, not the p.caption Pandoc uses in a div.figure */
+      {
+      caption-side: top;
+      border: none;
+      font-size:  0.9em;
+      font-style: italic;
+      text-align: center;
+      margin-top:  0.5em;
+      margin-bottom:  0.3em;
+      padding-bottom: 0.2em;
+      }
+  
+  /* ---- Definition lists ---- */
+  
+  dl /* The whole list */
+      {
+      border-top:  2pt solid #888;
+      padding-top: 0.5em;
+      border-bottom: 2pt solid #888;
+      }
+  
+  dt /* Definition term */
+      {
+      font-weight: bold;
+      }
+  
+  dd+dt /* 2nd or greater term in the list */
+      {
+      border-top:  1pt solid #888;
+      padding-top: 0.5em;
+      }
+      
+  dd /* A definition */
+      {
+      margin-bottom: 0.5em;
+      }
+  
+  dd+dd /* 2nd or greater definition of a term */
+      {
+      border-top: 1px solid #888; /* To separate multiple definitions */
+      }
+      
+  /* ---- Footnotes ---- */
+  
+  a.footnote, a.footnoteRef { /* Pandoc, MultiMarkdown footnote links */
+      font-size: small; 
+      vertical-align: text-top;
+  }
+  
+  a[href^="#fnref"], a.reversefootnote /* Pandoc, MultiMarkdown, ?? footnote back links */
+      {
+      }
+  
+  @media print
+      {
+      a[href^="#fnref"], a.reversefootnote /* Pandoc, MultiMarkdown */
+          {
+          /* Don't display these at all in print since the arrow is only something to click on */
+          display: none;
+          }
+      }
+      
+  div.footnotes /* Pandoc footnotes div at end of the document */
+      {
+      }
+      
+  div.footnotes li[id^="fn"] /* A footnote item within that div */
+      {
+      }
+  
+  /* Fancy rule for footnotes section (from http://css-tricks.com/examples/hrs/) */
+  
+  div.footnotes > hr
+      {
+      margin-top: 2em;
+      padding: 0;
+      border: none;
+      border-top: double;
+      border-color: #333;
+      border-width: 3pt;
+      color: #000;
+      text-align: center;
+      }
+  
+  div.footnotes > hr:after
+      {
+      content: "NOTES";
+      display: inline-block;
+      position: relative; 
+      top: -0.8em;  
+      font-size: 0.8em;
+      padding: 0 0.5em;
+      background: white;
+      }
+  
+  /* Convenience classes for DIVs or other things inserted into the Markdown */
+  
+  /* You can class stuff as "noprint" to not print. 
+     Useful since you can't set this media conditional inside an HTML element's 
+     style attribute (I think).
+  */
+  
+  @media screen
+      {
+      .noscreen /* Don't display on screen (something for print only) */
+          {
+          display: none;
+          }
+      }
+      
+  @media print
+      {
+      .noprint /* Don't display in print (something for screen only) */
+          {
+          display:none;
+          }
+      }
+  
+  .block-center
+      {
+      margin-left: auto;
+      margin-right: auto;
+      display: table;
+      }
+  .text-center
+      {
+      text-align: center;
+      }
+  
+  .block-right
+      {
+      margin-left: auto;
+      margin-right: 0;
+      display: table;
+      }
+  .text-right
+      {
+      text-align: right;
+      }
+  
+  .block-left
+      {
+      margin-left: 0;
+      margin-right: auto;
+      display: table;
+      }
+  .text-left
+      {
+      text-align: left;
+      }
+      
+  img {
+    		height:auto;
+    		width:20%;
+        display:block;
+        float:right;
+        clear:both;
+    	}
+  
+     h3{
+        clear:both;
+     }
+  
+  	p,ul,h1,h2,h3,h4,h5,h6{
+          margin-left:5%;
+          width:70%;
+  	}
+  
+      p {
+          text-align: justify;
+      }
+      
+  
+     p.caption{
+        float:right;
+        clear:right;
+         margin:0;
+         padding:0;
+        width:20%;
+         text-align:center;
+     }
+  
+    
+  </style>
+</head>
+<body>
+<h1 id="building-the-led-clock">Building the LED Clock</h1>
+<p>This guide provides details for learners to wire, program and configure a <span class="citation">@ShrimpingIt</span> digital cloc<span style="color:red">Red</span>k project with ultrabright LEDs which can programmed as a Word Clock or a Unary Clock.</p>
+<p>For general orientation, see the <a href="../clock/index.html">Alarm Clock</a> project page.</p>
+<h2 id="requirements">Requirements</h2>
+<p>The build assumes you have the following kits...</p>
+<ul>
+<li>An <a href="../clock/index.html">LED Clock Addon</a> kit</li>
+<li>An <a href="../clock/index.html">Alarm Clock Addon</a> kit</li>
+<li>A <a href="../shrimp/index.html">Shrimp Parts</a> kit</li>
+<li>A <a href="../cp2102/index.html">USB UART</a> kit</li>
+</ul>
+<p>For convenience, pre-bagged kits are available to order from <span class="citation">[@ShrimpingIt]</span>(http://shrimping.it) online. If you do not wish to buy from us, information is provided for you to source commodity parts direct from electronics wholesalers.</p>
+<p>In addition you will need a Linux, Mac or Windows computer running the latest <a href="../topics/ide.html">Arduino IDE</a>.</p>
+<p>Mac and Windows computers need a <a href="../cp2102/driver.html">CP2102 driver</a> to be installed for the USB Programmer to be recognised.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>Before embarking on the LED Clock, you should have successfully completed the <a href="../clock/build.html">Alarm Clock build</a>. This guide uses the Alarm Clock circuit configuration as its starting point.</p>
+<p>As before we'll be using 'battleship' numbering to indicate where components should be inserted, with numbers and letters indicating the rows and columns of the breadboard.</p>
+<h3 id="step-1-adding-an-extra-breadboard">Step 1: Adding an extra breadboard</h3>
+<p><a href="sequence/01_second_breadboard.png"><img src="sequence/01_second_breadboard.png" style="height:250px"/></a></p>
+<p>The 24 LEDs in the display will be laid out, with special chips to drive them, on an extra breadboard, which we will refer to as the LED Display breadboard.</p>
+<p>Later, this will be attached to the (previously constructed) Alarm Clock breadboard with just four wires, two for power (+5V and 0V) and two for receiving LED control data (Clock and Data).</p>
+<p>The breadboards can be oriented in various ways, as long as the four wires are attached. For example, the breadboards could be attached back-to-back to fit compactly inside a housing when the build is complete.</p>
+<p>However, to make the build simple, we will first attach the new breadboard to the right of the previous Alarm Clock breadboard, using the in-built docking mechanism.</p>
+<ul>
+<li>*** Attach a new breadboard to the right of the Alarm Clock breadboard. The new breadboard's lugs should slide into slots at the rear of the old breadboard***</li>
+</ul>
+<h3 id="step-2-connect-the-power-rails-of-the-new-breadboard">Step 2: Connect the power rails of the new breadboard</h3>
+<p><a href="sequence/02_powerrails.png"><img src="sequence/02_powerrails.png" style="height:250px"/></a></p>
+<p>Both power rails of the second breadboard will be heavily used, powering up the LED driver chips, and supplying each of the 24 LEDs.</p>
+<p>We therefore need to connect red and green wires across from the power rail of the Alarm Clock breadboard, and in turn wire the left and right power rails of the second breadboard together.</p>
+<ul>
+<li>*** Attach a <span style="color:red">Red</span> wire from the right-hand Red +ive column of the Alarm Clock breadboard to the left-hand <span style="color:red">Red</span> +ive column of the LED Display breadboard, roughly below the row numbered 15***</li>
+<li>*** Attach a <span style="color:green">Green</span> wire from the right-hand <span style="color:blue">Blue</span> -ive column of the Alarm Clock breadboard to the left-hand Blue -ive column of the LED Display breadboard, roughly below the row numbered 16***</li>
+<li>*** Attach a <span style="color:red;">Red</span> wire from the left-hand <span style="color:red;">Red</span> +ive column of the LED Display breadboard to the right-hand <span style="color:red;">Red</span> +ive column of the LED Display breadboard, starting just above row 15, and finishing just below row 15.***</li>
+<li>*** Attach a <span style="color:green;">Green</span> wire from the left-hand <span style="color:blue;">Blue</span> -ive column of the LED Display breadboard to the right-hand <span style="color:blue;">Blue</span> -ive column of the LED Display breadboard, starting just above row 16, and finishing just below row 16.***</li>
+</ul>
+<h3 id="step-3-attach-the-first-ws2803d-led-driver-chip">Step 3: Attach the first WS2803D LED Driver chip</h3>
+<p><a href="sequence/03_first_ws2803d.png"><img src="sequence/03_first_ws2803d.png" style="height:250px"/></a></p>
+<p>The WS2803D LED driver chip will be used to switch on and off the LEDs we're about to attach. Each chip is actually capable of controlling up to 18 LEDs, but we're only using 12 on each, for a total of 24 lights.</p>
+<p>The WS2803D chip will need a power connection, and wires to receive LED lighting commands from the Shrimp's microcontroller.</p>
+<p>Just like the ATMEGA328P-PU and the DS1307, the WS2803D chip has a half-moon stamped at one end. Pins are numbered anticlockwise, starting from the half-moon.</p>
+<p>The first driver chip should be placed in the same orientation as all the other chips, straddling the right-hand LED Display breadboard and positioned as far up as it can go, leaving just enough room for the power rail connections which should be running across the centre of the board.</p>
+<ul>
+<li>*** Insert the first WS2803D chip with the half-moon shape at the top of the breadboard. Pin 1 (the top-left pin, anticlockwise from the half-moon) should be in row 1, and pin 14 (the bottom-left pin) should be in row 14. ***</li>
+</ul>
+<h3 id="step-4-attach-power-to-the-ws2803d">Step 4: Attach power to the WS2803D</h3>
+<p><a href="sequence/04_first_ws2803d_power.png"><img src="sequence/04_first_ws2803d_power.png" style="height:250px"/></a></p>
+<p>Pin 1 needs a connection to ground and Pin 28 (all the way anticlockwise from the half-moon) needs a connection to the 5V supply.</p>
+<ul>
+<li>*** Attach a <span style="color:green;">Green</span> wire from <span style="color:gray">a1</span> to the (<span style="color:blue;">Blue</span>) left-hand -ive power rail ***</li>
+<li>*** Attach a <span style="color:red;">Red</span> wire from <span style="color:gray;">g1</span> to the (<span style="color:red;">Red</span>) right-hand +ive power rail ***</li>
+</ul>
+<h3 id="step-5-attach-a-resistor-as-a-current-reference">Step 5: Attach a resistor as a current reference</h3>
+<p><a href="sequence/05_first_ws2803d_resistor.png"><img src="sequence/05_first_ws2803d_resistor.png" style="height:250px"/></a></p>
+<p>You may recall from the <a href="../shrimp/build.html">Blink build</a> that attaching LEDs directly to 5V can make them burn out, so a current-limiting resistor was added between the LED and ground when attaching the Blink LED, to limit the flow of electricity.</p>
+<p>A WS2803D is known as a 'constant current' LED driver, and you can explicitly limit the current which flows through the LED pins. We simply have to attach a single current-limiting resistor to pin 2, to tell the WS2803D what the maximum current should be. This saves us attaching current-limiting resistors to every one of the 24 LEDs.</p>
+<p>The correct resistor value can be calculated according to the following formula; The resistance (in Ohms) is 27.5 divided by the desired current (in Amps). Our LEDs can handle a maximum of 20milliAmps which is the same as 0.020 Amps. The resistor should therefore be 27.5 / 0.020, which is 1375 Ohms or 1.375 kOhms.</p>
+<p>Unfortunately resistors are only available in a limited number of values, so we'll err on the side of caution and use a 1.5 kOhm resistor, limiting the current to 18.3 milliAmps instead.</p>
+<ul>
+<li>*** Attach a 1.5kOhm resistor between <span style="color:gray;">a2</span> and the (<span style="color:blue;">Blue</span>) left-hand -ive power rail ***</li>
+</ul>
+<h3 id="step-6-add-a-decoupling-capacitor">Step 6: Add a decoupling capacitor</h3>
+<p><a href="sequence/06_first_ws2803d_capacitor.png"><img src="sequence/06_first_ws2803d_capacitor.png" style="height:250px"/></a></p>
+<p>We'll add a small capacitor between the power lines of the WS2803D to smooth the supply in case the circuit experiences sudden power demands which cause the voltage to drop (e.g. turning on all the ultrabright LEDs at once!).</p>
+<p>We'll be using a capacitor marked 104, which indicates its capacitance in picoFarads. Because the last figure indicates the number of zeroes to add on the end, this means it's a 10(0000) picoFarad capacitor. Because there are 1000 picoFarads in a nanoFarad, it's also called a 100 nanoFarad capacitor.</p>
+<ul>
+<li>*** Attach a capacitor marked 104 between <span style="color:gray;">d1</span> and <span style="color:gray;">g1</span> ***</li>
+</ul>
+<h3 id="step-7-add-the-wires-for-receiving-led-control-instructions">Step 7: Add the wires for receiving LED control instructions</h3>
+<p><a href="sequence/07_first_ws2803d_clock+data.png"><img src="sequence/07_first_ws2803d_clock+data.png" style="height:250px"/></a></p>
+<p>The WS2803D can accept instructions to turn on and off specific LEDs over two wires. If the data wire is at 5V then a <strong>one</strong> is being sent. If the data wire is at 0V then a <strong>zero</strong> is being sent. The clock wire is pulsed to 5V when a new value on the data wire is ready to be read. Using this <strong>clocked serial</strong> data stream, a series of <strong>ones</strong> and <strong>zeroes</strong> is read into the WS2803, which determins whether individual LEDs are <strong>on</strong> or <strong>off</strong>.</p>
+<p>Once you have attached the clock and data lines the first WS2803D chip is fully wired up.</p>
+<ul>
+<li>*** Attach a <span style="color:blue;">Blue</span> wire between <span style="color:gray;">j5</span> on the left breadboard and <span style="color:gray;">a4</span> on the right breadboard, connecting the serial Clock line ***</li>
+<li>*** Attach an <span style="color:orange;">Orange</span> wire between <span style="color:gray;">j6</span> on the left breadboard and <span style="color:gray;">a5</span> on the right breadboard, connecting the serial Data line ***</li>
+</ul>
+<h3 id="step-8-now-wire-the-second-ws2803d-chip">Step 8: Now wire the second WS2803D chip</h3>
+<p><a href="sequence/08_second_ws2803d.png"><img src="sequence/08_second_ws2803d.png" style="height:250px"/></a></p>
+<p>The second chip needs exactly the same connections, but it's upside down relative to the rest of the chips on the breadboard. So the half-moon shape is at the very bottom of the board, so Pin 1 (which is anticlockwise from the half-moon shape) should be inserted at the bottom row 30.</p>
+<p>The second chip accepts data not from the ATMEGA chip directly, but from the other WS2803D. When the ATMEGA sends more than 18 <strong>ones</strong> and <strong>zeroes</strong>, the extra information is passed on from the first WS2803D to the next one. Special pins on each WS2803D are available to pass on this overflowing data. WS2803D chips can therefore be chained, and they provide special serial and clock pins for the next chip in the chain.</p>
+<ul>
+<li>*** Attach a <span style="color:green;">Green</span> wire from <span style="color:gray;">j30</span> to the (<span style="color:blue;">Blue</span>) right-hand -ive power rail, (connects WS2803D Pin 1 to 0V ground).***</li>
+<li>*** Attach a <span style="color:red;">Red</span> wire between <span style="color:gray;">a30</span> and the (<span style="color:red;">Red</span>) left-hand -ive power rail, (connecting the WS2803D Pin 28 to +5V power ).***</li>
+<li>*** Attach a capacitor marked 104 between <span style="color:gray;">d30</span> and <span style="color:gray;">g30</span> ***</li>
+<li>*** Attach a 1.5kOhm resistor between <span style="color:gray;">j29</span> and the (<span style="color:blue;">Blue</span>) right-hand -ive power rail, (providing Pin 2 with a constant current reference) ***</li>
+<li>*** Attach a <span style="color:blue;">Blue</span> wire between <span style="color:gray;">g2</span> and <span style="color:gray;">g27</span>, (the serial Clock line) ***</li>
+<li>*** Attach an <span style="color:orange;">Orange</span> wire between <span style="color:gray;">g3</span> and <span style="color:gray;">g26</span>, (the serial Data line) ***</li>
+</ul>
+<h3 id="step-9-add-all-the-leds">Step 9: Add all the LEDs</h3>
+<p><a href="sequence/09_leds.png"><img src="sequence/09_leds.png" style="height:250px"/></a></p>
+<p>There are a total of 24 LEDs to insert. Each one has one slightly longer leg - the positive leg, into which electrical charge flows to light it up. LED stands for &quot;Light Emitting Diode&quot;, and a diode is equivalent to a valve - it only allows charge to flow one way. If you attach your LEDs the wrong way round, they will not light up.</p>
+<p>The long legs need to be attached to the +ive power rails down the sides of the LED display breadboard, and the short legs should be inserted either side of the WS2803D chips in breadboard rows 6,7,9,11,13,14 and 17,18,20,22,24,25. The WS2803D will allow current to flow into the pins in these rows, or block current flow, depending on the instructions it receives from the Shrimp's microcontroller.</p>
+<p>Follow the pattern of LED wire locations in the diagram. These locations have been selected to allow enough space for the 5mm LEDs to lie next to each other.</p>
+<h3 id="finished">Finished!</h3>
+<p><a href="sequence/10_final.png"><img src="sequence/10_final.png" style="height:250px"/></a></p>
+</body>
+</html>

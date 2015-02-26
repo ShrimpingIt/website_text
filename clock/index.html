@@ -1,96 +1,621 @@
-Alarm Clock Addon
-=================
-
-Overview
---------
-
-<img src="8180682507_8b5d19ae14_o_credit_antonio_thomas.jpg" style="margin:10px;width:30%"/><img src="bells_credit_malcolmguite.jpg" style="margin:10px;width:30%"/><img src="1_CobaltClock_credit_dougsclocks.jpg" style="margin:10px;width:30%"/>
-
-This [addon](../topics/addon.html) extends a [Shrimp
-Parts](../shrimp/index.html) kit to create a functioning digital clock.
-The build offers a starting point for all kinds of time-driven
-inventions.
-
-The [project build](build.html) shows how to wire, program and configure
-the circuit as a clock which chimes hourly, or which sounds according to
-a daily or yearly schedule.
-
-For a visual display of the time, the Alarm Clock kit can be augmented
-with an [LED Clock Addon](../ledclock/index.html) which incorporates 24
-superbright LEDs and high-power LED driver chips for a
-<a href="https://github.com/schmiegelt/xbmc.screensaver.unaryclock" target="_blank">Unary
-clock</a> or
-<a href="http://www.instructables.com/id/Wordclock/" target="_blank">Word
-Clock</a>.
-
-A set of [activities](guide.html) are provided for educators who wish to
-use these builds to support lessons in high school or university.
-
-Design
-------
-
-The build employs a Real Time Clock (RTC) chip which has a precise
-quartz-controlled time signal, as well as a battery-backup system, so
-that the time doesn't need to be reset every time the clock is
-unplugged.
-
-Since the RTC chip keeps time independently, the
-[Shrimp](../shrimp/index.html) can be placed in a very [low-power
-mode](../topics/lowpower.html) suitable for long-lived projects with
-time-driven behaviours running from battery.
-
-Learning Outcomes
------------------
-
-This project shows how to use peripheral Integrated Circuits (ICs) as
-part of a @ShrimpingIt layout, demonstrates how to use a number of
-distinct digital communication protocols, and some special IC
-configurations. \* Protocols - Serial without clock - used to set and
-read the time (CP2102 UART IC) - I2C - used to set the clock, configure
-it, and read the time when needed (DS1307 Real Time Clock IC) - Serial
-with clock - controls the LEDs (WS2803 LED Driver IC) \* Configurations
-- The Shrimp configures itself to go into a low-powered sleep mode - The
-RTC is configured over I2C to flash an LED once per second
-
-Many D&T and Computing tasks are possible as spinoffs, specialising the
-housing, the time-controlled outputs or the software behaviour to suit
-many different purposes limited only by the imagination.
-
-Discussion
-----------
-
-Learners may remember from the original [Blink
-build](http://shrimping.it/shrimp/project/blink), that the ATMEGA328
-requires a 16MHz crystal component, as part of its internal 'clock'
-circuit. Hz is short for Hertz, a scientific unit meaning 'per second',
-so a 16MHz crystal provides a 'tick' 16 million times a second.
-
-The ATMEGA's clock circuit is used to trigger computing instructions.
-Each instruction relies on the results of the one before, and the 16MHz
-tick gives enough time for the movements of electrons which make up a
-single computing instruction to be completed before the next is
-triggered.
-
-Although it is accurate enough to space out computing instructions, the
-16 MHz signal is not very precise in absolute terms. If we were to rely
-on it to control our digital clock, adding up the inaccuracies over a
-whole day, we'd end up losing or gaining time making the clock
-unreliable. Even if we were to sample and assess the drift of our 16MHz
-crystal, and attempt to compensate for it, a later change in room
-temperature would influence the speed of the tick!
-
-The Real Time Clock (RTC) Chip is designed to provide a much more
-precise timing circuit, stable to ambient temperature changes, for use
-in digital clocks.
-
-In this build, we use the RTC as a peripheral chip, which is initially
-set by a user sending the correct time over the Serial UART to Arduino
-code running on the ATMEGA328. Arduino code running on the Shrimp then
-sets the RTC by sending a signal over the I2C bus. Once set, the RTC is
-then consulted periodically using an I2C request to establish an
-accurate time signal which can be used in our application.
-
-Even when the rest of the circuit is shut down, the coin battery can
-keep the Real Time Clock chip active. When power comes back to the rest
-of the circuit, the time reported by the RTC will still be accurate.
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+  /*
+      Buttondown
+      A Markdown/MultiMarkdown/Pandoc HTML output CSS stylesheet
+      Author: Ryan Gray
+      Date: 15 Feb 2011
+      Revised: 21 Feb 2012
+     
+      General style is clean, with minimal re-definition of the defaults. It also 
+      contains built-in print optimizations. 
+      
+      All elements that Pandoc and MultiMarkdown use should be listed here, even 
+      if the style is empty so you can easily add styling to anything.
+      
+      There are some elements in here for HTML5 output of Pandoc, but I have not 
+      gotten around to testing that yet.
+  */
+  
+  /* NOTES:
+  
+      Stuff tried and failed:
+      
+      It seems that specifying font-family:serif in Safari will always use 
+      Times New Roman rather than the user's preferences setting.
+      
+      Making the font size different or a fixed value for print in case the screen 
+      font size is making the print font too big: Making font-size different for 
+      print than for screen causes horizontal lines to disappear in math when using 
+      MathJax under Safari.
+  */
+  
+  /* ---- Front Matter ---- */
+  
+  /* Pandoc header DIV. Contains .title, .author and .date. Comes before div#TOC. 
+     Only appears if one of those three are in the document.
+  */
+  
+  div#header, header
+      {
+      /* Put border on bottom. Separates it from TOC or body that comes after it. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+      }
+  
+  .author, .date /* Pandoc author(s) and date headers (h2.author and h3.date) */
+      {
+      text-align: center;
+      }
+  
+  /* Pandoc table of contents DIV when using the --toc option.
+     NOTE: this doesn't support Pandoc's --id-prefix option for #TOC and #header. 
+     Probably would need to use div[id$='TOC'] and div[id$='header'] as selectors.
+  */
+  
+  div#TOC, nav#TOC
+      {
+      /* Put border on bottom to separate it from body. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  @media print
+      {
+      div#TOC, nav#TOC
+          {
+          /* Don't display TOC in print */
+          display: none;
+          }
+      }
+  
+  /* ---- Headers and sections ---- */
+  
+  h1, h2, h3, h4, h5, h6
+      {
+      font-family: "Helvetica Neue", Helvetica, "Liberation Sans", Calibri, Arial, sans-serif; /* Sans-serif headers */
+  
+      /* font-family: "Liberation Serif", "Georgia", "Times New Roman", serif; /* Serif headers */
+  
+      page-break-after: avoid; /* Firefox, Chrome, and Safari do not support the property value "avoid" */
+      }
+  
+  /* Pandoc with --section-divs option */
+  
+  div div, section section /* Nested sections */
+      {
+      margin-left: 1.5em; /* This will increasingly indent nested header sections. 1.5 Keep it in line with bullet indent of parent section */
+      }
+  
+  p {}
+  
+  blockquote
+      { 
+      font-style: italic;
+      }
+  
+  li /* All list items */
+      {
+      }
+  
+  li > p /* Loosely spaced list item */
+      {
+      margin-top: 1em; /* For IE's lack of space above a <li> when the item is inside a <p> */
+      }
+  
+  ul /* Whole unordered list */
+      {
+      }
+  
+  ul li /* Unordered list item */
+      {
+      }
+  
+  ol /* Whole ordered list */
+      {
+      }
+  
+  ol li /* Ordered list item */
+      {
+      }
+  
+  hr /* Simple line for normal rules */
+      {
+      border: none;
+      height: 1pt;
+      background: none;
+      border-top: 1pt solid #333;
+      }
+      
+  /* ---- Some span elements --- */
+  
+  sub /* Subscripts. Pandoc: H~2~O */
+      {
+      }
+  
+  sup /* Superscripts. Pandoc: The 2^nd^ try. */
+      {
+      }
+      
+  em /* Emphasis. Markdown: *emphasis* or _emphasis_ */
+      {
+      }
+      
+  em > em /* Emphasis within emphasis: *This is all *emphasized* except that* */
+      {
+      font-style: normal;
+      }
+  
+  strong /* Markdown **strong** or __strong__ */
+      {
+      }
+  
+  /* ---- Links (anchors) ---- */
+  
+  a /* All links */
+      {
+      /* Keep links clean. On screen, they are colored; in print, they do nothing anyway. */
+      text-decoration: none;
+      }
+  
+  @media screen
+      {
+      a:hover
+          {
+          /* On hover, we indicate a bit more that it is a link. */
+          text-decoration: underline;
+          }
+      }
+  
+  @media print
+      {
+      a   {
+          /* In print, a colored link is useless, so un-style it. */
+          color: black;
+          background: transparent;
+          }
+          
+      a[href^="http://"]:after, a[href^="https://"]:after
+          {
+          /* However, links that go somewhere else, might be useful to the reader,
+             so for http and https links, print the URL after what was the link 
+             text in parens
+          */
+          content: " (" attr(href) ") ";
+          font-size: 90%;
+          }
+      }
+  
+  /* ---- Images ---- */
+  
+  img
+      {
+      /* Let it be inline left/right where it wants to be, but verticality make 
+         it in the middle to look nicer, but opinions differ, and if in a multi-line 
+         paragraph, it might not be so great. 
+      */
+      vertical-align: middle;
+      }
+  
+  div.figure /* Pandoc figure-style image */
+      {
+      /* Center the image and caption */
+      margin-left:  auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      font-size:   small;
+      }
+  
+  p.caption /* Pandoc figure-style caption within div.figure */
+      {
+      /* Inherits div.figure props by default */
+      }
+  
+  /* ---- Code blocks and spans ---- */
+  
+  pre, code 
+      {
+      /* Preserve whitespace, but allow word wrapping */
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      }
+  
+  /* Coloring */
+  
+  /* This will be only for code spans */
+  code
+      {
+      background-color: #F4F4F4;
+      }
+      
+  /* This will be only for code blocks */
+  pre, pre > code
+      {
+      background-color: #F4F4F4;
+      }
+  
+  pre /* Code blocks */
+      {
+      /* Distinguish pre blocks from other text by more than the font with a background tint. */
+      padding: 0.5em; /* Since we have a background color */
+      border-radius: 5px; /* Softens it */
+      /* Give it a some definition, and if printing doesn't print the background */
+      border: 1px solid #aaa;
+      /* Set it off left and right, seems to look a bit nicer when we have a background */
+      margin-left:  0.5em;
+      margin-right: 0.5em;
+      }
+  
+  @media screen
+      {
+      pre
+          {
+          /* Shadow on screen instead of border */
+          border: none;
+          box-shadow: inset 1px 1px 3px #bbb;
+          }
+  
+      pre, pre > code
+          {
+          /* On screen, use an auto scroll box for long lines in a code block */
+          white-space: pre;
+          word-wrap: normal;
+          overflow: auto;
+          }
+      }
+  
+  code /* All inline code spans (applies to pre>code as well) */
+      {
+      /* Pad a little from adjacent text */
+      padding-left:  0.3em;
+      padding-right: 0.3em;
+      padding-top:    0.1em;
+      padding-bottom: 0.1em;
+      border-radius: 3px;
+      }
+  
+  @media screen
+      {
+      code
+          {
+          box-shadow: inset 0px 0px 2px #bbb;
+          }
+      }
+  
+  pre > code /* Code span in a code block */
+      {
+      /* Remove some styling on the span box */
+      padding: 0;
+      border: none;
+      border-radius: none;
+      background-color: inherit;
+      box-shadow: none;
+      }
+      
+  code.url /* Pandoc simple URLs */
+      {
+      background-color: inherit; /* Un-color from previous rules */
+      box-shadow: none;
+      }
+      
+  /* ---- Math ---- */
+  
+  span.math /* Pandoc inline math default and --jsmath inline math */
+      {
+      /* Tried font-style:italic here, and it messed up MathJax rendering in some browsers. Maybe don't mess with at all. */
+      }
+      
+  div.math /* Pandoc --jsmath display math */
+      {
+      }
+      
+  span.LaTeX /* Pandoc --latexmathml math */
+      {
+      } 
+  
+  eq /* Pandoc --gladtex math */
+      {
+      } 
+  
+  /* ---- Tables ---- */
+  
+  /*  A clean textbook-like style with horizontal lines above and below and under 
+      the header. Rows highlight on hover to help scanning the table on screen.
+  */
+  
+  table
+      {
+      border-collapse: collapse;
+      border-spacing: 0; /* IE 6 */
+  
+      border-top:    2pt solid #000; /* The caption on top will not have a bottom-border */
+      border-bottom: 2pt solid #000;
+  
+      /* Center */
+      margin-left:  auto;
+      margin-right: auto;
+      }
+      
+  thead, th /* Entire table header */
+      {
+      /* Well, we add th here since IE doesn't seem to respond to thead. 
+         This will work until we have multi-row headers.
+      */
+      border-bottom: 1pt solid #000;
+      background-color: #eee;
+      }
+  
+  tr.header /* Each header row */
+      {
+      } 
+  
+  tbody /* Entire table  body */
+      {
+      }
+  
+  /* Table body rows */
+  
+  tr  {
+      }
+  
+  /* Odd and even rows */
+  tr.odd  {}
+  tr.even {}
+  
+  tr.odd:hover, tr.even:hover /* Use .odd and .even classes to avoid styling rows in other tables */
+      {
+      background-color: #eee;
+      }
+      
+  td, th /* Table cells and table header cells */
+      { 
+      vertical-align: top; /* Word */
+      vertical-align: baseline; /* Others */
+      padding-left:   0.5em;
+      padding-right:  0.5em;
+      padding-top:    0.2em;
+      padding-bottom: 0.2em;
+      }
+      
+  /* Removes padding on left and right of table for a tight look. Good if thead has no background color*/
+  /*
+  tr td:last-child, tr th:last-child
+      {
+      padding-right: 0;
+      }
+  tr td:first-child, tr th:first-child 
+      {
+      padding-left: 0;
+      }
+  */
+  
+  th /* Table header cells */
+      {
+      font-weight: bold; 
+      }
+  
+  tfoot /* Table footer (what appears here if caption is on top?) */
+      {
+      }
+  
+  caption /* This is for a table caption tag, not the p.caption Pandoc uses in a div.figure */
+      {
+      caption-side: top;
+      border: none;
+      font-size:  0.9em;
+      font-style: italic;
+      text-align: center;
+      margin-top:  0.5em;
+      margin-bottom:  0.3em;
+      padding-bottom: 0.2em;
+      }
+  
+  /* ---- Definition lists ---- */
+  
+  dl /* The whole list */
+      {
+      border-top:  2pt solid #888;
+      padding-top: 0.5em;
+      border-bottom: 2pt solid #888;
+      }
+  
+  dt /* Definition term */
+      {
+      font-weight: bold;
+      }
+  
+  dd+dt /* 2nd or greater term in the list */
+      {
+      border-top:  1pt solid #888;
+      padding-top: 0.5em;
+      }
+      
+  dd /* A definition */
+      {
+      margin-bottom: 0.5em;
+      }
+  
+  dd+dd /* 2nd or greater definition of a term */
+      {
+      border-top: 1px solid #888; /* To separate multiple definitions */
+      }
+      
+  /* ---- Footnotes ---- */
+  
+  a.footnote, a.footnoteRef { /* Pandoc, MultiMarkdown footnote links */
+      font-size: small; 
+      vertical-align: text-top;
+  }
+  
+  a[href^="#fnref"], a.reversefootnote /* Pandoc, MultiMarkdown, ?? footnote back links */
+      {
+      }
+  
+  @media print
+      {
+      a[href^="#fnref"], a.reversefootnote /* Pandoc, MultiMarkdown */
+          {
+          /* Don't display these at all in print since the arrow is only something to click on */
+          display: none;
+          }
+      }
+      
+  div.footnotes /* Pandoc footnotes div at end of the document */
+      {
+      }
+      
+  div.footnotes li[id^="fn"] /* A footnote item within that div */
+      {
+      }
+  
+  /* Fancy rule for footnotes section (from http://css-tricks.com/examples/hrs/) */
+  
+  div.footnotes > hr
+      {
+      margin-top: 2em;
+      padding: 0;
+      border: none;
+      border-top: double;
+      border-color: #333;
+      border-width: 3pt;
+      color: #000;
+      text-align: center;
+      }
+  
+  div.footnotes > hr:after
+      {
+      content: "NOTES";
+      display: inline-block;
+      position: relative; 
+      top: -0.8em;  
+      font-size: 0.8em;
+      padding: 0 0.5em;
+      background: white;
+      }
+  
+  /* Convenience classes for DIVs or other things inserted into the Markdown */
+  
+  /* You can class stuff as "noprint" to not print. 
+     Useful since you can't set this media conditional inside an HTML element's 
+     style attribute (I think).
+  */
+  
+  @media screen
+      {
+      .noscreen /* Don't display on screen (something for print only) */
+          {
+          display: none;
+          }
+      }
+      
+  @media print
+      {
+      .noprint /* Don't display in print (something for screen only) */
+          {
+          display:none;
+          }
+      }
+  
+  .block-center
+      {
+      margin-left: auto;
+      margin-right: auto;
+      display: table;
+      }
+  .text-center
+      {
+      text-align: center;
+      }
+  
+  .block-right
+      {
+      margin-left: auto;
+      margin-right: 0;
+      display: table;
+      }
+  .text-right
+      {
+      text-align: right;
+      }
+  
+  .block-left
+      {
+      margin-left: 0;
+      margin-right: auto;
+      display: table;
+      }
+  .text-left
+      {
+      text-align: left;
+      }
+      
+  img {
+    		height:auto;
+    		width:20%;
+        display:block;
+        float:right;
+        clear:both;
+    	}
+  
+     h3{
+        clear:both;
+     }
+  
+  	p,ul,h1,h2,h3,h4,h5,h6{
+          margin-left:5%;
+          width:70%;
+  	}
+  
+      p {
+          text-align: justify;
+      }
+      
+  
+     p.caption{
+        float:right;
+        clear:right;
+         margin:0;
+         padding:0;
+        width:20%;
+         text-align:center;
+     }
+  
+    
+  </style>
+</head>
+<body>
+<h1 id="alarm-clock-addon">Alarm Clock Addon</h1>
+<h2 id="overview">Overview</h2>
+<p><img src="theme/8180682507_8b5d19ae14_o_credit_antonio_thomas.jpg" style="margin:10px;width:30%"/><img src="theme/bells_credit_malcolmguite.jpg" style="margin:10px;width:30%"/><img src="theme/1_CobaltClock_credit_dougsclocks.jpg" style="margin:10px;width:30%"/></p>
+<p>This <a href="../topics/addon.html">addon</a> extends a <a href="../shrimp/index.html">Shrimp Parts</a> kit to create a functioning digital clock. The build offers a starting point for all kinds of time-driven inventions.</p>
+<p>The <a href="build.html">project build</a> shows how to wire, program and configure the circuit as a clock which chimes hourly, or which sounds according to a daily or yearly schedule.</p>
+<p>For a visual display of the time, the Alarm Clock kit can be augmented with an <a href="../ledclock/index.html">LED Clock Addon</a> which incorporates 24 superbright LEDs and high-power LED driver chips for a <a href="https://github.com/schmiegelt/xbmc.screensaver.unaryclock" target="_blank">Unary clock</a> or <a href="http://www.instructables.com/id/Wordclock/" target="_blank">Word Clock</a>.</p>
+<p>A set of <a href="guide.html">activities</a> are provided for educators who wish to use these builds to support lessons in high school or university.</p>
+<h2 id="design">Design</h2>
+<p>The build employs a Real Time Clock (RTC) chip which has a precise quartz-controlled time signal, as well as a battery-backup system, so that the time doesn't need to be reset every time the clock is unplugged.</p>
+<p>Since the RTC chip keeps time independently, the <a href="../shrimp/index.html">Shrimp</a> can be placed in a very <a href="../topics/lowpower.html">low-power mode</a> suitable for long-lived projects with time-driven behaviours running from battery.</p>
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>This project shows how to use peripheral Integrated Circuits (ICs) as part of a <span class="citation">@ShrimpingIt</span> layout, demonstrates how to use a number of distinct digital communication protocols, and some special IC configurations. * Protocols - Serial without clock - used to set and read the time (CP2102 UART IC) - I2C - used to set the clock, configure it, and read the time when needed (DS1307 Real Time Clock IC) - Serial with clock - controls the LEDs (WS2803 LED Driver IC) * Configurations - The Shrimp configures itself to go into a low-powered sleep mode - The RTC is configured over I2C to flash an LED once per second</p>
+<p>Many D&amp;T and Computing tasks are possible as spinoffs, specialising the housing, the time-controlled outputs or the software behaviour to suit many different purposes limited only by the imagination.</p>
+<h2 id="discussion">Discussion</h2>
+<p>Learners may remember from the original <a href="http://shrimping.it/shrimp/project/blink">Blink build</a>, that the ATMEGA328 requires a 16MHz crystal component, as part of its internal 'clock' circuit. Hz is short for Hertz, a scientific unit meaning 'per second', so a 16MHz crystal provides a 'tick' 16 million times a second.</p>
+<p>The ATMEGA's clock circuit is used to trigger computing instructions. Each instruction relies on the results of the one before, and the 16MHz tick gives enough time for the movements of electrons which make up a single computing instruction to be completed before the next is triggered.</p>
+<p>Although it is accurate enough to space out computing instructions, the 16 MHz signal is not very precise in absolute terms. If we were to rely on it to control our digital clock, adding up the inaccuracies over a whole day, we'd end up losing or gaining time making the clock unreliable. Even if we were to sample and assess the drift of our 16MHz crystal, and attempt to compensate for it, a later change in room temperature would influence the speed of the tick!</p>
+<p>The Real Time Clock (RTC) Chip is designed to provide a much more precise timing circuit, stable to ambient temperature changes, for use in digital clocks.</p>
+<p>In this build, we use the RTC as a peripheral chip, which is initially set by a user sending the correct time over the Serial UART to Arduino code running on the ATMEGA328. Arduino code running on the Shrimp then sets the RTC by sending a signal over the I2C bus. Once set, the RTC is then consulted periodically using an I2C request to establish an accurate time signal which can be used in our application.</p>
+<p>Even when the rest of the circuit is shut down, the coin battery can keep the Real Time Clock chip active. When power comes back to the rest of the circuit, the time reported by the RTC will still be accurate.</p>
+</body>
+</html>

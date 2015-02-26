@@ -1,17 +1,607 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>index.html</title>
-  <meta name="generator" content="Haroopad 0.13.0" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>div.oembedall-githubrepos{border:1px solid #DDD;border-radius:4px;list-style-type:none;margin:0 0 10px;padding:8px 10px 0;font:13.34px/1.4 helvetica,arial,freesans,clean,sans-serif;width:452px;background-color:#fff}div.oembedall-githubrepos .oembedall-body{background:-moz-linear-gradient(center top,#FAFAFA,#EFEFEF);background:-webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#EFEFEF));border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-top:1px solid #EEE;margin-left:-10px;margin-top:8px;padding:5px 10px;width:100%}div.oembedall-githubrepos h3{font-size:14px;margin:0;padding-left:18px;white-space:nowrap}div.oembedall-githubrepos p.oembedall-description{color:#444;font-size:12px;margin:0 0 3px}div.oembedall-githubrepos p.oembedall-updated-at{color:#888;font-size:11px;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats{border:none;float:right;font-size:11px;font-weight:700;padding-left:15px;position:relative;z-index:5;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats li{border:none;color:#666;display:inline-block;list-style-type:none;margin:0!important}div.oembedall-githubrepos ul.oembedall-repo-stats li a{background-color:transparent;border:none;color:#666!important;background-position:5px -2px;background-repeat:no-repeat;border-left:1px solid #DDD;display:inline-block;height:21px;line-height:21px;padding:0 5px 0 23px}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a{border-left:medium none;margin-right:-3px}div.oembedall-githubrepos ul.oembedall-repo-stats li a:hover{background:5px -27px no-repeat #4183C4;color:#FFF!important;text-decoration:none}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a:hover{border-bottom-left-radius:3px;border-top-left-radius:3px}ul.oembedall-repo-stats li:last-child a:hover{border-bottom-right-radius:3px;border-top-right-radius:3px}span.oembedall-closehide{background-color:#aaa;border-radius:2px;cursor:pointer;margin-right:3px}div.oembedall-container{margin-top:5px;text-align:left}.oembedall-ljuser{font-weight:700}.oembedall-ljuser img{vertical-align:bottom;border:0;padding-right:1px}.oembedall-stoqembed{border-bottom:1px dotted #999;float:left;overflow:hidden;width:730px;line-height:1;background:#FFF;color:#000;font-family:Arial,Liberation Sans,DejaVu Sans,sans-serif;font-size:80%;text-align:left;margin:0;padding:0}.oembedall-stoqembed a{color:#07C;text-decoration:none;margin:0;padding:0}.oembedall-stoqembed a:hover{text-decoration:underline}.oembedall-stoqembed a:visited{color:#4A6B82}.oembedall-stoqembed h3{font-family:Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;font-size:130%;font-weight:700;margin:0;padding:0}.oembedall-stoqembed .oembedall-reputation-score{color:#444;font-size:120%;font-weight:700;margin-right:2px}.oembedall-stoqembed .oembedall-user-info{height:35px;width:185px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-gravatar32{float:left;height:32px;width:32px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-details{float:left;margin-left:5px;overflow:hidden;white-space:nowrap;width:145px}.oembedall-stoqembed .oembedall-question-hyperlink{font-weight:700}.oembedall-stoqembed .oembedall-stats{background:#EEE;margin:0 0 0 7px;padding:4px 7px 6px;width:58px}.oembedall-stoqembed .oembedall-statscontainer{float:left;margin-right:8px;width:86px}.oembedall-stoqembed .oembedall-votes{color:#555;padding:0 0 7px;text-align:center}.oembedall-stoqembed .oembedall-vote-count-post{font-size:240%;color:#808185;display:block;font-weight:700}.oembedall-stoqembed .oembedall-views{color:#999;padding-top:4px;text-align:center}.oembedall-stoqembed .oembedall-status{margin-top:-3px;padding:4px 0;text-align:center;background:#75845C;color:#FFF}.oembedall-stoqembed .oembedall-status strong{color:#FFF;display:block;font-size:140%}.oembedall-stoqembed .oembedall-summary{float:left;width:635px}.oembedall-stoqembed .oembedall-excerpt{line-height:1.2;margin:0;padding:0 0 5px}.oembedall-stoqembed .oembedall-tags{float:left;line-height:18px}.oembedall-stoqembed .oembedall-tags a:hover{text-decoration:none}.oembedall-stoqembed .oembedall-post-tag{background-color:#E0EAF1;border-bottom:1px solid #3E6D8E;border-right:1px solid #7F9FB6;color:#3E6D8E;font-size:90%;line-height:2.4;margin:2px 2px 2px 0;padding:3px 4px;text-decoration:none;white-space:nowrap}.oembedall-stoqembed .oembedall-post-tag:hover{background-color:#3E6D8E;border-bottom:1px solid #37607D;border-right:1px solid #37607D;color:#E0EAF1}.oembedall-stoqembed .oembedall-fr{float:right}.oembedall-stoqembed .oembedall-statsarrow{background-image:url(http://cdn.sstatic.net/stackoverflow/img/sprites.png?v=3);background-repeat:no-repeat;overflow:hidden;background-position:0 -435px;float:right;height:13px;margin-top:12px;width:7px}.oembedall-facebook1{border:1px solid #1A3C6C;padding:0;font:13.34px/1.4 verdana;width:500px}.oembedall-facebook2{background-color:#627add}.oembedall-facebook2 a{color:#e8e8e8;text-decoration:none}.oembedall-facebookBody{background-color:#fff;vertical-align:top;padding:5px}.oembedall-facebookBody .contents{display:inline-block;width:100%}.oembedall-facebookBody div img{float:left;margin-right:5px}div.oembedall-lanyard{-webkit-box-shadow:none;-webkit-transition-delay:0s;-webkit-transition-duration:.4000000059604645s;-webkit-transition-property:width;-webkit-transition-timing-function:cubic-bezier(0.42,0,.58,1);background-attachment:scroll;background-clip:border-box;background-color:transparent;background-image:none;background-origin:padding-box;border-width:0;box-shadow:none;color:#112644;display:block;float:left;font-family:'Trebuchet MS',Trebuchet,sans-serif;font-size:16px;height:253px;line-height:19px;margin:0;max-width:none;min-height:0;outline:#112644 0;overflow-x:visible;overflow-y:visible;padding:0;position:relative;text-align:left;vertical-align:baseline;width:804px}div.oembedall-lanyard .tagline{font-size:1.5em}div.oembedall-lanyard .wrapper{overflow:hidden;clear:both}div.oembedall-lanyard .split{float:left;display:inline}div.oembedall-lanyard .prominent-place .flag:active,div.oembedall-lanyard .prominent-place .flag:focus,div.oembedall-lanyard .prominent-place .flag:hover,div.oembedall-lanyard .prominent-place .flag:link,div.oembedall-lanyard .prominent-place .flag:visited{float:left;display:block;width:48px;height:48px;position:relative;top:-5px;margin-right:10px}div.oembedall-lanyard .place-context{font-size:.889em}div.oembedall-lanyard .prominent-place .sub-place{display:block}div.oembedall-lanyard .prominent-place{font-size:1.125em;line-height:1.1em;font-weight:400}div.oembedall-lanyard .main-date{color:#8CB4E0;font-weight:700;line-height:1.1}div.oembedall-lanyard .first{width:48.57%;margin:0 0 0 2.857%}html{height:100%}body{margin:0!important;padding:5px 20px 26px!important;background-color:#fff;font-family:"Lucida Grande","Segoe UI","Apple SD Gothic Neo","Malgun Gothic","Lucida Sans Unicode",Helvetica,Arial,sans-serif;font-size:.9em;overflow-x:hidden;overflow-y:auto}br,h1,h2,h3,h4,h5,h6{clear:both}hr.page{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x;border:0;color:#ccc;height:3px;padding:0}hr.underscore{border:0!important;height:30px;padding:0;-webkit-margin-before:0;-webkit-margin-after:0}body >:first-child{margin-top:0!important}img.plugin{box-shadow:0 1px 3px rgba(0,0,0,.1);border-radius:3px}iframe{border:0}figure{-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0}kbd{border:1px solid #aaa;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;-moz-box-shadow:1px 2px 2px #ddd;-webkit-box-shadow:1px 2px 2px #ddd;box-shadow:1px 2px 2px #ddd;background-color:#f9f9f9;background-image:-moz-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-o-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-webkit-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:linear-gradient(top,#eee,#f9f9f9,#eee);padding:1px 3px;font-family:inherit;font-size:.85em}.oembeded .oembed_photo{display:inline-block}img[data-echo]{margin:25px 0;width:100px;height:100px;background:url(../img/ajax.gif) center center no-repeat #fff}.spinner{display:inline-block;width:10px;height:10px;margin-bottom:-.1em;border:2px solid rgba(0,0,0,.5);border-top-color:transparent;border-radius:100%;-webkit-animation:spin 1s infinite linear;animation:spin 1s infinite linear}.spinner:after{content:'';display:block;width:0;height:0;position:absolute;top:-6px;left:0;border:4px solid transparent;border-bottom-color:rgba(0,0,0,.5);-webkit-transform:rotate(45deg);transform:rotate(45deg)}@-webkit-keyframes spin{to{-webkit-transform:rotate(360deg)}}@keyframes spin{to{transform:rotate(360deg)}}p.toc{margin:0!important}p.toc ul{padding-left:10px}p.toc>ul{padding:10px;margin:0 10px;display:inline-block;border:1px solid #ededed;border-radius:5px}p.toc li,p.toc ul{list-style-type:none}p.toc li{width:100%;padding:0;overflow:hidden}p.toc li a::after{content:"."}p.toc li a:before{content:"• "}p.toc h5{text-transform:uppercase}p.toc .title{float:left;padding-right:3px}p.toc .number{margin:0;float:right;padding-left:3px;background:#fff;display:none}.markdown{padding:20px}.markdown a{text-decoration:none;vertical-align:baseline}.markdown a:hover{text-decoration:underline}.markdown h1{font-size:2.2em;font-weight:700;margin:1.5em 0 1em}.markdown h2{font-size:1.8em;font-weight:700;margin:1.275em 0 .85em}.markdown h3{font-size:1.6em;font-weight:700;margin:1.125em 0 .75em}.markdown h4{font-size:1.4em;font-weight:700;margin:.99em 0 .66em}.markdown h5{font-size:1.2em;font-weight:700;margin:.855em 0 .57em}.markdown h6{font-size:1em;font-weight:700;margin:.75em 0 .5em}.markdown h1+p,.markdown h1:first-child,.markdown h2+p,.markdown h2:first-child,.markdown h3+p,.markdown h3:first-child,.markdown h4+p,.markdown h4:first-child,.markdown h5+p,.markdown h5:first-child,.markdown h6+p,.markdown h6:first-child{margin-top:0}.markdown hr{border:1px solid #ccc}.markdown p{margin:1em 0;word-wrap:break-word}.markdown ol{list-style-type:decimal}.markdown li{display:list-item;line-height:1.4em}.markdown blockquote{margin:1em 20px}.markdown blockquote>:first-child{margin-top:0}.markdown blockquote>:last-child{margin-bottom:0}.markdown blockquote cite:before{content:'\2014 \00A0'}.markdown .code{border-radius:3px;word-wrap:break-word}.markdown pre{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;overflow:auto}.markdown pre code{display:block}.markdown pre>code{white-space:pre;padding:.5em;margin:0}.markdown code{border-radius:3px;word-wrap:break-word;padding:0 5px;margin:0 2px}.markdown img{max-width:100%}.markdown table{padding:0;border-collapse:collapse;border-spacing:0;margin-bottom:16px}.markdown table tr td,.markdown table tr th{border:1px solid #ccc;margin:0;padding:6px 13px}.markdown table tr th{font-weight:700}.markdown table tr th>:first-child{margin-top:0}.markdown table tr th>:last-child{margin-bottom:0}.markdown table tr td>:first-child{margin-top:0}.markdown table tr td>:last-child{margin-bottom:0}.markdown em.underline{font-style:normal;text-decoration:underline}.markdown strong.highlight{color:#000;padding:0 5px;background-color:#fdffb6;-webkit-box-shadow:#fdffb6 0 0 5px;-moz-box-shadow:#fdffb6 0 0 5px;box-shadow:#fdffb6 0 0 5px}@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700);.haroopad{padding:20px;color:#222;font-size:15px;font-family:'Roboto Condensed',Tauri,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",AppleSDGothicNeo-Medium,'Segoe UI','Malgun Gothic',Verdana,Tahoma,sans-serif;background:#fff;-webkit-font-smoothing:antialiased}.haroopad a{color:#3269a0}.haroopad a:hover{color:#4183c4}.haroopad h2{border-bottom:1px solid #e6e6e6;line-height:1.7em}.haroopad h6{color:#777}.haroopad hr{border:1px solid #e6e6e6}.haroopad blockquote>code,.haroopad h1>code,.haroopad h2>code,.haroopad h3>code,.haroopad h4>code,.haroopad h5>code,.haroopad h6>code,.haroopad li>code,.haroopad p>code,.haroopad td>code{color:#000;background-color:#feecdd;border:1px solid #efdfd0}.haroopad pre>code{font-size:1em;font-family:Consolas,Inconsolata,Courier,monospace;letter-spacing:-1px;font-weight:700}.haroopad blockquote{border-left:4px solid #e6e6e6;padding:0 15px;color:#777}.haroopad table{background-color:#fafafa}.haroopad table tr td,.haroopad table tr th{border:1px solid #e6e6e6}.haroopad table tr:nth-child(2n){background-color:#f2f2f2}.hljs{display:block;overflow-x:auto;padding:.5em;background:#fdf6e3;color:#657b83;-webkit-text-size-adjust:none}.diff .hljs-header,.hljs-comment,.hljs-doctype,.hljs-javadoc,.hljs-pi,.lisp .hljs-string{color:#93a1a1}.css .hljs-tag,.hljs-addition,.hljs-keyword,.hljs-request,.hljs-status,.hljs-winutils,.method,.nginx .hljs-title{color:#859900}.hljs-command,.hljs-dartdoc,.hljs-hexcolor,.hljs-link_url,.hljs-number,.hljs-phpdoc,.hljs-regexp,.hljs-rules .hljs-value,.hljs-string,.hljs-tag .hljs-value,.tex .hljs-formula{color:#2aa198}.css .hljs-function,.hljs-built_in,.hljs-chunk,.hljs-decorator,.hljs-id,.hljs-identifier,.hljs-localvars,.hljs-title,.vhdl .hljs-literal{color:#268bd2}.hljs-attribute,.hljs-class .hljs-title,.hljs-constant,.hljs-link_reference,.hljs-parent,.hljs-type,.hljs-variable,.lisp .hljs-body,.smalltalk .hljs-number{color:#b58900}.css .hljs-pseudo,.diff .hljs-change,.hljs-attr_selector,.hljs-cdata,.hljs-header,.hljs-pragma,.hljs-preprocessor,.hljs-preprocessor .hljs-keyword,.hljs-shebang,.hljs-special,.hljs-subst,.hljs-symbol,.hljs-symbol .hljs-string{color:#cb4b16}.hljs-deletion,.hljs-important{color:#dc322f}.hljs-link_label{color:#6c71c4}.tex .hljs-formula{background:#eee8d5}.MathJax_Hover_Frame{border-radius:.25em;-webkit-border-radius:.25em;-moz-border-radius:.25em;-khtml-border-radius:.25em;box-shadow:0 0 15px #83A;-webkit-box-shadow:0 0 15px #83A;-moz-box-shadow:0 0 15px #83A;-khtml-box-shadow:0 0 15px #83A;border:1px solid #A6D!important;display:inline-block;position:absolute}.MathJax_Hover_Arrow{position:absolute;width:15px;height:11px;cursor:pointer}#MathJax_About{position:fixed;left:50%;width:auto;text-align:center;border:3px outset;padding:1em 2em;background-color:#DDD;color:#000;cursor:default;font-family:message-box;font-size:120%;font-style:normal;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;border-radius:15px;-webkit-border-radius:15px;-moz-border-radius:15px;-khtml-border-radius:15px;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_Menu{position:absolute;background-color:#fff;color:#000;width:auto;padding:5px 0;border:1px solid #CCC;margin:0;cursor:default;font:menu;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_MenuItem{padding:1px 2em;background:0 0}.MathJax_MenuArrow{position:absolute;right:.5em;color:#666}.MathJax_MenuActive .MathJax_MenuArrow{color:#fff}.MathJax_MenuCheck,.MathJax_MenuRadioCheck{position:absolute;left:.7em}.MathJax_MenuLabel{padding:1px 2em 3px 1.33em;font-style:italic}.MathJax_MenuRule{border-top:1px solid #DDD;margin:4px 3px}.MathJax_MenuDisabled{color:GrayText}.MathJax_MenuActive{background-color:#606872;color:#fff}.MathJax_Menu_Close{position:absolute;width:31px;height:31px;top:-15px;left:-15px}#MathJax_Zoom{position:absolute;background-color:#F0F0F0;overflow:auto;display:block;z-index:301;padding:.5em;border:1px solid #000;margin:0;font-weight:400;font-style:normal;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;box-shadow:5px 5px 15px #AAA;-webkit-box-shadow:5px 5px 15px #AAA;-moz-box-shadow:5px 5px 15px #AAA;-khtml-box-shadow:5px 5px 15px #AAA;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}#MathJax_ZoomOverlay{position:absolute;left:0;top:0;z-index:300;display:inline-block;width:100%;height:100%;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}#MathJax_ZoomFrame{position:relative;display:inline-block;height:0;width:0}#MathJax_ZoomEventTrap{position:absolute;left:0;top:0;z-index:302;display:inline-block;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}.MathJax_Preview{color:#888}#MathJax_Message{position:fixed;left:1px;bottom:2px;background-color:#E6E6E6;border:1px solid #959595;margin:0;padding:2px 8px;z-index:102;color:#000;font-size:80%;width:auto;white-space:nowrap}#MathJax_MSIE_Frame{position:absolute;top:0;left:0;width:0;z-index:101;border:0;margin:0;padding:0}.MathJax_Error{color:#C00;font-style:italic}footer{position:fixed;font-size:.8em;text-align:right;bottom:0;margin-left:-25px;height:20px;width:100%}</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+  /*
+      Buttondown
+      A Markdown/MultiMarkdown/Pandoc HTML output CSS stylesheet
+      Author: Ryan Gray
+      Date: 15 Feb 2011
+      Revised: 21 Feb 2012
+     
+      General style is clean, with minimal re-definition of the defaults. It also 
+      contains built-in print optimizations. 
+      
+      All elements that Pandoc and MultiMarkdown use should be listed here, even 
+      if the style is empty so you can easily add styling to anything.
+      
+      There are some elements in here for HTML5 output of Pandoc, but I have not 
+      gotten around to testing that yet.
+  */
+  
+  /* NOTES:
+  
+      Stuff tried and failed:
+      
+      It seems that specifying font-family:serif in Safari will always use 
+      Times New Roman rather than the user's preferences setting.
+      
+      Making the font size different or a fixed value for print in case the screen 
+      font size is making the print font too big: Making font-size different for 
+      print than for screen causes horizontal lines to disappear in math when using 
+      MathJax under Safari.
+  */
+  
+  /* ---- Front Matter ---- */
+  
+  /* Pandoc header DIV. Contains .title, .author and .date. Comes before div#TOC. 
+     Only appears if one of those three are in the document.
+  */
+  
+  div#header, header
+      {
+      /* Put border on bottom. Separates it from TOC or body that comes after it. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+      }
+  
+  .author, .date /* Pandoc author(s) and date headers (h2.author and h3.date) */
+      {
+      text-align: center;
+      }
+  
+  /* Pandoc table of contents DIV when using the --toc option.
+     NOTE: this doesn't support Pandoc's --id-prefix option for #TOC and #header. 
+     Probably would need to use div[id$='TOC'] and div[id$='header'] as selectors.
+  */
+  
+  div#TOC, nav#TOC
+      {
+      /* Put border on bottom to separate it from body. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  @media print
+      {
+      div#TOC, nav#TOC
+          {
+          /* Don't display TOC in print */
+          display: none;
+          }
+      }
+  
+  /* ---- Headers and sections ---- */
+  
+  h1, h2, h3, h4, h5, h6
+      {
+      font-family: "Helvetica Neue", Helvetica, "Liberation Sans", Calibri, Arial, sans-serif; /* Sans-serif headers */
+  
+      /* font-family: "Liberation Serif", "Georgia", "Times New Roman", serif; /* Serif headers */
+  
+      page-break-after: avoid; /* Firefox, Chrome, and Safari do not support the property value "avoid" */
+      }
+  
+  /* Pandoc with --section-divs option */
+  
+  div div, section section /* Nested sections */
+      {
+      margin-left: 1.5em; /* This will increasingly indent nested header sections. 1.5 Keep it in line with bullet indent of parent section */
+      }
+  
+  p {}
+  
+  blockquote
+      { 
+      font-style: italic;
+      }
+  
+  li /* All list items */
+      {
+      }
+  
+  li > p /* Loosely spaced list item */
+      {
+      margin-top: 1em; /* For IE's lack of space above a <li> when the item is inside a <p> */
+      }
+  
+  ul /* Whole unordered list */
+      {
+      }
+  
+  ul li /* Unordered list item */
+      {
+      }
+  
+  ol /* Whole ordered list */
+      {
+      }
+  
+  ol li /* Ordered list item */
+      {
+      }
+  
+  hr /* Simple line for normal rules */
+      {
+      border: none;
+      height: 1pt;
+      background: none;
+      border-top: 1pt solid #333;
+      }
+      
+  /* ---- Some span elements --- */
+  
+  sub /* Subscripts. Pandoc: H~2~O */
+      {
+      }
+  
+  sup /* Superscripts. Pandoc: The 2^nd^ try. */
+      {
+      }
+      
+  em /* Emphasis. Markdown: *emphasis* or _emphasis_ */
+      {
+      }
+      
+  em > em /* Emphasis within emphasis: *This is all *emphasized* except that* */
+      {
+      font-style: normal;
+      }
+  
+  strong /* Markdown **strong** or __strong__ */
+      {
+      }
+  
+  /* ---- Links (anchors) ---- */
+  
+  a /* All links */
+      {
+      /* Keep links clean. On screen, they are colored; in print, they do nothing anyway. */
+      text-decoration: none;
+      }
+  
+  @media screen
+      {
+      a:hover
+          {
+          /* On hover, we indicate a bit more that it is a link. */
+          text-decoration: underline;
+          }
+      }
+  
+  @media print
+      {
+      a   {
+          /* In print, a colored link is useless, so un-style it. */
+          color: black;
+          background: transparent;
+          }
+          
+      a[href^="http://"]:after, a[href^="https://"]:after
+          {
+          /* However, links that go somewhere else, might be useful to the reader,
+             so for http and https links, print the URL after what was the link 
+             text in parens
+          */
+          content: " (" attr(href) ") ";
+          font-size: 90%;
+          }
+      }
+  
+  /* ---- Images ---- */
+  
+  img
+      {
+      /* Let it be inline left/right where it wants to be, but verticality make 
+         it in the middle to look nicer, but opinions differ, and if in a multi-line 
+         paragraph, it might not be so great. 
+      */
+      vertical-align: middle;
+      }
+  
+  div.figure /* Pandoc figure-style image */
+      {
+      /* Center the image and caption */
+      margin-left:  auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      font-size:   small;
+      }
+  
+  p.caption /* Pandoc figure-style caption within div.figure */
+      {
+      /* Inherits div.figure props by default */
+      }
+  
+  /* ---- Code blocks and spans ---- */
+  
+  pre, code 
+      {
+      /* Preserve whitespace, but allow word wrapping */
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      }
+  
+  /* Coloring */
+  
+  /* This will be only for code spans */
+  code
+      {
+      background-color: #F4F4F4;
+      }
+      
+  /* This will be only for code blocks */
+  pre, pre > code
+      {
+      background-color: #F4F4F4;
+      }
+  
+  pre /* Code blocks */
+      {
+      /* Distinguish pre blocks from other text by more than the font with a background tint. */
+      padding: 0.5em; /* Since we have a background color */
+      border-radius: 5px; /* Softens it */
+      /* Give it a some definition, and if printing doesn't print the background */
+      border: 1px solid #aaa;
+      /* Set it off left and right, seems to look a bit nicer when we have a background */
+      margin-left:  0.5em;
+      margin-right: 0.5em;
+      }
+  
+  @media screen
+      {
+      pre
+          {
+          /* Shadow on screen instead of border */
+          border: none;
+          box-shadow: inset 1px 1px 3px #bbb;
+          }
+  
+      pre, pre > code
+          {
+          /* On screen, use an auto scroll box for long lines in a code block */
+          white-space: pre;
+          word-wrap: normal;
+          overflow: auto;
+          }
+      }
+  
+  code /* All inline code spans (applies to pre>code as well) */
+      {
+      /* Pad a little from adjacent text */
+      padding-left:  0.3em;
+      padding-right: 0.3em;
+      padding-top:    0.1em;
+      padding-bottom: 0.1em;
+      border-radius: 3px;
+      }
+  
+  @media screen
+      {
+      code
+          {
+          box-shadow: inset 0px 0px 2px #bbb;
+          }
+      }
+  
+  pre > code /* Code span in a code block */
+      {
+      /* Remove some styling on the span box */
+      padding: 0;
+      border: none;
+      border-radius: none;
+      background-color: inherit;
+      box-shadow: none;
+      }
+      
+  code.url /* Pandoc simple URLs */
+      {
+      background-color: inherit; /* Un-color from previous rules */
+      box-shadow: none;
+      }
+      
+  /* ---- Math ---- */
+  
+  span.math /* Pandoc inline math default and --jsmath inline math */
+      {
+      /* Tried font-style:italic here, and it messed up MathJax rendering in some browsers. Maybe don't mess with at all. */
+      }
+      
+  div.math /* Pandoc --jsmath display math */
+      {
+      }
+      
+  span.LaTeX /* Pandoc --latexmathml math */
+      {
+      } 
+  
+  eq /* Pandoc --gladtex math */
+      {
+      } 
+  
+  /* ---- Tables ---- */
+  
+  /*  A clean textbook-like style with horizontal lines above and below and under 
+      the header. Rows highlight on hover to help scanning the table on screen.
+  */
+  
+  table
+      {
+      border-collapse: collapse;
+      border-spacing: 0; /* IE 6 */
+  
+      border-top:    2pt solid #000; /* The caption on top will not have a bottom-border */
+      border-bottom: 2pt solid #000;
+  
+      /* Center */
+      margin-left:  auto;
+      margin-right: auto;
+      }
+      
+  thead, th /* Entire table header */
+      {
+      /* Well, we add th here since IE doesn't seem to respond to thead. 
+         This will work until we have multi-row headers.
+      */
+      border-bottom: 1pt solid #000;
+      background-color: #eee;
+      }
+  
+  tr.header /* Each header row */
+      {
+      } 
+  
+  tbody /* Entire table  body */
+      {
+      }
+  
+  /* Table body rows */
+  
+  tr  {
+      }
+  
+  /* Odd and even rows */
+  tr.odd  {}
+  tr.even {}
+  
+  tr.odd:hover, tr.even:hover /* Use .odd and .even classes to avoid styling rows in other tables */
+      {
+      background-color: #eee;
+      }
+      
+  td, th /* Table cells and table header cells */
+      { 
+      vertical-align: top; /* Word */
+      vertical-align: baseline; /* Others */
+      padding-left:   0.5em;
+      padding-right:  0.5em;
+      padding-top:    0.2em;
+      padding-bottom: 0.2em;
+      }
+      
+  /* Removes padding on left and right of table for a tight look. Good if thead has no background color*/
+  /*
+  tr td:last-child, tr th:last-child
+      {
+      padding-right: 0;
+      }
+  tr td:first-child, tr th:first-child 
+      {
+      padding-left: 0;
+      }
+  */
+  
+  th /* Table header cells */
+      {
+      font-weight: bold; 
+      }
+  
+  tfoot /* Table footer (what appears here if caption is on top?) */
+      {
+      }
+  
+  caption /* This is for a table caption tag, not the p.caption Pandoc uses in a div.figure */
+      {
+      caption-side: top;
+      border: none;
+      font-size:  0.9em;
+      font-style: italic;
+      text-align: center;
+      margin-top:  0.5em;
+      margin-bottom:  0.3em;
+      padding-bottom: 0.2em;
+      }
+  
+  /* ---- Definition lists ---- */
+  
+  dl /* The whole list */
+      {
+      border-top:  2pt solid #888;
+      padding-top: 0.5em;
+      border-bottom: 2pt solid #888;
+      }
+  
+  dt /* Definition term */
+      {
+      font-weight: bold;
+      }
+  
+  dd+dt /* 2nd or greater term in the list */
+      {
+      border-top:  1pt solid #888;
+      padding-top: 0.5em;
+      }
+      
+  dd /* A definition */
+      {
+      margin-bottom: 0.5em;
+      }
+  
+  dd+dd /* 2nd or greater definition of a term */
+      {
+      border-top: 1px solid #888; /* To separate multiple definitions */
+      }
+      
+  /* ---- Footnotes ---- */
+  
+  a.footnote, a.footnoteRef { /* Pandoc, MultiMarkdown footnote links */
+      font-size: small; 
+      vertical-align: text-top;
+  }
+  
+  a[href^="#fnref"], a.reversefootnote /* Pandoc, MultiMarkdown, ?? footnote back links */
+      {
+      }
+  
+  @media print
+      {
+      a[href^="#fnref"], a.reversefootnote /* Pandoc, MultiMarkdown */
+          {
+          /* Don't display these at all in print since the arrow is only something to click on */
+          display: none;
+          }
+      }
+      
+  div.footnotes /* Pandoc footnotes div at end of the document */
+      {
+      }
+      
+  div.footnotes li[id^="fn"] /* A footnote item within that div */
+      {
+      }
+  
+  /* Fancy rule for footnotes section (from http://css-tricks.com/examples/hrs/) */
+  
+  div.footnotes > hr
+      {
+      margin-top: 2em;
+      padding: 0;
+      border: none;
+      border-top: double;
+      border-color: #333;
+      border-width: 3pt;
+      color: #000;
+      text-align: center;
+      }
+  
+  div.footnotes > hr:after
+      {
+      content: "NOTES";
+      display: inline-block;
+      position: relative; 
+      top: -0.8em;  
+      font-size: 0.8em;
+      padding: 0 0.5em;
+      background: white;
+      }
+  
+  /* Convenience classes for DIVs or other things inserted into the Markdown */
+  
+  /* You can class stuff as "noprint" to not print. 
+     Useful since you can't set this media conditional inside an HTML element's 
+     style attribute (I think).
+  */
+  
+  @media screen
+      {
+      .noscreen /* Don't display on screen (something for print only) */
+          {
+          display: none;
+          }
+      }
+      
+  @media print
+      {
+      .noprint /* Don't display in print (something for screen only) */
+          {
+          display:none;
+          }
+      }
+  
+  .block-center
+      {
+      margin-left: auto;
+      margin-right: auto;
+      display: table;
+      }
+  .text-center
+      {
+      text-align: center;
+      }
+  
+  .block-right
+      {
+      margin-left: auto;
+      margin-right: 0;
+      display: table;
+      }
+  .text-right
+      {
+      text-align: right;
+      }
+  
+  .block-left
+      {
+      margin-left: 0;
+      margin-right: auto;
+      display: table;
+      }
+  .text-left
+      {
+      text-align: left;
+      }
+      
+  img {
+    		height:auto;
+    		width:20%;
+        display:block;
+        float:right;
+        clear:both;
+    	}
+  
+     h3{
+        clear:both;
+     }
+  
+  	p,ul,h1,h2,h3,h4,h5,h6{
+          margin-left:5%;
+          width:70%;
+  	}
+  
+      p {
+          text-align: justify;
+      }
+      
+  
+     p.caption{
+        float:right;
+        clear:right;
+         margin:0;
+         padding:0;
+        width:20%;
+         text-align:center;
+     }
+  
+    
+  </style>
 </head>
-<body class="markdown haroopad">
+<body>
 <ul>
-<li><a href="./blink/index.html">Blink</a></li><li><a href="./clock/index.html">Alarm Clock</a></li><li><a href="./ledclock/index.html">LED Clock</a></li><li><a href="./keyboard/index.html">Conductive Keyboard</a></li></ul>
-
-<footer style="position:fixed; font-size:.8em; text-align:right; bottom:0px; margin-left:-25px; height:20px; width:100%;">generated by <a href="http://pad.haroopress.com" target="_blank">haroopad</a></footer>
+<li><a href="./blink/index.html">Blink</a></li>
+<li><a href="./clock/index.html">Alarm Clock</a></li>
+<li><a href="./ledclock/index.html">LED Clock</a></li>
+<li><a href="./keyboard/index.html">Conductive Keyboard</a></li>
+</ul>
 </body>
 </html>

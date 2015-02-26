@@ -1,331 +1,740 @@
-Building the Alarm Clock
-========================
-
-This guide provides details for learners to wire, program and configure
-their first @ShrimpingIt digital clock project.
-
-For general orientation, see the [Alarm Clock](../clock/index.html)
-project page.
-
-Requirements
-------------
-
-The build assumes you have the following kits...
-
--   An [Alarm Clock Addon](../clock/index.html) kit
--   A [Shrimp Parts](../shrimp/index.html) kit
--   A [USB UART](../cp2102/index.html) kit
-
-For convenience, pre-bagged kits are available to order from
-@ShrimpingIt online. If you do not wish to buy from us, information is
-provided for you to source commodity parts direct from electronics
-wholesalers.
-
-In addition you will need a Linux, Mac or Windows computer running the
-latest [Arduino IDE](../topics/ide.html).
-
-Mac and Windows computers need a [CP2102 driver](../cp2102/driver.html)
-to be installed for the USB Programmer to be recognised.
-
-Getting started
----------------
-
-Before embarking on the Alarm Clock, you should have successfully
-completed the [Blink build](../blink/index.html). This guide uses the
-Blink circuit configuration as its starting point.
-
-### Step 1 : Remove unnecessary parts
-
-<a href="sequence/01_blink.png" target="animation"><img src="sequence/01_blink.png" style="height:250px"/></a>
-
-You can remove the Blink LED and resistor as these are not used in the
-circuit, and it will be easier to wire the circuit with them out of the
-way.
-
-### Step 2: Add a Decoupling Capacitor
-
-<a href="sequence/02_capacitor.png" target="animation"><img src="sequence/02_capacitor.png" style="height:250px"/></a>
-
-We are planning to deploy this circuit in the real world for a long
-time. We would like it to be stable to momentary changes to its power
-supply, (e.g. when a motor or a large number of LEDs suddenly draw a lot
-of energy).
-
-If the voltage drops too low, the Shrimp's ATMEGA328P-PU microcontroller
-will reset itself. Adding a decoupling capacitor provides a very
-short-term reservoir, *decoupling* the microcontroller from temporary
-dips in supply voltage.
-
-The S.I. unit of capacitance is the Farad, indicating how much charge
-can be stored at a given voltage. Capacitors are labelled with the
-number of picoFarads capacitance, with the last figure indicating the
-number of zeroes to tack onto the number.
-
-We will be using a small ceramic capacitor labelled 104. This means it's
-10(0000) picoFarads. There are 1000 picoFarads in a nanoFarad, so that's
-equivalent to 100 nanoFarads. Ceramic capacitors are symmetrical and can
-be inserted either way around.
-
-***Insert a capacitor labelled 104 between the 5V and GND Power rows D9
-and D10***
-
-### Step 3: Connect the Right Hand Power Rails
-
-<a href="sequence/03_powerrails.png" target="animation"><img src="sequence/03_powerrails.png" style="height:250px"/></a>
-
-The power rails of your 400 point breadboard are four very long contacts
-which run in pairs down each side of the breadboard. They can help
-provide a power connection close to any component in the circuit.
-
-They are called *power rails* because two crucial connections are needed
-for components to get power. In this circuit the two power connections
-needed are 5V (VSS or VCC) and 0V (Ground or GND). We will only be
-attaching the rails on the right of our breadboard.
-
-The columns often have a red or blue line running alongside them. We
-will follow the convention that the red column will be used for the +ive
-voltage supply of the circuit (in our case +5V) and the blue line offers
-a connection to ground (0V).
-
-Although the vertical *columns* of holes each side of the breadboard are
-presented in groups of five, each column actually contains a single
-contact. Any wire inserted in any group of five holes is connected to
-every other wire inserted in the same column. *Note this is completely
-different to breadboard *rows*, where every group of five is isolated
-from every other.*
-
-***Connect a Green wire between J9 and any hole in the right-hand Blue
-column (connecting the Ground Rail)*** ***Connect a Red wire between J11
-and any hole in the right-hand Red column (connecting the +5V rail)***
-
-### Step 4: Insert the DS1307 Real Time Clock Chip
-
-<a href="sequence/04_ds1307.png" target="animation"><img src="sequence/04_ds1307.png" style="height:250px"/></a>
-
-The DS1307 Real Time Clock chip will be used to keep accurate time in
-our circuit. It looks a bit like a dead bug.
-
-Each leg has a different number, name and function. The orientation and
-position of this chip is important, and each of its legs should be
-cleanly inserted into a separate breadboard hole with a minimum of
-bending. This means each leg is in a separate row. We can then proceed
-to wire the correct components to the correct legs.
-
-You will notice a half-moon shape punched in one end of the chip. A
-small circle is also punched in one corner, closest to Pin number 1.
-
-The half-moon should be at the top of the circuit and the circle should
-be positioned toward the top left (the DS1307 has the same orientation
-as the Shrimp's ATMEGA chip).
-
-It is called a chip or an Integrated Circuit (IC) because it contains a
-doped silicon wafer or 'chip' from which tiny shapes are cut, to
-construct electronic components which make the clock circuit. The
-circuit inside is connected to the two rows of four legs.
-
-Pins are numbered sequentially from Pin 1 (top-left, where a circle is
-punched in the plastic housing) anticlockwise around the chip until pin
-8. The wiring for each pin is described in the following list. If you
-want, you can ignore this list and simply follow the step-by-step
-instructions which follow.
-
--   Pins 1&2 - two sides of a crystal which oscillates at 32.768Hz
--   Pin 3 - the +ive side of 3V coin battery attached as a backup to
-    keep time
--   Pin 4 - ground rail 0V (GND)
--   Pin 5 - to ATMEGA SCL pin (is set to +5V when SDA has a *one* or
-    *zero* value ready)
--   Pin 6 - to ATMEGA SDA pin (is set to +5V to represent a *one*, or 0V
-    to represent a *zero* when sending binary data - used with Pin 5)
--   Pin 7 - Sends an accurate heartbeat, e.g. an attached LED flashes
-    once a second
--   Pin 8 - Connected to the supply rail 5V (VCC)
-
-***Place the chip straddling the gap in the centre of the breadboard,
-with pin 1 (next to the stamped circle) in e20, and the opposite corner
-(known as pin 5) in f23***
-
-### Step 5: Connect power to the DS1307 chip
-
-<a href="sequence/05_ds1307_power.png" target="animation"><img src="sequence/05_ds1307_power.png" style="height:250px"/></a>
-
-The DS1307 chip needs power for it to run. Now the right hand power
-rails are connected, we can easily get a +5V or 0V connection for any
-component in our circuit.
-
-***Connect a Red wire from j20 to any hole in the right-hand Red column
-(connecting to +5V)*** ***Connect a Green wire from d23 to any hole in
-the right-hand Blue column (connecting to 0V)***
-
-### Step 6: Connect ATMEGA328P-PU and DS1307 chips
-
-<a href="sequence/06_ds1307_i2c.png" target="animation"><img src="sequence/06_ds1307_i2c.png" style="height:250px"/></a>
-
-The Shrimp's microcontroller and the RTC chip communicate using a
-protocol known as "Inter-Integrated Circuit" or I2C. This is also known
-as the 'Two Wire Interface" as bidirectional communication between
-multiple ICs can be sent along just two wires, one wire which pulses on
-when binary data should be read, and another wire which sends binary
-data (as ons and offs) timed to the pulses.
-
-***Connect the Purple SCL wire from h3 to h23, connecting the ATMEGA's
-SCL pin to the DS1307 SCL pin*** ***Connect the Yellow SDA wire from i4
-to i22, connecting the ATMEGA's SDA pin to the DS1307 SDA pin***
-
-### Step 7: Attach I2C Pull-up resistors
-
-<a href="sequence/07_ds1307_resistors.png" target="animation"><img src="sequence/07_ds1307_resistors.png" style="height:250px"/></a>
-
-Chips communicating over I2C use an 'active low' to communicate. The
-circuit should be wired to maintain the SCL and SDA lines 'pulled up' at
-5V (but not very strongly - using resistors to limit the influence of
-the 5V signal).
-
-When an IC wants to signal, it drags down the voltage of the SCL or SDA
-lines to 0V with a much more powerful signal. Other ICs attached to the
-same wires can detect this change. Both SCL and SDA wires should be
-attached to 5V through a fairly large resistor.
-
-Resistors are labelled with colored stripes instead of numbers, but
-using the same system as the ’104′ capacitor earlier. Decoding the
-colors Brown=1, Black=0, Orange=3 gives us the number 103. That means
-the resistance in Ohms starts ‘10’ and continues with a further 3 zeroes
-– 10(000) Ohms or 10 kiloOhms.
-
-\*\* Attach a 10kiloOhm pull-up resistor between j3 and any hole in the
-right-hand Red column, connecting SCL to +5V*** ** Attach a 10kiloOhm
-pull-up resistor between j4 and any hole in the right-hand Red column,
-connecting SDA to +5V*\*\*
-
-### Step 8: Provide a crystal oscillator for the DS1307
-
-<a href="sequence/08_ds1307_crystal.png" target="animation"><img src="sequence/08_ds1307_crystal.png" style="height:250px"/></a>
-
-The crystal is a small silver cylinder with two wires coming out of one
-end, probably marked "32.768Hz".
-
-The DS1307 Real Time Clock chip needs a special piece of electrically
-oscillating material, known as a crystal to use as a pendulum for the
-clock. This material is coupled to a circuit inside the DS1307 which
-causes the material to resonate, generating high and low voltages, just
-like a pendulum swinging backwards and forwards driven by clockwork.
-
-Hz is a measure of how many times a second something happens so we would
-expect this crystal to oscillate 32.768 times every second.
-
-### Step 9: Add the Backup Battery Holder
-
-<a href="sequence/09_battery_holder.png" target="animation"><img src="sequence/09_battery_holder.png" style="height:250px"/></a>
-
-The holder is a Black plastic circular module with two pins coming from
-the base. If the coin cell is inside the battery holder, remove it.
-We'll add it back later.
-
-The holder is designed to hold either a CR2032 or LIR2032 (rechargeable)
-battery rated at around 3V. We've not added a recharging circuit to keep
-things simple, so we can use the cheaper CR2032 3V disposable battery.
-If wired correctly, it is still expected to last significantly more than
-a year as a backup for this clock.
-
-We need to insert the holder with the square bracket towards the top of
-the breadboard. As you insert the holder, look from the side, and note
-where the positive pin (at the square end) passes into the breadboard;
-it should enter into the row parallel to pin 3 - the battery backup pin
-on the DS1307. Note where the negative pin (at the round end) passes
-into the breadboard; it should enter at a30 which is not yet connected
-to anything else.
-
-Finally the negative pin of the battery holder needs to be connected to
-the common ground of the circuit. As any ground connection will do, we
-connect from row 30 back to the nearby ground pin of the DS1307 for
-convenience.
-
-***Add the backup battery holder, with the +3V positive pin (the square
-end) inserted at a22, and the 0V ground pin (the round end) inserted at
-a30, connecting the +3V pin to pin 3 of the DS1307*** ***Add a green
-wire from e30 to c23, completing the battery backup circuit***
-
-### Step 10: Add the Piezo
-
-<a href="sequence/10_piezo.png" target="animation"><img src="sequence/10_piezo.png" style="height:250px"/></a>
-
-Unless we add a display, (as detailed in the [LED Clock
-Addon](../ledclock/index.html) ) the only output of this clock will be a
-piezo beeper, which can play Nokia Ringtone (RTTTL) tunes according to
-scheduled alarms you program in.
-
-Piezo is short for Piezoelectric transducer. It uses a piezoelectric
-effect where applying a voltage generates flexing within a ceramic
-material. The effect is reversible, as flexing it also generates a
-voltage. For this reason the component is called called a *transducer*
-as it can be used for output OR for input.
-
-The piezos we are using have no orientation and can be inserted either
-way around.
-
-***Insert the Piezo so that one of its pins goes into row 26, and the
-other goes into row 27, keeping it as far to the left as possible***
-
-### Step 11: Connect Piezo to Ground
-
-<a href="sequence/11_piezo_ground.png" target="animation"><img src="sequence/11_piezo_ground.png" style="height:250px"/></a>
-
-We want the Piezo to experience a voltage across the material, so it
-will need to have a connection to 0V (ground) on one side, then we can
-control the voltage of the other side.
-
-***Attach a Green wire between the right-hand -ive (Blue) power rail,
-and hole j27***
-
-### Step 12: Connect the Piezo to its control pin
-
-<a href="sequence/12_piezo_resistor.png" target="animation"><img src="sequence/12_piezo_resistor.png" style="height:250px"/></a>
-
-We will be varying the bottom right hand pin of the ATMEGA chip between
-0V and 5V to cause the Piezo to flex back and forth, making sound. Using
-a resistor instead of a wire reduces the amount of current which the
-Piezo uses, making the circuit more stable.
-
-***Attach a resistor between j16 and j26, connecting the Piezo to the
-pin we'll use to generate audible waves; the bottom-right pin of the
-ATMEGA***
-
-### Step 13: Insert Coin Battery
-
-<a href="sequence/13_final.png" target="animation"><img src="sequence/13_final.png" style="height:250px"/></a>
-
-After double-checking your layout matches the final diagram above, you
-can insert the coin battery. Once you have set the time, this will help
-your clock keep time even when the USB or main battery pack is removed.
-
-Note, if you attach nothing to the DS1307 Battery pin, then the clock
-will not work at all. If you don't have a reliable coin battery, and
-want to test your clock by powering it from the 5V supply, you need to
-attach DS1307 Pin 3 (the positive side of the coin battery) to 0V
-(ground). This tells the DS1307 to use the main power supply instead of
-the coin battery. ***Note, if a coin battery is attached at the time,
-this will short the battery!***
-
-A workaround to ground DS1307 Pin 3, which avoids battery shorting, is
-to remove any battery, and balance a small metal disc or coin in the
-place of the battery, being sure that it touches both terminals. This
-effectively connects Pin 3 to Ground. A piece of card cut to size and
-wrapped in aluminium foil is a good option.
-
-### Ready to tick!
-
-Now the fundamental hardware is all in place, and we can start to
-program our clock to behave in different ways.
-
-For any clock behaviours to work (such as playing chimes) you must
-attach a reliable power supply of 3.6V to 5V, which you can get by
-plugging into USB or by wiring in a 3xAAA battery pack.
-
-Upload the code for a simple clock
-----------------------------------
-
-Now the clock subcircuit is complete, we should be able to set and read
-back the time from the clock. Verifying this simple behaviour is a
-useful test, before we add lots of extra logic for controlling different
-chimes.
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+  /*
+      Buttondown
+      A Markdown/MultiMarkdown/Pandoc HTML output CSS stylesheet
+      Author: Ryan Gray
+      Date: 15 Feb 2011
+      Revised: 21 Feb 2012
+     
+      General style is clean, with minimal re-definition of the defaults. It also 
+      contains built-in print optimizations. 
+      
+      All elements that Pandoc and MultiMarkdown use should be listed here, even 
+      if the style is empty so you can easily add styling to anything.
+      
+      There are some elements in here for HTML5 output of Pandoc, but I have not 
+      gotten around to testing that yet.
+  */
+  
+  /* NOTES:
+  
+      Stuff tried and failed:
+      
+      It seems that specifying font-family:serif in Safari will always use 
+      Times New Roman rather than the user's preferences setting.
+      
+      Making the font size different or a fixed value for print in case the screen 
+      font size is making the print font too big: Making font-size different for 
+      print than for screen causes horizontal lines to disappear in math when using 
+      MathJax under Safari.
+  */
+  
+  /* ---- Front Matter ---- */
+  
+  /* Pandoc header DIV. Contains .title, .author and .date. Comes before div#TOC. 
+     Only appears if one of those three are in the document.
+  */
+  
+  div#header, header
+      {
+      /* Put border on bottom. Separates it from TOC or body that comes after it. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+      }
+  
+  .author, .date /* Pandoc author(s) and date headers (h2.author and h3.date) */
+      {
+      text-align: center;
+      }
+  
+  /* Pandoc table of contents DIV when using the --toc option.
+     NOTE: this doesn't support Pandoc's --id-prefix option for #TOC and #header. 
+     Probably would need to use div[id$='TOC'] and div[id$='header'] as selectors.
+  */
+  
+  div#TOC, nav#TOC
+      {
+      /* Put border on bottom to separate it from body. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  @media print
+      {
+      div#TOC, nav#TOC
+          {
+          /* Don't display TOC in print */
+          display: none;
+          }
+      }
+  
+  /* ---- Headers and sections ---- */
+  
+  h1, h2, h3, h4, h5, h6
+      {
+      font-family: "Helvetica Neue", Helvetica, "Liberation Sans", Calibri, Arial, sans-serif; /* Sans-serif headers */
+  
+      /* font-family: "Liberation Serif", "Georgia", "Times New Roman", serif; /* Serif headers */
+  
+      page-break-after: avoid; /* Firefox, Chrome, and Safari do not support the property value "avoid" */
+      }
+  
+  /* Pandoc with --section-divs option */
+  
+  div div, section section /* Nested sections */
+      {
+      margin-left: 1.5em; /* This will increasingly indent nested header sections. 1.5 Keep it in line with bullet indent of parent section */
+      }
+  
+  p {}
+  
+  blockquote
+      { 
+      font-style: italic;
+      }
+  
+  li /* All list items */
+      {
+      }
+  
+  li > p /* Loosely spaced list item */
+      {
+      margin-top: 1em; /* For IE's lack of space above a <li> when the item is inside a <p> */
+      }
+  
+  ul /* Whole unordered list */
+      {
+      }
+  
+  ul li /* Unordered list item */
+      {
+      }
+  
+  ol /* Whole ordered list */
+      {
+      }
+  
+  ol li /* Ordered list item */
+      {
+      }
+  
+  hr /* Simple line for normal rules */
+      {
+      border: none;
+      height: 1pt;
+      background: none;
+      border-top: 1pt solid #333;
+      }
+      
+  /* ---- Some span elements --- */
+  
+  sub /* Subscripts. Pandoc: H~2~O */
+      {
+      }
+  
+  sup /* Superscripts. Pandoc: The 2^nd^ try. */
+      {
+      }
+      
+  em /* Emphasis. Markdown: *emphasis* or _emphasis_ */
+      {
+      }
+      
+  em > em /* Emphasis within emphasis: *This is all *emphasized* except that* */
+      {
+      font-style: normal;
+      }
+  
+  strong /* Markdown **strong** or __strong__ */
+      {
+      }
+  
+  /* ---- Links (anchors) ---- */
+  
+  a /* All links */
+      {
+      /* Keep links clean. On screen, they are colored; in print, they do nothing anyway. */
+      text-decoration: none;
+      }
+  
+  @media screen
+      {
+      a:hover
+          {
+          /* On hover, we indicate a bit more that it is a link. */
+          text-decoration: underline;
+          }
+      }
+  
+  @media print
+      {
+      a   {
+          /* In print, a colored link is useless, so un-style it. */
+          color: black;
+          background: transparent;
+          }
+          
+      a[href^="http://"]:after, a[href^="https://"]:after
+          {
+          /* However, links that go somewhere else, might be useful to the reader,
+             so for http and https links, print the URL after what was the link 
+             text in parens
+          */
+          content: " (" attr(href) ") ";
+          font-size: 90%;
+          }
+      }
+  
+  /* ---- Images ---- */
+  
+  img
+      {
+      /* Let it be inline left/right where it wants to be, but verticality make 
+         it in the middle to look nicer, but opinions differ, and if in a multi-line 
+         paragraph, it might not be so great. 
+      */
+      vertical-align: middle;
+      }
+  
+  div.figure /* Pandoc figure-style image */
+      {
+      /* Center the image and caption */
+      margin-left:  auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      font-size:   small;
+      }
+  
+  p.caption /* Pandoc figure-style caption within div.figure */
+      {
+      /* Inherits div.figure props by default */
+      }
+  
+  /* ---- Code blocks and spans ---- */
+  
+  pre, code 
+      {
+      /* Preserve whitespace, but allow word wrapping */
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      }
+  
+  /* Coloring */
+  
+  /* This will be only for code spans */
+  code
+      {
+      background-color: #F4F4F4;
+      }
+      
+  /* This will be only for code blocks */
+  pre, pre > code
+      {
+      background-color: #F4F4F4;
+      }
+  
+  pre /* Code blocks */
+      {
+      /* Distinguish pre blocks from other text by more than the font with a background tint. */
+      padding: 0.5em; /* Since we have a background color */
+      border-radius: 5px; /* Softens it */
+      /* Give it a some definition, and if printing doesn't print the background */
+      border: 1px solid #aaa;
+      /* Set it off left and right, seems to look a bit nicer when we have a background */
+      margin-left:  0.5em;
+      margin-right: 0.5em;
+      }
+  
+  @media screen
+      {
+      pre
+          {
+          /* Shadow on screen instead of border */
+          border: none;
+          box-shadow: inset 1px 1px 3px #bbb;
+          }
+  
+      pre, pre > code
+          {
+          /* On screen, use an auto scroll box for long lines in a code block */
+          white-space: pre;
+          word-wrap: normal;
+          overflow: auto;
+          }
+      }
+  
+  code /* All inline code spans (applies to pre>code as well) */
+      {
+      /* Pad a little from adjacent text */
+      padding-left:  0.3em;
+      padding-right: 0.3em;
+      padding-top:    0.1em;
+      padding-bottom: 0.1em;
+      border-radius: 3px;
+      }
+  
+  @media screen
+      {
+      code
+          {
+          box-shadow: inset 0px 0px 2px #bbb;
+          }
+      }
+  
+  pre > code /* Code span in a code block */
+      {
+      /* Remove some styling on the span box */
+      padding: 0;
+      border: none;
+      border-radius: none;
+      background-color: inherit;
+      box-shadow: none;
+      }
+      
+  code.url /* Pandoc simple URLs */
+      {
+      background-color: inherit; /* Un-color from previous rules */
+      box-shadow: none;
+      }
+      
+  /* ---- Math ---- */
+  
+  span.math /* Pandoc inline math default and --jsmath inline math */
+      {
+      /* Tried font-style:italic here, and it messed up MathJax rendering in some browsers. Maybe don't mess with at all. */
+      }
+      
+  div.math /* Pandoc --jsmath display math */
+      {
+      }
+      
+  span.LaTeX /* Pandoc --latexmathml math */
+      {
+      } 
+  
+  eq /* Pandoc --gladtex math */
+      {
+      } 
+  
+  /* ---- Tables ---- */
+  
+  /*  A clean textbook-like style with horizontal lines above and below and under 
+      the header. Rows highlight on hover to help scanning the table on screen.
+  */
+  
+  table
+      {
+      border-collapse: collapse;
+      border-spacing: 0; /* IE 6 */
+  
+      border-top:    2pt solid #000; /* The caption on top will not have a bottom-border */
+      border-bottom: 2pt solid #000;
+  
+      /* Center */
+      margin-left:  auto;
+      margin-right: auto;
+      }
+      
+  thead, th /* Entire table header */
+      {
+      /* Well, we add th here since IE doesn't seem to respond to thead. 
+         This will work until we have multi-row headers.
+      */
+      border-bottom: 1pt solid #000;
+      background-color: #eee;
+      }
+  
+  tr.header /* Each header row */
+      {
+      } 
+  
+  tbody /* Entire table  body */
+      {
+      }
+  
+  /* Table body rows */
+  
+  tr  {
+      }
+  
+  /* Odd and even rows */
+  tr.odd  {}
+  tr.even {}
+  
+  tr.odd:hover, tr.even:hover /* Use .odd and .even classes to avoid styling rows in other tables */
+      {
+      background-color: #eee;
+      }
+      
+  td, th /* Table cells and table header cells */
+      { 
+      vertical-align: top; /* Word */
+      vertical-align: baseline; /* Others */
+      padding-left:   0.5em;
+      padding-right:  0.5em;
+      padding-top:    0.2em;
+      padding-bottom: 0.2em;
+      }
+      
+  /* Removes padding on left and right of table for a tight look. Good if thead has no background color*/
+  /*
+  tr td:last-child, tr th:last-child
+      {
+      padding-right: 0;
+      }
+  tr td:first-child, tr th:first-child 
+      {
+      padding-left: 0;
+      }
+  */
+  
+  th /* Table header cells */
+      {
+      font-weight: bold; 
+      }
+  
+  tfoot /* Table footer (what appears here if caption is on top?) */
+      {
+      }
+  
+  caption /* This is for a table caption tag, not the p.caption Pandoc uses in a div.figure */
+      {
+      caption-side: top;
+      border: none;
+      font-size:  0.9em;
+      font-style: italic;
+      text-align: center;
+      margin-top:  0.5em;
+      margin-bottom:  0.3em;
+      padding-bottom: 0.2em;
+      }
+  
+  /* ---- Definition lists ---- */
+  
+  dl /* The whole list */
+      {
+      border-top:  2pt solid #888;
+      padding-top: 0.5em;
+      border-bottom: 2pt solid #888;
+      }
+  
+  dt /* Definition term */
+      {
+      font-weight: bold;
+      }
+  
+  dd+dt /* 2nd or greater term in the list */
+      {
+      border-top:  1pt solid #888;
+      padding-top: 0.5em;
+      }
+      
+  dd /* A definition */
+      {
+      margin-bottom: 0.5em;
+      }
+  
+  dd+dd /* 2nd or greater definition of a term */
+      {
+      border-top: 1px solid #888; /* To separate multiple definitions */
+      }
+      
+  /* ---- Footnotes ---- */
+  
+  a.footnote, a.footnoteRef { /* Pandoc, MultiMarkdown footnote links */
+      font-size: small; 
+      vertical-align: text-top;
+  }
+  
+  a[href^="#fnref"], a.reversefootnote /* Pandoc, MultiMarkdown, ?? footnote back links */
+      {
+      }
+  
+  @media print
+      {
+      a[href^="#fnref"], a.reversefootnote /* Pandoc, MultiMarkdown */
+          {
+          /* Don't display these at all in print since the arrow is only something to click on */
+          display: none;
+          }
+      }
+      
+  div.footnotes /* Pandoc footnotes div at end of the document */
+      {
+      }
+      
+  div.footnotes li[id^="fn"] /* A footnote item within that div */
+      {
+      }
+  
+  /* Fancy rule for footnotes section (from http://css-tricks.com/examples/hrs/) */
+  
+  div.footnotes > hr
+      {
+      margin-top: 2em;
+      padding: 0;
+      border: none;
+      border-top: double;
+      border-color: #333;
+      border-width: 3pt;
+      color: #000;
+      text-align: center;
+      }
+  
+  div.footnotes > hr:after
+      {
+      content: "NOTES";
+      display: inline-block;
+      position: relative; 
+      top: -0.8em;  
+      font-size: 0.8em;
+      padding: 0 0.5em;
+      background: white;
+      }
+  
+  /* Convenience classes for DIVs or other things inserted into the Markdown */
+  
+  /* You can class stuff as "noprint" to not print. 
+     Useful since you can't set this media conditional inside an HTML element's 
+     style attribute (I think).
+  */
+  
+  @media screen
+      {
+      .noscreen /* Don't display on screen (something for print only) */
+          {
+          display: none;
+          }
+      }
+      
+  @media print
+      {
+      .noprint /* Don't display in print (something for screen only) */
+          {
+          display:none;
+          }
+      }
+  
+  .block-center
+      {
+      margin-left: auto;
+      margin-right: auto;
+      display: table;
+      }
+  .text-center
+      {
+      text-align: center;
+      }
+  
+  .block-right
+      {
+      margin-left: auto;
+      margin-right: 0;
+      display: table;
+      }
+  .text-right
+      {
+      text-align: right;
+      }
+  
+  .block-left
+      {
+      margin-left: 0;
+      margin-right: auto;
+      display: table;
+      }
+  .text-left
+      {
+      text-align: left;
+      }
+      
+  img {
+    		height:auto;
+    		width:20%;
+        display:block;
+        float:right;
+        clear:both;
+    	}
+  
+     h3{
+        clear:both;
+     }
+  
+  	p,ul,h1,h2,h3,h4,h5,h6{
+          margin-left:5%;
+          width:70%;
+  	}
+  
+      p {
+          text-align: justify;
+      }
+      
+  
+     p.caption{
+        float:right;
+        clear:right;
+         margin:0;
+         padding:0;
+        width:20%;
+         text-align:center;
+     }
+  
+    
+  </style>
+</head>
+<body>
+<h1 id="building-the-alarm-clock">Building the Alarm Clock</h1>
+<p>This guide provides details for learners to wire, program and configure their first <span class="citation">@ShrimpingIt</span> digital clock project.</p>
+<p>For general orientation, see the <a href="../clock/index.html">Alarm Clock</a> project page.</p>
+<h2 id="requirements">Requirements</h2>
+<p>The build assumes you have the following kits...</p>
+<ul>
+<li>An <a href="../clock/index.html">Alarm Clock Addon</a> kit</li>
+<li>A <a href="../shrimp/index.html">Shrimp Parts</a> kit</li>
+<li>A <a href="../cp2102/index.html">USB UART</a> kit</li>
+</ul>
+<p>For convenience, pre-bagged kits are available to order from <span class="citation">@ShrimpingIt</span> online. If you do not wish to buy from us, information is provided for you to source commodity parts direct from electronics wholesalers.</p>
+<p>In addition you will need a Linux, Mac or Windows computer running the latest <a href="../topics/ide.html">Arduino IDE</a>.</p>
+<p>Mac and Windows computers need a <a href="../cp2102/driver.html">CP2102 driver</a> to be installed for the USB Programmer to be recognised.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>Before embarking on the Alarm Clock, you should have successfully completed the <a href="../blink/index.html">Blink build</a>. This guide uses the Blink circuit configuration as its starting point.</p>
+<h3 id="step-1-remove-unnecessary-parts">Step 1 : Remove unnecessary parts</h3>
+<div class="figure">
+<img src="./sequence/01_blink.png" alt="Blink Layout" />
+<p class="caption">Blink Layout</p>
+</div>
+<p>You can remove the Blink LED and resistor as these are not used in the circuit, and it will be easier to wire the circuit with them out of the way.</p>
+<h3 id="step-2-add-a-decoupling-capacitor">Step 2: Add a Decoupling Capacitor</h3>
+<div class="figure">
+<img src="./sequence/02_capacitor.png" alt="Decoupling Capacitor" />
+<p class="caption">Decoupling Capacitor</p>
+</div>
+<p>We are planning to deploy this circuit in the real world for a long time. We would like it to be stable to momentary changes to its power supply, (e.g. when a motor or a large number of LEDs suddenly draw a lot of energy).</p>
+<p>If the voltage drops too low, the Shrimp's ATMEGA328P-PU microcontroller will reset itself. Adding a decoupling capacitor provides a very short-term reservoir, <em>decoupling</em> the microcontroller from temporary dips in supply voltage.</p>
+<p>The S.I. unit of capacitance is the Farad, indicating how much charge can be stored at a given voltage. Capacitors are labelled with the number of picoFarads capacitance, with the last figure indicating the number of zeroes to tack onto the number.</p>
+<p>We will be using a small ceramic capacitor labelled 104. This means it's 10(0000) picoFarads. There are 1000 picoFarads in a nanoFarad, so that's equivalent to 100 nanoFarads. Ceramic capacitors are symmetrical and can be inserted either way around.</p>
+<p><strong><em>Insert a capacitor labelled 104 between the 5V and GND Power rows D9 and D10</em></strong></p>
+<h3 id="step-3-connect-the-right-hand-power-rails">Step 3: Connect the Right Hand Power Rails</h3>
+<div class="figure">
+<img src="./sequence/03_powerrails.png" alt="Right Hand Power Rails" />
+<p class="caption">Right Hand Power Rails</p>
+</div>
+<p>The power rails of your 400 point breadboard are four very long contacts which run in pairs down each side of the breadboard. They can help provide a power connection close to any component in the circuit.</p>
+<p>They are called <em>power rails</em> because two crucial connections are needed for components to get power. In this circuit the two power connections needed are 5V (VSS or VCC) and 0V (Ground or GND). We will only be attaching the rails on the right of our breadboard.</p>
+<p>The columns often have a red or blue line running alongside them. We will follow the convention that the red column will be used for the +ive voltage supply of the circuit (in our case +5V) and the blue line offers a connection to ground (0V).</p>
+<p>Although the vertical <em>columns</em> of holes each side of the breadboard are presented in groups of five, each column actually contains a single contact. Any wire inserted in any group of five holes is connected to every other wire inserted in the same column. <em>Note this is completely different to breadboard </em>rows<em>, where every group of five is isolated from every other.</em></p>
+<p><strong><em>Connect a Green wire between J9 and any hole in the right-hand Blue column (connecting the Ground Rail)</em></strong> <strong><em>Connect a Red wire between J11 and any hole in the right-hand Red column (connecting the +5V rail)</em></strong></p>
+<h3 id="step-4-insert-the-ds1307-real-time-clock-chip">Step 4: Insert the DS1307 Real Time Clock Chip</h3>
+<div class="figure">
+<img src="./sequence/04_ds1307.png" alt="DS1307" />
+<p class="caption">DS1307</p>
+</div>
+<p>The DS1307 Real Time Clock chip will be used to keep accurate time in our circuit. It looks a bit like a dead bug.</p>
+<p>Each leg has a different number, name and function. The orientation and position of this chip is important, and each of its legs should be cleanly inserted into a separate breadboard hole with a minimum of bending. This means each leg is in a separate row. We can then proceed to wire the correct components to the correct legs.</p>
+<p>You will notice a half-moon shape punched in one end of the chip. A small circle is also punched in one corner, closest to Pin number 1.</p>
+<p>The half-moon should be at the top of the circuit and the circle should be positioned toward the top left (the DS1307 has the same orientation as the Shrimp's ATMEGA chip).</p>
+<p>It is called a chip or an Integrated Circuit (IC) because it contains a doped silicon wafer or 'chip' from which tiny shapes are cut, to construct electronic components which make the clock circuit. The circuit inside is connected to the two rows of four legs.</p>
+<p>Pins are numbered sequentially from Pin 1 (top-left, where a circle is punched in the plastic housing) anticlockwise around the chip until pin 8. The wiring for each pin is described in the following list. If you want, you can ignore this list and simply follow the step-by-step instructions which follow.</p>
+<ul>
+<li>Pins 1&amp;2 - two sides of a crystal which oscillates at 32.768Hz</li>
+<li>Pin 3 - the +ive side of 3V coin battery attached as a backup to keep time</li>
+<li>Pin 4 - ground rail 0V (GND)</li>
+<li>Pin 5 - to ATMEGA SCL pin (is set to +5V when SDA has a <em>one</em> or <em>zero</em> value ready)</li>
+<li>Pin 6 - to ATMEGA SDA pin (is set to +5V to represent a <em>one</em>, or 0V to represent a <em>zero</em> when sending binary data - used with Pin 5)</li>
+<li>Pin 7 - Sends an accurate heartbeat, e.g. an attached LED flashes once a second</li>
+<li>Pin 8 - Connected to the supply rail 5V (VCC)</li>
+</ul>
+<p><strong><em>Place the chip straddling the gap in the centre of the breadboard, with pin 1 (next to the stamped circle) in e20, and the opposite corner (known as pin 5) in f23</em></strong></p>
+<h3 id="step-5-connect-power-to-the-ds1307-chip">Step 5: Connect power to the DS1307 chip</h3>
+<div class="figure">
+<img src="./sequence/05_ds1307_power.png" alt="DS1307 Power" />
+<p class="caption">DS1307 Power</p>
+</div>
+<p>The DS1307 chip needs power for it to run. Now the right hand power rails are connected, we can easily get a +5V or 0V connection for any component in our circuit.</p>
+<p><strong><em>Connect a Red wire from j20 to any hole in the right-hand Red column (connecting to +5V)</em></strong> <strong><em>Connect a Green wire from d23 to any hole in the right-hand Blue column (connecting to 0V)</em></strong></p>
+<h3 id="step-6-connect-atmega328p-pu-and-ds1307-chips">Step 6: Connect ATMEGA328P-PU and DS1307 chips</h3>
+<div class="figure">
+<img src="./sequence/06_ds1307_i2c.png" alt="DS1307 I2C Connection" />
+<p class="caption">DS1307 I2C Connection</p>
+</div>
+<p>The Shrimp's microcontroller and the RTC chip communicate using a protocol known as &quot;Inter-Integrated Circuit&quot; or I2C. This is also known as the 'Two Wire Interface&quot; as bidirectional communication between multiple ICs can be sent along just two wires, one wire which pulses on when binary data should be read, and another wire which sends binary data (as ons and offs) timed to the pulses.</p>
+<p><strong><em>Connect the Purple SCL wire from h3 to h23, connecting the ATMEGA's SCL pin to the DS1307 SCL pin</em></strong> <strong><em>Connect the Yellow SDA wire from i4 to i22, connecting the ATMEGA's SDA pin to the DS1307 SDA pin</em></strong></p>
+<h3 id="step-7-attach-i2c-pull-up-resistors">Step 7: Attach I2C Pull-up resistors</h3>
+<div class="figure">
+<img src="./sequence/07_ds1307_resistors.png" alt="DS1307 Resistors" />
+<p class="caption">DS1307 Resistors</p>
+</div>
+<p>Chips communicating over I2C use an 'active low' to communicate. The circuit should be wired to maintain the SCL and SDA lines 'pulled up' at 5V (but not very strongly - using resistors to limit the influence of the 5V signal).</p>
+<p>When an IC wants to signal, it drags down the voltage of the SCL or SDA lines to 0V with a much more powerful signal. Other ICs attached to the same wires can detect this change. Both SCL and SDA wires should be attached to 5V through a fairly large resistor.</p>
+<p>Resistors are labelled with colored stripes instead of numbers, but using the same system as the '104' capacitor earlier. Decoding the colors Brown=1, Black=0, Orange=3 gives us the number 103. That means the resistance in Ohms starts ‘10’ and continues with a further 3 zeroes – 10(000) Ohms or 10 kiloOhms.</p>
+<p>** Attach a 10kiloOhm pull-up resistor between j3 and any hole in the right-hand Red column, connecting SCL to +5V<em><strong> </strong> Attach a 10kiloOhm pull-up resistor between j4 and any hole in the right-hand Red column, connecting SDA to +5V</em>**</p>
+<h3 id="step-8-provide-a-crystal-oscillator-for-the-ds1307">Step 8: Provide a crystal oscillator for the DS1307</h3>
+<div class="figure">
+<img src="./sequence/08_ds1307_crystal.png" alt="DS1307 Crystal" />
+<p class="caption">DS1307 Crystal</p>
+</div>
+<p>The crystal is a small silver cylinder with two wires coming out of one end, probably marked &quot;32.768Hz&quot;.</p>
+<p>The DS1307 Real Time Clock chip needs a special piece of electrically oscillating material, known as a crystal to use as a pendulum for the clock. This material is coupled to a circuit inside the DS1307 which causes the material to resonate, generating high and low voltages, just like a pendulum swinging backwards and forwards driven by clockwork.</p>
+<p>Hz is a measure of how many times a second something happens so we would expect this crystal to oscillate 32.768 times every second.</p>
+<h3 id="step-9-add-the-backup-battery-holder">Step 9: Add the Backup Battery Holder</h3>
+<div class="figure">
+<img src="./sequence/09_battery_holder.png" alt="Battery Holder and Ground wire" />
+<p class="caption">Battery Holder and Ground wire</p>
+</div>
+<p>The holder is a Black plastic circular module with two pins coming from the base. If the coin cell is inside the battery holder, remove it. We'll add it back later.</p>
+<p>The holder is designed to hold either a CR2032 or LIR2032 (rechargeable) battery rated at around 3V. We've not added a recharging circuit to keep things simple, so we can use the cheaper CR2032 3V disposable battery. If wired correctly, it is still expected to last significantly more than a year as a backup for this clock.</p>
+<p>We need to insert the holder with the square bracket towards the top of the breadboard. As you insert the holder, look from the side, and note where the positive pin (at the square end) passes into the breadboard; it should enter into the row parallel to pin 3 - the battery backup pin on the DS1307. Note where the negative pin (at the round end) passes into the breadboard; it should enter at a30 which is not yet connected to anything else.</p>
+<p>Finally the negative pin of the battery holder needs to be connected to the common ground of the circuit. As any ground connection will do, we connect from row 30 back to the nearby ground pin of the DS1307 for convenience.</p>
+<p><strong><em>Add the backup battery holder, with the +3V positive pin (the square end) inserted at a22, and the 0V ground pin (the round end) inserted at a30, connecting the +3V pin to pin 3 of the DS1307</em></strong> <strong><em>Add a green wire from e30 to c23, completing the battery backup circuit</em></strong></p>
+<h3 id="step-10-add-the-piezo">Step 10: Add the Piezo</h3>
+<div class="figure">
+<img src="./sequence/10_piezo.png" alt="Piezo" />
+<p class="caption">Piezo</p>
+</div>
+<p>Unless we add a display, (as detailed in the <a href="../ledclock/index.html">LED Clock Addon</a> ) the only output of this clock will be a piezo beeper, which can play Nokia Ringtone (RTTTL) tunes according to scheduled alarms you program in.</p>
+<p>Piezo is short for Piezoelectric transducer. It uses a piezoelectric effect where applying a voltage generates flexing within a ceramic material. The effect is reversible, as flexing it also generates a voltage. For this reason the component is called called a <em>transducer</em> as it can be used for output OR for input.</p>
+<p>The piezos we are using have no orientation and can be inserted either way around.</p>
+<p><strong><em>Insert the Piezo so that one of its pins goes into row 26, and the other goes into row 27, keeping it as far to the left as possible</em></strong></p>
+<h3 id="step-11-connect-piezo-to-ground">Step 11: Connect Piezo to Ground</h3>
+<div class="figure">
+<img src="./sequence/11_piezo_ground.png" alt="Piezo Ground" />
+<p class="caption">Piezo Ground</p>
+</div>
+<p>We want the Piezo to experience a voltage across the material, so it will need to have a connection to 0V (ground) on one side, then we can control the voltage of the other side.</p>
+<p><strong><em>Attach a Green wire between the right-hand -ive (Blue) power rail, and hole j27</em></strong></p>
+<h3 id="step-12-connect-the-piezo-to-its-control-pin">Step 12: Connect the Piezo to its control pin</h3>
+<div class="figure">
+<img src="./sequence/12_piezo_resistor.png" alt="Piezo Resistor" />
+<p class="caption">Piezo Resistor</p>
+</div>
+<p>We will be varying the bottom right hand pin of the ATMEGA chip between 0V and 5V to cause the Piezo to flex back and forth, making sound. Using a resistor instead of a wire reduces the amount of current which the Piezo uses, making the circuit more stable.</p>
+<p><strong><em>Attach a resistor between j16 and j26, connecting the Piezo to the pin we'll use to generate audible waves; the bottom-right pin of the ATMEGA</em></strong></p>
+<h3 id="step-13-insert-coin-battery">Step 13: Insert Coin Battery</h3>
+<div class="figure">
+<img src="./sequence/13_final.png" alt="Final Layout" />
+<p class="caption">Final Layout</p>
+</div>
+<p>After double-checking your layout matches the final diagram above, you can insert the coin battery. Once you have set the time, this will help your clock keep time even when the USB or main battery pack is removed.</p>
+<p>Note, if you attach nothing to the DS1307 Battery pin, then the clock will not work at all. If you don't have a reliable coin battery, and want to test your clock by powering it from the 5V supply, you need to attach DS1307 Pin 3 (the positive side of the coin battery) to 0V (ground). This tells the DS1307 to use the main power supply instead of the coin battery. <strong><em>Note, if a coin battery is attached at the time, this will short the battery!</em></strong></p>
+<p>A workaround to ground DS1307 Pin 3, which avoids battery shorting, is to remove any battery, and balance a small metal disc or coin in the place of the battery, being sure that it touches both terminals. This effectively connects Pin 3 to Ground. A piece of card cut to size and wrapped in aluminium foil is a good option.</p>
+<h3 id="ready-to-tick">Ready to tick!</h3>
+<p>Now the fundamental hardware is all in place, and we can start to program our clock to behave in different ways.</p>
+<p>For any clock behaviours to work (such as playing chimes) you must attach a reliable power supply of 3.6V to 5V, which you can get by plugging into USB or by wiring in a 3xAAA battery pack.</p>
+<h2 id="upload-the-code-for-a-simple-clock">Upload the code for a simple clock</h2>
+<p>Now the clock subcircuit is complete, we should be able to set and read back the time from the clock. Verifying this simple behaviour is a useful test, before we add lots of extra logic for controlling different chimes.</p>
+</body>
+</html>

@@ -24,14 +24,13 @@ Before embarking on the Alarm Clock, you should have successfully completed the 
 
 ### Step 1 : Remove unnecessary parts
 
-<a href="sequence/01_blink.png" target="animation"><img src="sequence/01_blink.png" style="height:250px"/></a>
-
+![Blink Layout][step01]
 
 You can remove the Blink LED and resistor as these are not used in the circuit, and it will be easier to wire the circuit with them out of the way.
 
 ### Step 2: Add a Decoupling Capacitor
 
-<a href="sequence/02_capacitor.png" target="animation"><img src="sequence/02_capacitor.png" style="height:250px"/></a>
+![Decoupling Capacitor][step02]
 
 We are planning to deploy this circuit in the real world for a long time. We would like it to be stable to momentary changes to its power supply, (e.g. when a motor or a large number of LEDs suddenly draw a lot of energy). 
 
@@ -45,7 +44,7 @@ We will be using a small ceramic capacitor labelled 104. This means it's 10(0000
 
 ### Step 3: Connect the Right Hand Power Rails
 
-<a href="sequence/03_powerrails.png" target="animation"><img src="sequence/03_powerrails.png" style="height:250px"/></a>
+![Right Hand Power Rails][step03]
 
 The power rails of your 400 point breadboard are four very long contacts which run in pairs down each side of the breadboard. They can help provide a power connection close to any component in the circuit.
 
@@ -60,7 +59,7 @@ Although the vertical *columns* of holes each side of the breadboard are present
 
 ### Step 4: Insert the DS1307 Real Time Clock Chip
 
-<a href="sequence/04_ds1307.png" target="animation"><img src="sequence/04_ds1307.png" style="height:250px"/></a>
+![DS1307][step04]
 
 The DS1307 Real Time Clock chip will be used to keep accurate time in our circuit. It looks a bit like a dead bug.
 
@@ -86,7 +85,7 @@ Pins are numbered sequentially from Pin 1 (top-left, where a circle is punched i
 
 ### Step 5: Connect power to the DS1307 chip
 
-<a href="sequence/05_ds1307_power.png" target="animation"><img src="sequence/05_ds1307_power.png" style="height:250px"/></a>
+![DS1307 Power][step05]
 
 The DS1307 chip needs power for it to run. Now the right hand power rails are connected, we can easily get a +5V or 0V connection for any component in our circuit.
 
@@ -95,7 +94,7 @@ The DS1307 chip needs power for it to run. Now the right hand power rails are co
 
 ### Step 6: Connect ATMEGA328P-PU and DS1307 chips
 
-<a href="sequence/06_ds1307_i2c.png" target="animation"><img src="sequence/06_ds1307_i2c.png" style="height:250px"/></a>
+![DS1307 I2C Connection][step06]
 
 The Shrimp's microcontroller and the RTC chip communicate using a protocol known as "Inter-Integrated Circuit" or I2C. This is also known as the 'Two Wire Interface" as bidirectional communication between multiple ICs can be sent along just two wires, one wire which pulses on when binary data should be read, and another wire which sends binary data (as ons and offs) timed to the pulses. 
 
@@ -104,13 +103,13 @@ The Shrimp's microcontroller and the RTC chip communicate using a protocol known
 
 ### Step 7: Attach I2C Pull-up resistors
 
-<a href="sequence/07_ds1307_resistors.png" target="animation"><img src="sequence/07_ds1307_resistors.png" style="height:250px"/></a>
+![DS1307 Resistors][step07]
 
 Chips communicating over I2C use an 'active low' to communicate. The circuit should be wired to maintain the SCL and SDA lines 'pulled up' at 5V (but not very strongly - using resistors to limit the influence of the 5V signal). 
 
 When an IC wants to signal, it drags down the voltage of the SCL or SDA lines to 0V with a much more powerful signal. Other ICs attached to the same wires can detect this change. Both SCL and SDA wires should be attached to 5V through a fairly large resistor.
 
-Resistors are labelled with colored stripes instead of numbers, but using the same system as  the ’104′ capacitor earlier. Decoding the colors Brown=1, Black=0, Orange=3 gives us the number 103. That means the resistance in Ohms starts ‘10’ and continues with a further 3 zeroes – 10(000) Ohms or 10 kiloOhms.
+Resistors are labelled with colored stripes instead of numbers, but using the same system as  the '104' capacitor earlier. Decoding the colors Brown=1, Black=0, Orange=3 gives us the number 103. That means the resistance in Ohms starts ‘10’ and continues with a further 3 zeroes – 10(000) Ohms or 10 kiloOhms.
 
 
 ** Attach a 10kiloOhm pull-up resistor between j3 and any hole in the right-hand Red column, connecting SCL to +5V***
@@ -118,7 +117,7 @@ Resistors are labelled with colored stripes instead of numbers, but using the sa
 
 ### Step 8: Provide a crystal oscillator for the DS1307
 
-<a href="sequence/08_ds1307_crystal.png" target="animation"><img src="sequence/08_ds1307_crystal.png" style="height:250px"/></a>
+![DS1307 Crystal][step08]
 
 The crystal is a small silver cylinder with two wires coming out of one end, probably marked "32.768Hz". 
 
@@ -128,7 +127,7 @@ Hz is a measure of how many times a second something happens so we would expect 
 
 ### Step 9: Add the Backup Battery Holder
 
-<a href="sequence/09_battery_holder.png" target="animation"><img src="sequence/09_battery_holder.png" style="height:250px"/></a>
+![Battery Holder and Ground wire][step09]
 
 The holder is a Black plastic circular module with two pins coming from the base. If the coin cell is inside the battery holder, remove it. We'll add it back later. 
 
@@ -143,7 +142,7 @@ Finally the negative pin of the battery holder needs to be connected to the comm
 
 ### Step 10: Add the Piezo
 
-<a href="sequence/10_piezo.png" target="animation"><img src="sequence/10_piezo.png" style="height:250px"/></a>
+![Piezo][step10]
 
 Unless we add a display, (as detailed in the [LED Clock Addon](../ledclock/index.html) ) the only output of this clock will be a piezo beeper, which can play Nokia Ringtone (RTTTL) tunes according to scheduled alarms you program in.
 
@@ -155,7 +154,7 @@ The piezos we are using have no orientation and can be inserted either way aroun
 
 ### Step 11: Connect Piezo to Ground
 
-<a href="sequence/11_piezo_ground.png" target="animation"><img src="sequence/11_piezo_ground.png" style="height:250px"/></a>
+![Piezo Ground][step11]
 
 We want the Piezo to experience a voltage across the material, so it will need to have a connection to 0V (ground) on one side, then we can control the voltage of the other side.
 
@@ -163,7 +162,7 @@ We want the Piezo to experience a voltage across the material, so it will need t
 
 ### Step 12: Connect the Piezo to its control pin
 
-<a href="sequence/12_piezo_resistor.png" target="animation"><img src="sequence/12_piezo_resistor.png" style="height:250px"/></a>
+![Piezo Resistor][step12]
 
 We will be varying the bottom right hand pin of the ATMEGA chip between 0V and 5V to cause the Piezo to flex back and forth, making sound. Using a resistor instead of a wire reduces the amount of current which the Piezo uses, making the circuit more stable.
 
@@ -171,7 +170,7 @@ We will be varying the bottom right hand pin of the ATMEGA chip between 0V and 5
 
 ### Step 13: Insert Coin Battery
 
-<a href="sequence/13_final.png" target="animation"><img src="sequence/13_final.png" style="height:250px"/></a>
+![Final Layout][step13]
 
 After double-checking your layout matches the final diagram above, you can insert the coin battery. Once you have set the time, this will help your clock keep time even when the USB or main battery pack is removed.
 
@@ -189,3 +188,17 @@ For any clock behaviours to work (such as playing chimes) you must attach a reli
 ## Upload the code for a simple clock
 
 Now the clock subcircuit is complete, we should be able to set and read back the time from the clock. Verifying this simple behaviour is a useful test, before we add lots of extra logic for controlling different chimes.
+
+[step01]: ./sequence/01_blink.png
+[step02]: ./sequence/02_capacitor.png
+[step03]: ./sequence/03_powerrails.png
+[step04]: ./sequence/04_ds1307.png
+[step05]: ./sequence/05_ds1307_power.png
+[step06]: ./sequence/06_ds1307_i2c.png
+[step07]: ./sequence/07_ds1307_resistors.png
+[step08]: ./sequence/08_ds1307_crystal.png
+[step09]: ./sequence/09_battery_holder.png
+[step10]: ./sequence/10_piezo.png
+[step11]: ./sequence/11_piezo_ground.png
+[step12]: ./sequence/12_piezo_resistor.png
+[step13]: ./sequence/13_final.png
