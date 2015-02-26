@@ -19,11 +19,7 @@ As with all [@ShrimpingIt](http://shrimping.it) projects, the build should begin
 Once your Shrimp is blinking, you can then proceed through the following builds...
 
 1) Minimal Conductive Sensor
-- add a single 20 MegaOhm [pull up resistor](../topics/pullup.html), a ground wire and a sensor wire
-- upload code which reports the sensed voltage by sending number characters over the Serial link
-  - use the Serial Monitor feature within the Arduino IDE to monitor the numbers sent
-  - observe the effect on the numbers when a human body connects the two wires
-  - it's possible to plot the voltage signal by using Processing or Python
+
 
 2) Minimal USB Keyboard
 - add the minimum components for the circuit to be able to emulate a [USB keyboard](../topics/usb.html).
