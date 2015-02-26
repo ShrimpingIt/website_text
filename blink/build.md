@@ -1,14 +1,13 @@
-<table class="build" border="0" cellspacing="1" cellpadding="1">
-<tbody>
-<tr>
-<td><a href="http://shrimping.it/blog/wp-content/uploads/2012/09/stripboard_vs_breadboard_alternative.jpg"><img class="aligncenter size-medium wp-image-68" src="http://shrimping.it/blog/wp-content/uploads/2012/09/stripboard_vs_breadboard_alternative-300x154.jpg" alt="stripboard_vs_breadboard_alternative" width="300" height="154" /></a></td>
-<td>
-<h2>Build a Shrimp, Blink an LED</h2>
-In this step-by-step, illustrated guide, we show you how to build an Arduino-compatible <a title="The Shrimp" href="http://shrimping.it/blog/shrimp/">Shrimp</a> from scratch, and upload your first code to control it.
 
-A Shrimp is great for deploying your first interactive inventions, doing physical computing using sensors and actuators. It is programmed using the <a href="http://arduino.cc/en/main/software" target="_blank">Arduino IDE</a>, and thinks it's an <a href="http://arduino.cc/en/Main/arduinoBoardUno" target="_blank">Arduino Uno</a> but is much cheaper, and teaches more electronics fundamentals. You can use it in a <a title="Arduino Community" href="http://shrimping.it/blog/arduino-community/">whole world of projects</a>.
+# Build a Shrimp, Blink an LED</h2>
 
-You make a Shrimp by pushing components into holes in a solderless breadboard. You can <a title="Bill of Materials for the Shrimp circuit" href="http://shrimping.it/blog/bill-of-materials/" target="_blank">source them yourself</a> following our guide, or <a title="Kits" href="http://shrimping.it/blog/kits/" target="_blank">buy pre-bagged bundles</a> from us.
+<a href="http://shrimping.it/blog/wp-content/uploads/2012/09/stripboard_vs_breadboard_alternative.jpg"><img class="aligncenter size-medium wp-image-68" src="http://shrimping.it/blog/wp-content/uploads/2012/09/stripboard_vs_breadboard_alternative-300x154.jpg" alt="stripboard_vs_breadboard_alternative" width="300" height="154" /></a>
+
+In this step-by-step, illustrated guide, we show you how to build an Arduino-compatible [Shrimp](../shrimp/index.html) from scratch, and upload your first code to control it.
+
+A Shrimp is great for deploying your first interactive inventions, doing physical computing using sensors and actuators. It is programmed using the [Arduino IDE](http://arduino.cc/en/main/software), and thinks it's an [Arduino Uno](http://arduino.cc/en/Main/arduinoBoardUno) but is much cheaper, and teaches more electronics fundamentals. You can use it in a [whole world of projects](http://shrimping.it/blog/arduino-community/).
+
+You make a Shrimp by pushing components into holes in a solderless breadboard. You can [source them yourself](http://shrimping.it/blog/bill-of-materials/)  following our guide, or [buy pre-bagged bundles](http://shrimping.it/blog/kits/) from us.
 
 We use the 'Blink' build at the beginning of all our workshops, and when prototyping for ourselves, to prove that everything works before adding more challenging modules or behaviours. The minimal circuit can take 20 minutes or so when attempted the first time, plus troubleshooting if you didn't follow the instructions quite right.
 <h3>Get hold of your Shrimp components and a breadboard, sit down with your laptop and favourite beverage, then click 'Next Step'</h3>

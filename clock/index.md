@@ -1,4 +1,4 @@
-# Chiming Clock Addon
+# Alarm Clock Addon
 
 ## Overview
 
@@ -8,9 +8,9 @@ This [addon](../topics/addon.html) extends a [Shrimp Parts](../shrimp/index.html
 
 The [project build](build.html) shows how to wire, program and configure the circuit as a clock which chimes hourly, or which sounds according to a daily or yearly schedule.
 
-For a visual display of the time, the Chiming Clock kit can be augmented with an [LED Clock Addon](../ledclock/index.html) which incorporates 24 superbright LEDs and high-power LED driver chips for a <a href="https://github.com/schmiegelt/xbmc.screensaver.unaryclock" target="_blank">Unary clock</a> or <a href="http://www.instructables.com/id/Wordclock/" target="_blank">Word Clock</a>.
+For a visual display of the time, the Alarm Clock kit can be augmented with an [LED Clock Addon](../ledclock/index.html) which incorporates 24 superbright LEDs and high-power LED driver chips for a <a href="https://github.com/schmiegelt/xbmc.screensaver.unaryclock" target="_blank">Unary clock</a> or <a href="http://www.instructables.com/id/Wordclock/" target="_blank">Word Clock</a>.
 
-A set of [activities](activities.html) are provided for educators who wish to use these builds to support lessons in high school or university.
+A set of [activities](guide.html) are provided for educators who wish to use these builds to support lessons in high school or university.
 
 ## Design
 
