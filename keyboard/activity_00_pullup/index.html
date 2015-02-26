@@ -597,11 +597,17 @@
   </style>
 </head>
 <body>
-<!-- * [Blink](./blink/index.html) -->
+<h1 id="minimal-button-circuit-and-conductive-sensor">Minimal Button Circuit, and Conductive Sensor</h1>
+<p>This activity demonstrates the construction of a voltage divider which operates like a button circuit.</p>
+<p>one half of the divider is a very high-value resistor, and the circuit is completed by a human body touching two contacts.</p>
+<h2 id="build">Build</h2>
 <ul>
-<li><a href="./clock/index.html">Alarm Clock</a></li>
-<li><a href="./ledclock/index.html">LED Clock</a></li>
-<li><a href="./keyboard/index.html">Conductive Keyboard</a></li>
+<li>add a single 20 MegaOhm <a href="../topics/pullup.html">pull up resistor</a>, a ground wire and a sensor wire</li>
+<li>upload code which reports the sensed voltage by sending number characters over the Serial link</li>
+<li>use the Serial Monitor feature within the Arduino IDE to monitor the numbers sent</li>
+<li>observe the effect on the numbers when a human body connects the two wires</li>
+<li>it's possible to plot the voltage signal by using Processing or Python</li>
 </ul>
+<p>Open the AnalogInOutSerial sketch</p>
 </body>
 </html>
