@@ -36,9 +36,7 @@ We are planning to deploy this circuit in the real world for a long time. We wou
 
 If the voltage drops too low, the Shrimp's ATMEGA328P-PU microcontroller will reset itself. Adding a decoupling capacitor provides a very short-term reservoir, *decoupling* the microcontroller from temporary dips in supply voltage.
 
-The S.I. unit of capacitance is the Farad, indicating how much charge can be stored at a given voltage. Capacitors are labelled with the number of picoFarads capacitance, with the last figure indicating the number of zeroes to tack onto the number.
-
-We will be using a small ceramic capacitor labelled 104. This means it's 10(0000) picoFarads. There are 1000 picoFarads in a nanoFarad, so that's equivalent to 100 nanoFarads. Ceramic capacitors are symmetrical and can be inserted either way around.
+The [S.I. unit](../topic/unit.html) of capacitance is the Farad, indicating how much charge can be stored at a given voltage. Capacitors are labelled with the number of picoFarads capacitance, with the last figure indicating the number of zeroes to tack onto the number. We will be using a small ceramic capacitor labelled 104. This means it's 10(0000) picoFarads. There are 1000 picoFarads in a nanoFarad, so that's equivalent to 100 nanoFarads. Ceramic capacitors are symmetrical and can be inserted either way around.
 
 ***Insert a capacitor labelled 104 between the 5V and GND Power rows D9 and D10***
 
@@ -52,7 +50,7 @@ They are called *power rails* because two crucial connections are needed for com
 
 The columns often have a red or blue line running alongside them. We will follow the convention that the red column will be used for the +ive voltage supply of the circuit (in our case +5V) and the blue line offers a connection to ground (0V).
 
-Although the vertical *columns* of holes each side of the breadboard are presented in groups of five, each column actually contains a single contact. Any wire inserted in any group of five holes is connected to every other wire inserted in the same column. *Note this is completely different to breadboard *rows*, where every group of five is isolated from every other.*
+Although the vertical *columns* of holes each side of the breadboard are presented in groups of five, each column actually contains a single contact. Any wire inserted in any group of five holes is connected to every other wire inserted in the same column, even if it's inserted in a different group. *Note this is completely different to breadboard *rows*, where every group of five is isolated from every other.*
 
 ***Connect a Green wire between J9 and any hole in the right-hand Blue column (connecting the Ground Rail)***
 ***Connect a Red wire between J11 and any hole in the right-hand Red column (connecting the +5V rail)***
