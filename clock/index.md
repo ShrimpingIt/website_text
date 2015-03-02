@@ -2,7 +2,7 @@
 
 ## Overview
 
-<img src="theme/8180682507_8b5d19ae14_o_credit_antonio_thomas.jpg" style="margin:10px;width:30%"/><img src="theme/bells_credit_malcolmguite.jpg" style="margin:10px;width:30%"/><img src="theme/1_CobaltClock_credit_dougsclocks.jpg" style="margin:10px;width:30%"/>
+<img src="theme/8180682507_8b5d19ae14_o_credit_antonio_thomas.jpg" style="margin:1%;width:30%"/><img src="theme/bells_credit_malcolmguite.jpg" style="margin:1%;width:30%"/><img src="theme/1_CobaltClock_credit_dougsclocks.jpg" style="margin:1%;width:30%"/>
 
 This [addon](../topics/addon.html) extends a [Shrimp Parts](../shrimp/index.html) kit to create a functioning digital clock. The build offers a starting point for all kinds of time-driven inventions. 
 

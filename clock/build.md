@@ -1,5 +1,7 @@
 # Building the Alarm Clock
 
+![An alarm clock][header]
+
 This guide provides details for learners to wire, program and configure their first @ShrimpingIt digital clock project.
 
 For general orientation, see the [Alarm Clock](../clock/index.html) project page.
@@ -8,9 +10,9 @@ For general orientation, see the [Alarm Clock](../clock/index.html) project page
 
 The build assumes you have the following kits...
 
-* An [Alarm Clock Addon](../clock/index.html) kit
-* A [Shrimp Parts](../shrimp/index.html) kit
-* A [USB UART](../cp2102/index.html) kit
+* An [Alarm Clock Addon](../clock/kit.html) kit
+* A [Shrimp Parts](../shrimp/kit.html) kit
+* A [Programmer](../cp2102/kit.html) kit
 
 For convenience, pre-bagged kits are available to order from @ShrimpingIt online. If you do not wish to buy from us, information is provided for you to source commodity parts direct from electronics wholesalers.
 
@@ -20,9 +22,9 @@ Mac and Windows computers need a [CP2102 driver](../cp2102/driver.html) to be in
 
 ## Getting started
 
-Before embarking on the Alarm Clock, you should have successfully completed the [Blink build](../blink/index.html). This guide uses the Blink circuit configuration as its starting point.
+Before embarking on the Alarm Clock, you should have **successfully completed the [Blink build](../blink/index.html)**. This build uses the Blink circuit as its starting point.
 
-### Step 1 : Remove unnecessary parts
+### Step 1: Remove unnecessary parts
 
 ![Blink Layout][step01]
 
@@ -61,11 +63,9 @@ Although the vertical *columns* of holes each side of the breadboard are present
 
 The DS1307 Real Time Clock chip will be used to keep accurate time in our circuit. It looks a bit like a dead bug.
 
-Each leg has a different number, name and function. The orientation and position of this chip is important, and each of its legs should be cleanly inserted into a separate breadboard hole with a minimum of bending. This means each leg is in a separate row. We can then proceed to wire the correct components to the correct legs.
+Each leg has a different number, name and function. Each of its legs should be cleanly inserted into a separate breadboard hole with a minimum of bending. The position of this chip (straddling the central spine of the breadboard) is important. This means each leg is in a separate row. We can then proceed to wire the correct components to the correct legs.
 
-You will notice a half-moon shape punched in one end of the chip. A small circle is also punched in one corner, closest to Pin number 1. 
-
-The half-moon should be at the top of the circuit and the circle should be positioned toward the top left (the DS1307 has the same orientation as the Shrimp's ATMEGA chip).
+Its orientation is also very important. You will notice a half-moon shape punched in one end of the chip. A small circle is sometimes punched in one corner (indicating which is Pin number 1). The half-moon should be at the top of the circuit and any circle should be positioned toward the top left (the DS1307 has the same orientation as the Shrimp's ATMEGA chip).
 
 It is called a chip or an Integrated Circuit (IC) because it contains a doped silicon wafer or 'chip' from which tiny shapes are cut, to construct electronic components which make the clock circuit. The circuit inside is connected to the two rows of four legs. 
 
@@ -79,7 +79,7 @@ Pins are numbered sequentially from Pin 1 (top-left, where a circle is punched i
 * Pin 7 - Sends an accurate heartbeat, e.g. an attached LED flashes once a second
 * Pin 8 - Connected to the supply rail 5V (VCC)
 
-***Place the chip straddling the gap in the centre of the breadboard, with pin 1 (next to the stamped circle) in e20, and the opposite corner (known as pin 5) in f23***
+***Place the chip straddling the gap in the centre of the breadboard, with pin 1 (anticlockwise from the half moon) in e20, and the opposite corner (known as pin 5) in f23***
 
 ### Step 5: Connect power to the DS1307 chip
 
@@ -187,6 +187,7 @@ For any clock behaviours to work (such as playing chimes) you must attach a reli
 
 Now the clock subcircuit is complete, we should be able to set and read back the time from the clock. Verifying this simple behaviour is a useful test, before we add lots of extra logic for controlling different chimes.
 
+[header]: clock_kit.png
 [step01]: ./sequence/01_blink.png
 [step02]: ./sequence/02_capacitor.png
 [step03]: ./sequence/03_powerrails.png

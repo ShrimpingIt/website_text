@@ -7,6 +7,7 @@
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
+      
   /*
       Buttondown
       A Markdown/MultiMarkdown/Pandoc HTML output CSS stylesheet
@@ -561,58 +562,71 @@
       {
       text-align: left;
       }
-      
-  img {
-    		height:auto;
-    		width:20%;
-        display:block;
-        float:right;
-        clear:both;
-    	}
   
-     h3{
-        clear:both;
-     }
-  
-  	p,ul,h1,h2,h3,h4,h5,h6{
-          margin-left:5%;
-          width:70%;
+  	div.figure {
+  		float:right;
+  		margin:2em;
   	}
   
-      p {
-          text-align: justify;
-      }
-      
+  	div.figure img {
+  		height:480px;
+  		width:auto;
+  		max-width:auto;
+  	}
   
-     p.caption{
-        float:right;
-        clear:right;
-         margin:0;
-         padding:0;
-        width:20%;
-         text-align:center;
-     }
+  	h3{
+  		clear:both;
+  	}
   
+  	p,ul,h1,h2,h3,h4,h5,h6{
+  		margin-left:5%;
+  		width:70%;
+  	}
+  
+  	p {
+  		text-align: justify;
+  	}      
+  
+  	p.caption{
+  		text-align:center;
+  	}
+  
+  
+  	h1,h2,h3,h4,h5,h6 {
+  		margin-top:2em;
+  		margin-bottom:1em;
+  	}
+  
+  	h1{ font-size:164%; }
+  	h2{ font-size:156%; }
+  	h3{ font-size:148%; }
+  	h4{ font-size:136%; }
+  	h5{ font-size:124%; }
+  	h6{ font-size:110%; }
     
   </style>
 </head>
 <body>
 <h1 id="building-the-alarm-clock">Building the Alarm Clock</h1>
+<div class="figure">
+<img src="clock_kit.png" alt="An alarm clock" />
+<p class="caption">An alarm clock</p>
+</div>
 <p>This guide provides details for learners to wire, program and configure their first <span class="citation">@ShrimpingIt</span> digital clock project.</p>
 <p>For general orientation, see the <a href="../clock/index.html">Alarm Clock</a> project page.</p>
 <h2 id="requirements">Requirements</h2>
 <p>The build assumes you have the following kits...</p>
 <ul>
-<li>An <a href="../clock/index.html">Alarm Clock Addon</a> kit</li>
-<li>A <a href="../shrimp/index.html">Shrimp Parts</a> kit</li>
-<li>A <a href="../cp2102/index.html">USB UART</a> kit</li>
+<li>An <a href="../clock/kit.html">Alarm Clock Addon</a> kit</li>
+<li>A <a href="../shrimp/kit.html">Shrimp Parts</a> kit</li>
+<li>A <a href="../cp2102/kit.html">Programmer</a> kit</li>
 </ul>
 <p>For convenience, pre-bagged kits are available to order from <span class="citation">@ShrimpingIt</span> online. If you do not wish to buy from us, information is provided for you to source commodity parts direct from electronics wholesalers.</p>
 <p>In addition you will need a Linux, Mac or Windows computer running the latest <a href="../topics/ide.html">Arduino IDE</a>.</p>
 <p>Mac and Windows computers need a <a href="../cp2102/driver.html">CP2102 driver</a> to be installed for the USB Programmer to be recognised.</p>
 <h2 id="getting-started">Getting started</h2>
-<p>Before embarking on the Alarm Clock, you should have successfully completed the <a href="../blink/index.html">Blink build</a>. This guide uses the Blink circuit configuration as its starting point.</p>
-<h3 id="step-1-remove-unnecessary-parts">Step 1 : Remove unnecessary parts</h3>
+<p>Before embarking on the Alarm Clock, you should have <strong>successfully completed the <a href="../blink/index.html">Blink build</a></strong>. This build uses the Blink circuit as its starting point.</p>
+<h3 id="step-1-remove-unnecessary-parts">Step 1: Remove unnecessary parts</h3>
 <div class="figure">
 <img src="./sequence/01_blink.png" alt="Blink Layout" />
 <p class="caption">Blink Layout</p>
@@ -625,8 +639,7 @@
 </div>
 <p>We are planning to deploy this circuit in the real world for a long time. We would like it to be stable to momentary changes to its power supply, (e.g. when a motor or a large number of LEDs suddenly draw a lot of energy).</p>
 <p>If the voltage drops too low, the Shrimp's ATMEGA328P-PU microcontroller will reset itself. Adding a decoupling capacitor provides a very short-term reservoir, <em>decoupling</em> the microcontroller from temporary dips in supply voltage.</p>
-<p>The S.I. unit of capacitance is the Farad, indicating how much charge can be stored at a given voltage. Capacitors are labelled with the number of picoFarads capacitance, with the last figure indicating the number of zeroes to tack onto the number.</p>
-<p>We will be using a small ceramic capacitor labelled 104. This means it's 10(0000) picoFarads. There are 1000 picoFarads in a nanoFarad, so that's equivalent to 100 nanoFarads. Ceramic capacitors are symmetrical and can be inserted either way around.</p>
+<p>The <a href="../topic/unit.html">S.I. unit</a> of capacitance is the Farad, indicating how much charge can be stored at a given voltage. Capacitors are labelled with the number of picoFarads capacitance, with the last figure indicating the number of zeroes to tack onto the number. We will be using a small ceramic capacitor labelled 104. This means it's 10(0000) picoFarads. There are 1000 picoFarads in a nanoFarad, so that's equivalent to 100 nanoFarads. Ceramic capacitors are symmetrical and can be inserted either way around.</p>
 <p><strong><em>Insert a capacitor labelled 104 between the 5V and GND Power rows D9 and D10</em></strong></p>
 <h3 id="step-3-connect-the-right-hand-power-rails">Step 3: Connect the Right Hand Power Rails</h3>
 <div class="figure">
@@ -636,7 +649,7 @@
 <p>The power rails of your 400 point breadboard are four very long contacts which run in pairs down each side of the breadboard. They can help provide a power connection close to any component in the circuit.</p>
 <p>They are called <em>power rails</em> because two crucial connections are needed for components to get power. In this circuit the two power connections needed are 5V (VSS or VCC) and 0V (Ground or GND). We will only be attaching the rails on the right of our breadboard.</p>
 <p>The columns often have a red or blue line running alongside them. We will follow the convention that the red column will be used for the +ive voltage supply of the circuit (in our case +5V) and the blue line offers a connection to ground (0V).</p>
-<p>Although the vertical <em>columns</em> of holes each side of the breadboard are presented in groups of five, each column actually contains a single contact. Any wire inserted in any group of five holes is connected to every other wire inserted in the same column. <em>Note this is completely different to breadboard </em>rows<em>, where every group of five is isolated from every other.</em></p>
+<p>Although the vertical <em>columns</em> of holes each side of the breadboard are presented in groups of five, each column actually contains a single contact. Any wire inserted in any group of five holes is connected to every other wire inserted in the same column, even if it's inserted in a different group. <em>Note this is completely different to breadboard </em>rows<em>, where every group of five is isolated from every other.</em></p>
 <p><strong><em>Connect a Green wire between J9 and any hole in the right-hand Blue column (connecting the Ground Rail)</em></strong> <strong><em>Connect a Red wire between J11 and any hole in the right-hand Red column (connecting the +5V rail)</em></strong></p>
 <h3 id="step-4-insert-the-ds1307-real-time-clock-chip">Step 4: Insert the DS1307 Real Time Clock Chip</h3>
 <div class="figure">
@@ -644,9 +657,8 @@
 <p class="caption">DS1307</p>
 </div>
 <p>The DS1307 Real Time Clock chip will be used to keep accurate time in our circuit. It looks a bit like a dead bug.</p>
-<p>Each leg has a different number, name and function. The orientation and position of this chip is important, and each of its legs should be cleanly inserted into a separate breadboard hole with a minimum of bending. This means each leg is in a separate row. We can then proceed to wire the correct components to the correct legs.</p>
-<p>You will notice a half-moon shape punched in one end of the chip. A small circle is also punched in one corner, closest to Pin number 1.</p>
-<p>The half-moon should be at the top of the circuit and the circle should be positioned toward the top left (the DS1307 has the same orientation as the Shrimp's ATMEGA chip).</p>
+<p>Each leg has a different number, name and function. Each of its legs should be cleanly inserted into a separate breadboard hole with a minimum of bending. The position of this chip (straddling the central spine of the breadboard) is important. This means each leg is in a separate row. We can then proceed to wire the correct components to the correct legs.</p>
+<p>Its orientation is also very important. You will notice a half-moon shape punched in one end of the chip. A small circle is sometimes punched in one corner (indicating which is Pin number 1). The half-moon should be at the top of the circuit and any circle should be positioned toward the top left (the DS1307 has the same orientation as the Shrimp's ATMEGA chip).</p>
 <p>It is called a chip or an Integrated Circuit (IC) because it contains a doped silicon wafer or 'chip' from which tiny shapes are cut, to construct electronic components which make the clock circuit. The circuit inside is connected to the two rows of four legs.</p>
 <p>Pins are numbered sequentially from Pin 1 (top-left, where a circle is punched in the plastic housing) anticlockwise around the chip until pin 8. The wiring for each pin is described in the following list. If you want, you can ignore this list and simply follow the step-by-step instructions which follow.</p>
 <ul>
@@ -658,7 +670,7 @@
 <li>Pin 7 - Sends an accurate heartbeat, e.g. an attached LED flashes once a second</li>
 <li>Pin 8 - Connected to the supply rail 5V (VCC)</li>
 </ul>
-<p><strong><em>Place the chip straddling the gap in the centre of the breadboard, with pin 1 (next to the stamped circle) in e20, and the opposite corner (known as pin 5) in f23</em></strong></p>
+<p><strong><em>Place the chip straddling the gap in the centre of the breadboard, with pin 1 (anticlockwise from the half moon) in e20, and the opposite corner (known as pin 5) in f23</em></strong></p>
 <h3 id="step-5-connect-power-to-the-ds1307-chip">Step 5: Connect power to the DS1307 chip</h3>
 <div class="figure">
 <img src="./sequence/05_ds1307_power.png" alt="DS1307 Power" />
