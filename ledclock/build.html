@@ -7,6 +7,7 @@
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
+      
   /*
       Buttondown
       A Markdown/MultiMarkdown/Pandoc HTML output CSS stylesheet
@@ -561,44 +562,57 @@
       {
       text-align: left;
       }
-      
-  img {
-    		height:auto;
-    		width:20%;
-        display:block;
-        float:right;
-        clear:both;
-    	}
   
-     h3{
-        clear:both;
-     }
-  
-  	p,ul,h1,h2,h3,h4,h5,h6{
-          margin-left:5%;
-          width:70%;
+  	div.figure {
+  		float:right;
+  		margin:2em;
   	}
   
-      p {
-          text-align: justify;
-      }
-      
+  	div.figure img {
+  		height:480px;
+  		width:auto;
+  		max-width:auto;
+  	}
   
-     p.caption{
-        float:right;
-        clear:right;
-         margin:0;
-         padding:0;
-        width:20%;
-         text-align:center;
-     }
+  	h3{
+  		clear:both;
+  	}
   
+  	p,ul,h1,h2,h3,h4,h5,h6{
+  		margin-left:5%;
+  		width:70%;
+  	}
+  
+  	p {
+  		text-align: justify;
+  	}      
+  
+  	p.caption{
+  		text-align:center;
+  	}
+  
+  
+  	h1,h2,h3,h4,h5,h6 {
+  		margin-top:2em;
+  		margin-bottom:1em;
+  	}
+  
+  	h1{ font-size:164%; }
+  	h2{ font-size:156%; }
+  	h3{ font-size:148%; }
+  	h4{ font-size:136%; }
+  	h5{ font-size:124%; }
+  	h6{ font-size:110%; }
     
   </style>
 </head>
 <body>
-<h1 id="building-the-led-clock">Building the LED Clock</h1>
-<p>This guide provides details for learners to wire, program and configure a <span class="citation">@ShrimpingIt</span> digital cloc<span style="color:red">Red</span>k project with ultrabright LEDs which can programmed as a Word Clock or a Unary Clock.</p>
+<h1 id="building-the-led-clockan">Building the LED ClockAn</h1>
+<div class="figure">
+<img src="ledclock_kit.png" alt="The LED Clock Addon Kit" />
+<p class="caption">The LED Clock Addon Kit</p>
+</div>
+<p>This guide provides details for learners to wire, program and configure a <span class="citation">@ShrimpingIt</span> digital clock project with ultrabright LEDs which can programmed as a Word Clock or a Unary Clock.</p>
 <p>For general orientation, see the <a href="../clock/index.html">Alarm Clock</a> project page.</p>
 <h2 id="requirements">Requirements</h2>
 <p>The build assumes you have the following kits...</p>
@@ -615,82 +629,109 @@
 <p>Before embarking on the LED Clock, you should have successfully completed the <a href="../clock/build.html">Alarm Clock build</a>. This guide uses the Alarm Clock circuit configuration as its starting point.</p>
 <p>As before we'll be using 'battleship' numbering to indicate where components should be inserted, with numbers and letters indicating the rows and columns of the breadboard.</p>
 <h3 id="step-1-adding-an-extra-breadboard">Step 1: Adding an extra breadboard</h3>
-<p><a href="sequence/01_second_breadboard.png"><img src="sequence/01_second_breadboard.png" style="height:250px"/></a></p>
+<p><a href="sequence/01_second_breadboard.png">Second Breadboard</a></p>
 <p>The 24 LEDs in the display will be laid out, with special chips to drive them, on an extra breadboard, which we will refer to as the LED Display breadboard.</p>
 <p>Later, this will be attached to the (previously constructed) Alarm Clock breadboard with just four wires, two for power (+5V and 0V) and two for receiving LED control data (Clock and Data).</p>
 <p>The breadboards can be oriented in various ways, as long as the four wires are attached. For example, the breadboards could be attached back-to-back to fit compactly inside a housing when the build is complete.</p>
 <p>However, to make the build simple, we will first attach the new breadboard to the right of the previous Alarm Clock breadboard, using the in-built docking mechanism.</p>
 <ul>
-<li>*** Attach a new breadboard to the right of the Alarm Clock breadboard. The new breadboard's lugs should slide into slots at the rear of the old breadboard***</li>
+<li>***Attach a new breadboard to the right of the Alarm Clock breadboard. The new breadboard's lugs should slide into slots at the rear of the old breadboard</li>
 </ul>
 <h3 id="step-2-connect-the-power-rails-of-the-new-breadboard">Step 2: Connect the power rails of the new breadboard</h3>
-<p><a href="sequence/02_powerrails.png"><img src="sequence/02_powerrails.png" style="height:250px"/></a></p>
+<div class="figure">
+<img src="sequence/02_powerrails.png" alt="Connect power rails" />
+<p class="caption">Connect power rails</p>
+</div>
 <p>Both power rails of the second breadboard will be heavily used, powering up the LED driver chips, and supplying each of the 24 LEDs.</p>
 <p>We therefore need to connect red and green wires across from the power rail of the Alarm Clock breadboard, and in turn wire the left and right power rails of the second breadboard together.</p>
 <ul>
-<li>*** Attach a <span style="color:red">Red</span> wire from the right-hand Red +ive column of the Alarm Clock breadboard to the left-hand <span style="color:red">Red</span> +ive column of the LED Display breadboard, roughly below the row numbered 15***</li>
-<li>*** Attach a <span style="color:green">Green</span> wire from the right-hand <span style="color:blue">Blue</span> -ive column of the Alarm Clock breadboard to the left-hand Blue -ive column of the LED Display breadboard, roughly below the row numbered 16***</li>
-<li>*** Attach a <span style="color:red;">Red</span> wire from the left-hand <span style="color:red;">Red</span> +ive column of the LED Display breadboard to the right-hand <span style="color:red;">Red</span> +ive column of the LED Display breadboard, starting just above row 15, and finishing just below row 15.***</li>
-<li>*** Attach a <span style="color:green;">Green</span> wire from the left-hand <span style="color:blue;">Blue</span> -ive column of the LED Display breadboard to the right-hand <span style="color:blue;">Blue</span> -ive column of the LED Display breadboard, starting just above row 16, and finishing just below row 16.***</li>
+<li><strong><em>Attach a <span style="color:red">Red</span> wire from the right-hand Red +ive column of the Alarm Clock breadboard to the left-hand <span style="color:red">Red</span> +ive column of the LED Display breadboard, roughly below the row numbered 15</em></strong></li>
+<li><strong><em>Attach a <span style="color:green">Green</span> wire from the right-hand <span style="color:blue">Blue</span> -ive column of the Alarm Clock breadboard to the left-hand Blue -ive column of the LED Display breadboard, roughly below the row numbered 16</em></strong></li>
+<li><strong><em>Attach a <span style="color:red;">Red</span> wire from the left-hand <span style="color:red;">Red</span> +ive column of the LED Display breadboard to the right-hand <span style="color:red;">Red</span> +ive column of the LED Display breadboard, starting just above row 15, and finishing just below row 15.</em></strong></li>
+<li><strong><em>Attach a <span style="color:green;">Green</span> wire from the left-hand <span style="color:blue;">Blue</span> -ive column of the LED Display breadboard to the right-hand <span style="color:blue;">Blue</span> -ive column of the LED Display breadboard, starting just above row 16, and finishing just below row 16.</em></strong></li>
 </ul>
 <h3 id="step-3-attach-the-first-ws2803d-led-driver-chip">Step 3: Attach the first WS2803D LED Driver chip</h3>
-<p><a href="sequence/03_first_ws2803d.png"><img src="sequence/03_first_ws2803d.png" style="height:250px"/></a></p>
+<div class="figure">
+<img src="sequence/03_first_ws2803d.png" alt="WS2803D" />
+<p class="caption">WS2803D</p>
+</div>
 <p>The WS2803D LED driver chip will be used to switch on and off the LEDs we're about to attach. Each chip is actually capable of controlling up to 18 LEDs, but we're only using 12 on each, for a total of 24 lights.</p>
 <p>The WS2803D chip will need a power connection, and wires to receive LED lighting commands from the Shrimp's microcontroller.</p>
 <p>Just like the ATMEGA328P-PU and the DS1307, the WS2803D chip has a half-moon stamped at one end. Pins are numbered anticlockwise, starting from the half-moon.</p>
 <p>The first driver chip should be placed in the same orientation as all the other chips, straddling the right-hand LED Display breadboard and positioned as far up as it can go, leaving just enough room for the power rail connections which should be running across the centre of the board.</p>
 <ul>
-<li>*** Insert the first WS2803D chip with the half-moon shape at the top of the breadboard. Pin 1 (the top-left pin, anticlockwise from the half-moon) should be in row 1, and pin 14 (the bottom-left pin) should be in row 14. ***</li>
+<li><strong><em>Insert the first WS2803D chip with the half-moon shape at the top of the breadboard. Pin 1 (the top-left pin, anticlockwise from the half-moon) should be in row 1, and pin 14 (the bottom-left pin) should be in row 14.</em></strong></li>
 </ul>
 <h3 id="step-4-attach-power-to-the-ws2803d">Step 4: Attach power to the WS2803D</h3>
-<p><a href="sequence/04_first_ws2803d_power.png"><img src="sequence/04_first_ws2803d_power.png" style="height:250px"/></a></p>
+<div class="figure">
+<img src="sequence/04_first_ws2803d_power.png" alt="WS2803D Power" />
+<p class="caption">WS2803D Power</p>
+</div>
 <p>Pin 1 needs a connection to ground and Pin 28 (all the way anticlockwise from the half-moon) needs a connection to the 5V supply.</p>
 <ul>
-<li>*** Attach a <span style="color:green;">Green</span> wire from <span style="color:gray">a1</span> to the (<span style="color:blue;">Blue</span>) left-hand -ive power rail ***</li>
-<li>*** Attach a <span style="color:red;">Red</span> wire from <span style="color:gray;">g1</span> to the (<span style="color:red;">Red</span>) right-hand +ive power rail ***</li>
+<li><strong><em>Attach a <span style="color:green;">Green</span> wire from <span style="color:gray">a1</span> to the (<span style="color:blue;">Blue</span>) left-hand -ive power rail</em></strong></li>
+<li><strong><em>Attach a <span style="color:red;">Red</span> wire from <span style="color:gray;">g1</span> to the (<span style="color:red;">Red</span>) right-hand +ive power rail</em></strong></li>
 </ul>
 <h3 id="step-5-attach-a-resistor-as-a-current-reference">Step 5: Attach a resistor as a current reference</h3>
-<p><a href="sequence/05_first_ws2803d_resistor.png"><img src="sequence/05_first_ws2803d_resistor.png" style="height:250px"/></a></p>
+<div class="figure">
+<img src="sequence/05_first_ws2803d_resistor.png" alt="Reference Resistor" />
+<p class="caption">Reference Resistor</p>
+</div>
 <p>You may recall from the <a href="../shrimp/build.html">Blink build</a> that attaching LEDs directly to 5V can make them burn out, so a current-limiting resistor was added between the LED and ground when attaching the Blink LED, to limit the flow of electricity.</p>
 <p>A WS2803D is known as a 'constant current' LED driver, and you can explicitly limit the current which flows through the LED pins. We simply have to attach a single current-limiting resistor to pin 2, to tell the WS2803D what the maximum current should be. This saves us attaching current-limiting resistors to every one of the 24 LEDs.</p>
 <p>The correct resistor value can be calculated according to the following formula; The resistance (in Ohms) is 27.5 divided by the desired current (in Amps). Our LEDs can handle a maximum of 20milliAmps which is the same as 0.020 Amps. The resistor should therefore be 27.5 / 0.020, which is 1375 Ohms or 1.375 kOhms.</p>
 <p>Unfortunately resistors are only available in a limited number of values, so we'll err on the side of caution and use a 1.5 kOhm resistor, limiting the current to 18.3 milliAmps instead.</p>
 <ul>
-<li>*** Attach a 1.5kOhm resistor between <span style="color:gray;">a2</span> and the (<span style="color:blue;">Blue</span>) left-hand -ive power rail ***</li>
+<li><strong><em>Attach a 1.5kOhm resistor between <span style="color:gray;">a2</span> and the (<span style="color:blue;">Blue</span>) left-hand -ive power rail</em></strong></li>
 </ul>
 <h3 id="step-6-add-a-decoupling-capacitor">Step 6: Add a decoupling capacitor</h3>
-<p><a href="sequence/06_first_ws2803d_capacitor.png"><img src="sequence/06_first_ws2803d_capacitor.png" style="height:250px"/></a></p>
+<div class="figure">
+<img src="sequence/06_first_ws2803d_capacitor.png" alt="Decoupling capacitor" />
+<p class="caption">Decoupling capacitor</p>
+</div>
 <p>We'll add a small capacitor between the power lines of the WS2803D to smooth the supply in case the circuit experiences sudden power demands which cause the voltage to drop (e.g. turning on all the ultrabright LEDs at once!).</p>
 <p>We'll be using a capacitor marked 104, which indicates its capacitance in picoFarads. Because the last figure indicates the number of zeroes to add on the end, this means it's a 10(0000) picoFarad capacitor. Because there are 1000 picoFarads in a nanoFarad, it's also called a 100 nanoFarad capacitor.</p>
 <ul>
-<li>*** Attach a capacitor marked 104 between <span style="color:gray;">d1</span> and <span style="color:gray;">g1</span> ***</li>
+<li><strong><em>Attach a capacitor marked 104 between <span style="color:gray;">d1</span> and <span style="color:gray;">g1</span></em></strong></li>
 </ul>
 <h3 id="step-7-add-the-wires-for-receiving-led-control-instructions">Step 7: Add the wires for receiving LED control instructions</h3>
-<p><a href="sequence/07_first_ws2803d_clock+data.png"><img src="sequence/07_first_ws2803d_clock+data.png" style="height:250px"/></a></p>
+<div class="figure">
+<img src="sequence/07_first_ws2803d_clock+data.png" alt="I2C Wires" />
+<p class="caption">I2C Wires</p>
+</div>
 <p>The WS2803D can accept instructions to turn on and off specific LEDs over two wires. If the data wire is at 5V then a <strong>one</strong> is being sent. If the data wire is at 0V then a <strong>zero</strong> is being sent. The clock wire is pulsed to 5V when a new value on the data wire is ready to be read. Using this <strong>clocked serial</strong> data stream, a series of <strong>ones</strong> and <strong>zeroes</strong> is read into the WS2803, which determins whether individual LEDs are <strong>on</strong> or <strong>off</strong>.</p>
 <p>Once you have attached the clock and data lines the first WS2803D chip is fully wired up.</p>
 <ul>
-<li>*** Attach a <span style="color:blue;">Blue</span> wire between <span style="color:gray;">j5</span> on the left breadboard and <span style="color:gray;">a4</span> on the right breadboard, connecting the serial Clock line ***</li>
-<li>*** Attach an <span style="color:orange;">Orange</span> wire between <span style="color:gray;">j6</span> on the left breadboard and <span style="color:gray;">a5</span> on the right breadboard, connecting the serial Data line ***</li>
+<li><strong><em>Attach a <span style="color:blue;">Blue</span> wire between <span style="color:gray;">j5</span> on the left breadboard and <span style="color:gray;">a4</span> on the right breadboard, connecting the serial Clock line</em></strong></li>
+<li><strong><em>Attach an <span style="color:orange;">Orange</span> wire between <span style="color:gray;">j6</span> on the left breadboard and <span style="color:gray;">a5</span> on the right breadboard, connecting the serial Data line</em></strong></li>
 </ul>
 <h3 id="step-8-now-wire-the-second-ws2803d-chip">Step 8: Now wire the second WS2803D chip</h3>
-<p><a href="sequence/08_second_ws2803d.png"><img src="sequence/08_second_ws2803d.png" style="height:250px"/></a></p>
+<div class="figure">
+<img src="sequence/08_second_ws2803d.png" alt="The Second WS2803D" />
+<p class="caption">The Second WS2803D</p>
+</div>
 <p>The second chip needs exactly the same connections, but it's upside down relative to the rest of the chips on the breadboard. So the half-moon shape is at the very bottom of the board, so Pin 1 (which is anticlockwise from the half-moon shape) should be inserted at the bottom row 30.</p>
 <p>The second chip accepts data not from the ATMEGA chip directly, but from the other WS2803D. When the ATMEGA sends more than 18 <strong>ones</strong> and <strong>zeroes</strong>, the extra information is passed on from the first WS2803D to the next one. Special pins on each WS2803D are available to pass on this overflowing data. WS2803D chips can therefore be chained, and they provide special serial and clock pins for the next chip in the chain.</p>
 <ul>
-<li>*** Attach a <span style="color:green;">Green</span> wire from <span style="color:gray;">j30</span> to the (<span style="color:blue;">Blue</span>) right-hand -ive power rail, (connects WS2803D Pin 1 to 0V ground).***</li>
-<li>*** Attach a <span style="color:red;">Red</span> wire between <span style="color:gray;">a30</span> and the (<span style="color:red;">Red</span>) left-hand -ive power rail, (connecting the WS2803D Pin 28 to +5V power ).***</li>
-<li>*** Attach a capacitor marked 104 between <span style="color:gray;">d30</span> and <span style="color:gray;">g30</span> ***</li>
-<li>*** Attach a 1.5kOhm resistor between <span style="color:gray;">j29</span> and the (<span style="color:blue;">Blue</span>) right-hand -ive power rail, (providing Pin 2 with a constant current reference) ***</li>
-<li>*** Attach a <span style="color:blue;">Blue</span> wire between <span style="color:gray;">g2</span> and <span style="color:gray;">g27</span>, (the serial Clock line) ***</li>
-<li>*** Attach an <span style="color:orange;">Orange</span> wire between <span style="color:gray;">g3</span> and <span style="color:gray;">g26</span>, (the serial Data line) ***</li>
+<li><strong><em>Attach a <span style="color:green;">Green</span> wire from <span style="color:gray;">j30</span> to the (<span style="color:blue;">Blue</span>) right-hand -ive power rail, (connects WS2803D Pin 1 to 0V ground).</em></strong></li>
+<li><strong><em>Attach a <span style="color:red;">Red</span> wire between <span style="color:gray;">a30</span> and the (<span style="color:red;">Red</span>) left-hand -ive power rail, (connecting the WS2803D Pin 28 to +5V power ).</em></strong></li>
+<li><strong><em>Attach a capacitor marked 104 between <span style="color:gray;">d30</span> and <span style="color:gray;">g30</span></em></strong></li>
+<li><strong><em>Attach a 1.5kOhm resistor between <span style="color:gray;">j29</span> and the (<span style="color:blue;">Blue</span>) right-hand -ive power rail, (providing Pin 2 with a constant current reference)</em></strong></li>
+<li><strong><em>Attach a <span style="color:blue;">Blue</span> wire between <span style="color:gray;">g2</span> and <span style="color:gray;">g27</span>, (the serial Clock line)</em></strong></li>
+<li><strong><em>Attach an <span style="color:orange;">Orange</span> wire between <span style="color:gray;">g3</span> and <span style="color:gray;">g26</span>, (the serial Data line) </em></strong></li>
 </ul>
 <h3 id="step-9-add-all-the-leds">Step 9: Add all the LEDs</h3>
-<p><a href="sequence/09_leds.png"><img src="sequence/09_leds.png" style="height:250px"/></a></p>
-<p>There are a total of 24 LEDs to insert. Each one has one slightly longer leg - the positive leg, into which electrical charge flows to light it up. LED stands for &quot;Light Emitting Diode&quot;, and a diode is equivalent to a valve - it only allows charge to flow one way. If you attach your LEDs the wrong way round, they will not light up.</p>
+<div class="figure">
+<img src="sequence/09_leds.png" alt="LEDs" />
+<p class="caption">LEDs</p>
+</div>
+<p>There are a total of 24 LEDs to insert. Each one has one slightly longer leg - the positive leg, into which electrical charge flows to light it up. LED stands for &quot;Light Emitting Diode&quot;. A diode is equivalent to a valve - it only allows charge to flow one way. If you attach your LEDs the wrong way round, they will not light up.</p>
 <p>The long legs need to be attached to the +ive power rails down the sides of the LED display breadboard, and the short legs should be inserted either side of the WS2803D chips in breadboard rows 6,7,9,11,13,14 and 17,18,20,22,24,25. The WS2803D will allow current to flow into the pins in these rows, or block current flow, depending on the instructions it receives from the Shrimp's microcontroller.</p>
 <p>Follow the pattern of LED wire locations in the diagram. These locations have been selected to allow enough space for the 5mm LEDs to lie next to each other.</p>
 <h3 id="finished">Finished!</h3>
-<p><a href="sequence/10_final.png"><img src="sequence/10_final.png" style="height:250px"/></a></p>
+<div class="figure">
+<img src="sequence/10_final.png" alt="A complete LED clock" />
+<p class="caption">A complete LED clock</p>
+</div>
 </body>
 </html>
