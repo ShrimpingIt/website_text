@@ -1,4 +1,5 @@
 <style type="text/css">
+    
 /*
     Buttondown
     A Markdown/MultiMarkdown/Pandoc HTML output CSS stylesheet
@@ -553,37 +554,46 @@ div.footnotes > hr:after
     {
     text-align: left;
     }
-    
-img {
-  		height:auto;
-  		width:20%;
-      display:block;
-      float:right;
-      clear:both;
-  	}
 
-   h3{
-      clear:both;
-   }
-
-	p,ul,h1,h2,h3,h4,h5,h6{
-        margin-left:5%;
-        width:70%;
+	div.figure {
+		float:right;
+		margin:2em;
 	}
 
-    p {
-        text-align: justify;
-    }
-    
+	div.figure img {
+		height:480px;
+		width:auto;
+		max-width:auto;
+	}
 
-   p.caption{
-      float:right;
-      clear:right;
-       margin:0;
-       padding:0;
-      width:20%;
-       text-align:center;
-   }
+	h3{
+		clear:both;
+	}
 
+	p,ul,h1,h2,h3,h4,h5,h6{
+		margin-left:5%;
+		width:70%;
+	}
+
+	p {
+		text-align: justify;
+	}      
+
+	p.caption{
+		text-align:center;
+	}
+
+
+	h1,h2,h3,h4,h5,h6 {
+		margin-top:2em;
+		margin-bottom:1em;
+	}
+
+	h1{ font-size:164%; }
+	h2{ font-size:156%; }
+	h3{ font-size:148%; }
+	h4{ font-size:136%; }
+	h5{ font-size:124%; }
+	h6{ font-size:110%; }
   
 </style>
