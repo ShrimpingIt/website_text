@@ -1,4 +1,4 @@
-# ShrimpKey: Conductive Keyboard
+# Conductive Keyboard, (ShrimpKey)
 
 This project demonstrates how to build a substitute for the <a href="http://makeymakey.com/" target="_blank">MakeyMakey</a> USB conductive keyboard. 
 
