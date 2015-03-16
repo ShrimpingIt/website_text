@@ -4,9 +4,9 @@
 
 This guide provides details for learners to wire, program and configure their first @ShrimpingIt digital clock project.
 
-For general orientation, see the [Alarm Clock](../clock/index.html) project page.
+For general orientation, see the [Alarm Clock](../clock/index.html) project page. The image to the right shows the completed build.
 
-## Requirements
+### Requirements
 
 The build assumes you have the following kits...
 
@@ -20,17 +20,17 @@ In addition you will need a Linux, Mac or Windows computer running the latest [A
 
 Mac and Windows computers need a [CP2102 driver](../cp2102/driver.html) to be installed for the USB Programmer to be recognised.
 
-## Getting started
+### Getting started
 
 Before embarking on the Alarm Clock, you should have **successfully completed the [Blink build](../blink/index.html)**. This build uses the Blink circuit as its starting point.
 
-### Step 1: Remove unnecessary parts
+## Step 1: Remove unnecessary parts
 
 ![Blink Layout][step01]
 
 You can remove the Blink LED and resistor as these are not used in the circuit, and it will be easier to wire the circuit with them out of the way.
 
-### Step 2: Add a Decoupling Capacitor
+## Step 2: Add a Decoupling Capacitor
 
 ![Decoupling Capacitor][step02]
 
@@ -42,7 +42,7 @@ The [S.I. unit](../topic/unit.html) of capacitance is the Farad, indicating how 
 
 ***Insert a capacitor labelled 104 between the 5V and GND Power rows D9 and D10***
 
-### Step 3: Connect the Right Hand Power Rails
+## Step 3: Connect the Right Hand Power Rails
 
 ![Right Hand Power Rails][step03]
 
@@ -57,7 +57,7 @@ Although the vertical *columns* of holes each side of the breadboard are present
 ***Connect a Green wire between J9 and any hole in the right-hand Blue column (connecting the Ground Rail)***
 ***Connect a Red wire between J11 and any hole in the right-hand Red column (connecting the +5V rail)***
 
-### Step 4: Insert the DS1307 Real Time Clock Chip
+## Step 4: Insert the DS1307 Real Time Clock Chip
 
 ![DS1307][step04]
 
@@ -81,7 +81,7 @@ Pins are numbered sequentially from Pin 1 (top-left, where a circle is punched i
 
 ***Place the chip straddling the gap in the centre of the breadboard, with pin 1 (anticlockwise from the half moon) in e20, and the opposite corner (known as pin 5) in f23***
 
-### Step 5: Connect power to the DS1307 chip
+## Step 5: Connect power to the DS1307 chip
 
 ![DS1307 Power][step05]
 
@@ -90,7 +90,7 @@ The DS1307 chip needs power for it to run. Now the right hand power rails are co
 ***Connect a Red wire from j20 to any hole in the right-hand Red column (connecting to +5V)***
 ***Connect a Green wire from d23 to any hole in the right-hand Blue column (connecting to 0V)***
 
-### Step 6: Connect ATMEGA328P-PU and DS1307 chips
+## Step 6: Connect ATMEGA328P-PU and DS1307 chips
 
 ![DS1307 I2C Connection][step06]
 
@@ -99,7 +99,7 @@ The Shrimp's microcontroller and the RTC chip communicate using a protocol known
 ***Connect the Purple SCL wire from h3 to h23, connecting the ATMEGA's SCL pin to the DS1307 SCL pin***
 ***Connect the Yellow SDA wire from i4 to i22, connecting the ATMEGA's SDA pin to the DS1307 SDA pin***
 
-### Step 7: Attach I2C Pull-up resistors
+## Step 7: Attach I2C Pull-up resistors
 
 ![DS1307 Resistors][step07]
 
@@ -113,7 +113,7 @@ Resistors are labelled with colored stripes instead of numbers, but using the sa
 ** Attach a 10kiloOhm pull-up resistor between j3 and any hole in the right-hand Red column, connecting SCL to +5V***
 ** Attach a 10kiloOhm pull-up resistor between j4 and any hole in the right-hand Red column, connecting SDA to +5V***
 
-### Step 8: Provide a crystal oscillator for the DS1307
+## Step 8: Provide a crystal oscillator for the DS1307
 
 ![DS1307 Crystal][step08]
 
@@ -123,7 +123,7 @@ The DS1307 Real Time Clock chip needs a special piece of electrically oscillatin
 
 Hz is a measure of how many times a second something happens so we would expect this crystal to oscillate 32.768 times every second.
 
-### Step 9: Add the Backup Battery Holder
+## Step 9: Add the Backup Battery Holder
 
 ![Battery Holder and Ground wire][step09]
 
@@ -138,7 +138,7 @@ Finally the negative pin of the battery holder needs to be connected to the comm
 ***Add the backup battery holder, with the +3V positive pin (the square end) inserted at a22, and the 0V ground pin (the round end) inserted at a30, connecting the +3V pin to pin 3 of the DS1307***
 ***Add a green wire from e30 to c23, completing the battery backup circuit***
 
-### Step 10: Add the Piezo
+## Step 10: Add the Piezo
 
 ![Piezo][step10]
 
@@ -150,7 +150,7 @@ The piezos we are using have no orientation and can be inserted either way aroun
 
 ***Insert the Piezo so that one of its pins goes into row 26, and the other goes into row 27, keeping it as far to the left as possible***
 
-### Step 11: Connect Piezo to Ground
+## Step 11: Connect Piezo to Ground
 
 ![Piezo Ground][step11]
 
@@ -158,7 +158,7 @@ We want the Piezo to experience a voltage across the material, so it will need t
 
 ***Attach a Green wire between the right-hand -ive (Blue) power rail, and hole j27***
 
-### Step 12: Connect the Piezo to its control pin
+## Step 12: Connect the Piezo to its control pin
 
 ![Piezo Resistor][step12]
 
@@ -166,7 +166,7 @@ We will be varying the bottom right hand pin of the ATMEGA chip between 0V and 5
 
 ***Attach a resistor between j16 and j26, connecting the Piezo to the pin we'll use to generate audible waves; the bottom-right pin of the ATMEGA***
 
-### Step 13: Insert Coin Battery
+## Step 13: Insert Coin Battery
 
 ![Final Layout][step13]
 
@@ -176,7 +176,7 @@ Note, if you attach nothing to the DS1307 Battery pin, then the clock will not w
 
 A workaround to ground DS1307 Pin 3, which avoids battery shorting, is to remove any battery, and balance a small metal disc or coin in the place of the battery, being sure that it touches both terminals. This effectively connects Pin 3 to Ground. A piece of card cut to size and wrapped in aluminium foil is a good option.
 
-### Ready to tick!
+## Ready to tick!
 
 Now the fundamental hardware is all in place, and we can start to program our clock to behave in different ways.
 
