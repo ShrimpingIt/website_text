@@ -5,42 +5,44 @@ import sys,os,copy,threading,traceback,argparse,glob,pdb
 from string import Formatter
 from watchdog.observers import Observer
 
+# 
 class ResolvingDict(dict):
     def __init__(self, *args):
         dict.__init__(self, args)
         self.resolvedstrings = dict()
 
     # recursively expands string values using str.format, drawing from
-    # its own dict entries eliminating circular references by checking
-    # against a thread-local list of references which are resolving 
+    # its own dict entries and eliminating circular references by
+    # checking against a thread-local list of references which are on
+    # the 'resolving stack' - note this does not work when Formatter
+    # class vformat call is substituted with (ostensibly equivalent)
+    # str.format call
     def __getitem__(self, key):
         val = dict.__getitem__(self, key)
-        #log.info("GET %s['%s'] = %s" % str(dict.get(self, 'name_label')), str(key), str(val))
+        #print("GET %s['%s'] = %s" % str(dict.get(self, 'name_label')), str(key), str(val))
         if type(val) is str:
             if key not in self.resolvedstrings:
-                if key == 'xquery' or val.find('xquery') :
-                    pass # pdb.set_trace()
-                # thread-local 'resolving' list eliminates circular refs
-                threadlocal = threading.local()
                 try:
-                    try: # check if resolution chain already started
+                    # used to track circular refs
+                    threadlocal = threading.local()
+                    
+                    try: # check if resolution list already allocated
                         threadlocal.resolving 
-                        isroot = False 
-                    except: # this is the start of resolution chain
+                        allocatedhere = False 
+                    except: # resolution list not already allocated
                         threadlocal.resolving = list()
-                        isroot = True
+                        allocatedhere = True
+                        
+                    # quit on circular refs
                     if key in threadlocal.resolving:
-                        raise Error('Referencing cycle found ' + threadlocal.resolving )
-                    else:
+                        raise Error('Cycle found in references! ' + threadlocal.resolving )
+                    else:                    
+                        # recursively expand string value with string.Formatter
                         threadlocal.resolving.append(key)
-                        formatter = Formatter()
-                        self.resolvedstrings[key]=formatter.vformat(val,[],self)
+                        self.resolvedstrings[key]=Formatter().vformat(val,[],self)
                         threadlocal.resolving.pop()
-                except:
-                    print traceback.format_exc()
-                    raise
                 finally:
-                    if isroot : # end of this resolution chain
+                    if allocatedhere : # de-allocate resolution list
                         del threadlocal.resolving
             return self.resolvedstrings[key]
         else:
