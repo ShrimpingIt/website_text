@@ -34,4 +34,4 @@ Once your Shrimp is blinking, you can then proceed through the following builds.
 4) ShrimpKey: Full Conductive Keyboard
 - add the remaining 15 [pull up resistors](../topics/pullup.html) to create a total of 16 conductive sensors, making it possible to create compelling interactive demonstrations like the MakeyMakey demos below.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rfQqh7iCcOU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rfQqh7iCcOU" frameborder="0" allowfullscreen="true"></iframe>
