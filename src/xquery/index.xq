@@ -2,6 +2,7 @@ declare default element namespace "http://www.w3.org/1999/xhtml";
 declare namespace html="http://www.w3.org/1999/xhtml";
 
 declare variable $serverroot external;
+declare variable $inputpaths external;
 
 declare function local:rewrite-head($head){
     (: Note original head is ignored :)
@@ -28,9 +29,19 @@ declare function local:sectionafter($item){
 
 declare function local:rewrite-body($body){
     element body {
+        <div class="menu">
+            <h1>Projects</h1>
+            <ul>
+                <li><a href="{$serverroot}project/blink/build.html">Blink</a></li>
+                <li><a href="{$serverroot}project/pov/build.html">Persistence of Vision</a></li>
+                <li><a href="{$serverroot}project/alarmclock/build.html">Alarm Clock</a></li>
+                <li><a href="{$serverroot}project/ledclock/build.html">LED Clock</a></li>
+                <li><a href="{$serverroot}project/keyboard/build.html">Conductive Keyboard</a></li>
+            </ul>
+        </div>,
         for $headtag in $body/*
         let $sectiontags := local:sectionafter($headtag),
-            $sectionimage := $sectiontags//img[1],
+            $sectionimage := ($sectiontags//img)[1],
             $filteredimage :=
             if ($sectionimage) then
                 <a href="{$sectionimage/@src}" target="_animation"><img src="{$sectionimage/@src}" /></a>
