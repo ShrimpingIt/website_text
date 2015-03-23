@@ -12,18 +12,20 @@ class MarkdownExporter(Runner):
         super(MarkdownExporter,self).initparser(parser)
         parser.set_defaults(
             workingdirectory='../markdown',
-            outputfiletemplate='../../build/raw/{inputdirname}{sep}{inputbasename}.html',
+            outputdirectory='../../build/raw',
+            outputfiletemplate='{outputdirectory}{sep}{inputdirname}{sep}{inputbasename}.html',
             shellcmd='echo {inputpath};'+
                     'mkdir -p $(dirname {outputfiletemplate});'+
                     'pandoc --from=markdown_github --to=html --standalone {inputpath}'+
-                    '> {outputfiletemplate}'
+                    '> {outputfiletemplate}',
+            watch=True
         )
 
-    def processinput(self, inputdict):
+    def runcommand(self, inputdict):
         #print( inputdict['shellcmd'] )
         subprocess.call(inputdict['shellcmd'],shell=True)
 
 
 if __name__ == "__main__":
     exporter = MarkdownExporter()
-    exporter.run()
+    exporter.execute()
