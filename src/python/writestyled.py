@@ -28,7 +28,7 @@ class XqueryStyler(Runner):
             help='A str.format defining the path to an XQuery filter'
         )
         parser.add_argument('--serverroot',
-            default='/home/cefn/Documents/shrimping/git/kits/build/styled/',
+            default='/home/cefn/Documents/shrimping/git/website_text/build/styled/',
             help='Used to populate root-relative urls (e.g. for css references)'
         )
 
