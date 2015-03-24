@@ -34,11 +34,11 @@ class Runner(object):
             help='The filename pattern (glob) searched recursively from'+
                     '{workingdirectory} for files to process'
         )
-        parser.add_argument('--outputdirname', default='.{sep}',
+        parser.add_argument('--outputdirectory', default='.{sep}',
             help='The pattern to use to generate the output directory'+
                 'relative to the {workingdirectory}'
         )
-        parser.add_argument('--outputfiletemplate', default='{outputdirname}{sep}{inputbasename}.out',
+        parser.add_argument('--outputfiletemplate', default='{outputdirectory}{sep}{inputdirname}{sep}{inputbasename}.html',
             help='The pattern to use to generate the output file'+
             '{vars} value for the {shellcmd} substitution, relative to the {workingdirectory}'
         )
@@ -177,12 +177,12 @@ class Watcher(object):
 
     def runafterburst(self):
         while True: # wait until last event older than burstwindow
-            duetime = self.lasteventtime + self.burstwindow
-            waittime = duetime - time() 
-            if waittime < 0:
+            timedue = self.lasteventtime + self.burstwindow
+            towait = timedue - time() 
+            if towait < 0:
                 break
             else:
-                sleep(waittime)
+                sleep(towait)
                 
         if threading.current_thread() == self.burstthread:
             self.burstthread = None

@@ -11,11 +11,9 @@ class XqueryStyler(Runner):
     def initparser(self, parser):
         super(XqueryStyler,self).initparser(parser)
         parser.set_defaults(
-            serverroot='/home/cefn/Documents/shrimping/git/kits/build/styled/',
             inputfileglob='*.html',
             workingdirectory='../../build/raw/',
             outputdirectory='../styled',
-            outputfiletemplate='{outputdirectory}/{inputdirname}/{inputbasename}.html',
             shellcmd='echo {inputpath};'+
                     'mkdir -p $(dirname {outputfiletemplate});'+
                     'cat {inputpath}'+
@@ -23,12 +21,15 @@ class XqueryStyler(Runner):
                     '|xqilla -i /dev/stdin {xquery} -v serverroot {serverroot} -v inputpaths "{inputpaths}" {varstring} '+
                     '> {outputfiletemplate}',
             burstwindow=0.25,
-            watch=True,
             watchextra=["../../src/xquery"]
         )
         parser.add_argument('--xquery',
             default='..{sep}..{sep}src{sep}xquery{sep}index.xq',
             help='A str.format defining the path to an XQuery filter'
+        )
+        parser.add_argument('--serverroot',
+            default='/home/cefn/Documents/shrimping/git/kits/build/styled/',
+            help='Used to populate root-relative urls (e.g. for css references)'
         )
 
     def runcommand(self, inputdict):        
