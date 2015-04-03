@@ -17,12 +17,10 @@
 @import "refills/sliding-panel";
 @import "refills/pagination";
 @import "refills/accordion-tabs";
+@import "refills/vertical-tabs";
 @import "refills/tooltip";
 
 @import "shrimpingit/linebehind";
+@import "shrimpingit/linkbuttons";
 @import "shrimpingit/widesubmenu";
-
-body{
-  width:80%;
-  margin:auto;
-}
+@import "shrimpingit/pagelayout";
