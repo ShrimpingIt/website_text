@@ -2,20 +2,40 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title></title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" data-main="index" src="require/require.js" ><!-- Prevent self-closing --></script>
+    <link href="http://fonts.googleapis.com/css?family=Oswald:400,300,700|Lusitana:400,700|Open+Sans:400,800" rel='stylesheet' type='text/css' />
+    <link href='//fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Merriweather+Sans:400,300,300italic,400italic,700italic,700,800,800italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="normalize.css" />
     <link rel="stylesheet" type="text/css" href="index.css" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300,700|Lusitana:400,700|Open+Sans:400,800"/>
 </head>
 <body>
+<section>
+    <div class="hero">
+        <div class="hero-inner">
+            <a href="" class="hero-logo"><img src="brand/logo.png" alt="Logo Image"></a>
+            <div class="hero-copy">
+                <h1>@ShrimpingIt : Programmable Electronics</h1>
+            </div>
+            <p>
+                We document free project designs using prototyping materials
+                supporting STEM teachers and hobbyists in the UK and worldwide.
+            </p>
+            <a class="button scroll-on-page-link" href="#what">Find Out More</a>
+        </div>
+    </div>
+</section>
 <header class="navigation" role="banner">
     <div class="navigation-wrapper">
         <a href="/" class="logo">
-            <img src="logomenu.png" alt="Logo Image">
+            <img src="brand/logomenu.png" alt="Logo Image">
         </a>
         <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
         <nav role="navigation">
             <ul id="js-navigation-menu" class="navigation-menu show">
-                <li class="nav-link more"><a href="javascript:void(0)">Builds</a>
+                <li class="nav-link more"><a href="javascript:void(0)">Projects</a>
                     <ul class="submenu wide">
                         <li><a href="project/blink/">...blink an LED</a></li>
                         <li><a href="project/pov/">...paint with light</a></li>
@@ -27,6 +47,7 @@
                 </li>
                 <li class="nav-link more"><a href="kits/">Kits</a>
                     <ul class="submenu">
+                        <li><a class="scroll-on-page-link" href="#kit">How to Choose</a></li>
                         <li class="more"><a href="javascript:void(0)">Product List</a>
                             <ul class="submenu wide">
                                 <li><a href="project/blink/">Shrimp Bundle</a></li>
@@ -37,7 +58,6 @@
                                 <li><a href="project/ledclock/">Word Clock</a></li>
                             </ul>
                         </li>
-                        <li><a href="kits/">How to Choose</a></li>
                     </ul>
                 </li>
                 <li class="nav-link more"><a href="javascript:void(0)">Teaching</a>
@@ -45,7 +65,7 @@
                         <li class="nav-link"><a href="workshops.html">Workshops</a></li>
                         <li class="nav-link"><a href="about.html">Resources</a></li>
                         <li class="nav-link"><a href="#testimonials" class="scroll-on-page-link" >Testimonials</a></li>
-                        <li class="nav-link"><a href="#offers" class="scroll-on-page-link" >Special Offers</a></li>
+                        <li class="nav-link"><a href="offer.html" >Special Offers</a></li>
                     </ul>
                 </li>
                 <li class="nav-link more"><a href="javascript:void(0)">More</a>
@@ -62,7 +82,7 @@
         <div class="navigation-tools">
             <div class="search-bar">
                 <form role="search" action="http://duckduckgo.com/">
-                    <input type="hidden" value="start.shrimping.it" name="sites"></input>
+                    <input type="hidden" value="start.shrimping.it" id="sites"></input>
                     <input type="hidden" value="1" name="kh"></input>
                     <input type="hidden" value="1" name="kn"></input>
                     <input type="hidden" value="1" name="kac"></input>
@@ -75,253 +95,219 @@
         </div>
     </div>
 </header>
-<section>
-    <h1>Really should have a video</h1>
-    <div class="video">
-        <div class="video-wrapper">
-            <iframe src="http://www.youtube.com/embed/8ItNE_DX6Cc?showinfo=0&iv_load_policy=3&controls=0" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-</section>
-<section>
-    <h1>Good for intro header? (see also Verti)</h1>
-    <div class="hero">
-        <div class="hero-inner">
-            <a href="" class="hero-logo"><img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png
-" alt="Logo Image"></a>
-            <div class="hero-copy">
-                <h1>Short description of Product</h1>
-                <p>A few reasons why this product is worth using, who it's for and why they need it.</p>
-            </div>
-            <button>Learn More</button>
-        </div>
-    </div>
-</section>
-<section>
-    <h1>Also good for intro page?</h1>
-    <div id="js-parallax-window" class="parallax-window">
-        <div class="parallax-static-content">
-            <b>Parallax Window</b>
-        </div>
-        <div id="js-parallax-background" class="parallax-background"></div>
-    </div>
-</section>
-<section>
+<section id="what">
+    <h2 class="line-behind" id="about"><span>What We Do</span></h2>
     <div class="cards">
         <div class="card">
             <div class="card-image">
-                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
+                <a class="scroll-on-page-link" href="#project">
+                    <img src="brand/project/simon.png" alt="Memory Game project"/>
+                </a>
             </div>
             <div class="card-header">
-                First Card
+                Free classroom projects
             </div>
             <div class="card-copy">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+                <p>
+                    We design high-impact programmable electronics projects, freely documenting how to source, build and teach with them.
+                    Our builds are <a target="_blank" href="http://arduino.cc">Arduino-compatible</a> using cheap components on solderless breadboard.
+                    <a class="read-more scroll-on-page-link" href="#project">More about Projects</a>
+                </p>
             </div>
         </div>
-
         <div class="card">
             <div class="card-image">
-                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png" alt="">
+                <a class="scroll-on-page-link" href="#kit">
+                    <img src="brand/kits.jpg" alt="Kits"/>
+                </a>
             </div>
             <div class="card-header">
-                Another Card
+                Kits for sale
             </div>
             <div class="card-copy">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+                <p>
+                    We offer pre-bagged kits, to simplify the task of sourcing and preparing our projects for the classroom
+                    and to support the development of more @ShrimpingIt projects. We <a href="/offer.html">offer schools</a> their first example of any kit at
+                    cost prices.
+                    <a class="read-more scroll-on-page-link" href="#kit">More about Kits</a>
+                </p>
             </div>
         </div>
-
         <div class="card">
             <div class="card-image">
-                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
+                <a class="scroll-on-page-link" href="#workshop">
+                    <img src="brand/workshop.jpg" alt="Workshop at Heysham High school"/>
+                </a>
             </div>
             <div class="card-header">
-                The Last Card
+                Workshops on request
             </div>
             <div class="card-copy">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                <p>
+                    We run workshops for learners and teachers, introducing solderless breadboard and programming
+                    tools, with project kits to take away. We also design bespoke workshop series for a host's
+                    subject-specific needs.
+                    <a class="read-more scroll-on-page-link" href="#workshop">More about Workshops</a>
+                </p>
             </div>
         </div>
     </div>
 </section>
-<section>
-    <h2 class="line-behind" id="about"><span>What We Do</span></h2>
-    <div class="flex-boxes">
-        <a href="javascript:void(0)" class="flex-box flex-box-big">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2_dark.png" alt="">
-            <h1 class="flex-title">A Wide Flex Box Item</h1>
-            <p>
-                Invent, test and document programmable electronic
-                projects for educators and learners to build in the
-                classroom
-            </p>
-        </a>
-        <a href="javascript:void(0)" class="flex-box">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1_dark.png" alt="">
-            <h1 class="flex-title">Flex Box Item</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestiae fugiat tenetur fugit atque dignissimos, fugiat natus vitae.</p>
-        </a>
-        <a href="javascript:void(0)" class="flex-box">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="">
-            <h1 class="flex-title">A Flex Box Item</h1>
-            <p>Lorem adipisicing elit. Voluptas consectetur tempora quis nam, officia tenetur blanditiis in illo dolor?</p>
-        </a>
-        <a href="javascript:void(0)" class="flex-box flex-box-big">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2_dark.png" alt="">
-            <h1 class="flex-title">Another Wide Item</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quis ipsum, officia, aperiam tenetur dolor molestiae voluptate perferendis dolorem vel ex, unde fugit blanditiis sapiente.</p>
-        </a>
-        <a href="javascript:void(0)" class="flex-box">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2_dark.png" alt="">
-            <h1 class="flex-title">Flex Box Item</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo obcaecati in provident illo.</p>
-        </a>
-        <a href="javascript:void(0)" class="flex-box">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="">
-            <h1 class="flex-title">Last Flex Box Item</h1>
-            <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
-        </a>
-    </div>
-</section>
-<section>
-    <h2 class="line-behind" id="testimonials"><span>What Our Customers Say</span></h2>
-    <div class="comment">
-        <div class="comment-image">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
-        </div>
-        <div class="comment-content">
-            <h1>First Comment Title or Author</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
-            <p class="comment-detail">Date or details about this post</p>
-        </div>
-    </div>
-    <div class="comment">
-        <div class="comment-image">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
-        </div>
-        <div class="comment-content">
-            <h1>First Comment Title or Author</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
-            <p class="comment-detail">Date or details about this post</p>
-        </div>
-    </div>
-    <div class="comment">
-        <div class="comment-image">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
-        </div>
-        <div class="comment-content">
-            <h1>First Comment Title or Author</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
-            <p class="comment-detail">Date or details about this post</p>
-        </div>
-    </div>
-
-</section>
-<section>
-    <h1>Useful for pricing kits?</h1>
-    <div class="ribbon-box">
-        <div class="ribbon-wrapper">
-            <div class="ribbon">Ribbon</div>
-        </div>
-    </div>
-</section>
-<section>
-    <h2>Example content for build pages</h2>
+<section id="project">
+    <h2 class="line-behind"><span>Projects Already Documented</span></h2>
     <ul class="accordion-tabs">
         <li class="tab-header-and-content">
-            <a href="javascript:void(0)" class="is-active tab-link">Tab Item</a>
-            <div class="tab-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt pellentesque lorem, id suscipit dolor rutrum id. Morbi facilisis porta volutpat. Fusce adipiscing, mauris quis congue tincidunt, sapien purus suscipit odio, quis dictum odio tortor in sem. Ut sit amet libero nec orci mattis fringilla. Praesent eu ipsum in sapien tincidunt molestie sed ut magna. Nam accumsan dui at orci rhoncus pharetra tincidunt elit ullamcorper. Sed ac mauris ipsum. Nullam imperdiet sapien id purus pretium id aliquam mi ullamcorper.</p>
+            <a id="project-blink" href="javascript:void(0)" class="is-active tab-link">Blink</a>
+            <div class="tab-content project blink">
+                <img src="brand/project/blink.png" alt="Build diagram for Blink"/>
+                <p>
+                    <a href="/project/blink/">Blink</a> is the first build we complete in our workshops.
+                    It is the simplest possible Arduino-Uno-compatible circuit, made on
+                    solderless breadboard. You can attach it to your computer and program it to
+                    <a target="_blank" href="http://arduino.cc/en/tutorial/blink">Blink its LED</a>.
+                    Once you have Blink working, you can go on to make a whole universe of projects.
+                    <br/><br/>
+                    The @ShrimpingIt projects all follow on from <a href="/project/blink/">Blink</a>, with build
+                    diagrams, software, bagged kits and teaching materials. For example you can build
+                    a <a href="#project-pov">Persistence of Vision</a> display to paint your name in the air,
+                    a <a href="#project-keyboard">Conductive Keyboard</a> for interactive games driven playfully by
+                    touched objects just like a <a target="_blank" href="http://makeymakey.com/">MakeyMakey</a>,
+                    an <a href="#project-alarmclock">Alarm Clock</a> to explore time-driven applications,
+                    or a <a href="#project-memory">Memory Game</a> as a high-impact demonstrator of physical computing
+                    to wow friends and family.
+                    <br/><br/>
+                    Since our layout is binary-
+                    and pin-compatible with an Arduino Uno, you can also take advantage of the
+                    <a href="arduino.html">huge collection of projects</a> already shared for free by the Arduino
+                    community, but in a cheaper and more educational way than using an official Arduino board.
+                    <br/><br/>
+                    Finally, learners can reinforce the success of any of their prototypes by completing a
+                    <a href="#stripboard">Stripboard build</a> and deploying it permanently with its own power supply
+                    in a housing they have designed.
+                    <a class="read-more" href="/project/blink/">More about this Project</a>
+                </p>
             </div>
         </li>
         <li class="tab-header-and-content">
-            <a href="javascript:void(0)" class="tab-link">Another Tab</a>
-            <div class="tab-content">
-                <p>Ut laoreet augue et neque pretium non sagittis nibh pulvinar. Etiam ornare tincidunt orci quis ultrices. Pellentesque ac sapien ac purus gravida ullamcorper. Duis rhoncus sodales lacus, vitae adipiscing tellus pharetra sed. Praesent bibendum lacus quis metus condimentum ac accumsan orci vulputate. Aenean fringilla massa vitae metus facilisis congue. Morbi placerat eros ac sapien semper pulvinar. Vestibulum facilisis, ligula a molestie venenatis, metus justo ullamcorper ipsum, congue aliquet dolor tortor eu neque. Sed imperdiet, nibh ut vestibulum tempor, nibh dui volutpat lacus, vel gravida magna justo sit amet quam. Quisque tincidunt ligula at nisl imperdiet sagittis. Morbi rutrum tempor arcu, non ultrices sem semper a. Aliquam quis sem mi.</p>
+            <a id="project-pov" href="javascript:void(0)" class="tab-link">Persistence of Vision</a>
+            <div class="tab-content project pov">
+                <img src="brand/project/pov.png" alt="Build diagram for Persistence of Vision"/>
+                <p>
+                    Once you've completed <a href="#project-blink">Blink</a>, just another 7 LEDs and a battery pack and you can paint your name
+                    in the air with our <a href="/project/pov/">Persistence of Vision</a> project. After changing the text, a more advanced lesson plan incorporates learning binary
+                    and designing your own 8-pixel-high glyphs to replace characters in the original Commodore 64
+                    font provided with your own icon designs. <a class="read-more" href="/project/pov/">More about this Project</a>
+                </p>
             </div>
         </li>
         <li class="tab-header-and-content">
-            <a href="javascript:void(0)" class="tab-link">Third</a>
-            <div class="tab-content">
-                <p>Donec mattis mauris gravida metus laoreet non rutrum sem viverra. Aenean nibh libero, viverra vel vestibulum in, porttitor ut sapien. Phasellus tempor lorem id justo ornare tincidunt. Nulla faucibus, purus eu placerat fermentum, velit mi iaculis nunc, bibendum tincidunt ipsum justo eu mauris. Nulla facilisi. Vestibulum vel lectus ac purus tempus suscipit nec sit amet eros. Nullam fringilla, enim eu lobortis dapibus, quam magna tincidunt nibh, sit amet imperdiet dolor justo congue turpis.</p>
+            <a id="project-keyboard" href="javascript:void(0)" class="tab-link">Conductive Keyboard</a>
+            <div class="tab-content project keyboard">
+                <img src="brand/project/keyboard.png" alt="Build diagram for Conductive Keyboard"/>
+                <p>
+                    The <a href="/project/keyboard/">Conductive Keyboard</a> project allows human touch of conductive objects, like bananas, foil, pencil drawings and other people
+                    to trigger USB keystrokes, substituting for the popular <a target="_blank" href="http://makeymakey.com/">MakeyMakey</a>
+                    for high-impact interactive classroom projects and game controllers. <a class="read-more" href="/project/keyboard/">More about this Project</a>
+                </p>
             </div>
         </li>
         <li class="tab-header-and-content">
-            <a href="javascript:void(0)" class="tab-link">Last Item</a>
-            <div class="tab-content">
-                <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus dui urna.</p>
+            <a id="project-alarmclock" href="javascript:void(0)" class="tab-link">Alarm Clock</a>
+            <div class="tab-content project alarmclock">
+                <img src="brand/project/alarmclock.png" alt="Build diagram for Alarm Clock"/>
+                <p>
+                    Our <a href="/project/alarmclock/">Alarm Clock</a> circuit demonstrates a simple use for a clock module with backup watch battery, allowing
+                    remixes which trigger arbitrary events according to time of day, week, month, year and epoch. <a class="read-more" href="/project/alarmclock/">More about this Project</a>
+                </p>
+            </div>
+        </li>
+        <li class="tab-header-and-content">
+            <a id="project-memory" href="javascript:void(0)" class="tab-link">Memory Game</a>
+            <div class="tab-content project memory">
+                <img src="brand/project/simon.png" alt="Build diagram for Memory Game"/>
+                <p>
+                    Our <a href="/project/pov/">Memory Game</a> project has backlit buttons, and plays
+                    tunes through a small Piezo transducer, challenging you to recall melody sequences,
+                    just like M.B.Games' <a target="_blank" href="http://en.wikipedia.org/wiki/Simon_%28game%29">Simon</a> from the 80s. <a class="read-more" href="/project/memory/">More about this Project</a>
+                </p>
+            </div>
+        </li>
+        <li class="tab-header-and-content">
+            <a id="project-stripboard" href="javascript:void(0)" class="tab-link">Stripboard Build</a>
+            <div class="tab-content project stripboard">
+                <img src="brand/project/stripboard.png" alt="Build diagram for Stripboard kit"/>
+                <p>
+                    Try building a <a href="/project/pov/">Stripboard</a> project! You can make any of your Shrimp
+                    projects permanent by soldering the same components in an identical layout onto copper stripboard.
+                    <a class="read-more" href="/project/stripboard/">More about this Project</a>
+                </p>
             </div>
         </li>
     </ul>
 
-    <div class="pagination">
-        <ul>
-            <li class="page-prev"><a href="javascript:void(0)">Prev</a></li>
-            <li>
-                <ul>
-                    <li><a href="javascript:void(0)">1</a></li>
-                    <li><a href="javascript:void(0)">2</a></li>
-                    <li><a href="javascript:void(0)">3</a></li>
-                    <li><a href="javascript:void(0)">4</a></li>
-                    <li><a href="javascript:void(0)">5</a></li>
-                    <li><a href="javascript:void(0)">6</a></li>
-                    <li><a href="javascript:void(0)">7</a></li>
-                </ul>
-            </li>
-            <li class="page-next"><a href="javascript:void(0)">Next</a></li>
-        </ul>
-    </div>
+</section>
+<section id="kit">
+    <h2 class="line-behind"><span>Kits Already Bagged</span></h2>
+    <section id="combinations">
+        <img src="brand/combinations.png" />
+        <p>
+            This table shows how our kits can be combined and recombined to make different projects.
+            <br/><br/>
+            Complete project bundles are as low as £10-£12 pounds, but that only scratches the surface of the savings
+            you can make.
+            <br/><br/>
+            The £7.30 Shrimp Bundle and £1.20-2.00 breadboards can be reused between projects, making your second and
+            third projects truly pocket-money prices.
+            <br/><br/>
+            Within the Shrimp Bundle, the £3.30 USB UART modules are only needed when programming. If money is really
+            tight, they can be held as a classroom resource, with learners taking working projects away which
+            run from battery or hacked USB cables.
+            <br/><br/>
+            Finally projects can be transferred from breadboard to stripboard from just £0.44 per circuit, freeing
+            a classroom's solderless breadboards for the next year group.
+            <a class="read-more scroll-on-page-link" href="/kits/">More about Kits</a>
+        </p>
+    </section>
+</section>
+<section id="workshop">
+    <h2 class="line-behind"><span>Workshops for Learners, Teachers or Special Events</span></h2>
+    <section>
+        <p>
 
-    <button type="button" class="js-menu-trigger sliding-panel-button">
-        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png" alt="Menu Icon">
-    </button>
-
-    <nav class="js-menu sliding-panel-content">
-        <ul>
-            <li><a href="javascript:void(0)">Item 1</a></li>
-            <li><a href="javascript:void(0)">Item 2</a></li>
-            <li><a href="javascript:void(0)">Item 3</a></li>
-        </ul>
-    </nav>
-
-    <div class="js-menu-screen sliding-panel-fade-screen"></div>
-
-    <div class="tooltip-item">
-        Hover for Tooltip
-        <div class="tooltip">
-            <p>Lorem ipsum doldae oluptate aperiam unde voluptates quas.</p>
-        </div>
-    </div>
-
+        </p>
+    </section>
 </section>
 <footer class="footer" role="contentinfo">
     <div class="footer-logo">
-        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
+        <img src="brand/logomenu.png" alt="Logo image">
     </div>
     <div class="footer-links">
         <ul>
-            <li><h3>Content</h3></li>
-            <li><a href="javascript:void(0)">About</a></li>
-            <li><a href="javascript:void(0)">Contact</a></li>
-            <li><a href="javascript:void(0)">Products</a></li>
+            <li><h3>Community</h3></li>
+            <li><a href="/kits/">Builds</a></li>
+            <li><a href="/workshops.html">Support</a></li>
+            <li><a href="/licensing.html">Licensing</a></li>
         </ul>
         <ul>
-            <li><h3>Follow Us</h3></li>
-            <li><a href="javascript:void(0)">Facebook</a></li>
-            <li><a href="javascript:void(0)">Twitter</a></li>
-            <li><a href="javascript:void(0)">YouTube</a></li>
+            <li><h3>Commercial</h3></li>
+            <li><a href="/kits/">Kits</a></li>
+            <li><a href="/workshops.html">Workshops</a></li>
+            <li><a href="/training.html">Training</a></li>
         </ul>
         <ul>
-            <li><h3>Legal</h3></li>
-            <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-            <li><a href="javascript:void(0)">Privacy Policy</a></li>
+            <li><h3>More</h3></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+            <li><a href="/social.html">Follow Us</a></li>
+            <li><a href="/">About Us</a></li>
         </ul>
     </div>
 
     <hr>
 
-    <p>Disclaimer area lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, nostrum repudiandae saepe.</p>
+    <p>
+        Thanks to the <a href="http://arduino.cc">Arduino</a> community for the amazing foundations on which the Shrimp and @ShrimpingIt projects are based.
+        Thanks to <a href="http://fritzing.org">Fritzing</a> for vector graphics elements. Flickr user <a href="https://www.flickr.com/photos/randomskk/">Adam Greig</a> for cover image.
+    </p>
 </footer>
 </body>
 </html>
