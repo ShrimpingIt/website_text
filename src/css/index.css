@@ -1,0 +1,21 @@
+body *{
+    font-family: sans-serif;
+}
+
+table.section{
+    width:100%;
+}
+
+table.section td{
+    vertical-align: top;
+}
+
+
+table.section td.image {
+    width:30%;
+}
+
+table.section td.image img{
+    height:480px;
+    width:auto;
+}
