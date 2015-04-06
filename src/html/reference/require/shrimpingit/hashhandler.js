@@ -1,4 +1,4 @@
-require(['jquery'], function($) {
+require(['jquery', 'animateScroll'], function($) {
 
     var lasthash = null;
 
@@ -27,15 +27,13 @@ require(['jquery'], function($) {
         var matchq = $(hash);
         if(hash != lasthash){
             //emulate click if the id matches to a tab (causes it to open)
-            if( matchq.is("a.tab")  //corresponds with refill's vertical-tab
+            if( matchq.is("a.vertical-tab")  //corresponds with refill's vertical-tab
                 ||
                 matchq.is("a.tab-link") //corresponds with refill's accordion-tab
             ){
+                //$("html,body").css({scrollTop:0});
+                matchq.closest("section").animateScroll({scrollSpeed:4000});
                 matchq.click();
-                var from = $(document).scrollTop();
-                var to = matchq.offset().top;
-                $('html,body').css({scrollTop:from});
-                $('html,body').animate( {scrollTop:to}, 'slow' );
             }
             lasthash = hash;
         }

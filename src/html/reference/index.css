@@ -1465,4 +1465,11 @@ a.read-more {
     cursor: not-allowed;
     opacity: 0.5; }
 
+body.project header.navigation {
+  position: fixed;
+  left: 0;
+  top: 0; }
+body.project section.content {
+  padding-top: 60px; }
+
 /*# sourceMappingURL=index.css.map */

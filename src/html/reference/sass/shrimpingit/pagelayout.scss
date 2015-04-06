@@ -61,3 +61,14 @@ a.read-more {
   display:block;
   float: right;
 }
+
+body.project{
+  header.navigation{
+    position:fixed;
+    left:0;
+    top:0;
+  }
+  section.content{
+    padding-top:60px;
+  }
+}

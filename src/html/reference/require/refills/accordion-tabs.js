@@ -15,6 +15,13 @@ require(['jquery'], function($) {
                 $(this).next().toggleClass('is-open').toggle();
                 accordionTabs.find('.is-active').removeClass('is-active');
                 $(this).addClass('is-active');
+
+                //CH added to update hash links to correspond to open tabs
+                var id = $(this).attr("id");
+                if(id){
+                    location.hash = "#" + id;
+                }
+
             } else {
                 event.preventDefault();
             }

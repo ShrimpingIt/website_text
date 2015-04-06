@@ -16,6 +16,13 @@ require(['jquery'], function($) {
 
         $(".js-vertical-tab-accordion-heading").removeClass("is-active");
         $(".js-vertical-tab-accordion-heading[rel^='"+activeTab+"']").addClass("is-active");
+
+        //CH added to update hash links to correspond to open tabs
+        var id = $(this).attr("id");
+        if(id){
+            location.hash = "#" + id;
+        }
+
     });
 
     /* if in accordion mode */
