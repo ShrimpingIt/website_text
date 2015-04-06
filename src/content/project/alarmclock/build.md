@@ -24,13 +24,13 @@ Mac and Windows computers need a [CP2102 driver](../cp2102/driver.html) to be in
 
 Before embarking on the Alarm Clock, you should have **successfully completed the [Blink build](../blink/index.html)**. This build uses the Blink circuit as its starting point.
 
-## Step 1: Remove unnecessary parts
+## Remove surplus parts
 
 ![Blink Layout][step01]
 
 You can remove the Blink LED and resistor as these are not used in the circuit, and it will be easier to wire the circuit with them out of the way.
 
-## Step 2: Add a Decoupling Capacitor
+## Decoupling Capacitor
 
 ![Decoupling Capacitor][step02]
 
@@ -42,7 +42,7 @@ The [S.I. unit](../topic/unit.html) of capacitance is the Farad, indicating how 
 
 ***Insert a capacitor labelled 104 between the 5V and GND Power rows D9 and D10***
 
-## Step 3: Connect the Right Hand Power Rails
+## Right Hand Power Rails
 
 ![Right Hand Power Rails][step03]
 
@@ -57,17 +57,17 @@ Although the vertical *columns* of holes each side of the breadboard are present
 ***Connect a Green wire between J9 and any hole in the right-hand Blue column (connecting the Ground Rail)***
 ***Connect a Red wire between J11 and any hole in the right-hand Red column (connecting the +5V rail)***
 
-## Step 4: Insert the DS1307 Real Time Clock Chip
+## DS1307 Real Time Clock
 
 ![DS1307][step04]
 
 The DS1307 Real Time Clock chip will be used to keep accurate time in our circuit. It looks a bit like a dead bug.
 
-Each leg has a different number, name and function. Each of its legs should be cleanly inserted into a separate breadboard hole with a minimum of bending. The position of this chip (straddling the central spine of the breadboard) is important. This means each leg is in a separate row. We can then proceed to wire the correct components to the correct legs.
+The chip must straddle the central spine of the breadboard. Each leg has a different number, name and function and should be cleanly inserted into a separate breadboard row with a minimum of bending. We can then wire components to a leg by inserting them in the same row.
 
-Its orientation is also very important. You will notice a half-moon shape punched in one end of the chip. A small circle is sometimes punched in one corner (indicating which is Pin number 1). The half-moon should be at the top of the circuit and any circle should be positioned toward the top left (the DS1307 has the same orientation as the Shrimp's ATMEGA chip).
+The chip must be placed the correct way up. You may notice a half-moon shape punched in one end of the chip. A small circle is sometimes punched in one corner (indicating which is Pin number 1). The half-moon should be at the top of the circuit and any circle should be positioned toward the top left (the DS1307 has the same orientation as the Shrimp's ATMEGA chip).
 
-It is called a chip or an Integrated Circuit (IC) because it contains a doped silicon wafer or 'chip' from which tiny shapes are cut, to construct electronic components which make the clock circuit. The circuit inside is connected to the two rows of four legs. 
+It is called a chip or an Integrated Circuit (IC) because it contains a doped silicon wafer or 'chip' from which tiny shapes are cut, constructing the electronic components which make the clock circuit. The circuit inside is connected to the two rows of four legs.
 
 Pins are numbered sequentially from Pin 1 (top-left, where a circle is punched in the plastic housing) anticlockwise around the chip until pin 8. The wiring for each pin is described in the following list. If you want, you can ignore this list and simply follow the step-by-step instructions which follow.
 
@@ -81,7 +81,7 @@ Pins are numbered sequentially from Pin 1 (top-left, where a circle is punched i
 
 ***Place the chip straddling the gap in the centre of the breadboard, with pin 1 (anticlockwise from the half moon) in e20, and the opposite corner (known as pin 5) in f23***
 
-## Step 5: Connect power to the DS1307 chip
+## DS1307 Power
 
 ![DS1307 Power][step05]
 
@@ -90,7 +90,7 @@ The DS1307 chip needs power for it to run. Now the right hand power rails are co
 ***Connect a Red wire from j20 to any hole in the right-hand Red column (connecting to +5V)***
 ***Connect a Green wire from d23 to any hole in the right-hand Blue column (connecting to 0V)***
 
-## Step 6: Connect ATMEGA328P-PU and DS1307 chips
+## Wire ATMEGA328 to DS1307
 
 ![DS1307 I2C Connection][step06]
 
@@ -99,7 +99,7 @@ The Shrimp's microcontroller and the RTC chip communicate using a protocol known
 ***Connect the Purple SCL wire from h3 to h23, connecting the ATMEGA's SCL pin to the DS1307 SCL pin***
 ***Connect the Yellow SDA wire from i4 to i22, connecting the ATMEGA's SDA pin to the DS1307 SDA pin***
 
-## Step 7: Attach I2C Pull-up resistors
+## I2C Pull-up Resistors
 
 ![DS1307 Resistors][step07]
 
@@ -113,7 +113,7 @@ Resistors are labelled with colored stripes instead of numbers, but using the sa
 ** Attach a 10kiloOhm pull-up resistor between j3 and any hole in the right-hand Red column, connecting SCL to +5V***
 ** Attach a 10kiloOhm pull-up resistor between j4 and any hole in the right-hand Red column, connecting SDA to +5V***
 
-## Step 8: Provide a crystal oscillator for the DS1307
+## Crystal for DS1307
 
 ![DS1307 Crystal][step08]
 
@@ -123,7 +123,7 @@ The DS1307 Real Time Clock chip needs a special piece of electrically oscillatin
 
 Hz is a measure of how many times a second something happens so we would expect this crystal to oscillate 32.768 times every second.
 
-## Step 9: Add the Backup Battery Holder
+## Backup Battery Holder
 
 ![Battery Holder and Ground wire][step09]
 
@@ -138,7 +138,7 @@ Finally the negative pin of the battery holder needs to be connected to the comm
 ***Add the backup battery holder, with the +3V positive pin (the square end) inserted at a22, and the 0V ground pin (the round end) inserted at a30, connecting the +3V pin to pin 3 of the DS1307***
 ***Add a green wire from e30 to c23, completing the battery backup circuit***
 
-## Step 10: Add the Piezo
+## Piezo Transducer
 
 ![Piezo][step10]
 
@@ -150,7 +150,7 @@ The piezos we are using have no orientation and can be inserted either way aroun
 
 ***Insert the Piezo so that one of its pins goes into row 26, and the other goes into row 27, keeping it as far to the left as possible***
 
-## Step 11: Connect Piezo to Ground
+## Piezo Ground wire
 
 ![Piezo Ground][step11]
 
@@ -158,7 +158,7 @@ We want the Piezo to experience a voltage across the material, so it will need t
 
 ***Attach a Green wire between the right-hand -ive (Blue) power rail, and hole j27***
 
-## Step 12: Connect the Piezo to its control pin
+## Piezo Control wire
 
 ![Piezo Resistor][step12]
 
@@ -166,7 +166,7 @@ We will be varying the bottom right hand pin of the ATMEGA chip between 0V and 5
 
 ***Attach a resistor between j16 and j26, connecting the Piezo to the pin we'll use to generate audible waves; the bottom-right pin of the ATMEGA***
 
-## Step 13: Insert Coin Battery
+## Coin Battery
 
 ![Final Layout][step13]
 
@@ -183,11 +183,11 @@ Now the fundamental hardware is all in place, and we can start to program our cl
 For any clock behaviours to work (such as playing chimes) you must attach a reliable power supply of 3.6V to 5V, which you can get by plugging into USB or by wiring in a 3xAAA battery pack.
 
 
-## Upload the code for a simple clock
+## Upload Code
 
 Now the clock subcircuit is complete, we should be able to set and read back the time from the clock. Verifying this simple behaviour is a useful test, before we add lots of extra logic for controlling different chimes.
 
-[header]: clock_kit.png
+[header]: kit.png
 [step01]: ./sequence/01_blink.png
 [step02]: ./sequence/02_capacitor.png
 [step03]: ./sequence/03_powerrails.png
