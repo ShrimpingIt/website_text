@@ -11,7 +11,7 @@ class MarkdownExporter(Runner):
     def initparser(self, parser):
         super(MarkdownExporter,self).initparser(parser)
         parser.set_defaults(
-            workingdirectory='../markdown',
+            workingdirectory='../content',
             outputdirectory='../../build/raw',
             shellcmd='echo {inputpath};'+
                     'mkdir -p $(dirname {outputfiletemplate});'+
