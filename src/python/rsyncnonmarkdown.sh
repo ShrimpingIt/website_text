@@ -1,3 +1,5 @@
 #!/bin/bash
-rsync --recursive --exclude '*.md' ../../src/markdown/ ../../build/raw/
-rsync --recursive --exclude '*.md' ../../src/markdown/ ../../build/styled/
+find ../../build/raw/ -type f -not -name '.gitignore' -delete
+find ../../build/styled/ -type f -not -name '.gitignore' -delete
+rsync --verbose --recursive --exclude '*.md' ../../src/content/ ../../build/raw/
+rsync --verbose --recursive --exclude '*.md' ../../src/content/ ../../build/styled/
