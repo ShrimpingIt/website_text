@@ -1,0 +1,87 @@
+section.separate{
+  height:100vh;
+}
+
+.hero {
+  margin:0;
+  padding:0;
+}
+
+.cards, .accordion-tabs, section#combinations {
+  @include outer-container();
+}
+
+.card {
+  @include span-columns(4);
+}
+
+.vertical-tab-content-container, .vertical-tab-container, .vertical-tabs, .vertical-tab-content{
+  height:auto !important;
+}
+
+body.project.build, body.index{ // applies to top page, and build pages within projects only
+
+  .tab-content, .vertical-tab-content {
+
+    @include outer-container();
+
+    img{
+      @include span-columns(4);
+    }
+    p{
+      @include span-columns(8);
+    }
+
+    &.memory, &.stripboard{
+      img{
+        @include span-columns(8);
+      }
+      p{
+        @include span-columns(4);
+      }
+    }
+
+  }
+
+}
+
+
+section#combinations {
+  img{
+    @include span-columns(8);
+  }
+  p{
+    @include span-columns(4);
+  }
+  img,p{
+    margin-top:1em;
+    margin-bottom:2em;
+  }
+}
+
+a.read-more {
+  @include clearfix;
+  @include button(flat, $base-accent-color);
+  margin:20px;
+  display:block;
+  float: right;
+}
+
+body.project{
+  header.navigation{
+    position:fixed;
+    left:0;
+    top:0;
+  }
+  section.content{
+    padding-top:60px;
+  }
+
+}
+
+.hero-inner {
+  padding-top: 1.7em !important;
+  p{
+    background-color: rgba(255,255,255,0.1);
+  }
+}
