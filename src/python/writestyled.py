@@ -18,8 +18,11 @@ class XqueryStyler(Runner):
                     'mkdir -p $(dirname {outputfiletemplate});'+
                     'cat {inputpath}'+
                     '|sed 1d '+
-                    '|xqilla -i /dev/stdin {xquery} -v serverroot {serverroot} -v inputpaths "{inputpaths}" {varstring} '+
+                    '|xqilla -i /dev/stdin {xquery} -v sourcepath {inputpath} -v serverroot {serverroot} -v allsourcepaths "{inputpaths}" {varstring} '+
+                    '|xmlindent '+
                     '> {outputfiletemplate}',
+            # to get nicely indented XHTML
+            # consider adding perltidy -i=2 -ce
             burstwindow=0.25,
             watchextra=["../../src/xquery"]
         )
