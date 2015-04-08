@@ -77,29 +77,29 @@ declare function local:rewrite-body($body){
                 <nav role="navigation">
                     <ul id="js-navigation-menu" class="navigation-menu show">
                         <li class="nav-link more">
-                            <a href="javascript:void(0)">Projects</a>
+                            <a href="{$serverroot}project/">Projects</a>
                             <ul class="submenu wide">
-                                <li><a href="project/blink/">...blink an LED</a></li>
-                                <li><a href="project/pov/">...paint with light</a></li>
-                                <li><a href="project/keyboard/">...make a Banana Piano</a></li>
-                                <li><a href="project/memory/">...test your melody memory</a></li>
-                                <li><a href="project/alarmclock/">...invent an Alarm Clock</a></li>
-                                <li><a href="project/ledclock/">...build a Word Clock</a></li>
+                                <li><a href="{$serverroot}#project-blink">...blink an LED</a></li>
+                                <li><a href="{$serverroot}#project-pov">...paint with light</a></li>
+                                <li><a href="{$serverroot}#project-blink">...make a Banana Piano</a></li>
+                                <li><a href="{$serverroot}#project-memory">...test your melody memory</a></li>
+                                <li><a href="{$serverroot}#project-alarmclock">...invent a new Clock</a></li>
+                                <!-- <li><a href="{$serverroot}#project-ledclock">...build a Word Clock</a></li> -->
                             </ul>
                         </li>
                         <li class="nav-link more">
-                            <a href="kits/">Kits</a>
+                            <a href="{$serverroot}kit/">Kits</a>
                             <ul class="submenu">
                                 <li><a class="scroll-on-page-link" href="#kit">How to Choose</a></li>
                                 <li class="more">
                                     <a href="javascript:void(0)">Product List</a>
                                     <ul class="submenu wide">
-                                        <li><a href="project/blink/">Shrimp Bundle</a></li>
-                                        <li><a href="project/pov/">Persistence of Vision</a></li>
-                                        <li><a href="project/keyboard/">Conductive Keyboard</a></li>
-                                        <li><a href="project/memory/">'Simon' Memory Game</a></li>
-                                        <li><a href="project/alarmclock/">Alarm Clock</a></li>
-                                        <li><a href="project/ledclock/">Word Clock</a></li>
+                                        <li><a href="{$serverroot}kit/shrimp.html">Shrimp Bundle</a></li>
+                                        <li><a href="{$serverroot}kit/pov.html">Persistence of Vision</a></li>
+                                        <li><a href="{$serverroot}kit/keyboard.html">Conductive Keyboard</a></li>
+                                        <li><a href="{$serverroot}kit/memory.html">'Simon' Memory Game</a></li>
+                                        <li><a href="{$serverroot}kit/alarmclock.html">Alarm Clock</a></li>
+                                        <!-- <li><a href="{$serverroot}project/ledclock/">Word Clock</a></li> -->
                                     </ul>
                                 </li>
                             </ul>
@@ -107,19 +107,19 @@ declare function local:rewrite-body($body){
                         <li class="nav-link more">
                             <a href="javascript:void(0)">Teaching</a>
                             <ul class="submenu">
-                                <li class="nav-link"><a href="workshops.html">Workshops</a></li>
-                                <li class="nav-link"><a href="about.html">Resources</a></li>
-                                <li class="nav-link"><a href="#testimonials" class="scroll-on-page-link" >Testimonials</a></li>
-                                <li class="nav-link"><a href="offer.html" >Special Offers</a></li>
+                                <li class="nav-link"><a href="{$serverroot}workshop/">Workshops</a></li>
+                                <li class="nav-link"><a href="{$serverroot}about.html">Resources</a></li>
+                                <li class="nav-link"><a href="{$serverroot}#testimonials" class="scroll-on-page-link" >Testimonials</a></li>
+                                <li class="nav-link"><a href="{$serverroot}offer.html" >Special Offers</a></li>
                             </ul>
                         </li>
                         <li class="nav-link more">
                             <a href="javascript:void(0)">More</a>
                             <ul class="submenu">
-                                <li class="nav-link"><a href="#about" class="scroll-on-page-link" >About Us</a></li>
-                                <li class="nav-link"><a href="contribute.html">Contributing</a></li>
-                                <li class="nav-link"><a href="license.html">Licensing</a></li>
-                                <li class="nav-link"><a href="contact.html">Contact</a></li>
+                                <li class="nav-link"><a href="{$serverroot}#about" class="scroll-on-page-link" >About Us</a></li>
+                                <li class="nav-link"><a href="{$serverroot}contribute.html">Contributing</a></li>
+                                <li class="nav-link"><a href="{$serverroot}license.html">Licensing</a></li>
+                                <li class="nav-link"><a href="{$serverroot}contact.html">Contact</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -150,6 +150,36 @@ declare function local:rewrite-body($body){
                 )
             }
         </section>
+        <footer class="footer" role="contentinfo">
+            <div class="footer-logo">
+                <img src="{$serverroot}style/brand/logomenu.png" alt="Logo image" />
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><h3>Community</h3></li>
+                    <li><a href="{$serverroot}project/">Projects</a></li>
+                    <li><a href="{$serverroot}support.html">Support</a></li>
+                    <li><a href="{$serverroot}license.html">Licensing</a></li>
+                </ul>
+                <ul>
+                    <li><h3>Commercial</h3></li>
+                    <li><a href="{$serverroot}kit/">Kits</a></li>
+                    <li><a href="{$serverroot}workshop/">Workshops</a></li>
+                    <li><a href="{$serverroot}workshop/cpd.html">Training</a></li>
+                </ul>
+                <ul>
+                    <li><h3>More</h3></li>
+                    <li><a href="{$serverroot}contact.html">Contact Us</a></li>
+                    <li><a href="{$serverroot}social.html">Follow Us</a></li>
+                    <li><a href="{$serverroot}">About Us</a></li>
+                </ul>
+            </div>
+            <hr/>
+            <p>
+                Thanks to the <a href="http://arduino.cc">Arduino</a> community for the amazing foundations on which the Shrimp and @ShrimpingIt projects are based.
+                Thanks to <a href="http://fritzing.org">Fritzing</a> for vector graphics elements. Flickr user <a href="https://www.flickr.com/photos/randomskk/">Adam Greig</a> for cover image.
+            </p>
+        </footer>
     </body>
 };
 
