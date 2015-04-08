@@ -190,33 +190,3 @@
         </article>
     </section>
 </section>
-<footer class="footer" role="contentinfo">
-    <div class="footer-logo">
-        <img src="style/brand/logomenu.png" alt="Logo image" />
-    </div>
-    <div class="footer-links">
-        <ul>
-            <li><h3>Community</h3></li>
-            <li><a href="/kits/">Builds</a></li>
-            <li><a href="/workshops.html">Support</a></li>
-            <li><a href="/licensing.html">Licensing</a></li>
-        </ul>
-        <ul>
-            <li><h3>Commercial</h3></li>
-            <li><a href="/kits/">Kits</a></li>
-            <li><a href="/workshops.html">Workshops</a></li>
-            <li><a href="/training.html">Training</a></li>
-        </ul>
-        <ul>
-            <li><h3>More</h3></li>
-            <li><a href="/contact.html">Contact Us</a></li>
-            <li><a href="/social.html">Follow Us</a></li>
-            <li><a href="/">About Us</a></li>
-        </ul>
-    </div>
-    <hr/>
-    <p>
-        Thanks to the <a href="http://arduino.cc">Arduino</a> community for the amazing foundations on which the Shrimp and @ShrimpingIt projects are based.
-        Thanks to <a href="http://fritzing.org">Fritzing</a> for vector graphics elements. Flickr user <a href="https://www.flickr.com/photos/randomskk/">Adam Greig</a> for cover image.
-    </p>
-</footer>
