@@ -76,12 +76,15 @@ body.project{
   section.content{
     padding-top:60px;
   }
-
 }
 
 .hero-inner {
   padding-top: 1.7em !important;
-  p{
-    background-color: rgba(255,255,255,0.1);
+  h1{
+    color:#ff6600;
   }
+  p{
+    color:white;
+  }
+
 }
