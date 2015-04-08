@@ -4,15 +4,16 @@
 
 This guide provides details for learners to wire, program and configure their first @ShrimpingIt digital clock project.
 
-For general orientation, see the [Alarm Clock](../clock/index.html) project page. The image to the right shows the completed build.
+For general orientation, see the [Alarm Clock](../clock/index.html) project page. The image shows the completed build.
 
 ### Requirements
 
-The build assumes you have the following kits...
+The build assumes you have the following kits, or have sourced equivalent parts...
 
-* An [Alarm Clock Addon](../clock/kit.html) kit
-* A [Shrimp Parts](../shrimp/kit.html) kit
-* A [Programmer](../cp2102/kit.html) kit
+* An [Alarm Clock Addon](../../kit/alarmclock.html) kit
+* A [Shrimp Parts](../../kit/shrimp.html) kit
+* A [Programmer](../../kit/cp2102.html) kit
+* A [400point Breadboard](../../kit/breadboard400.html) kit
 
 For convenience, pre-bagged kits are available to order from @ShrimpingIt online. If you do not wish to buy from us, information is provided for you to source commodity parts direct from electronics wholesalers.
 
@@ -34,7 +35,7 @@ You can remove the Blink LED and resistor as these are not used in the circuit, 
 
 ![Decoupling Capacitor][step02]
 
-We are planning to deploy this circuit in the real world for a long time. We would like it to be stable to momentary changes to its power supply, (e.g. when a motor or a large number of LEDs suddenly draw a lot of energy). 
+We are planning to deploy this circuit in the real world for a long time. We would like it to be stable to momentary changes to its power supply, (e.g. when a motor or a large number of LEDs suddenly draw a lot of energy from the same source). 
 
 If the voltage drops too low, the Shrimp's ATMEGA328P-PU microcontroller will reset itself. Adding a decoupling capacitor provides a very short-term reservoir, *decoupling* the microcontroller from temporary dips in supply voltage.
 
@@ -172,7 +173,7 @@ We will be varying the bottom right hand pin of the ATMEGA chip between 0V and 5
 
 After double-checking your layout matches the final diagram above, you can insert the coin battery. Once you have set the time, this will help your clock keep time even when the USB or main battery pack is removed.
 
-Note, if you attach nothing to the DS1307 Battery pin, then the clock will not work at all. If you don't have a reliable coin battery, and want to test your clock by powering it from the 5V supply, you need to attach DS1307 Pin 3 (the positive side of the coin battery) to 0V (ground). This tells the DS1307 to use the main power supply instead of the coin battery. ***Note, if a coin battery is attached at the time, this will short the battery!***
+Note, if you attach nothing to the DS1307 Battery pin, then the clock will not work at all. If you don't have a reliable coin battery, and want to test your clock programming by powering the DS1307 from the 5V supply, you need to attach DS1307 Pin 3 (the positive side of the coin battery) to 0V (ground). This tells the DS1307 to use the main power supply instead of the coin battery. ***Note, if a coin battery is attached at the time, this will short the battery!***
 
 A workaround to ground DS1307 Pin 3, which avoids battery shorting, is to remove any battery, and balance a small metal disc or coin in the place of the battery, being sure that it touches both terminals. This effectively connects Pin 3 to Ground. A piece of card cut to size and wrapped in aluminium foil is a good option.
 
@@ -182,10 +183,15 @@ Now the fundamental hardware is all in place, and we can start to program our cl
 
 For any clock behaviours to work (such as playing chimes) you must attach a reliable power supply of 3.6V to 5V, which you can get by plugging into USB or by wiring in a 3xAAA battery pack.
 
-
 ## Upload Code
 
-Now the clock subcircuit is complete, we should be able to set and read back the time from the clock. Verifying this simple behaviour is a useful test, before we add lots of extra logic for controlling different chimes.
+Now the clock subcircuit is complete, we should be able to set and read back the time from the clock. Verifying this simple behaviour is a useful test, before we add lots of extra logic for controlling different chimes. [This software is yet to be uploaded]
+
+Software which enables the clock to operate as an Alarm Clock can be found in our 'projects' Github repository. Note, code for this project depends upon the RTCLib, rtttl and Narcoleptic libraries also available in the same repository.  
+
+For novices, scrolling down to the [README](https://github.com/ShrimpingIt/projects) instructions on our main repository page should offer enough guidance to prepare your computer for uploading software.
+
+For more expert experimenters, here is a direct link to the code [in github](https://github.com/ShrimpingIt/projects/tree/master/sketchbook/shrimpingit/alarmclock/UnaryAlarmClock) and [in raw form](https://raw.githubusercontent.com/ShrimpingIt/projects/master/sketchbook/shrimpingit/alarmclock/UnaryAlarmClock/UnaryAlarmClock.ino)
 
 [header]: kit.png
 [step01]: ./sequence/01_blink.png
