@@ -6,7 +6,7 @@ declare variable $allsourcepaths external;
 declare variable $serverroot external;
 
 declare function local:body-classes(){
-    tokenize($sourcepath, '([/\\\.])|(\.html)')[not(.=' ')]
+    tokenize($sourcepath, '([/\\\.])|(\.html)')[not(.='')]
 };
 
 declare function local:rewrite-head($head){
@@ -43,8 +43,31 @@ declare function local:sectionafter($item){
     ) else ()
 };
 
+declare function local:write-hero(){
+    <section>
+        <div class="hero">
+            <div class="hero-inner">
+                <a href="" class="hero-logo"><img src="style/brand/logo.png" alt="Logo Image"/></a>
+                <div class="hero-copy">
+                    <h1>@ShrimpingIt : Programmable Electronics</h1>
+                </div>
+                <p>
+                    We document free project designs using prototyping materials<br/>
+                    supporting STEM teachers and hobbyists in the UK and worldwide.
+                </p>
+                <a class="button scroll-on-page-link" href="#what">Find Out More</a>
+            </div>
+        </div>
+    </section>
+};
+
 declare function local:rewrite-body($body){
-    <body class="{fn:normalize-space(string-join(local:body-classes(),' '))}">
+    let $classes := local:body-classes()
+    return
+    <body class="{fn:normalize-space(string-join($classes,' '))}">
+        {
+            if(count($classes)=1 and 'index'=$classes) then local:write-hero() else ()
+        }
         <header class="navigation" role="banner">
             <div class="navigation-wrapper">
                 <a href="/" class="logo">
@@ -119,7 +142,7 @@ declare function local:rewrite-body($body){
         </header>
         <section class="content">
             {
-                if(('project'=local:body-classes()) and ('build'=local:body-classes())) then (
+                if(('project'=$classes) and ('build'=$classes)) then (
                     local:filter-project-body($body)
                 )
                 else (
