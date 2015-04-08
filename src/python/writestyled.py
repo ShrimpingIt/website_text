@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+                                                                           
 import subprocess
 
 from shrimpshell import Runner
@@ -18,7 +18,7 @@ class XqueryStyler(Runner):
                     'mkdir -p $(dirname {outputfiletemplate});'+
                     'cat {inputpath}'+
                     '|sed 1d '+
-                    '|xqilla -i /dev/stdin {xquery} -v sourcepath {inputpath} -v serverroot {serverroot} -v allsourcepaths "{inputpaths}" {varstring} '+
+                    "|xqilla -i /dev/stdin {xquery} -v sourcepath {inputpath} -v serverroot '{serverroot}' -v allsourcepaths '{inputpaths}' {varstring} "+
                     '|xmlindent '+
                     '> {outputfiletemplate}',
             # to get nicely indented XHTML
