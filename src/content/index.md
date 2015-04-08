@@ -1,18 +1,3 @@
-<section>
-    <div class="hero">
-        <div class="hero-inner">
-            <a href="" class="hero-logo"><img src="style/brand/logo.png" alt="Logo Image"/></a>
-            <div class="hero-copy">
-                <h1>@ShrimpingIt : Programmable Electronics</h1>
-            </div>
-            <p>
-                We document free project designs using prototyping materials<br/>
-                supporting STEM teachers and hobbyists in the UK and worldwide.
-            </p>
-            <a class="button scroll-on-page-link" href="#what">Find Out More</a>
-        </div>
-    </div>
-</section>
 <section id="what">
     <h2 class="line-behind" id="about"><span>What We Do</span></h2>
     <div class="cards">
@@ -189,9 +174,20 @@
 </section>
 <section id="workshop">
     <h2 class="line-behind"><span>Workshops for Learners, Teachers or Special Events</span></h2>
-    <section>
-        <p>
-        </p>
+    <section >
+        <img src="style/brand/combinations.png" />
+        <article>
+            <p>
+                @ShrimpingIt has wide-ranging experience running workshops at schools and special events. We have a variety of
+                formats to help learners and educators with their first steps. Workshop attendees build their own circuits
+                and program them, getting familiar with the components they will be taking home. In a full-day workshop format,
+                for example, we learn how to connect inputs and outputs to build their own personal invention ideas.
+                constructing programmable projects with cheap electronics prototyping material.
+            </p>
+            <p>
+            	
+            </p>
+        </article>
     </section>
 </section>
 <footer class="footer" role="contentinfo">
