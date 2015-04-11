@@ -1,10 +1,6 @@
 require.config({
     paths: {
-        jquery: 'jquery-1.11.1',
-            animateScroll: 'jquery.animate-scroll'
-    },
-    "shim": {
-        "animateScroll": ["jquery"]
+        jquery: 'jquery-1.11.1'
     }
 });
 
