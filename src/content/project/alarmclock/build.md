@@ -4,7 +4,7 @@
 
 This guide provides details for learners to wire, program and configure their first @ShrimpingIt digital clock project.
 
-For general orientation, see the [Alarm Clock](../clock/index.html) project page. The image shows the completed build.
+For general orientation, see the [Alarm Clock](./index.html) project page. The image shows the completed build.
 
 ### Requirements
 
@@ -19,7 +19,7 @@ For convenience, pre-bagged kits are available to order from @ShrimpingIt online
 
 In addition you will need a Linux, Mac or Windows computer running the latest [Arduino IDE](../topics/ide.html). 
 
-Mac and Windows computers need a [CP2102 driver](../cp2102/driver.html) to be installed for the USB Programmer to be recognised.
+Mac and Windows computers need a [CP2102 driver](../../kit/cp2102.html#driver) to be installed for the USB Programmer to be recognised.
 
 ### Getting started
 
@@ -187,11 +187,11 @@ For any clock behaviours to work (such as playing chimes) you must attach a reli
 
 Now the clock subcircuit is complete, we should be able to set and read back the time from the clock. Verifying this simple behaviour is a useful test, before we add lots of extra logic for controlling different chimes. [This software is yet to be uploaded]
 
-Software which enables the clock to operate as an Alarm Clock can be found in our 'projects' Github repository. Note, code for this project depends upon the RTCLib, rtttl and Narcoleptic libraries also available in the same repository.  
+Software for the Alarm Clock behaviour can be found in our ['projects'](https://github.com/ShrimpingIt/projects) Github repository. Note, code for this project depends upon the RTCLib, rtttl and Narcoleptic libraries (also distributed in the same repository).
 
-For novices, scrolling down to the [README](https://github.com/ShrimpingIt/projects) instructions on our main repository page should offer enough guidance to prepare your computer for uploading software.
+To get started uploading code to a Shrimp, read the instructions at our [projects](https://github.com/ShrimpingIt/projects) repository. They detail how to prepare your computer for uploading the software, including downloading and installing the sketchbook, libraries and USB drivers you need. Once configured, you can refer to the Arduino guidance directly; a Shrimp appears as an Arduino Uno.
 
-For more expert experimenters, here is a direct link to the code [in github](https://github.com/ShrimpingIt/projects/tree/master/sketchbook/shrimpingit/alarmclock/UnaryAlarmClock) and [in raw form](https://raw.githubusercontent.com/ShrimpingIt/projects/master/sketchbook/shrimpingit/alarmclock/UnaryAlarmClock/UnaryAlarmClock.ino)
+For interest, you may wish to [preview](https://github.com/ShrimpingIt/projects/tree/master/sketchbook/shrimpingit/alarmclock/UnaryAlarmClock) the code without downloading the sketchbook folder, libraries etc.
 
 [header]: kit.png
 [step01]: ./sequence/01_blink.png
