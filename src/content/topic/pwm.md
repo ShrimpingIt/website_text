@@ -1,3 +1,4 @@
-# Part of
+Pulse Width Modulation
+======================
 
-@ShrimpingIt [Clock](../clock/index.html) and [Memory Game](../memory/index.html) projects.
+Although the ATMEGA328 microcontroller used by a [Shrimp](./shrimp.html)

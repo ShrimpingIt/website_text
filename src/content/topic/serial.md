@@ -1,4 +1,4 @@
-# Part of 
+Serial UART
+===========
 
-@ShrimpingIt Clock project.
-
+A Serial UART connection provides a standardised way for two computers to talk to each other using just two wires.
