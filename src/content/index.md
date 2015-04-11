@@ -30,7 +30,7 @@
             <div class="card-copy">
                 <p>
                     We offer pre-bagged kits, to simplify the task of sourcing and preparing our projects for the classroom
-                    and to support the development of more @ShrimpingIt projects. We <a href="/offer.html">offer schools</a> their first example of any kit at
+                    and to support the development of more @ShrimpingIt projects. We <a href="./offer.html">offer schools</a> their first example of any kit at
                     cost prices.
                     <a class="read-more scroll-on-page-link" href="#kit">More about Kits</a>
                 </p>
@@ -64,13 +64,13 @@
             <div class="tab-content project blink">
                 <img src="project/blink/kit.png" alt="Build diagram for Blink"/>
                 <p>
-                    <a href="/project/blink/">Blink</a> is the first build we complete in our workshops.
+                    <a href="./project/blink/">Blink</a> is the first build we complete in our workshops.
                     It is the simplest possible Arduino-Uno-compatible circuit, made on
                     solderless breadboard. You can attach it to your computer and program it to
                     <a target="_blank" href="http://arduino.cc/en/tutorial/blink">Blink its LED</a>.
                     Once you have Blink working, you can go on to make a whole universe of projects.
                     <br/><br/>
-                    The @ShrimpingIt projects all follow on from <a href="/project/blink/">Blink</a>, with build
+                    The @ShrimpingIt projects all follow on from <a href="project/blink/">Blink</a>, with build
                     diagrams, software, bagged kits and teaching materials. For example you can build
                     a <a href="#project-pov">Persistence of Vision</a> display to paint your name in the air,
                     a <a href="#project-keyboard">Conductive Keyboard</a> for interactive games driven playfully by
@@ -87,7 +87,7 @@
                     Finally, learners can reinforce the success of any of their prototypes by completing a
                     <a href="#stripboard">Stripboard build</a> and deploying it permanently with its own power supply
                     in a housing they have designed.
-                    <a class="read-more" href="/project/blink/">More about this Project</a>
+                    <a class="read-more" href="project/blink/">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -97,9 +97,9 @@
                 <img src="project/pov/kit.png" alt="Build diagram for Persistence of Vision"/>
                 <p>
                     Once you've completed <a href="#project-blink">Blink</a>, just another 7 LEDs and a battery pack and you can paint your name
-                    in the air with our <a href="/project/pov/">Persistence of Vision</a> project. After changing the text, a more advanced lesson plan incorporates learning binary
+                    in the air with our <a href="project/pov/">Persistence of Vision</a> project. After changing the text, a more advanced lesson plan incorporates learning binary
                     and designing your own 8-pixel-high glyphs to replace characters in the original Commodore 64
-                    font provided with your own icon designs. <a class="read-more" href="/project/pov/">More about this Project</a>
+                    font provided with your own icon designs. <a class="read-more" href="project/pov/">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -108,9 +108,9 @@
             <div class="tab-content project keyboard">
                 <img src="project/keyboard/kit.png" alt="Build diagram for Conductive Keyboard"/>
                 <p>
-                    The <a href="/project/keyboard/">Conductive Keyboard</a> project allows human touch of conductive objects, like bananas, foil, pencil drawings and other people
+                    The <a href="project/keyboard/">Conductive Keyboard</a> project allows human touch of conductive objects, like bananas, foil, pencil drawings and other people
                     to trigger USB keystrokes, substituting for the popular <a target="_blank" href="http://makeymakey.com/">MakeyMakey</a>
-                    for high-impact interactive classroom projects and game controllers. <a class="read-more" href="/project/keyboard/">More about this Project</a>
+                    for high-impact interactive classroom projects and game controllers. <a class="read-more" href="project/keyboard/">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -119,8 +119,8 @@
             <div class="tab-content project alarmclock">
                 <img src="project/alarmclock/kit.png" alt="Build diagram for Alarm Clock"/>
                 <p>
-                    Our <a href="/project/alarmclock/">Alarm Clock</a> circuit demonstrates a simple use for a clock module with backup watch battery, allowing
-                    remixes which trigger arbitrary events according to time of day, week, month, year and epoch. <a class="read-more" href="/project/alarmclock/">More about this Project</a>
+                    Our <a href="project/alarmclock/">Alarm Clock</a> circuit demonstrates a simple use for a clock module with backup watch battery, allowing
+                    remixes which trigger arbitrary events according to time of day, week, month, year and epoch. <a class="read-more" href="project/alarmclock/">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -129,9 +129,9 @@
             <div class="tab-content project memory">
                 <img src="project/memory/kit.png" alt="Build diagram for Memory Game"/>
                 <p>
-                    Our <a href="/project/pov/">Memory Game</a> project has backlit buttons, and plays
+                    Our <a href="project/pov/">Memory Game</a> project has backlit buttons, and plays
                     tunes through a small Piezo transducer, challenging you to recall melody sequences,
-                    just like M.B.Games' <a target="_blank" href="http://en.wikipedia.org/wiki/Simon_%28game%29">Simon</a> from the 80s. <a class="read-more" href="/project/memory/">More about this Project</a>
+                    just like M.B.Games' <a target="_blank" href="http://en.wikipedia.org/wiki/Simon_%28game%29">Simon</a> from the 80s. <a class="read-more" href="project/memory/">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -140,9 +140,9 @@
             <div class="tab-content project stripboard">
                 <img src="project/stripboard/kit.png" alt="Build diagram for Stripboard kit"/>
                 <p>
-                    Try building a <a href="/project/pov/">Stripboard</a> project! You can make any of your Shrimp
+                    Try building a <a href="project/pov/">Stripboard</a> project! You can make any of your Shrimp
                     projects permanent by soldering the same components in an identical layout onto copper stripboard.
-                    <a class="read-more" href="/project/stripboard/">More about this Project</a>
+                    <a class="read-more" href="project/stripboard/">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -168,7 +168,7 @@
             <br/><br/>
             Finally projects can be transferred from breadboard to stripboard from just £0.44 per circuit, freeing
             a classroom's solderless breadboards for the next year group.
-            <a class="read-more scroll-on-page-link" href="/kits/">More about Kits</a>
+            <a class="read-more scroll-on-page-link" href="./kit/">More about Kits</a>
         </p>
     </section>
 </section>
