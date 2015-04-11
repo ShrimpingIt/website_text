@@ -1,4 +1,4 @@
-# Building the LED ClockAn 
+# Building the LED Clock
 
 ![The LED Clock Addon Kit][header]
 
@@ -6,7 +6,7 @@ This guide provides details for learners to wire, program and configure a @Shrim
 
 For general orientation, see the [Alarm Clock](../clock/index.html) project page.
 
-## Requirements
+### Requirements
 
 The build assumes you have the following kits...
 
@@ -21,15 +21,15 @@ In addition you will need a Linux, Mac or Windows computer running the latest [A
 
 Mac and Windows computers need a [CP2102 driver](../cp2102/driver.html) to be installed for the USB Programmer to be recognised.
 
-## Getting started
+### Getting started
 
 Before embarking on the LED Clock, you should have successfully completed the [Alarm Clock build](../clock/build.html). This guide uses the Alarm Clock circuit configuration as its starting point.
 
 As before we'll be using 'battleship' numbering to indicate where components should be inserted, with numbers and letters indicating the rows and columns of the breadboard.
 
-### Step 1: Adding an extra breadboard
+## An extra breadboard
 
-[Second Breadboard][step01]
+![Second Breadboard][step01]
 
 The 24 LEDs in the display will be laid out, with special chips to drive them, on an extra breadboard, which we will refer to as the LED Display breadboard.
 
@@ -41,7 +41,7 @@ However, to make the build simple, we will first attach the new breadboard to th
 
 * ***Attach a new breadboard to the right of the Alarm Clock breadboard. The new breadboard's lugs should slide into slots at the rear of the old breadboard
 
-### Step 2: Connect the power rails of the new breadboard
+## Power rails for extra breadboard
 
 ![Connect power rails][step02]
 
@@ -54,7 +54,7 @@ We therefore need to connect red and green wires across from the power rail of t
 * ***Attach a <span style="color:red;">Red</span> wire from the left-hand <span style="color:red;">Red</span> +ive column of the LED Display breadboard to the right-hand <span style="color:red;">Red</span> +ive column of the LED Display breadboard, starting just above row 15, and finishing just below row 15.***
 * ***Attach a <span style="color:green;">Green</span> wire from the left-hand <span style="color:blue;">Blue</span> -ive column of the LED Display breadboard to the right-hand <span style="color:blue;">Blue</span> -ive column of the LED Display breadboard, starting just above row 16, and finishing just below row 16.***
 
-### Step 3: Attach the first WS2803D LED Driver chip
+## First WS2803D LED Driver
 
 ![WS2803D][step03]
 
@@ -68,7 +68,7 @@ The first driver chip should be placed in the same orientation as all the other 
 
 * ***Insert the first WS2803D chip with the half-moon shape at the top of the breadboard. Pin 1 (the top-left pin, anticlockwise from the half-moon) should be in row 1, and pin 14 (the bottom-left pin) should be in row 14.***
 
-### Step 4: Attach power to the WS2803D
+## Power for the WS2803D
 
 ![WS2803D Power][step04]
 
@@ -77,7 +77,7 @@ Pin 1 needs a connection to ground and Pin 28 (all the way anticlockwise from th
 * ***Attach a <span style="color:green;">Green</span> wire from <span style="color:gray">a1</span> to the (<span style="color:blue;">Blue</span>) left-hand -ive power rail***
 * ***Attach a <span style="color:red;">Red</span> wire from <span style="color:gray;">g1</span> to the (<span style="color:red;">Red</span>) right-hand +ive power rail***
 
-### Step 5: Attach a resistor as a current reference
+## A 'Reference' Resistor
 
 ![Reference Resistor][step05]
 
@@ -91,7 +91,7 @@ Unfortunately resistors are only available in a limited number of values, so we'
 
 * ***Attach a 1.5kOhm resistor between <span style="color:gray;">a2</span> and the (<span style="color:blue;">Blue</span>) left-hand -ive power rail***
 
-### Step 6: Add a decoupling capacitor
+## Decoupling capacitor
 
 ![Decoupling capacitor][step06]
 
@@ -102,7 +102,7 @@ We'll be using a capacitor marked 104, which indicates its capacitance in picoFa
 * ***Attach a capacitor marked 104 between <span style="color:gray;">d1</span> and <span style="color:gray;">g1</span>***
 
 
-### Step 7: Add the wires for receiving LED control instructions
+## WS2803 I2C Control Wires
 
 ![I2C Wires][step07]
 
@@ -113,7 +113,7 @@ Once you have attached the clock and data lines the first WS2803D chip is fully 
 * ***Attach a <span style="color:blue;">Blue</span> wire between <span style="color:gray;">j5</span> on the left breadboard and <span style="color:gray;">a4</span> on the right breadboard, connecting the serial Clock line***
 * ***Attach an <span style="color:orange;">Orange</span> wire between <span style="color:gray;">j6</span> on the left breadboard and <span style="color:gray;">a5</span> on the right breadboard, connecting the serial Data line***
 
-### Step 8: Now wire the second WS2803D chip
+## Second WS2803D chip
 
 ![The Second WS2803D][step08]
 
@@ -128,7 +128,7 @@ The second chip accepts data not from the ATMEGA chip directly, but from the oth
 * ***Attach a <span style="color:blue;">Blue</span> wire between <span style="color:gray;">g2</span> and <span style="color:gray;">g27</span>, (the serial Clock line)***
 * ***Attach an <span style="color:orange;">Orange</span> wire between <span style="color:gray;">g3</span> and <span style="color:gray;">g26</span>, (the serial Data line) ***
 
-### Step 9: Add all the LEDs
+## 24 LEDs
 
 ![LEDs][step09]
 
@@ -138,11 +138,11 @@ The long legs need to be attached to the +ive power rails down the sides of the 
 
 Follow the pattern of LED wire locations in the diagram. These locations have been selected to allow enough space for the 5mm LEDs to lie next to each other.
 
-### Finished!
+## Finished, Upload the code!
 
 ![A complete LED clock][step10]
 
-[header]: ledclock_kit.png
+[header]: kit.png
 [step01]: sequence/01_second_breadboard.png
 [step02]: sequence/02_powerrails.png
 [step03]: sequence/03_first_ws2803d.png
