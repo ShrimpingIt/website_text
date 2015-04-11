@@ -13,16 +13,16 @@ declare function local:rewrite-head($head){
     (: Note original head is ignored :)
     local:filter-items(
         <head>
-            <title>{string((root($head)//*[local:is-header(.)])[1])}</title>
+            <title>{string((root($head)//*[local:is-header(.)])[1])}&#160;</title>
             <meta charset="utf-8"/>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-            <script type="text/javascript" src="{$serverroot}style/require/require.js" ><!-- Prevent self-closing --></script>
+            <script type="text/javascript" src="{$serverroot}style/require/require.js" >&#160;</script>
             <script>
                 require.config({{
                     baseUrl: '{$serverroot}style/require',
                 }});
             </script>
-            <script type="text/javascript" src="{$serverroot}style/index.js" ><!-- Prevent self-closing --></script>
+            <script type="text/javascript" src="{$serverroot}style/index.js" >&#160;</script>
             <link href="http://fonts.googleapis.com/css?family=Oswald:400,300,700|Lusitana:400,700|Open+Sans:400,800" rel='stylesheet' type='text/css' />
             <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'/>
             <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,300italic,400italic,700italic,700,800,800italic' rel='stylesheet' type='text/css'/>
@@ -76,6 +76,20 @@ declare function local:rewrite-body($body){
                 <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
                 <nav role="navigation">
                     <ul id="js-navigation-menu" class="navigation-menu show">
+                        {
+                            if('project'=$classes) then
+                                <li class="nav-link more"><a href="./">This Project</a>
+                                    <ul class="submenu">
+                                        <li><a href="index.html">Introduction</a></li>
+                                        <li><a href="build.html">Build</a></li>
+                                        <li><a href="software.html">Software</a></li>
+                                        <li><a href="procure.html">Materials</a></li>
+                                        <li><a href="trouble.html">Troubleshooting</a></li>
+                                        <li><a href="teach.html">Teaching</a></li>
+                                    </ul>
+                                </li>
+                            else ()
+                        }
                         <li class="nav-link more">
                             <a href="{$serverroot}project/">Projects</a>
                             <ul class="submenu wide">
@@ -119,6 +133,7 @@ declare function local:rewrite-body($body){
                                 <li class="nav-link"><a href="{$serverroot}#about" class="scroll-on-page-link" >About Us</a></li>
                                 <li class="nav-link"><a href="{$serverroot}contribute.html">Contributing</a></li>
                                 <li class="nav-link"><a href="{$serverroot}license.html">Licensing</a></li>
+                                <li class="nav-link"><a href="{$serverroot}feedback.html" target="_blank" >Feedback</a></li>
                                 <li class="nav-link"><a href="{$serverroot}contact.html">Contact</a></li>
                             </ul>
                         </li>
@@ -183,8 +198,12 @@ declare function local:rewrite-body($body){
     </body>
 };
 
-declare function local:project-tab-id($headtags, $headindex){
+declare function local:project-tabname($headtags, $headindex){
     concat('tab', $headindex)
+};
+
+declare function local:project-tablink($headtags, $headindex){
+    concat('#step', $headindex)
 };
 
 declare function local:filter-project-body($body){
@@ -198,9 +217,8 @@ declare function local:filter-project-body($body){
                         <ul>
                             {
                                 for $headtag at $headindex in $headtags
-                                let $tabid := local:project-tab-id($headtags,$headindex)
                                 return
-                                    <li><a href="javascript:void(0)">{$headindex}</a></li>
+                                    <li><a href="{local:project-tablink($headtags,$headindex)}">{$headindex}</a></li>
                             }
                         </ul>
                     </li>
@@ -211,11 +229,11 @@ declare function local:filter-project-body($body){
                 <div class="vertical-tabs">
                     {
                         for $headtag at $headindex in $headtags
-                            let $tabid := local:project-tab-id($headtags,$headindex)
+                            let $tabname := local:project-tabname($headtags,$headindex)
                         return
-                            <a  href="#{$tabid}"
+                            <a href="javascript:void(0);"
                                 class="js-vertical-tab vertical-tab {if ($headindex=1) then 'is-active' else ''}"
-                                rel="{$tabid}">
+                                rel="{$tabname}">
                                 {string($headtag)}
                             </a>
                     }
@@ -226,11 +244,11 @@ declare function local:filter-project-body($body){
                         let $sectiontags := local:sectionafter($headtag),
                             $sectionimage := ($sectiontags//img)[1],
                             $remainingtags := ($sectiontags except $sectionimage/ancestor::*),
-                            $tabid := local:project-tab-id($headtags,$headindex)
+                            $tabname := local:project-tabname($headtags,$headindex)
                         return
                             <div>
-                                <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading is-active" rel="{$tabid}">{string($headtag)}</a>
-                                <div id="{$tabid}" class="js-vertical-tab-content vertical-tab-content">
+                                <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading is-active" rel="{$tabname}">{string($headtag)}</a>
+                                <div id="{$tabname}" class="js-vertical-tab-content vertical-tab-content">
                                     <a href="{$sectionimage/@src}" target="_animation"><img src="{$sectionimage/@src}"/></a>
                                     <aside>{$remainingtags}</aside>
                                 </div>
