@@ -20,6 +20,7 @@ class XqueryStyler(Runner):
                     '|sed 1d '+
                     "|xqilla -i /dev/stdin {xquery} -v sourcepath {inputpath} -v serverroot '{serverroot}' -v allsourcepaths '{inputpaths}' {varstring} "+
                     '|xmlindent '+
+                    '| sed -e \'1i<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>\\\' '
                     '> {outputfiletemplate}',
             # to get nicely indented XHTML
             # consider adding perltidy -i=2 -ce
