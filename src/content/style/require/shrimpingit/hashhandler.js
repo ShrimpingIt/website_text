@@ -1,18 +1,12 @@
-require(['jquery', 'animateScroll'], function($) {
+require(['jquery'], function($) {
 
-    //prevent page from scrolling unnecessarily to the anchor for hashes corresponding to tabs
-    /*
-    $( 'a[href^="#"]' ).click( function(e) {
-        e.preventDefault();
-        location.hash = "#" + id;
-        var rel = $(this).attr("href").substring(1);
-        $('a[rel="' + rel + '"]"').click();
-        //$(this).closest("section").animateScroll({scrollSpeed:4000});
-    } );
-    */
+    var hashprefix = "step";
+    var tabprefix = "tab";
+
+    var lasthash = null;
 
     $('a.tab-link, a.vertical-tab').click(function(e){
-       window.location.hash = '#' + $(this).attr("rel");
+       window.location.hash = '#' + hashprefix + $(this).attr("rel").substring(tabprefix.length);
     });
 
     function loadTab(tabname){
@@ -25,7 +19,8 @@ require(['jquery', 'animateScroll'], function($) {
     function hashLoaded(){
         var hash = location.hash;
         if(hash != lasthash){
-            loadTab(location.hash.substring(1));
+            var tabname = tabprefix + location.hash.substring(hashprefix.length + 1);
+            loadTab(tabname);
             lasthash = hash;
         }
     };
