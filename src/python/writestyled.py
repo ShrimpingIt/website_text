@@ -16,9 +16,9 @@ class XqueryStyler(Runner):
             outputdirectory='../styled',
             shellcmd='echo {inputpath};'+
                     'mkdir -p $(dirname {outputfiletemplate});'+
-                    'cat {inputpath}'+
-                    '|sed 1d '+
-                    "|xqilla -i /dev/stdin {xquery} -v sourcepath {inputpath} -v serverroot '{serverroot}' -v allsourcepaths '{inputpaths}' {varstring} "+
+                    #'cat {inputpath}'+
+                    #'|sed 1d '+
+                    "xqilla -i {inputpath} {xquery} -v sourcepath {inputpath} -v serverroot '{serverroot}' -v allsourcepaths '{inputpaths}' {varstring} "+
                     '|xmlindent '+
                     '| sed -e \'1i<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>\\\' '
                     '> {outputfiletemplate}',

@@ -16,6 +16,7 @@ class MarkdownExporter(Runner):
             shellcmd='echo {inputpath};'+
                     'mkdir -p $(dirname {outputfiletemplate});'+
                     'pandoc --from=markdown_github --to=html --standalone {inputpath}'+
+                    '|sed 1d'
                     '> {outputfiletemplate}'
         )
 
