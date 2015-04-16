@@ -2,24 +2,9 @@
 
 ![An alarm clock][header]
 
-This guide provides details for learners to wire, program and configure their first @ShrimpingIt digital clock project.
+This guide provides details for learners to wire, program and configure their first @ShrimpingIt digital clock project. For general orientation, see the [Alarm Clock](./index.html) project page. The completed build should replicate the image shown on the left.
 
-For general orientation, see the [Alarm Clock](./index.html) project page. The image shows the completed build.
-
-### Requirements
-
-The build assumes you have the following kits, or have sourced equivalent parts...
-
-* An [Alarm Clock Addon](../../kit/alarmclock.html) kit
-* A [Shrimp Parts](../../kit/shrimp.html) kit
-* A [Programmer](../../kit/cp2102.html) kit
-* A [400point Breadboard](../../kit/breadboard400.html) kit
-
-For convenience, pre-bagged kits are available to order from @ShrimpingIt online. If you do not wish to buy from us, information is provided for you to source commodity parts direct from electronics wholesalers.
-
-In addition you will need a Linux, Mac or Windows computer running the latest [Arduino IDE](../topics/ide.html). 
-
-Mac and Windows computers need a [CP2102 driver](../../kit/cp2102.html#driver) to be installed for the USB Programmer to be recognised.
+For convenience, [pre-bagged kits](../../kit/alarmclock.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](./procure.html) for you to source commodity parts direct from electronics wholesalers.
 
 ### Getting started
 
