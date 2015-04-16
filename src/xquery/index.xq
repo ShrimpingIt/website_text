@@ -61,8 +61,13 @@ declare function local:write-hero(){
     </section>
 };
 
+declare function local:relativedoc($node, $path){
+    doc(replace(string(document-uri(root($node))), '[^/]*.html', $path))
+};
+
 declare function local:rewrite-body($body){
-    let $classes := local:body-classes()
+    let $classes := local:body-classes(),
+        $projectpage := 'project'=$classes and count($classes) = 3 (: corresponds to e.g. ('project','alarmclock','index'):)
     return
     <body class="{fn:normalize-space(string-join($classes,' '))}">
         {
@@ -77,21 +82,24 @@ declare function local:rewrite-body($body){
                 <nav role="navigation">
                     <ul id="js-navigation-menu" class="navigation-menu show">
                         {
-                            if('project'=$classes) then
-                                <li class="nav-link more"><a href="./">This Project</a>
-                                    <ul class="submenu">
-                                        <li><a href="index.html">Introduction</a></li>
-                                        <li><a href="build.html">Build</a></li>
-                                        <li><a href="software.html">Software</a></li>
-                                        <li><a href="procure.html">Materials</a></li>
-                                        <li><a href="trouble.html">Troubleshooting</a></li>
-                                        <li><a href="teach.html">Teaching</a></li>
-                                    </ul>
-                                </li>
+                            if($projectpage) then
+                                let $introdoc := local:relativedoc($body, 'index.html'),
+                                    $introtitle := string($introdoc//h1)
+                                return
+                                    <li class="nav-link more"><a href="./">{$introtitle} Project</a>
+                                        <ul class="submenu">
+                                            <li><a href="index.html">Intro</a></li>
+                                            <li><a href="build.html">Circuit</a></li>
+                                            <li><a href="program.html">Programs</a></li>
+                                            <li><a href="debug.html">Troubleshoot</a></li>
+                                            <li><a href="buy.html">Buying</a></li>
+                                            <li><a href="teach.html">Teaching</a></li>
+                                        </ul>
+                                    </li>
                             else ()
                         }
                         <li class="nav-link more">
-                            <a href="{$serverroot}project/">Projects</a>
+                            <a href="{$serverroot}project/">{if($projectpage) then 'Other Projects' else 'Projects' }</a>
                             <ul class="submenu wide">
                                 <li><a href="{$serverroot}#project-blink">...blink an LED</a></li>
                                 <li><a href="{$serverroot}#project-pov">...paint with light</a></li>
