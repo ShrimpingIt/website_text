@@ -1,4 +1,3 @@
-kits
-====
+# Website Text
 
-A place for resources and issue tracking about our freely licensed breadboard builds.
+This repository hosts the authoring of the text of the [start.shrimping.it](http://start.shrimping.it) website and build instructions surrounding our projects. We invite visitors who have any feedback or suggestions to [raise an issue](https://github.com/ShrimpingIt/website_text/issues).
