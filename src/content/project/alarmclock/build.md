@@ -6,13 +6,15 @@ This guide provides details for learners to wire, program and configure their fi
 
 For convenience, [pre-bagged kits](../../kit/alarmclock.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](./procure.html) for you to source commodity parts direct from electronics wholesalers.
 
-### Getting started
+## Getting started
 
-Before embarking on the Alarm Clock, you should have **successfully completed the [Blink build](../blink/index.html)**. This build uses the Blink circuit as its starting point.
+![Blink Layout][step00]
+
+Before embarking on the Alarm Clock, you should have **successfully completed the [Blink build](../blink/build.html)**. This build uses the Blink circuit as its starting point.
 
 ## Remove surplus parts
 
-![Blink Layout][step01]
+![Blink components to remove][step01]
 
 You can remove the Blink LED and resistor as these are not used in the circuit, and it will be easier to wire the circuit with them out of the way.
 
@@ -134,27 +136,27 @@ Piezo is short for Piezoelectric transducer. It uses a piezoelectric effect wher
 
 The piezos we are using have no orientation and can be inserted either way around.
 
-***Insert the Piezo so that one of its pins goes into row 26, and the other goes into row 27, keeping it as far to the left as possible***
+***Insert the Piezo so that one of its pins goes into row 26, and the other goes into row 28, keeping it as far to the left as possible***
 
 ## Piezo Ground wire
 
 ![Piezo Ground][step11]
 
-We want the Piezo to experience a voltage across the material, so it will need to have a connection to 0V (ground) on one side, then we can control the voltage of the other side.
+We want the Piezo to experience a voltage across the material, so it will need to have a connection to 0V (ground) on one side, then we can control the voltage of the other side. We will connect the ground rail with a 'current-limiting' resistor. Using a resistor instead of a wire reduces the amount of power sent to the Piezo, making the circuit more stable.
 
-***Attach a Green wire between the right-hand -ive (Blue) power rail, and hole j27***
+***Attach a 100 Ohm resistor wire between the right-hand -ive (Blue) power rail, and hole j28***
 
 ## Piezo Control wire
 
-![Piezo Resistor][step12]
+![Piezo Control wire][step12]
 
-We will be varying the bottom right hand pin of the ATMEGA chip between 0V and 5V to cause the Piezo to flex back and forth, making sound. Using a resistor instead of a wire reduces the amount of current which the Piezo uses, making the circuit more stable.
+We will be varying Arduino pin 6 on the ATMEGA chip between 0V and 5V using its special [PWM capabilities](../../pwm.html)  to cause the Piezo to flex back and forth, making sound.
 
-***Attach a resistor between j16 and j26, connecting the Piezo to the pin we'll use to generate audible waves; the bottom-right pin of the ATMEGA***
+***Attach a wire between d14 and j26, connecting the Piezo to the pin we'll use to generate audible waves; Arduino pin 6***
 
-## Coin Battery
+## Insert Coin Battery
 
-![Final Layout][step13]
+![Layout to test][step13]
 
 After double-checking your layout matches the final diagram above, you can insert the coin battery. Once you have set the time, this will help your clock keep time even when the USB or main battery pack is removed.
 
@@ -162,24 +164,41 @@ Note, if you attach nothing to the DS1307 Battery pin, then the clock will not w
 
 A workaround to ground DS1307 Pin 3, which avoids battery shorting, is to remove any battery, and balance a small metal disc or coin in the place of the battery, being sure that it touches both terminals. This effectively connects Pin 3 to Ground. A piece of card cut to size and wrapped in aluminium foil is a good option.
 
-## Ready to tick!
-
-Now the fundamental hardware is all in place, and we can start to program our clock to behave in different ways.
-
 For any clock behaviours to work (such as playing chimes) you must attach a reliable power supply of 3.6V to 5V, which you can get by plugging into USB or by wiring in a 3xAAA battery pack.
+
+***Check the circuit, then add the coin battery.***
 
 ## Upload Code
 
-Now the clock subcircuit is complete, we should be able to set and read back the time from the clock. Verifying this simple behaviour is a useful test, before we add lots of extra logic for controlling different chimes. [This software is yet to be uploaded]
+![Layout to test][step13]
 
-Software for the Alarm Clock behaviour can be found in our ['projects'](https://github.com/ShrimpingIt/projects) Github repository. Note, code for this project depends upon the RTCLib, rtttl and Narcoleptic libraries (also distributed in the same repository).
+Now the clock subcircuit is complete, we can set and read back the time from the clock. Verifying this simple behaviour is a useful test, before we add extra hardware for a specific time-based project, or extra logic for controlling different chimes.
 
-To get started uploading code to a Shrimp, read the instructions at our [projects](https://github.com/ShrimpingIt/projects) repository. They detail how to prepare your computer for uploading the software, including downloading and installing the sketchbook, libraries and USB drivers you need. Once configured, you can refer to the Arduino guidance directly; a Shrimp appears as an Arduino Uno.
+In later steps we add a special subcircuit allowing the Clock to be woken from a LowPower state by sending over Serial, and add some buttons which can be used for controlling the Alarm. However the fundamental hardware is all in place, and we can already start to program our clock.
 
-For interest, you may wish to [preview](https://github.com/ShrimpingIt/projects/tree/master/sketchbook/shrimpingit/alarmclock/UnaryAlarmClock) the code without downloading the sketchbook folder, libraries etc.
+***Visit the [programs page](program.html) to configure your programming environment and program the circuit with the [Clock01HardcodeTime](https://github.com/ShrimpingIt/projects/blob/master/sketchbook/shrimpingit/alarmclock/Clock01HardcodeTime/Clock01HardcodeTime.ino) or [Clock02SetTime](https://github.com/ShrimpingIt/projects/blob/master/sketchbook/shrimpingit/alarmclock/Clock02SetTime/Clock02SetTime.ino) programs.***
+
+## Wire for Serial Wake
+
+![Serial Wake Wire][step14]
+
+This wire allows us to monitor activity on the Serial data in wire using Arduino pin 2, a pin which is capable of waking the chip from a low-power sleep mode. This is demonstrated by the [Clock02LowPowerSetTime](https://github.com/ShrimpingIt/projects/blob/master/sketchbook/shrimpingit/alarmclock/Clock02LowPowerSetTime/Clock02LowPowerSetTime.ino) sketch.
+
+## Interactive Buttons 
+
+![Adding Two buttons][step15]
+
+Buttons can be added to allow you to control your clock in different ways, for example as a Snooze button, or to advance or retard the time or alarm time.
+
+## Button Ground wires
+
+![Button Ground wires][step16]
+
+Once the Ground wires are attached, the buttons can be configured in software by setting Arduino Pin 7 and Pin 8 [pinMode() to be INPUTPULLUP](http://www.arduino.cc/en/Tutorial/InputPullupSerial), then they can be detected by using [digitalRead](http://www.arduino.cc/en/Reference/DigitalRead).
 
 [header]: kit.png
-[step01]: ./sequence/01_blink.png
+[step00]: ./sequence/00_blink.png
+[step01]: ./sequence/01_blink_remove.png
 [step02]: ./sequence/02_capacitor.png
 [step03]: ./sequence/03_powerrails.png
 [step04]: ./sequence/04_ds1307.png
@@ -189,6 +208,9 @@ For interest, you may wish to [preview](https://github.com/ShrimpingIt/projects/
 [step08]: ./sequence/08_ds1307_crystal.png
 [step09]: ./sequence/09_battery_holder.png
 [step10]: ./sequence/10_piezo.png
-[step11]: ./sequence/11_piezo_ground.png
-[step12]: ./sequence/12_piezo_resistor.png
-[step13]: ./sequence/13_final.png
+[step11]: ./sequence/11_piezo_ground_resistor.png
+[step12]: ./sequence/12_piezo_control_wire.png
+[step13]: ./sequence/13_test.png
+[step14]: ./sequence/14_extra_serial_wake.png
+[step15]: ./sequence/15_extra_buttons.png
+[step16]: ./sequence/16_extra_buttons_ground.png
