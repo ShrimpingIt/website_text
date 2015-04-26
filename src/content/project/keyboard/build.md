@@ -1,4 +1,4 @@
-# Building the Conductive Keyboard
+# Wiring the Conductive Keyboard
 
 ![Conductive Keyboard Kit cover][header]
 
@@ -8,19 +8,19 @@ For orientation, see the [Conductive Keyboard](../keyboard/index.html) project p
 
 For convenience, [pre-bagged kits](../../kit/keyboard.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](./procure.html) for you to source commodity parts direct from electronics wholesalers.
 
-## Getting started
+## Getting started	
 
 ![Blink Layout][step00]
 
 Before embarking on the Conductive Keyboard, you should have **successfully completed the [Blink build](../blink/index.html)**. This build uses the Blink circuit as its starting point. 
 
-## Step 1: Remove unnecessary parts
+## Remove surplus parts
 
 ![Remove Blink parts][step01]
 
 You can remove the Blink LED and resistor as these are not used in the circuit, and it will be easier to wire the circuit with them out of the way.
 
-## Step 2: Connect Right-hand Power Rails 
+## Right Power Rails 
 
 ![Connecting power rails][step02]
 
@@ -29,7 +29,7 @@ The power rails on the right must be connected to the ATMEGA's power pins, and h
 ***Attach a Green wire from J9 horizontally and slightly down to the -ive (Blue) power rail on the right***
 ***Attach a Red wire from J11 horizontally and slightly up to the +ive (Red) power rail on the right*** 
 
-## Step 3: A hacked USB cable to connect as a keyboard
+## USB cable
 
 ![Hacked USB Cable][step03]
 
@@ -50,7 +50,7 @@ The other two wires are known as Data+ or D+ (Green) and Data- or D- (White), an
 ***Attach +5V to the right hand +ive power rail***
 ***Attach 0V to the right hand -ive power rail***
 
-## Step 4: Regulate USB signal levels with Zener Diodes  
+## Regulating Zener Diodes 
 
 ![USB Signalling Zener Diodes][step04]
 
@@ -62,7 +62,7 @@ However, a Zener is a special kind of diode. It is more like a leaky water valve
 
 We can use this feature of Zeners to ensure that the Green and White wires have a maximum of  3.6V output, even though they are being driven by the ATMEGA328's 5V output pins. Essentially, any voltage above 3.6V is allowed to bleed away through the Zener.
 
-## Step 5: Resistors to Satisfy USB 1.1 'Full speed' Standards 
+## USB 1.1 'Full speed' resistors
 
 ![USB Resistors][step05]
 
@@ -78,7 +78,7 @@ Each of the colored bands corresponds with a single figure number in the resisto
 ***Connect a 68Ohm resistor from d8 to f2***
 ***Connect a 2.2KOhm resistor from i1 to the right hand +ive (Red) power rail, just below the red USB wire***
 
-## Step 6: Adding a pull-up resistor to test conductive sensing
+## Test conductive sensing
 
 ![Pullup Resistor #1][step06]
 
@@ -90,13 +90,13 @@ The 20 MegaOhm resistors have Red Black, Blue for a code sequence 2, 0, 6. The f
 
 ***Connect a 20MegaOhm resistor between j3 and the next free hole on the right-hand +ive (Red) power rail***
 
-## Step 7: Remaining Right Hand Pullups
+## More Right Hand Pullups
 
 ![Pullup Resistors #2 to #15][step07]
 
 ***Connect 20MegaOhm resistors from j4,j5,j6,j7,j8,j12,j13,j14,j15,j16 to the next free holes on the right-hand +ive (Red) power rail***
 
-## Step 8: Connecting the Left Power Rails
+## Left Power Rails
 
 ![Connecting Left Power Rails][step08]
 
@@ -105,7 +105,7 @@ If we want more than 11 keys on our keyboard, we need to start using sensing pin
 ***Attach a Green wire from the Right Hand -ive (Blue) power rail to the Left Hand -ive (Blue) power rail ***
 ***Attach a Red wire from the Right Hand +ive (Blue) power rail to the Left Hand +ive (Blue) power rail ***
 
-## Step 9: Accessible Left Hand Pullups
+## Accessible Left Hand Pullups
 
 ![Connecting Left Power Rails][step09]
 
@@ -113,7 +113,7 @@ A set of four digital pullups are really easy to connect on the left, giving us 
 
 ***Attach 20MegaOhm resistors from j16,j15,j14,j13 to the nearest holes on the Left-hand +ive (Red) power rail***
 
-## Step 9: Last (bonus) pullup if needed
+## Last (bonus) pullup if needed
 
 ![Pullup Resistor #16][step10]
 

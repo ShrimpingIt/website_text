@@ -1,4 +1,4 @@
-# Building the Alarm Clock
+# Wiring the Alarm Clock
 
 ![An alarm clock][header]
 
