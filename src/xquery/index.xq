@@ -149,8 +149,8 @@ declare function local:rewrite-body($body){
                 </nav>
                 <div class="navigation-tools">
                     <div class="search-bar">
-                        <form role="search" action="http://duckduckgo.com/">
-                            <input type="hidden" value="start.shrimping.it" id="sites"></input>
+                        <form role="search" action="http://duckduckgo.com/" method="get">
+                            <input type="hidden" value="start.shrimping.it" name="sites"></input>
                             <input type="hidden" value="1" name="kh"></input>
                             <input type="hidden" value="1" name="kn"></input>
                             <input type="hidden" value="1" name="kac"></input>
