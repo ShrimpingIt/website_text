@@ -6,27 +6,17 @@ This guide provides details for learners to wire, program and configure a @Shrim
 
 For orientation, see the [Conductive Keyboard](../keyboard/index.html) project page.
 
-## Requirements
-
-The build assumes you have the following kits...
-
-* A [Conductive Keyboard Addon](../keyboard/kit.html) kit
-* A [Shrimp Parts](../shrimp/kit.html) kit
-* A [Programmer](../shrimp/kit.html) kit
-
-For convenience, pre-bagged kits are available to order from @ShrimpingIt online. If you do not wish to buy from us, information is provided for you to source commodity parts direct from electronics wholesalers.
-
-In addition you will need a Linux, Mac or Windows computer running the latest [Arduino IDE](../topics/ide.html). 
-
-Mac and Windows computers need a [CP2102 driver](../cp2102/driver.html) to be installed for the USB Programmer to be recognised.
+For convenience, [pre-bagged kits](../../kit/keyboard.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](./procure.html) for you to source commodity parts direct from electronics wholesalers.
 
 ## Getting started
+
+![Blink Layout][step00]
 
 Before embarking on the Conductive Keyboard, you should have **successfully completed the [Blink build](../blink/index.html)**. This build uses the Blink circuit as its starting point. 
 
 ## Step 1: Remove unnecessary parts
 
-![Blink Layout][step01]
+![Remove Blink parts][step01]
 
 You can remove the Blink LED and resistor as these are not used in the circuit, and it will be easier to wire the circuit with them out of the way.
 
@@ -132,8 +122,9 @@ If you really need the full set of 16 sensor pins to be active, you'll need to c
 ***Replace the programming header, leaving 5 pins at the top, a one-pin gap, and 3 further pins below.***
 ***Attach a 20MegaOhm resistor from A7 to the nearest hole on the Left-hand +ive (Red) power rail*** 
 
-[header]: ./keyboard_kit.png
-[step01]: ./sequence/01_blink.png
+[header]: ./kit.png
+[step00]: ./sequence/00_blink.png
+[step01]: ./sequence/01_blink_remove.png
 [step02]: ./sequence/02_rightpower.png
 [step03]: ./sequence/03_usbcable.png
 [step04]: ./sequence/04_usbdiodes.png
