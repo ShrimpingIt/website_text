@@ -2,15 +2,15 @@
 
 ![Kit cover showing layout](../project/alarmclock/kit.png)
 
-This is a bagged kit of the project-specific components to build a @ShrimpingIt [Alarm Clock](../project/alarmclock/) following our [step by step build instructions](../project/alarmclock/build.html).
+We sell pre-bagged components to build a @ShrimpingIt [Alarm Clock](../project/alarmclock/), to accompany our [step by step build instructions](../project/alarmclock/build.html).
 
 ## Project Bundle
 
-To make the project, the Alarm Clock Addon needs to be combined with the following reusable @ShrimpingIt kits (or equivalent parts you have sourced yourself).
+To make the project, you need the following @ShrimpingIt kits (or equivalent parts you have sourced yourself)...
 
-* A [Shrimp Parts](../../kit/shrimp.html) kit (microcontroller and supporting parts) 
-* A [400point Breadboard](../../kit/breadboard400.html) kit (to build the circuit on)
-* A [UART](../../kit/cp2102.html) kit (for uploading programmed behaviours to your Alarm Clock)
+* A [400point Breadboard](breadboard400.html) (to build the circuit on)
+* A [Shrimp Parts](shrimp.html) kit (microcontroller and supporting parts) 
+* A [UART](cp2102.html) kit (for uploading programmed behaviours to your Shrimp)
+* This Alarm Clock Addon kit
 
-
-At the time of writing a complete Alarm Clock bundle costs £10.30 retail following the standard [pricing scheme](/bagging.html) for our bagging service.
+At the time of writing prepared bundles for the Alarm Clock project have been priced at £10.30 according to the standard [pricing scheme](../bagging.html) for our bagging service.
