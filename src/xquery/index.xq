@@ -88,25 +88,25 @@ declare function local:rewrite-body($body){
                                 return
                                     <li class="nav-link more"><a href="./">{$introtitle} Project</a>
                                         <ul class="submenu">
-                                            <li><a href="index.html">Intro</a></li>
-                                            <li><a href="build.html">Circuit</a></li>
-                                            <li><a href="program.html">Programs</a></li>
-                                            <li><a href="debug.html">Troubleshoot</a></li>
-                                            <li><a href="buy.html">Buying</a></li>
+                                            <li><a href="index.html">Introducing</a></li>
+                                            <li><a href="build.html">Wiring</a></li>
+                                            <li><a href="program.html">Programming</a></li>
+                                            <li><a href="debug.html">Debugging</a></li>
                                             <li><a href="teach.html">Teaching</a></li>
+                                            <li><a href="procure.html">Buying</a></li>
                                         </ul>
                                     </li>
                             else ()
                         }
                         <li class="nav-link more">
-                            <a href="{$serverroot}project/">{if($projectpage) then 'Other Projects' else 'Projects' }</a>
+                            <a href="{$serverroot}index.html#project">{if($projectpage) then 'Other Projects' else 'Projects' }</a>
                             <ul class="submenu wide">
-                                <li><a href="{$serverroot}#project-blink">...blink an LED</a></li>
-                                <li><a href="{$serverroot}#project-pov">...paint with light</a></li>
-                                <li><a href="{$serverroot}#project-blink">...make a Banana Piano</a></li>
-                                <li><a href="{$serverroot}#project-memory">...test your melody memory</a></li>
-                                <li><a href="{$serverroot}#project-alarmclock">...invent a new Clock</a></li>
-                                <!-- <li><a href="{$serverroot}#project-ledclock">...build a Word Clock</a></li> -->
+                                <li><a href="{$serverroot}index.html#project-blink">...blink an LED</a></li>
+                                <li><a href="{$serverroot}index.html#project-pov">...paint with light</a></li>
+                                <li><a href="{$serverroot}index.html#project-blink">...make a Banana Piano</a></li>
+                                <li><a href="{$serverroot}index.html#project-memory">...test your melody memory</a></li>
+                                <li><a href="{$serverroot}index.html#project-alarmclock">...invent a new Clock</a></li>
+                                <!-- <li><a href="{$serverroot}index.html#project-ledclock">...build a Word Clock</a></li> -->
                             </ul>
                         </li>
                         <li class="nav-link more">
@@ -131,14 +131,14 @@ declare function local:rewrite-body($body){
                             <ul class="submenu">
                                 <li class="nav-link"><a href="{$serverroot}workshop/">Workshops</a></li>
                                 <li class="nav-link"><a href="{$serverroot}about.html">Resources</a></li>
-                                <li class="nav-link"><a href="{$serverroot}#testimonials" class="scroll-on-page-link" >Testimonials</a></li>
+                                <li class="nav-link"><a href="{$serverroot}index.html#testimonials" class="scroll-on-page-link" >Testimonials</a></li>
                                 <li class="nav-link"><a href="{$serverroot}offer.html" >Special Offers</a></li>
                             </ul>
                         </li>
                         <li class="nav-link more">
                             <a href="javascript:void(0)">More</a>
                             <ul class="submenu">
-                                <li class="nav-link"><a href="{$serverroot}#about" class="scroll-on-page-link" >About Us</a></li>
+                                <li class="nav-link"><a href="{$serverroot}index.html#about" class="scroll-on-page-link" >About Us</a></li>
                                 <li class="nav-link"><a href="{$serverroot}contribute.html">Contributing</a></li>
                                 <li class="nav-link"><a href="{$serverroot}license.html">Licensing</a></li>
                                 <li class="nav-link"><a href="{$serverroot}feedback.html" target="_blank" >Feedback</a></li>
