@@ -1,21 +1,19 @@
-# @ShrimpingIt "LED Clock" Addon
+# LED Clock
 
 The default time display relies on a set of 24 LEDs organised in two lines of 12, a display which is quite power-hungry, and therefore intended to be continually illuminated by a permanent power supply (not a battery).
 
 These LEDs are employed in two distinct regimes to present the time of day as...
 
 * a word clock display
-    - leds are placed behind printed words
-    - words are selectively illuminated to present the time in English
-    - examples; "It's five minutes to ten", "It's a quarter past three"
+ - leds are placed behind printed words
+ - words are selectively illuminated to present the time in English
+ - examples; "It's five minutes to ten", "It's a quarter past three"
 
 * a proportional display
-    - a row with one lit LED for every hour 
-    - another row with one lit LED for every 5 minutes.
-    - examples `* * * * * * ` is 6 hours, `**   *   ** ` is 5 hours
-    - examples `* * * * * * ` is 30 minutes, `**   *   ** ` is 25 minutes
-
-
+ - a row with one lit LED for every hour 
+   - examples `* * * * * * ` is 6 hours, `**   *   ** ` is 5 hours
+ - another row with one lit LED for every 5 minutes.
+   - examples `* * * * * * ` is 30 minutes, `**   *   ** ` is 25 minutes
 
 The build provides a jumping off point for programming activities focused on different LED lighting behaviours for time display such as altering which lights are visible for easy identification of the hour, creating a word clock with different logic (e.g. translated from english to french), different tunes played on the hour, menu interactions to set the time or alarms. It also provides a natural foundation for D&T activities around developing time display mechanisms or product housings. 
 
