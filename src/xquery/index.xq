@@ -88,12 +88,12 @@ declare function local:rewrite-body($body){
                                 return
                                     <li class="nav-link more"><a href="./">{$introtitle} Project</a>
                                         <ul class="submenu">
-                                            <li><a href="index.html">Introducing</a></li>
-                                            <li><a href="build.html">Wiring</a></li>
-                                            <li><a href="program.html">Programming</a></li>
-                                            <li><a href="debug.html">Debugging</a></li>
-                                            <li><a href="teach.html">Teaching</a></li>
-                                            <li><a href="procure.html">Buying</a></li>
+                                            <li><a href="index.html">Introducing It</a></li>
+                                            <li><a href="build.html">Wiring It</a></li>
+                                            <li><a href="program.html">Programming It</a></li>
+                                            <li><a href="debug.html">Debugging It</a></li>
+                                            <li><a href="teach.html">Teaching It</a></li>
+                                            <li><a href="buy.html">Buying It</a></li>
                                         </ul>
                                     </li>
                             else ()
