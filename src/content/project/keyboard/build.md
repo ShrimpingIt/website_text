@@ -8,7 +8,7 @@ For orientation, see the [Conductive Keyboard](../keyboard/index.html) project p
 
 For convenience, [pre-bagged kits](../../kit/keyboard.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](./procure.html) for you to source commodity parts direct from electronics wholesalers.
 
-## Getting started	
+## Getting started
 
 ![Blink Layout][step00]
 

@@ -22,7 +22,6 @@ require(['jquery'], function($) {
         if(id){
             location.hash = "#" + id;
         }
-
     });
 
     /* if in accordion mode */
