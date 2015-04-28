@@ -154,17 +154,17 @@
     <section id="combinations">
         <img src="style/brand/combinations.png" />
         <p>
-            This table shows how our kits can be combined and recombined to make different projects.
+            This table shows how our kits can be reused and recombined to make different projects.
             <br/><br/>
             Complete project bundles are as low as £10-£12 pounds, but that only scratches the surface of the savings
             you can make.
             <br/><br/>
-            The £7.30 Shrimp Bundle and £1.20-2.00 breadboards can be reused between projects, making your second and
+            The Shrimp Bundle and breadboards can be reused between projects, making your second and
             third projects truly pocket-money prices.
             <br/><br/>
             Within the Shrimp Bundle, the £3.30 USB UART modules are only needed when programming. If money is really
-            tight, they can be held as a classroom resource, with learners taking working projects away which
-            run from battery or hacked USB cables.
+            tight, they can be held as a classroom resource, with learners taking programmed projects away which
+            run from battery or hacked USB cables (allowing them to re-program at home is the ideal).
             <br/><br/>
             Finally projects can be transferred from breadboard to stripboard from just £0.44 per circuit, freeing
             a classroom's solderless breadboards for the next year group.
