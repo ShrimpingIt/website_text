@@ -30,7 +30,7 @@ Once the adaptor is in place, you should be able to connect a rainbow cable to w
 
 There is deliberately a spare wire between the GND (0Volts, green) and the VCC (+5Volts, Red), here shown in yellow, which you might wish to use for controlling the backlight of the LCD screen, but this is not currently included in our programs.
 
-***Attach one end of the rainbow cable to the adaptor, and the other to the Nokia screen.***
+***Attach one end of the rainbow cable to the adaptor***
 
 ## Rainbow cable
 
@@ -38,7 +38,7 @@ There is deliberately a spare wire between the GND (0Volts, green) and the VCC (
 
 Now attach your LCD screen. Verify your wiring by following the route of the coloured wires in the graphic on the diagram to check the Liquid Crystal display is properly wired before powering up the circuit. Ensure no wires cross over (they should be in the same sequence at both ends), and that the VCC and GND connectors on the LCD connect to the Red and Green wires crossing the ATmega.
 
-***Attach one end of the rainbow cable to the adaptor, and the other to the Nokia screen.***
+***Attach the other end of the adaptor to the Nokia screen.***
 
 [header]: sequence/03_screen.png
 [step00]: sequence/00_alarmclock.png

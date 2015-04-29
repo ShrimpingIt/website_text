@@ -2,40 +2,48 @@
 <img src="arduinoweb.png" style="margin:1%;height:200px"/><img src="arduinoide.png" style="margin:1%;height:200px"/><img src="projectsgithub.png" style="margin:1%;height:200px"/>
 </section>
 
-To upload code to a Shrimp you must complete the following steps, described in more detail below...
+The following configuration steps are needed before uploading your first example sketch (program) to a @ShrimpingIt circuit...
 
-* Install the latest Arduino IDE from [arduino.cc](http://www.arduino.cc/en/main/Software)
-* Install drivers for the UART module from [shrimping.it](http://shrimping.it/drivers/) (not needed on Linux)
-* Install our [example 'Sketches'](https://github.com/ShrimpingIt/projects) (programs) in your Arduino IDE 'sketchbook' folder 
+* Download our Sketches (example Shrimp programs)
+* Install the USB Module
+* Install the Arduino IDE
+* Select our Sketches and USB Module in the Arduino IDE
 
-## Installing the Arduino IDE
+Once you have completed these steps, you should be able to choose and upload any sketch from our collection, using the Arduino IDE.
 
-We use an unmodified Arduino IDE to upload programs to the Shrimp (it thinks it's an Arduino Uno).
+## Download Our Sketches
 
-Instructions for installing the Arduino IDE are available for 
+Visit the [@ShrimpingIt projects repository](https://github.com/ShrimpingIt/projects) to find a folder containing the programs and libraries for all our @ShrimpingIt projects, intended for the [Arduino IDE](http://www.arduino.cc/en/Main/Software)  version 1.6.3 or above. You should be able to click on the Zip button to download a snapshot of the repository and unpack it to a location of your choice.
+
+## Install Drivers for the CP2102 UART
+
+Once new driver software is installed, it is a good idea to restart your machine to ensure everything works. Drivers are available for the CP2102 for...
+
+* [Mac OS 10.4 and above](http://shrimping.it/drivers/cp2102/macos/10.4-10.9_newer_untested/Mac_OSX_VCP_Driver.zip)
+* [Windows 8](http://shrimping.it/drivers/cp2102/windows/windows-8-silabs/CP210x_VCP_Windows.zip) [Windows XP, Vista, 7](http://shrimping.it/drivers/cp2102/windows/xp-vista-win7-silabs/CP210x_VCP_Win_XP_S2K3_Vista_7.exe)
+
+Linux distributions include built-in CP2102 drivers, although Linux user accounts may need 'dialout' permissions to access the device. Those running Linux kernels without CP210x drivers are l33t hackers and can solve this problem themselves :)
+
+If your machine is running an old or specialist operating system, then browse [http://shrimping.it/drivers](http://shrimping.it/drivers) or the [Silabs driver page](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx). 
+
+## Install the Arduino IDE
+
+We use an unmodified Arduino IDE to upload programs to the Shrimp. Instructions for installing the Arduino IDE are available for...
 
 * [Linux](http://playground.arduino.cc/Learning/Linux)
 * [Mac](http://arduino.cc/en/Guide/MacOSX)
 * [Windows](http://arduino.cc/en/Guide/Windows)
 
-## Installing Drivers for the CP2102 UART
+## Configure our Sketches and Serial Module
 
-Drivers are available for the CP2102 for
+Click on *File=>Preferences* in the menu of the Arduino IDE, and select the downloaded 'sketchbook' folder as your Arduino Sketchbook.
 
-* [Mac](http://arduino.cc/en/Guide/MacOSX)
-* [Windows](http://arduino.cc/en/Guide/Windows)
+A new port should appear in the Arduino IDE under *Tools=>Serial Ports* a short while after you plug in the CP2102, and it should disappear when you remove it. Click on that port to select it. A tick should appear next to the port to indicate that the Arduino IDE will use it for uploading and serial monitoring
 
-...and they are built in to the kernel on all mainstream Linux distributions. 
+Click on 'Arduino Uno' under *Tools=>Boards* in the Arduino IDE. A Shrimp is binary- and pin-compatible with an Arduino Uno. A dot should appear next to 'Arduino Uno' to show it is selected.
 
-If your machine is running an unusual OS (old or specialist), then browse [http://shrimping.it/drivers](http://shrimping.it/drivers) or the [Silabs driver page](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx). If you're running a Linux kernel which doesn't include the CP210x drivers, you're enough of a hacker to solve this problem yourself :)
+## Choose and Upload a Sketch
 
-## Installing Example Sketches
+To run any of the sketches on your Shrimp you need to find it under *File=>Sketchbook=>shrimpingit* and click on it. Once the code appears in the editor you can click on *File=>Upload* or *CTRL+U* or click the 'Right Arrow' symbol in the top menu bar to send it to your Shrimp.
 
-Visit the [@ShrimpingIt projects repository](https://github.com/ShrimpingIt/projects) to find a folder containing the programs and libraries for all our @ShrimpingIt projects for use with the [Arduino IDE](http://www.arduino.cc/en/Main/Software)  version 1.6.3 or above.
-
-Download and unzip the repository and configure your computer by navigating to *File=>Preferences* in the menu of the Arduino IDE, selecting the downloaded 'sketchbook' folder as your Arduino Sketchbook.
-
-To run each of the programs on your Shrimp you need to open it from its location under *File=>Sketchbook=>shrimpingit*, then click on *File=>Upload* or *CTRL+U* or click the 'Right Arrow' symbol in the top menu bar.
-
-Eventually it should report 'Done Uploading' **without any red error text** appearing at the bottom. If Red error text is appearing, there's something wrong with your circuit or the configuration of your USB module.
-
+Eventually it should report 'Done Uploading' **without any red error text** appearing at the bottom. If Red error text is appearing, there's something wrong with the installation of your USB module or you have made an error in your circuit.

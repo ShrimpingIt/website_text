@@ -1,12 +1,6 @@
 # Example Sketches
 
-Visit the [@ShrimpingIt projects repository](https://github.com/ShrimpingIt/projects) to find a folder containing the programs and libraries for all our @ShrimpingIt projects for use with the [Arduino IDE](http://www.arduino.cc/en/Main/Software)  version 1.6.3 or above.
-
-Download and unzip the repository and configure your computer by navigating to *File=>Preferences* in the menu of the Arduino IDE, selecting the downloaded 'sketchbook' folder as your Arduino Sketchbook.
-
-To run each of the programs below on your Shrimp you need to open it from its location under *File=>Sketchbook=>shrimpingit*, then click on *File=>Upload* or *CTRL+U* or click the 'Right Arrow' symbol in the top menu bar. 
-
-Eventually it should report 'Done Uploading' **without any red error text** appearing at the bottom. If Red error text is appearing, there's something wrong with your circuit or the configuration of your USB module.
+You will be able to upload the programs described below to your [Alarm Clock](index.html) once you have completed [these instructions](../shrimp/program.html) to install the relevant software on your laptop.
 
 ## Prove Clock Chip is properly configured 
 
