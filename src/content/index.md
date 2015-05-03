@@ -125,6 +125,16 @@
             </div>
         </li>
         <li class="tab-header-and-content">
+            <a id="project-ledclock" href="javascript:void(0)" class="tab-link">LED Clock</a>
+            <div class="tab-content project ledclock">
+                <img src="project/ledclock/kit.png" alt="Build diagram for LED Clock"/>
+                <p>
+                    Our <a href="project/ledclock/">LED Clock</a> circuit builds on the Alarm Clock project, adding a display of the time with two rows of 12 LEDs - one row for hours and one row for minutes. 
+                    It allows remixes which change the way the lights are used to represent the time in different ways. It has enough controllable LEDs to make a <a href="http://www.amazon.com/Princess-AAAD7312-LED-Word-Clock/dp/B00JPNWR3G" target="blank"></a>Word Clock, which lights words to tell the time, such as [It's] [twelve] [thirty] [five]. <a class="read-more" href="project/ledclock/">More about this Project</a>
+                </p>
+            </div>
+        </li>
+        <li class="tab-header-and-content">
             <a id="project-memory" href="javascript:void(0)" class="tab-link">Memory Game</a>
             <div class="tab-content project memory">
                 <img src="project/memory/kit.png" alt="Build diagram for Memory Game"/>
