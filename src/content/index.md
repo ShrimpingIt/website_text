@@ -173,20 +173,15 @@
     </section>
 </section>
 <section id="workshop">
-    <h2 class="line-behind"><span>Workshops for Learners, Teachers or Special Events</span></h2>
-    <section >
-        <img src="style/brand/combinations.png" />
-        <article>
-            <p>
-                @ShrimpingIt has wide-ranging experience running workshops at schools and special events. We have a variety of
-                formats to help learners and educators with their first steps. Workshop attendees build their own circuits
-                and program them, getting familiar with the components they will be taking home. In a full-day workshop format,
-                for example, we learn how to connect inputs and outputs to build their own personal invention ideas.
-                constructing programmable projects with cheap electronics prototyping material.
-            </p>
-            <p>
-            	
-            </p>
-        </article>
+    <h2 class="line-behind"><span>Workshops for Learners, Teachers, Special Events</span></h2>**
+    <section id="combinations">
+        <img src="style/brand/workshop2.jpg" />
+        <p>
+            @ShrimpingIt has wide-ranging experience running workshops at schools and special events. We can bring our 24-laptop mobile hacking studio, configured to operate without dependencies on local network or computing infrastructure.
+            We have a variety of formats to help learners and educators with their first steps. Workshop attendees build their own circuits
+            and program them, getting familiar with the components they will be taking home. In a full-day workshop format,
+            for example, we learn how to connect inputs and outputs to build their own personal invention ideas.
+            constructing programmable projects with cheap electronics prototyping material.
+        </p>
     </section>
 </section>
