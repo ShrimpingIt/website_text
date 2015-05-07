@@ -1,4 +1,4 @@
-# Building the Liquid Crystal Clock
+# Wiring an LCD Clock
 
 ![Final build][header]
 
@@ -32,7 +32,7 @@ There is deliberately a spare wire between the GND (0Volts, green) and the VCC (
 
 ***Attach one end of the rainbow cable to the adaptor***
 
-## Rainbow cable
+## Attach Screen
 
 ![Wire Nokia 5110 screen][step03]
 
