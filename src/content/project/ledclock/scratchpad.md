@@ -1,0 +1,1 @@
+Could create an educational circuit where there is no Shrimp at all, but just three buttons, one for clock, one for data, one for latch, and could manually tick through the Shift Register, getting feedback of your comprehension of the system.
