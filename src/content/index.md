@@ -194,9 +194,6 @@
                 for example, we learn how to connect inputs and outputs to build their own personal invention ideas.
                 constructing programmable projects with cheap electronics prototyping material.
             </p>
-            <p>
-            	
-            </p>
         </article>
     </section>
 </section>
