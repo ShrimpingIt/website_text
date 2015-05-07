@@ -32,6 +32,7 @@ Anecdotal reports are than no-one has yet sourced kits equivalent to ours more c
 
 If you do choose to bag your own kits, we strongly recommend you refer closely to the specific parts specifications and suppliers we provide for each kit and don't just source from your favourite UK supplier. That's because...
 
+
 * Our buying decisions are based on classroom experience, for example
 	* we provide buttons with only two legs *deliberately* to eliminate confusion in workshops
 	* stripped solid core wires are more reliable than badly soldered wholesale jumper wires
