@@ -1,6 +1,6 @@
 # Building the LED Clock
 
-![The LED Clock Addon Kit][header]
+![The LED Clock Addon Kit][step10]
 
 This guide provides details for learners to wire, program and configure a @ShrimpingIt digital clock project. It incorporates two LED driver chips which control ultrabright LEDs in a layout which can be programmed as a Word Clock or a Unary Clock.
 
@@ -78,15 +78,25 @@ The correct resistor value can be calculated by looking at the[Data sheet for th
 
 ## DM134 I2C Control Wires
 
-![I2C Wires][step07]
+![I2C Wires][step06]
 
-The DM134 can accept instructions to turn on and off specific LEDs over three wires. If the data wire (yellow) is at 5V then a **one** is being sent. If the data wire is at 0V then a **zero** is being sent. The clock wire (purple) is pulsed to 5V when a new value on the data wire is ready to be read. Using this **clocked serial** data stream, a series of **ones** and **zeroes** is read into a memory store on the DM134. Finally when the values of all the LEDs have been sent, a **Latch** wire is pulsed, to tell the DM134 to display the new series which determines whether individual LEDs are **on** or **off**.
+The DM134 can accept instructions to turn on and off specific LEDs over three wires. If the data wire (yellow) is at 5V then a **one** is being sent. If the data wire is at 0V then a **zero** is being sent. The clock wire (purple) is pulsed to 5V when a new value on the data wire is ready to be read. Using this **clocked serial** data stream, a series of **ones** and **zeroes** is read into a memory store on the DM134. Finally when the values of all the LEDs have been sent, a **Latch** wire is pulsed, to tell the DM134 to display the new series, determining which individual LEDs are **on** or **off**.
 
-Once you have attached the clock and data lines the first DM134 chip is fully wired up.
-
-* ***Attach a <span style="color:yellow;">Yellow</span> wire between <span style="color:gray;">j5</span> on the left breadboard and <span style="color:gray;">c2</span> on the right breadboard, connecting the serial 'Data' line***
+* ***Attach a <span style="color:goldenrod;">Yellow</span> wire between <span style="color:gray;">j5</span> on the left breadboard and <span style="color:gray;">c2</span> on the right breadboard, connecting the serial 'Data' line***
 * ***Attach an <span style="color:purple;">Purple</span> wire between <span style="color:gray;">j6</span> on the left breadboard and <span style="color:gray;">b3</span> on the right breadboard, connecting the serial Data line***
 * ***Attach an <span style="color:blue;">Blue</span> wire between <span style="color:gray;">j7</span> on the left breadboard and <span style="color:gray;">a4</span> on the right breadboard, connecting the serial Data line***
+
+## DM134 Enable Wire
+
+![Enable Wire][step07]
+
+The DM134 has an *enable* pin. When the pin detects the right signal, it enables itself. Without receiving the right signal, it will do nothing at all.
+
+The required signal is described in the data sheet as an 'Active Low'. That means it's a pin which is normally pulled up to the supply voltage (5V), and needs to be connected to Ground to pull down the pin (to 0V) to activate it. 
+
+When *enable* it is not connected to Ground, then no LEDs will light.
+
+Once you have attached the enable wire the first DM134 chip is fully wired up.
 
 ## Second DM134 chip
 
@@ -94,12 +104,14 @@ Once you have attached the clock and data lines the first DM134 chip is fully wi
 
 The second chip needs exactly the same connections as shown in the diagram. However, the second chip accepts data not from the ATMEGA chip directly, but from lighting information 'overflowing' from the previous DM134. When the ATMEGA sends more than 16 **ones** and **zeroes**, the extra information is passed on from the first DM134 to the next one. 
 
-* ***Attach a <span style="color:green;">Green</span> wire from <span style="color:gray;">a15</span> to the (<span style="color:blue;">Blue</span>) left-hand -ive power rail, (connects DM134 Pin 1 to 0V ground).***
-* ***Attach a <span style="color:red;">Red</span> wire between <span style="color:gray;">j15</span> and the (<span style="color:red;">Red</span>) left-hand -ive power rail, (connecting the DM134 Pin 24 to +5V power ).***
+* ***Attach a <span style="color:green;">Green</span> wire from <span style="color:gray;">a15</span> to the (<span style="color:blue;">Blue</span>) left-hand -ive power rail, (connects DM134 Ground Pin to 0V).***
+* ***Attach a <span style="color:red;">Red</span> wire between <span style="color:gray;">j15</span> and the (<span style="color:red;">Red</span>) left-hand -ive power rail, (connects DM134 Power Pin to +5V).***
 * ***Attach a 680 Ohm resistor between <span style="color:gray;">d15</span> and the top-left row (<span style="color:blue;">Blue</span>) (providing Pin 23 with a constant current reference)***
-* ***Attach a <span style="color:yellow;">Yellow</span> wire between <span style="color:gray;">g3</span> on the right breadboard and <span style="color:gray;">d16</span> on the right breadboard, connecting the serial 'Data' line***
+* ***Attach a <span style="color:goldenrod;">Yellow</span> wire between <span style="color:gray;">g3</span> on the right breadboard and <span style="color:gray;">d16</span> on the right breadboard, connecting the serial 'Data' line***
 * ***Attach an <span style="color:purple;">Purple</span> wire between <span style="color:gray;">c3</span> on the right breadboard and <span style="color:gray;">c17</span> on the right breadboard, connecting the serial Data line***
 * ***Attach an <span style="color:blue;">Blue</span> wire between <span style="color:gray;">b4</span> on the right breadboard and <span style="color:gray;">b18</span> on the right breadboard, connecting the serial Data line***
+* ***Attach a <span style="color:green;">Green</span> wire between <span style="color:gray;">i18</span> on the right breadboard and the (<span style="color:blue;">Blue</span>) right-hand -ive power rail, (connects DM134 'Active Low' Enable pin to 0V).***
+
 
 ## 24 LEDs
 
@@ -110,6 +122,21 @@ There are a total of 24 LEDs to insert. Each one has one slightly longer leg - t
 The long legs need to be attached to the +ive power rails down the sides of the LED display breadboard, and the short legs should be inserted either side of the DM134 chips in breadboard rows 5,6,8,9,11,12 and 19,20,22,23,25,26. The DM134 will allow current to flow into the pins in these rows, or block current flow, depending on the instructions it receives from the Shrimp's microcontroller. 
 
 Follow the pattern of LED wire locations in the diagram. These locations have been selected to allow enough space for the 5mm LEDs to lie next to each other.
+
+## Extra Protection
+
+![Extra Protection][step09a]
+
+The LED driver chip draws so much current that if all its lights are turned on simultaneously then the sudden demand can trigger problems elsewhere in the circuit. This is a frustrating fault to diagnose because it is occasional, depending on multiple factors.
+
+Unless your USB power supply is very reliable (e.g. a short cable to a high-quality voltage-regulated supply) it's a good idea to have a local reservoir of charge to smooth over these differences.
+
+The 104 ceramic capacitors we use have a very rapid response time, but they cannot hold a great deal of charge. By contrast, the large 10uF electrolytic capacitor is slow to respond, but can store quite a lot of charge. Adding both capacitors together should enable rapid response *and* a substantial reservoir.
+
+The capacitors will be attached across the power supply from 5V to 0V. The ceramic capacitor has no orientation. The electrolytic capacitor has its positive leg longer than its negative leg, and a strip down its body on the negative side showing minus symbols.
+
+***Add a 100 nF ceramic capacitor (marked 104) between h9 and h11 on the left breadboard***
+***Add a 10 uF electrolytic capacitor between i9 and i11 on the left breadboard***
 
 ## Finished, Upload the code!
 
@@ -124,7 +151,9 @@ Now you should be able to upload example code to use the LED arrays as a time di
 [step03]: sequence/03_first_dm134.png
 [step04]: sequence/04_first_dm134_power.png
 [step05]: sequence/05_first_dm134_resistor.png
-[step07]: sequence/07_first_dm134_clock+data.png
+[step06]: sequence/06_first_dm134_clock+data.png
+[step07]: sequence/07_first_dm134_enable.png
 [step08]: sequence/08_second_dm134.png
 [step09]: sequence/09_leds.png
+[step09a]: sequence/09a_extra_protection.png
 [step10]: sequence/10_final.png
