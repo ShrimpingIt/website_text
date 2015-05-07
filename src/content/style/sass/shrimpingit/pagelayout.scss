@@ -45,6 +45,42 @@ body.index{ // applies to top page, and build pages within projects only
 
 }
 
+.hero-copy h1{
+  text-transform: uppercase;
+}
+
+section.content{
+  @include outer-container();
+
+  //@extend article.type-system-serif;
+
+  margin-top:2em;
+
+  &>p{
+    @include span-columns(12);
+  }
+  &>img{
+    @include span-columns(4);
+  }
+
+  /* padding-top:60px; //to correspond with fixed header nav */
+
+  ul{
+    @extend %default-ul;
+  }
+
+  ol{
+    @extend %default-ol;
+  }
+
+  ul,ol{
+    p{
+      margin:0;
+      padding:0;
+    }
+  }
+
+}
 
 body.project {
 
@@ -53,24 +89,6 @@ body.project {
       left:0;
       top:0;
     }*/
-
-  section.content{
-    @include outer-container();
-
-    @extend article.type-system-serif;
-
-    margin-top:2em;
-
-    &>p{
-      @include span-columns(12);
-    }
-    &>img{
-      @include span-columns(4);
-    }
-
-    /* padding-top:60px; //to correspond with fixed header nav */
-
-  }
 
   &.build{
     @extend body.index;

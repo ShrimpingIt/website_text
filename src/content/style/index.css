@@ -107,6 +107,15 @@ ol {
   list-style-type: none;
   margin: 0;
   padding: 0; }
+  section.content ul {
+    list-style-type: disc;
+    margin-bottom: 0.75em;
+    padding-left: 1.5em; }
+  section.content ol {
+    list-style-type: decimal;
+    margin-bottom: 0.75em;
+    padding-left: 1.5em; }
+
 dl {
   margin-bottom: 0.75em; }
   dl dt {
@@ -919,27 +928,27 @@ header.navigation {
     max-width: 35em;
     text-align: center; }
 
-article.type-system-serif, body.project section.content {
+article.type-system-serif, section.content {
   text-align: left; }
-  article.type-system-serif h1, body.project section.content h1, article.type-system-serif h2, body.project section.content h2, article.type-system-serif h3, body.project section.content h3, article.type-system-serif p, body.project section.content p {
+  article.type-system-serif h1, section.content h1, article.type-system-serif h2, section.content h2, article.type-system-serif h3, section.content h3, article.type-system-serif p, section.content p {
     margin: 0; }
-  article.type-system-serif hr, body.project section.content hr {
+  article.type-system-serif hr, section.content hr {
     border-bottom: 1px solid #ddd;
     border-left: none;
     border-right: none;
     border-top: none;
     margin: 1.5em 0; }
-  article.type-system-serif p, body.project section.content p {
+  article.type-system-serif p, section.content p {
     color: #333;
     line-height: 1.5; }
-  article.type-system-serif a, body.project section.content a {
+  article.type-system-serif a, section.content a {
     color: #477DCA;
     text-decoration: none; }
-  article.type-system-serif::after, body.project section.content::after {
+  article.type-system-serif::after, section.content::after {
     clear: both;
     content: "";
     display: table; }
-  article.type-system-serif .type, body.project section.content .type {
+  article.type-system-serif .type, section.content .type {
     border-bottom: 1px solid;
     display: inline-block;
     font-family: "Merriweather Sans", sans-serif;
@@ -949,15 +958,15 @@ article.type-system-serif, body.project section.content {
     padding: 0.3em 0;
     text-align: left;
     text-transform: uppercase; }
-  article.type-system-serif h1, body.project section.content h1 {
+  article.type-system-serif h1, section.content h1 {
     font-family: "Lusitana", serif;
     font-size: 2em;
     font-weight: 700;
     margin-bottom: 0.5em; }
     @media screen and (min-width: 40em) {
-      article.type-system-serif h1, body.project section.content h1 {
+      article.type-system-serif h1, section.content h1 {
         font-size: 2.6em; } }
-  article.type-system-serif h2, body.project section.content h2 {
+  article.type-system-serif h2, section.content h2 {
     font-family: "Merriweather", serif;
     font-size: 1em;
     font-style: italic;
@@ -965,9 +974,9 @@ article.type-system-serif, body.project section.content {
     line-height: 1.6em;
     margin-bottom: 0.9em; }
     @media screen and (min-width: 40em) {
-      article.type-system-serif h2, body.project section.content h2 {
+      article.type-system-serif h2, section.content h2 {
         font-size: 1.2em; } }
-  article.type-system-serif code, body.project section.content code {
+  article.type-system-serif code, section.content code {
     background: #F7F7F7;
     border-radius: 4.5px;
     border: 1px solid #E0E0E0;
@@ -976,27 +985,27 @@ article.type-system-serif, body.project section.content {
     font-style: normal;
     padding: 0.1em 0.4em;
     white-space: nowrap; }
-  article.type-system-serif h3, body.project section.content h3 {
+  article.type-system-serif h3, section.content h3 {
     font-family: "Lusitana", serif;
     font-size: 1.4em;
     font-weight: 400;
     line-height: 1.3em;
     margin-bottom: .4em; }
-  article.type-system-serif p.date, body.project section.content p.date {
+  article.type-system-serif p.date, section.content p.date {
     color: rgba(51, 51, 51, 0.4);
     font-family: "Merriweather", serif;
     font-size: 0.9em;
     font-style: italic;
     margin-bottom: 0.3em; }
-  article.type-system-serif p, body.project section.content p {
+  article.type-system-serif p, section.content p {
     font-family: "Merriweather", serif;
     font-size: 0.9em;
     line-height: 1.6em;
     margin-bottom: 1.5em; }
-    article.type-system-serif p span, body.project section.content p span {
+    article.type-system-serif p span, section.content p span {
       font-family: "Merriweather Sans", sans-serif;
       font-weight: 700; }
-  article.type-system-serif a.read-more, body.project section.content a.read-more {
+  article.type-system-serif a.read-more, section.content a.read-more {
     display: inline-block;
     font-family: "Merriweather Sans", sans-serif;
     font-size: 0.8em;
@@ -1004,16 +1013,16 @@ article.type-system-serif, body.project section.content {
     margin-left: 0.2em;
     position: relative;
     text-transform: uppercase; }
-    article.type-system-serif a.read-more span, body.project section.content a.read-more span {
+    article.type-system-serif a.read-more span, section.content a.read-more span {
       font-family: "Lusitana", serif;
       font-size: 1.5em;
       font-style: normal;
       position: absolute;
       right: -12px;
       top: -1px; }
-  article.type-system-serif hr, body.project section.content hr {
+  article.type-system-serif hr, section.content hr {
     width: 3em; }
-  article.type-system-serif p.author, body.project section.content p.author {
+  article.type-system-serif p.author, section.content p.author {
     font-family: "Merriweather", serif;
     font-style: italic; }
 
@@ -1527,36 +1536,40 @@ body.index .tab-content, body.project.build .tab-content, body.index .vertical-t
     body.index .tab-content.memory p:last-child, body.project.build .tab-content.memory p:last-child, body.index .tab-content.stripboard p:last-child, body.project.build .tab-content.stripboard p:last-child, body.index .vertical-tab-content.memory p:last-child, body.project.build .vertical-tab-content.memory p:last-child, body.index .vertical-tab-content.stripboard p:last-child, body.project.build .vertical-tab-content.stripboard p:last-child {
       margin-right: 0; }
 
+section.content {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  /* padding-top:60px; //to correspond with fixed header nav */ }
+  section.content::after {
+    clear: both;
+    content: "";
+    display: table; }
+  section.content > p {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    section.content > p:last-child {
+      margin-right: 0; }
+  section.content > img {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%; }
+    section.content > img:last-child {
+      margin-right: 0; }
+  section.content ul p, section.content ol p {
+    margin: 0;
+    padding: 0; }
+
 body.project {
   /*header.navigation{
       position:fixed;
       left:0;
       top:0;
     }*/ }
-  body.project section.content {
-    max-width: 68em;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2em;
-    /* padding-top:60px; //to correspond with fixed header nav */ }
-    body.project section.content::after {
-      clear: both;
-      content: "";
-      display: table; }
-    body.project section.content > p {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 100%; }
-      body.project section.content > p:last-child {
-        margin-right: 0; }
-    body.project section.content > img {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 31.76157%; }
-      body.project section.content > img:last-child {
-        margin-right: 0; }
   body.project.build .pagination {
     text-align: right;
     font-size: 0.8em; }
