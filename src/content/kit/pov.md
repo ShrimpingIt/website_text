@@ -19,4 +19,4 @@ The standalone bundle includes...
 * A [Shrimp Parts](shrimp.html) kit (microcontroller and supporting parts) 
 * A [UART](cp2102.html) kit (for uploading programmed behaviours to your Shrimp)
 
-See the [pathways map](/#kit) for a pricing breakdown and to find accessories to build other [@ShrimpingIt projects](/#project) with the same components.
+See the [pathways map](/#kit) for a pricing breakdown and to find accessories to build other [@ShrimpingIt projects](/#project) reusing the same components.
