@@ -10,14 +10,13 @@ Parts are deliberately reusable between projects. Once each learner has a Shrimp
 
 | Project | Description | Kit Price | Kit includes | Bundle also includes | Bundle Price| Features |
 |---------|------|-------|-----------|-----------|-----------|-----------|
-| [Shrimp](http://shrimping.it/project/shrimp/) | Substitutes for an Arduino Uno - the foundation for our programmable projects | ***£4.00*** | Shrimp Parts (Microcontroller circuit, supporting components) | UART for Programming, 400 point breadboard for circuit layout | £9.30 | * |
-| [Conductive Keyboard Addon](./keyboard.html) | substitutes for a MakeyMakey to create interactive games | ***£2.00*** | USB wiring, Jumper wires, Conductive tape | Shrimp Bundle| £11.30 | * |
-| [Persistence of Vision Addon](http://shrimping.it/project/pov/) | just add 8 LEDs, paint your name with lights in the air | ***£1.25*** | 8 Red Ultrabright LEDs, 3xAAA Battery pack with switch | Shrimp Bundle| £10.55 | * + $ |
-| [Alarm Clock Addon](./alarmclock.html) | Accurate alarm clock with backup coin battery for time-controlled projects | ***£1.00*** | Real Time Clock chip, Piezo transducer, I2C wiring | Shrimp Bundle| £10.30 | * $ |
-| [Memory Game Addon](http://shrimping.it/project/memory/) | has backlit buttons, plays melodies like M.B. Games' Simon from the '80s | ***£2.75*** | Piezo transducer, Backlit buttons, resistors | Shrimp Parts, UART, 2x 170pt breadboards | £12.45| * $ |
-| [Stripboard Addon](http://shrimping.it/project/stripboard/) | make your project more permanent by soldering it to a circuit board | £1.30 | 93x54mm Copper Stripboard 28DIP chip socket, 40 Right angle male header pins | Shrimp Parts, UART | £8.60 | *
-
-<!--  | [LED Clock Addon](./ledclock.html) | Adds a word clock or unary clock time display to the Alarm Clock project| ***£3.20*** | 2 WS2803D LED Driver chips, 24 Red Ultrabright LEDs| Alarm Clock Bundle, extra 400 point breadboard  | £15.50 | * $ -->
+| [Shrimp](shrimp.html) | Substitutes for an Arduino Uno - the foundation for our programmable projects | ***£4.00*** | Shrimp Parts (Microcontroller circuit, supporting components) | UART for Programming, 400 point breadboard for circuit layout | £9.30 | * |
+| [Conductive Keyboard Addon](keyboard.html) | substitutes for a MakeyMakey to create interactive games | ***£2.00*** | USB wiring, Jumper wires, Conductive tape | Shrimp Bundle| £11.30 | * |
+| [Persistence of Vision Addon](pov.html) | just add 8 LEDs, paint your name with lights in the air | ***£1.25*** | 8 Red Ultrabright LEDs, 3xAAA Battery pack with switch | Shrimp Bundle| £10.55 | * + $ |
+| [Alarm Clock Addon](alarmclock.html) | Accurate alarm clock with backup coin battery for time-controlled projects | ***£1.00*** | Real Time Clock chip, Piezo transducer, I2C wiring | Shrimp Bundle| £10.30 | * $ |
+| [Memory Game Addon](memory.html) | has backlit buttons, plays melodies like M.B. Games' Simon from the '80s | ***£2.75*** | Piezo transducer, Backlit buttons, resistors | Shrimp Parts, UART, 2x 170pt breadboards | £12.45| * $ |
+| [Stripboard Addon](stripboard.html) | make your project more permanent by soldering it to a circuit board | £1.30 | 93x54mm Copper Stripboard 28DIP chip socket, 40 Right angle male header pins | Shrimp Parts, UART | £8.60 | *
+| [LED Clock Addon](ledclock.html) | Adds a word clock or unary clock time display to the Alarm Clock project| ***£2:00*** | 2 DM134 LED Driver chips, 24 Red Ultrabright LEDs| Alarm Clock Bundle, extra 400 point breadboard  | £15.50 | * $
 
 Features 
 \* has animated graphical instructions for each component added 
