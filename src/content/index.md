@@ -130,7 +130,7 @@
                 <img src="project/ledclock/kit.png" alt="Build diagram for LED Clock"/>
                 <p>
                     Our <a href="project/ledclock/">LED Clock</a> circuit builds on the Alarm Clock project, adding a display of the time with two rows of 12 LEDs - one row for hours and one row for minutes. 
-                    It allows remixes which change the way the lights are used to represent the time in different ways. It has enough controllable LEDs to make a <a href="http://www.amazon.com/Princess-AAAD7312-LED-Word-Clock/dp/B00JPNWR3G" target="blank"></a>Word Clock, which lights words to tell the time, such as [It's] [twelve] [thirty] [five]. <a class="read-more" href="project/ledclock/">More about this Project</a>
+                    It allows remixes which change the way the lights are used to represent the time in different ways. It has enough controllable LEDs to make a <a href="http://www.amazon.com/Princess-AAAD7312-LED-Word-Clock/dp/B00JPNWR3G" target="_blank">Word Clock</a>, which lights words to tell the time, such as <em>[It's] [twelve] [thirty] [five].</em> <a class="read-more" href="project/ledclock/">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -186,13 +186,16 @@
     <h2 class="line-behind"><span>Workshops for Learners, Teachers, Special Events</span></h2>
     <section id="combinations">
         <img src="style/brand/workshop2.jpg" />
-        <p>
-		        @ShrimpingIt has wide-ranging experience running workshops at schools and special events. We can bring our 24-laptop mobile hacking studio, configured to operate without dependencies on local network or computing infrastructure.
+            <p>
+		        @ShrimpingIt has wide-ranging experience running workshops at schools and special events. 
+                <br/><br/>
 		        We have a variety of formats to help learners and educators with their first steps. Workshop attendees build their own circuits
 		        and program them, getting familiar with the components they will be taking home. In a full-day workshop format,
 		        for example, we learn how to connect inputs and outputs to build their own personal invention ideas.
 		        constructing programmable projects with cheap electronics prototyping material.
+                <br/><br/>
+	            Venues or learners without computers can rely on our 24-laptop mobile hacking studio, configured to operate without dependencies on local network or computing infrastructure.
+	            <a class="read-more scroll-on-page-link" href="./workshop/">More about Workshops</a>
             </p>
-        </article>
     </section>
 </section>
