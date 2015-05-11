@@ -1,4 +1,4 @@
-# Wiring the Conductive Keyboard
+# About this Guide
 
 ![Conductive Keyboard Kit cover][header]
 
@@ -14,7 +14,7 @@ For convenience, [pre-bagged kits](../../kit/keyboard.html) are available to ord
 
 Before embarking on the Conductive Keyboard, you should have **successfully completed the [Blink build](../blink/index.html)**. This build uses the Blink circuit as its starting point. 
 
-## Remove surplus parts
+## Surplus parts
 
 ![Remove Blink parts][step01]
 
@@ -62,7 +62,7 @@ However, a Zener is a special kind of diode. It is more like a leaky water valve
 
 We can use this feature of Zeners to ensure that the Green and White wires have a maximum of  3.6V output, even though they are being driven by the ATMEGA328's 5V output pins. Essentially, any voltage above 3.6V is allowed to bleed away through the Zener.
 
-## USB 1.1 'Full speed' resistors
+## USB 1.1 resistors
 
 ![USB Resistors][step05]
 
@@ -105,7 +105,7 @@ If we want more than 11 keys on our keyboard, we need to start using sensing pin
 ***Attach a Green wire from the Right Hand -ive (Blue) power rail to the Left Hand -ive (Blue) power rail ***
 ***Attach a Red wire from the Right Hand +ive (Blue) power rail to the Left Hand +ive (Blue) power rail ***
 
-## Accessible Left Hand Pullups
+## Left Hand Pullups
 
 ![Connecting Left Power Rails][step09]
 
@@ -113,7 +113,7 @@ A set of four digital pullups are really easy to connect on the left, giving us 
 
 ***Attach 20MegaOhm resistors from j16,j15,j14,j13 to the nearest holes on the Left-hand +ive (Red) power rail***
 
-## Last (bonus) pullup if needed
+## Bonus Pullup 
 
 ![Pullup Resistor #16][step10]
 
