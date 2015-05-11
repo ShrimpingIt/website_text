@@ -928,103 +928,99 @@ header.navigation {
     max-width: 35em;
     text-align: center; }
 
-article.type-system-serif, section.content {
+article.type-system-rounded, body.project section.content {
   text-align: left; }
-  article.type-system-serif h1, section.content h1, article.type-system-serif h2, section.content h2, article.type-system-serif h3, section.content h3, article.type-system-serif p, section.content p {
+  article.type-system-rounded h1, body.project section.content h1, article.type-system-rounded h2, body.project section.content h2, article.type-system-rounded h3, body.project section.content h3, article.type-system-rounded p, body.project section.content p {
     margin: 0; }
-  article.type-system-serif hr, section.content hr {
+  article.type-system-rounded hr, body.project section.content hr {
     border-bottom: 1px solid #ddd;
     border-left: none;
     border-right: none;
     border-top: none;
     margin: 1.5em 0; }
-  article.type-system-serif p, section.content p {
+  article.type-system-rounded p, body.project section.content p {
     color: #333;
     line-height: 1.5; }
-  article.type-system-serif a, section.content a {
+  article.type-system-rounded a, body.project section.content a {
     color: #477DCA;
     text-decoration: none; }
-  article.type-system-serif::after, section.content::after {
+  article.type-system-rounded::after, body.project section.content::after {
     clear: both;
     content: "";
     display: table; }
-  article.type-system-serif .type, section.content .type {
+  article.type-system-rounded .type, body.project section.content .type {
     border-bottom: 1px solid;
     display: inline-block;
-    font-family: "Merriweather Sans", sans-serif;
+    font-family: "Nunito", sans-serif;
     font-size: 0.7em;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 2em;
     padding: 0.3em 0;
     text-align: left;
     text-transform: uppercase; }
-  article.type-system-serif h1, section.content h1 {
-    font-family: "Lusitana", serif;
-    font-size: 2em;
-    font-weight: 700;
+  article.type-system-rounded h1, body.project section.content h1 {
+    font-family: "Varela Round", sans-serif;
+    font-size: 1.8em;
     margin-bottom: 0.5em; }
     @media screen and (min-width: 40em) {
-      article.type-system-serif h1, section.content h1 {
-        font-size: 2.6em; } }
-  article.type-system-serif h2, section.content h2 {
-    font-family: "Merriweather", serif;
-    font-size: 1em;
-    font-style: italic;
+      article.type-system-rounded h1, body.project section.content h1 {
+        font-size: 2.4em; } }
+  article.type-system-rounded h2, body.project section.content h2 {
+    font-family: "Varela Round", sans-serif;
+    font-size: 1.2em;
     font-weight: 400;
-    line-height: 1.6em;
+    line-height: 1.4em;
     margin-bottom: 0.9em; }
     @media screen and (min-width: 40em) {
-      article.type-system-serif h2, section.content h2 {
-        font-size: 1.2em; } }
-  article.type-system-serif code, section.content code {
+      article.type-system-rounded h2, body.project section.content h2 {
+        font-size: 1.4em; } }
+  article.type-system-rounded code, body.project section.content code {
     background: #F7F7F7;
     border-radius: 4.5px;
     border: 1px solid #E0E0E0;
     font-family: monaco;
-    font-size: 0.75em;
+    font-size: 0.7em;
     font-style: normal;
     padding: 0.1em 0.4em;
     white-space: nowrap; }
-  article.type-system-serif h3, section.content h3 {
-    font-family: "Lusitana", serif;
-    font-size: 1.4em;
+  article.type-system-rounded h3, body.project section.content h3 {
+    font-family: "Varela Round", sans-serif;
+    font-size: 1.2em;
     font-weight: 400;
     line-height: 1.3em;
-    margin-bottom: .4em; }
-  article.type-system-serif p.date, section.content p.date {
+    margin-bottom: 0.4em; }
+  article.type-system-rounded p.date, body.project section.content p.date {
     color: rgba(51, 51, 51, 0.4);
-    font-family: "Merriweather", serif;
+    font-family: "Nunito", sans-serif;
     font-size: 0.9em;
-    font-style: italic;
     margin-bottom: 0.3em; }
-  article.type-system-serif p, section.content p {
-    font-family: "Merriweather", serif;
-    font-size: 0.9em;
-    line-height: 1.6em;
+  article.type-system-rounded p, body.project section.content p {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.05em;
+    font-weight: 300;
+    line-height: 1.4em;
     margin-bottom: 1.5em; }
-    article.type-system-serif p span, section.content p span {
-      font-family: "Merriweather Sans", sans-serif;
-      font-weight: 700; }
-  article.type-system-serif a.read-more, section.content a.read-more {
+    article.type-system-rounded p span, body.project section.content p span {
+      font-family: "Varela Round", sans-serif;
+      font-size: 0.8em;
+      text-transform: uppercase; }
+  article.type-system-rounded a.read-more, body.project section.content a.read-more {
     display: inline-block;
-    font-family: "Merriweather Sans", sans-serif;
+    font-family: "Varela Round", sans-serif;
     font-size: 0.8em;
     font-weight: 700;
     margin-left: 0.2em;
     position: relative;
     text-transform: uppercase; }
-    article.type-system-serif a.read-more span, section.content a.read-more span {
-      font-family: "Lusitana", serif;
+    article.type-system-rounded a.read-more span, body.project section.content a.read-more span {
       font-size: 1.5em;
-      font-style: normal;
       position: absolute;
       right: -12px;
       top: -1px; }
-  article.type-system-serif hr, section.content hr {
+  article.type-system-rounded hr, body.project section.content hr {
     width: 3em; }
-  article.type-system-serif p.author, section.content p.author {
-    font-family: "Merriweather", serif;
-    font-style: italic; }
+  article.type-system-rounded p.author, body.project section.content p.author {
+    font-family: "Nunito", sans-serif; }
 
 .ribbon-box {
   height: 100px;
@@ -1173,17 +1169,17 @@ article.type-system-serif, section.content {
       -webkit-transition: all 0.2s ease-in-out;
       -moz-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
-      background: #f7f7f7;
+      background: #e6e6e6;
       border-radius: 3px;
       border: 1px solid #ddd;
       color: #333;
       outline: none;
       padding: 0.375em 0.809em; }
       .pagination ul li a:hover, .pagination ul li a:focus {
-        background: white;
+        background: #fff;
         color: #477DCA; }
       .pagination ul li a:active {
-        background: #f7f7f7; }
+        background: #e6e6e6; }
 
 .accordion-tabs {
   line-height: 1.5;
@@ -1272,7 +1268,7 @@ article.type-system-serif, section.content {
     display: none; }
     @media screen and (min-width: 40em) {
       .vertical-tabs-container .vertical-tabs {
-        background-color: #fff;
+        background-color: #e6e6e6;
         display: inline;
         float: left;
         height: 18.75em;
@@ -1285,7 +1281,7 @@ article.type-system-serif, section.content {
       margin-right: -1px;
       padding: 0.75em 0.809em; }
       .vertical-tabs-container .vertical-tab.is-active {
-        background-color: #f7f7f7;
+        background-color: #fff;
         margin-right: -1px; } }
   .vertical-tabs-container a.vertical-tab-accordion-heading,
   .vertical-tabs-container a.vertical-tab {
@@ -1301,17 +1297,17 @@ article.type-system-serif, section.content {
       .vertical-tabs-container .vertical-tab-content-container {
         height: 18.75em;
         width: 80%;
-        background-color: #f7f7f7;
+        background-color: #fff;
         display: inline-block; } }
   .vertical-tabs-container .vertical-tab-content {
-    background-color: #f7f7f7;
+    background-color: #fff;
     padding: 1.5em 1.618em; }
     @media screen and (min-width: 40em) {
       .vertical-tabs-container .vertical-tab-content {
         border: none;
         display: none; } }
   .vertical-tabs-container .vertical-tab-accordion-heading {
-    background-color: #fff;
+    background-color: #e6e6e6;
     border-top: 1px solid #ddd;
     cursor: pointer;
     display: block;
@@ -1322,7 +1318,7 @@ article.type-system-serif, section.content {
     .vertical-tabs-container .vertical-tab-accordion-heading:first-child {
       border-top: none; }
     .vertical-tabs-container .vertical-tab-accordion-heading.is-active {
-      background: #f7f7f7;
+      background: #fff;
       border-bottom: none; }
     @media screen and (min-width: 40em) {
       .vertical-tabs-container .vertical-tab-accordion-heading {
@@ -1491,50 +1487,53 @@ section.separate {
 .card {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%; }
+  margin-right: 1.75788%;
+  width: 23.68159%; }
   .card:last-child {
     margin-right: 0; }
 
 .vertical-tab-content-container, .vertical-tab-container, .vertical-tabs, .vertical-tab-content {
   height: auto !important; }
 
-body.index .tab-content, body.project.build .tab-content, body.index .vertical-tab-content, body.project.build .vertical-tab-content {
+body.index .tab-content, body.index .vertical-tab-content {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto; }
-  body.index .tab-content::after, body.project.build .tab-content::after, body.index .vertical-tab-content::after, body.project.build .vertical-tab-content::after {
+  body.index .tab-content::after, body.index .vertical-tab-content::after {
     clear: both;
     content: "";
     display: table; }
-  body.index .tab-content img, body.project.build .tab-content img, body.index .vertical-tab-content img, body.project.build .vertical-tab-content img {
+  body.index .tab-content img, body.index .vertical-tab-content img {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
-    body.index .tab-content img:last-child, body.project.build .tab-content img:last-child, body.index .vertical-tab-content img:last-child, body.project.build .vertical-tab-content img:last-child {
+    margin-right: 1.75788%;
+    width: 36.40133%; }
+    body.index .tab-content img:last-child, body.index .vertical-tab-content img:last-child {
       margin-right: 0; }
-  body.index .tab-content p, body.project.build .tab-content p, body.index .vertical-tab-content p, body.project.build .vertical-tab-content p {
+  body.index .tab-content p, body.index .vertical-tab-content p {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 65.88078%; }
-    body.index .tab-content p:last-child, body.project.build .tab-content p:last-child, body.index .vertical-tab-content p:last-child, body.project.build .vertical-tab-content p:last-child {
+    margin-right: 1.75788%;
+    width: 61.8408%; }
+    body.index .tab-content p:last-child, body.index .vertical-tab-content p:last-child {
       margin-right: 0; }
-  body.index .tab-content.memory img, body.project.build .tab-content.memory img, body.index .tab-content.stripboard img, body.project.build .tab-content.stripboard img, body.index .vertical-tab-content.memory img, body.project.build .vertical-tab-content.memory img, body.index .vertical-tab-content.stripboard img, body.project.build .vertical-tab-content.stripboard img {
+  body.index .tab-content.memory img, body.index .tab-content.stripboard img, body.index .tab-content.ledclock img, body.index .vertical-tab-content.memory img, body.index .vertical-tab-content.stripboard img, body.index .vertical-tab-content.ledclock img {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 65.88078%; }
-    body.index .tab-content.memory img:last-child, body.project.build .tab-content.memory img:last-child, body.index .tab-content.stripboard img:last-child, body.project.build .tab-content.stripboard img:last-child, body.index .vertical-tab-content.memory img:last-child, body.project.build .vertical-tab-content.memory img:last-child, body.index .vertical-tab-content.stripboard img:last-child, body.project.build .vertical-tab-content.stripboard img:last-child {
+    margin-right: 1.75788%;
+    width: 61.8408%; }
+    body.index .tab-content.memory img:last-child, body.index .tab-content.stripboard img:last-child, body.index .tab-content.ledclock img:last-child, body.index .vertical-tab-content.memory img:last-child, body.index .vertical-tab-content.stripboard img:last-child, body.index .vertical-tab-content.ledclock img:last-child {
       margin-right: 0; }
-  body.index .tab-content.memory p, body.project.build .tab-content.memory p, body.index .tab-content.stripboard p, body.project.build .tab-content.stripboard p, body.index .vertical-tab-content.memory p, body.project.build .vertical-tab-content.memory p, body.index .vertical-tab-content.stripboard p, body.project.build .vertical-tab-content.stripboard p {
+  body.index .tab-content.memory p, body.index .tab-content.stripboard p, body.index .tab-content.ledclock p, body.index .vertical-tab-content.memory p, body.index .vertical-tab-content.stripboard p, body.index .vertical-tab-content.ledclock p {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
-    body.index .tab-content.memory p:last-child, body.project.build .tab-content.memory p:last-child, body.index .tab-content.stripboard p:last-child, body.project.build .tab-content.stripboard p:last-child, body.index .vertical-tab-content.memory p:last-child, body.project.build .vertical-tab-content.memory p:last-child, body.index .vertical-tab-content.stripboard p:last-child, body.project.build .vertical-tab-content.stripboard p:last-child {
+    margin-right: 1.75788%;
+    width: 36.40133%; }
+    body.index .tab-content.memory p:last-child, body.index .tab-content.stripboard p:last-child, body.index .tab-content.ledclock p:last-child, body.index .vertical-tab-content.memory p:last-child, body.index .vertical-tab-content.stripboard p:last-child, body.index .vertical-tab-content.ledclock p:last-child {
       margin-right: 0; }
+
+.hero-copy h1 {
+  text-transform: uppercase; }
 
 section.content {
   max-width: 68em;
@@ -1546,23 +1545,68 @@ section.content {
     clear: both;
     content: "";
     display: table; }
-  section.content > p {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%; }
-    section.content > p:last-child {
-      margin-right: 0; }
-  section.content > img {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
-    section.content > img:last-child {
-      margin-right: 0; }
   section.content ul p, section.content ol p {
     margin: 0;
     padding: 0; }
+  section.content .vertical-tabs-container {
+    float: left;
+    display: block;
+    margin-right: 1.75788%;
+    width: 100%; }
+    section.content .vertical-tabs-container:last-child {
+      margin-right: 0; }
+    section.content .vertical-tabs-container .vertical-tabs {
+      float: left;
+      display: block;
+      margin-right: 1.75788%;
+      width: 17.32172%; }
+      section.content .vertical-tabs-container .vertical-tabs:last-child {
+        margin-right: 0; }
+      section.content .vertical-tabs-container .vertical-tabs a.vertical-tab {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        padding-left: 1em;
+        box-sizing: content-box; }
+    section.content .vertical-tabs-container .vertical-tab-content-container {
+      display: block;
+      float: left;
+      display: block;
+      margin-right: 1.75788%;
+      width: 80.9204%; }
+      section.content .vertical-tabs-container .vertical-tab-content-container::after {
+        clear: both;
+        content: "";
+        display: table; }
+      section.content .vertical-tabs-container .vertical-tab-content-container:last-child {
+        margin-right: 0; }
+      section.content .vertical-tabs-container .vertical-tab-content-container a.picture {
+        float: left;
+        display: block;
+        margin-right: 2.17235%;
+        width: 37.12471%; }
+        section.content .vertical-tabs-container .vertical-tab-content-container a.picture:last-child {
+          margin-right: 0; }
+        section.content .vertical-tabs-container .vertical-tab-content-container a.picture img {
+          float: left;
+          display: block;
+          margin-right: 5.85151%;
+          width: 100%; }
+          section.content .vertical-tabs-container .vertical-tab-content-container a.picture img:last-child {
+            margin-right: 0; }
+      section.content .vertical-tabs-container .vertical-tab-content-container section.text {
+        float: left;
+        display: block;
+        margin-right: 2.17235%;
+        width: 60.70294%;
+        min-height: 70%; }
+        section.content .vertical-tabs-container .vertical-tab-content-container section.text:last-child {
+          margin-right: 0; }
+        section.content .vertical-tabs-container .vertical-tab-content-container section.text p {
+          width: 100%;
+          box-sizing: content-box;
+          padding-left: 1em;
+          padding-right: 1em; }
 
 body.project {
   /*header.navigation{
@@ -1570,22 +1614,22 @@ body.project {
       left:0;
       top:0;
     }*/ }
-  body.project.build .pagination {
+  body.project .pagination {
     text-align: right;
     font-size: 0.8em; }
 
 section#combinations img {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 65.88078%; }
+  margin-right: 1.75788%;
+  width: 55.48093%; }
   section#combinations img:last-child {
     margin-right: 0; }
 section#combinations p {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%; }
+  margin-right: 1.75788%;
+  width: 42.76119%; }
   section#combinations p:last-child {
     margin-right: 0; }
 section#combinations img, section#combinations p {
