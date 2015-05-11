@@ -14,9 +14,11 @@ Next, load the [Clock02SetTime](https://github.com/ShrimpingIt/projects/blob/mas
 
 Choose **Newline** and a speed of **9600 baud** (bits per second) from the dropdown menus. You should then be able to send commands like any of the following...
 
-    19:45  
-    2007-04-25
-    2007-04-25T19:45:00
+	19:45
+
+	2007-04-25
+
+	2007-04-25T19:45:00
 
 Which should send back the new time, showing that the RealTime Clock chip has been set according to your command.
 
