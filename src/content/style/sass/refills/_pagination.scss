@@ -25,8 +25,8 @@
 
   $pagination-border-color: $base-border-color;
   $pagination-border: 1px solid $pagination-border-color;
-  $pagination-background: lighten($pagination-border-color, 10);
-  $pagination-hover-background: lighten($pagination-background, 5);
+  $pagination-background: darken($base-background-color, 10%);
+  $pagination-hover-background: $base-background-color;
   $pagination-color: $base-font-color;
 
   text-align: center;
