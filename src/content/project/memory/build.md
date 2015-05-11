@@ -53,7 +53,7 @@ As you slide in the button use long-nose pliers or a cocktail stick to ensure th
 ***Remove the black plastic nodules from the base of each backlit button and bend the switch legs to match diagram***
 ***Guide Buttons' switch pins and LED pins gently into alignment with the holes shown in the diagram, then push down firmly ***
 
-## Current-limiting LED Resistors
+## Current-limiting Resistors
 
 ![100 Ohm Series Resistors][step04]
 
