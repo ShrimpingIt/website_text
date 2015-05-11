@@ -1,3 +1,5 @@
+# Memory Game
+
 ![Circuit picture][photo]
 
 The Memory Game @ShrimpingIt kit is an Arduino-compatible project which replicates the behaviour of an old-school 80s MB Games’ Simon,(AKA Simon Says).
