@@ -6,11 +6,20 @@
 	* Pack 1 through 22 or so
 	* Get them networked 
 	* Put the shrimpingit Sketchbook in place
+	* Copy Arduino 1.6.4? Needed?
 * Components
 	* Strip and crimp Male USB cables
 	* Replace 22kOhm resistors (cables too fat)
 	* Bag jumpers or solid-core wire
-
+* Vector Art
+	* Voltage Divider layout(s)  
+* Code
+	* Augment sketchbook with
+		* Potential divider demo
+			* BBC Bitesize GCSE Electronics 
+		* USB Hello World demo
+		* USB 1 Resistor demo
+		* USB 11 Resistor demo   
 
 # To take
 
@@ -26,6 +35,7 @@
 * Fruit
 	* Bananas, Onions
 * 2B Pencils 
+* * Blank white paper
 
 # Sequence
 
