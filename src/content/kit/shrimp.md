@@ -14,12 +14,12 @@ The kit is normally purchased along with a [solderless breadboard](breadboard400
 
 If you already have a breadboard and UART each set of ***Shrimp Parts*** costs just £4.00. 
 
-It costs £9.30 to buy a bundle with a breadboard and UART through our [retail bagging service](../bagging.html).
+It costs £9.30 to buy a bundle including a breadboard and UART through our [retail bagging service](../bagging.html).
 
 The standalone bundle includes...
 
 * The ***Shrimp Parts*** kit including...
-	* A Arduino-Uno-compatible [ATmega328P-PU](http://cpc.farnell.com/1/1/108471-mcu-8bit-avr-32k-flash-28pdip-cpu-speed-20mhz-controller-familyseries-atmega-embedded-interface-type-i2c-spi-uart-mcu-case-style-dip-msl-no-of-ios-23-no-of-pins-28-packaging-each-program-memory-size-32kb-ram-memory-size-2kb-svhc-n-atmega328p-pu-atmel.html) bootloaded microcontroller
+	* Arduino-Uno-compatible [ATmega328P-PU](http://cpc.farnell.com/1/1/108471-mcu-8bit-avr-32k-flash-28pdip-cpu-speed-20mhz-controller-familyseries-atmega-embedded-interface-type-i2c-spi-uart-mcu-case-style-dip-msl-no-of-ios-23-no-of-pins-28-packaging-each-program-memory-size-32kb-ram-memory-size-2kb-svhc-n-atmega328p-pu-atmel.html) bootloaded microcontroller
 	* 2x [22pF Ceramic Capacitor](http://www.taydaelectronics.com/10-x-22pf-50v-ceramic-disc-capacitor-pkg-of-10.html)
 	* 4x [100nF Ceramic Capacitor](http://www.taydaelectronics.com/10-x-0-1uf-50v-ceramic-disc-capacitor-pkg-of-10.html)
 	* A [10uF Electrolytic Capacitor](http://www.taydaelectronics.com/10uf-25v-105c-radial-electrolytic-capacitor-5x11mm.html)

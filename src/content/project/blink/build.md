@@ -154,9 +154,15 @@ To make the editor compile the code and upload it to your Shrimp, click the Uplo
 
 You should now have a working Shrimp! The LED should be flashing on and off.
 
-You can change bits of your code to prove that your machine is able to send new behaviours to your microcontroller.
+You can change bits of your code to prove that your machine is able to send new behaviours to your microcontroller. Can you make sense of each line in the code?
 
-Why not change the number of milliseconds in the delay request so that the light blinks much more quickly, much more slowly, spends longer on for a long blink, or spends longer off for a short blink.
+For example find **one** of the lines which say ```delay(1000); ``` (for a delay of 1000 milliseconds) and change it to read ```delay(100);```. What happens after you click upload to program your circuit with the new code? Why?
+
+You could change both of the delay commands to use a value of 100. What happens then?
+
+If you decide to change both of the lines to 1, it appears to be on all the time, but it's actually flashing on and off so quickly you can't see it. As it's off half the time, you might notice it is 50% as bright as when it's fully on (e.g. choose a long delay before turning the LED off).
+
+Can you make the LED appear with 25% brightness or 10% brightness? How?
 
 * ***Next, why not attempt one of our [project walkthroughs](../../index.html#project) to build a functioning product or game*** 
 * ***You can solder it [on to stripboard](../../kit/stripboard.html) for a permanent Arduino substitute for deployment***
