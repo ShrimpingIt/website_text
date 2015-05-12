@@ -49,7 +49,7 @@ declare function local:write-hero(){
             <div class="hero-inner">
                 <a href="" class="hero-logo"><img src="style/brand/logo.png" alt="Logo Image"/></a>
                 <div class="hero-copy">
-                    <h1>@ShrimpingIt : Programmable Electronics</h1>
+                    <h1>@ShrimpingIt - Programmable Electronics</h1>
                 </div>
                 <p>
                     We document free project designs using prototyping materials<br/>
@@ -67,7 +67,8 @@ declare function local:relativedoc($node, $path){
 
 declare function local:rewrite-body($body){
     let $classes := local:body-classes(),
-        $projectpage := 'project'=$classes and count($classes) = 3 (: corresponds to e.g. ('project','alarmclock','index'):)
+        $projectpage := 'project'=$classes and count($classes) = 3 (: corresponds to e.g. ('project','alarmclock','index'):),
+        $projectid := if($projectpage) then $classes[2] else ()
     return
     <body class="{fn:normalize-space(string-join($classes,' '))}">
         {
@@ -93,7 +94,12 @@ declare function local:rewrite-body($body){
                                             <li><a href="program.html">Programming It</a></li>
                                             <li><a href="debug.html">Debugging It</a></li>
                                             <li><a href="teach.html">Teaching It</a></li>
-                                            <li><a href="buy.html">Buying It</a></li>
+                                            {
+                                                if($projectid) then
+                                                    <li><a href="../../kit/{$projectid}.html">Buying It</a></li>
+                                                else
+                                                    ()
+                                            }
                                         </ul>
                                     </li>
                             else ()
@@ -101,27 +107,27 @@ declare function local:rewrite-body($body){
                         <li class="nav-link more">
                             <a href="{$serverroot}index.html#project">{if($projectpage) then 'Other Projects' else 'Projects' }</a>
                             <ul class="submenu wide">
-                                <li><a href="{$serverroot}index.html#project-blink">...blink an LED</a></li>
-                                <li><a href="{$serverroot}index.html#project-pov">...paint with light</a></li>
-                                <li><a href="{$serverroot}index.html#project-blink">...make a Banana Piano</a></li>
-                                <li><a href="{$serverroot}index.html#project-memory">...test your melody memory</a></li>
-                                <li><a href="{$serverroot}index.html#project-alarmclock">...invent a new Clock</a></li>
-                                <!-- <li><a href="{$serverroot}index.html#project-ledclock">...build a Word Clock</a></li> -->
+                                <li><a href="{$serverroot}project/blink/build.html">...blink an LED</a></li>
+                                <li><a href="{$serverroot}project/pov/build.html">...paint with light</a></li>
+                                <li><a href="{$serverroot}project/keyboard/build.html">...make a Banana Piano</a></li>
+                                <li><a href="{$serverroot}project/memory/build.html">...test your melody memory</a></li>
+                                <li><a href="{$serverroot}project/alarmclock/build.html">...invent a Clock</a></li>
+                                <li><a href="{$serverroot}project/ledclock/build.html">...show the time with LEDs</a></li>
                             </ul>
                         </li>
                         <li class="nav-link more">
-                            <a href="{$serverroot}kit/">Kits</a>
+                            <a href="{$serverroot}kit/">Buying</a>
                             <ul class="submenu">
-                                <li><a class="scroll-on-page-link" href="#kit">How to Choose</a></li>
+                                <li><a class="scroll-on-page-link" href="{$serverroot}index.html#kit">How to Choose</a></li>
                                 <li class="more">
-                                    <a href="javascript:void(0)">Product List</a>
+                                    <a href="javascript:void(0)">Kit List</a>
                                     <ul class="submenu wide">
                                         <li><a href="{$serverroot}kit/shrimp.html">Shrimp Bundle</a></li>
                                         <li><a href="{$serverroot}kit/pov.html">Persistence of Vision</a></li>
                                         <li><a href="{$serverroot}kit/keyboard.html">Conductive Keyboard</a></li>
                                         <li><a href="{$serverroot}kit/memory.html">'Simon' Memory Game</a></li>
                                         <li><a href="{$serverroot}kit/alarmclock.html">Alarm Clock</a></li>
-                                        <!-- <li><a href="{$serverroot}project/ledclock/">Word Clock</a></li> -->
+                                        <li><a href="{$serverroot}kit/ledclock.html">LED Clock</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -129,19 +135,27 @@ declare function local:rewrite-body($body){
                         <li class="nav-link more">
                             <a href="javascript:void(0)">Teaching</a>
                             <ul class="submenu">
-                                <li class="nav-link"><a href="{$serverroot}workshop/">Workshops</a></li>
+                                <li class="nav-link"><a href="{$serverroot}/#workshop">Workshops</a></li>
+                            <!--
                                 <li class="nav-link"><a href="{$serverroot}about.html">Resources</a></li>
                                 <li class="nav-link"><a href="{$serverroot}index.html#testimonials" class="scroll-on-page-link" >Testimonials</a></li>
+                            -->
                                 <li class="nav-link"><a href="{$serverroot}offer.html" >Special Offers</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-link more">
+                            <a href="javascript:void(0)">Contributing</a>
+                            <ul class="submenu">
+                                <li class="nav-link"><a href="{$serverroot}contribute.html#feedback">Feedback</a></li>
+                                <li class="nav-link"><a href="{$serverroot}contribute.html#donate">Donating</a></li>
+                                <li class="nav-link"><a href="{$serverroot}bagging.html">Buying</a></li>
                             </ul>
                         </li>
                         <li class="nav-link more">
                             <a href="javascript:void(0)">More</a>
                             <ul class="submenu">
                                 <li class="nav-link"><a href="{$serverroot}index.html#about" class="scroll-on-page-link" >About Us</a></li>
-                                <li class="nav-link"><a href="{$serverroot}contribute.html">Contributing</a></li>
                                 <li class="nav-link"><a href="{$serverroot}license.html">Licensing</a></li>
-                                <li class="nav-link"><a href="{$serverroot}feedback.html" target="_blank" >Feedback</a></li>
                                 <li class="nav-link"><a href="{$serverroot}contact.html">Contact</a></li>
                             </ul>
                         </li>
@@ -217,7 +231,7 @@ declare function local:project-tablink($headtags, $headindex){
 declare function local:filter-project-body($body){
     let $headtags := $body/*[local:is-header(.)]
     return local:filter-items(
-        <section>
+        <div>
             <div class="pagination">
                 <ul>
                     <li class="page-prev"><a href="javascript:void(0)">Prev</a></li>
@@ -237,11 +251,11 @@ declare function local:filter-project-body($body){
                 <div class="vertical-tabs">
                     {
                         for $headtag at $headindex in $headtags
-                            let $tabname := local:project-tabname($headtags,$headindex)
+                        let $tabname := local:project-tabname($headtags,$headindex)
                         return
                             <a href="javascript:void(0);"
-                                class="js-vertical-tab vertical-tab {if ($headindex=1) then 'is-active' else ''}"
-                                rel="{$tabname}">
+                            class="js-vertical-tab vertical-tab {if ($headindex=1) then 'is-active' else ''}"
+                            rel="{$tabname}">
                                 {string($headtag)}
                             </a>
                     }
@@ -257,14 +271,14 @@ declare function local:filter-project-body($body){
                             <div>
                                 <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading is-active" rel="{$tabname}">{string($headtag)}</a>
                                 <div id="{$tabname}" class="js-vertical-tab-content vertical-tab-content">
-                                    <a href="{$sectionimage/@src}" target="_animation"><img src="{$sectionimage/@src}"/></a>
-                                    <aside>{$remainingtags}</aside>
+                                    <a class="picture" href="{$sectionimage/@src}" target="_animation"><img src="{$sectionimage/@src}"/></a>
+                                    <section class="text">{$remainingtags}</section>
                                 </div>
                             </div>/*
                     }
                 </div>
             </div>
-        </section>
+        </div>/*
     )
 };
 
