@@ -62,6 +62,10 @@ However, a Zener is a special kind of diode. It is more like a leaky water valve
 
 We can use this feature of Zeners to ensure that the Green and White wires have a maximum of  3.6V output, even though they are being driven by the ATMEGA328's 5V output pins. Essentially, any voltage above 3.6V is allowed to bleed away through the Zener.
 
+Zeners are a small red and black cylinder on a silver wire. Current can flow forwards from the red end to the black end freely. When the reverse voltage exceeds 3.6V it can flow backwards too. 
+
+***Attach the two small Zener diodes from h9->h1 and i9->i2 making sure the black end connect to the green and white USB wires***
+
 ## USB 1.1 resistors
 
 ![USB Resistors][step05]
