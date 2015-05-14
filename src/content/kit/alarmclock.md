@@ -22,7 +22,6 @@ It costs £10.30 to buy a bundle with everything needed for this project through
 	* A 100Ω [1/2 Watt resistor](http://www.taydaelectronics.com/10-x-resistor-100-ohm-1-2w-5-carbon-film-pkg-of-10.html)
 	* 2x 10kΩ [1/2 Watt resistors](http://www.taydaelectronics.com/10-x-resistor-10k-ohm-1-2w-5-carbon-film-pkg-of-10.html)
 	* 5xGreen 2xRed 2xYellow 1xPurple 1xBlue stripped [22AWG solid core wire](http://www.rapidonline.com/cables-connectors/rapid-1-0-6mm-single-core-equipment-wire-on-100m-reels-62317)
-	* Some lengths of 2.54mm [male pin header strip](http://www.aliexpress.com/item/100PC-Lot-2-54mm-Pitch-Single-Row-Pin-Header-Pin-Male-Pin-Connector-Length-15mm-Free/688027713.html)
 * A [400point Breadboard](breadboard400.html) (to build the circuit on)
 * A [Shrimp Parts](shrimp.html) kit (microcontroller and supporting parts)
 * A [UART](cp2102.html) kit (for uploading programmed behaviours to your Shrimp)
