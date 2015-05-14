@@ -6,7 +6,7 @@ This guide provides details for learners to wire and program a minimal Arduino-c
 
 For general orientation, see the [Blink](../blink/index.html) project page. The completed build should replicate the image shown on the left.
 
-For convenience, [pre-bagged kits](../../shrimp.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../shrimp/procure.html) for you to source commodity parts direct from electronics wholesalers.
+For convenience, [pre-bagged kits](../../shrimp.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/shrimp.html#bom) for you to source commodity parts direct from electronics wholesalers.
 
 ***Get hold of your Shrimp components and a breadboard, sit down with your laptop and favourite beverage, then click 'Next' at the top right corner of this page***
 

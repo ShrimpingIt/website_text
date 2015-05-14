@@ -4,7 +4,7 @@
 
 This guide provides details for learners to wire, program and configure a @ShrimpingIt Memory Game project, inspired by [M.B. Games Simon](http://en.wikipedia.org/wiki/Simon_%28game%29). For general orientation, see the Memory Game [project page](./index.html). The completed build should replicate the image shown on the left.
 
-For convenience, [pre-bagged kits](../../kit/memory.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](./procure.html) for you to source commodity parts direct from electronics wholesalers.
+For convenience, [pre-bagged kits](../../kit/memory.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/memory.html#bom) for you to source commodity parts direct from electronics wholesalers.
 
 ## Getting started
 

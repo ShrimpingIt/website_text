@@ -4,7 +4,7 @@
 
 This guide provides details for learners to wire, program and configure a @ShrimpingIt digital clock project. It incorporates a 84x48 pixel liquid crystal display (the same as the Nokia 5110). It can therefore be programmed to display text, numbers or simple line-art as part of a time-driven behaviour. For general orientation, see the [Liquid Crystal Clock](./index.html) project page. See a demo [here](https://plus.google.com/115551960274376151777/posts/1sH9LafaPZ3)
 
-For convenience, [pre-bagged kits](../../kit/lcdclock.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](./procure.html) for you to source commodity parts direct from electronics wholesalers.
+For convenience, [pre-bagged kits](../../kit/lcdclock.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/lcdclock.html#bom) for you to source commodity parts direct from electronics wholesalers.
 
 ## Getting started
 

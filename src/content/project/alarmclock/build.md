@@ -4,7 +4,7 @@
 
 This guide provides details for learners to wire, program and configure their first @ShrimpingIt digital clock project. For general orientation, see the [Alarm Clock](./index.html) project page. The completed build should replicate the image shown on the left.
 
-For convenience, [pre-bagged kits](../../kit/alarmclock.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](./procure.html) for you to source commodity parts direct from electronics wholesalers.
+For convenience, [pre-bagged kits](../../kit/alarmclock.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/alarmclock.html#bom) for you to source commodity parts direct from electronics wholesalers.
 
 ## Getting started
 

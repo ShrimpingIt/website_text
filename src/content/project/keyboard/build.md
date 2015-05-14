@@ -6,7 +6,7 @@ This guide provides details for learners to wire, program and configure a @Shrim
 
 For orientation, see the [Conductive Keyboard](../keyboard/index.html) project page.
 
-For convenience, [pre-bagged kits](../../kit/keyboard.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](./procure.html) for you to source commodity parts direct from electronics wholesalers.
+For convenience, [pre-bagged kits](../../kit/keyboard.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/keyboard.html#bom) for you to source commodity parts direct from electronics wholesalers.
 
 ## Getting started
 

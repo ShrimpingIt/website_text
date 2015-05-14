@@ -4,7 +4,7 @@
 
 The *Alarm Clock Addon* is a pre-bagged kit containing the extra components needed to for our @ShrimpingIt [Alarm Clock](../project/alarmclock/) project. This is a breadboard circuit which can be programmed to run on very low power, keeping accurate time, controlling melody chimes or your choice of time display.
 
-The Addon combines with the @ShrimpingIt kits described below (or equivalent parts) enabling learners to follow our [step-by-step wiring guide](../project/alarm/build.html), and then to upload our [software examples](../project/alarm/program.html) using the free Arduino IDE.
+The Addon combines with the @ShrimpingIt kits described below (or equivalent parts) enabling learners to follow our [step-by-step wiring guide](../project/alarmclock/build.html), and then to upload our [software examples](../project/alarmclock/program.html) using the free Arduino IDE.
 
 ## Kits and Bundles
 

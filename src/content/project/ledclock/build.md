@@ -6,7 +6,7 @@ This guide provides details for learners to wire, program and configure a @Shrim
 
 This guide provides details for learners to wire, program and configure their first @ShrimpingIt digital clock project. For general orientation, see the [LED Clock](./index.html) project page. The completed build should replicate the image shown.
 
-For convenience, [pre-bagged kits](../../kit/ledclock.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](./procure.html) for you to source commodity parts direct from electronics wholesalers.
+For convenience, [pre-bagged kits](../../kit/ledclock.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/ledclock.html#bom) for you to source commodity parts direct from electronics wholesalers.
 
 ## Getting started
 

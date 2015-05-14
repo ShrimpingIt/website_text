@@ -4,13 +4,13 @@
 
 The ***Shrimp Parts*** kit is a pre-bagged kit containing the microcontroller and supporting components of the Shrimp layout, central to all our Arduino-compatible [@ShrimpingIt projects](/#project). 
 
-Learners begin with the ultra-minimal [Blink](../project/blink.html) which just controls a single LED. The [Protected Build](../project/protected/) adds a few capacitors and buttons for deployment in challenging environments, so your Shrimp can substitute for an Arduino Uno in the tens of thousands of Arduino projects documented online.
+Learners begin with the ultra-minimal [Blink](../project/blink/) which just controls a single LED. The [Protected Build](../project/protected/) adds a few capacitors and buttons for deployment in challenging environments, so your Shrimp can substitute for an Arduino Uno in the tens of thousands of Arduino projects documented online.
 
 For a more advanced example project to get started, combine it with one of our Addon kits to build a [Persistence of Vision](../project/pov/), [Alarm Clock](../project/alarmclock/), [Conductive Keyboard](../project/keyboard/), [Memory Game](../project/memory/) or [LED Clock](../project/ledclock/) following the step by step wiring guides and using our example programs.
 
 ## Kits and Bundles
 
-The kit is normally purchased along with a [solderless breadboard](breadboard400.html) to build the circuit and a [USB UART module](CP2102.html) to program it from your computer using the free Arduino IDE. 
+The kit is normally purchased along with a [solderless breadboard](breadboard400.html) to build the circuit and a [USB UART module](cp2102.html) to program it from your computer using the free Arduino IDE. 
 
 If you already have a breadboard and UART each set of ***Shrimp Parts*** costs just £4.00. 
 

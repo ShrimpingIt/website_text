@@ -4,7 +4,7 @@
 
 This guide provides details for learners to wire, program and configure a @ShrimpingIt Persistence of Vision (POV) project. For general orientation, see the [POV](./index.html) project page. The completed build should replicate the image shown on the left.
 
-For convenience, [pre-bagged kits](../../kit/pov.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](./procure.html) for you to source commodity parts direct from electronics wholesalers.
+For convenience, [pre-bagged kits](../../kit/pov.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/pov.html#bom) for you to source commodity parts direct from electronics wholesalers.
 
 ## Getting started
 
