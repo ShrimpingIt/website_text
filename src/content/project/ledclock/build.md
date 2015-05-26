@@ -2,9 +2,7 @@
 
 ![The LED Clock Addon Kit][step10]
 
-This guide provides details for learners to wire, program and configure a @ShrimpingIt digital clock project. It incorporates two LED driver chips which control ultrabright LEDs in a layout which can be programmed as a Word Clock or a Unary Clock.
-
-This guide provides details for learners to wire, program and configure their first @ShrimpingIt digital clock project. For general orientation, see the [LED Clock](./index.html) project page. The completed build should replicate the image shown.
+This guide provides details for learners to wire, program and configure their first @ShrimpingIt digital clock project. It incorporates two LED driver chips which control ultrabright LEDs in a layout which can be programmed as a Word Clock or a Unary Clock. For general orientation, see the [LED Clock](./index.html) project page. The completed build should replicate the image shown.
 
 For convenience, [pre-bagged kits](../../kit/ledclock.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/ledclock.html#bom) for you to source commodity parts direct from electronics wholesalers.
 
