@@ -6,7 +6,7 @@ This guide provides details for learners to wire and program a minimal Arduino-c
 
 For general orientation, see the [Blink](../blink/index.html) project page. The completed build should replicate the image shown on the left.
 
-For convenience, [pre-bagged kits](../../shrimp.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/shrimp.html#bom) for you to source commodity parts direct from electronics wholesalers.
+For convenience, [pre-bagged kits](../../kit/shrimp.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/shrimp.html#bom) for you to source commodity parts direct from electronics wholesalers.
 
 ***Get hold of your Shrimp components and a breadboard, sit down with your laptop and favourite beverage, then click 'Next' at the top right corner of this page***
 
@@ -34,25 +34,29 @@ Check the legs don’t splay out too much. It can break the legs if you force th
 
 ***Carefully align the chip, checking the half-moon shape is at the top, with two empty breadboard rows above the chip. Check the legs are cleanly aligned with the breadboard below. Once the legs are all aligned, press down until the chip slides fully into the board (about 3mm movement).***
 
+<!-- TODO: Add arrow pointing to half-moon -->
+
 ## 100 nF ‘decoupling’ capacitor
 
 ![Decoupling capacitor][step02]
 
-Look for the 100 nanoFarad (nF) ceramic capacitor, a small disc with two thin wires coming out of it. These have no orientation, each leg is the same as the other.
+Look for the 100 nanoFarad (nF) ceramic capacitor, a small disc with two thin wires coming out of it marked '104'. These have no orientation, each leg is the same as the other.
 
 This ‘decoupling’ capacitor smooths electrical spikes, so that the reboot signal sent through to Pin 1 is stable and reliably detected. The chip should reboot only when you request it (e.g. when you’re reprogramming the microcontroller).
 
 The digits 104 indicate capacitance in picoFarads using scientific notation. The last figure '4' tells us how many zeroes to add, so the capacitance starts ‘10’ and then continues with a further 4 zeroes - 100,000 picoFarads. Since 1 nanoFarad is 1000 picoFarads, there’s 100 nanoFarads in a capacitor marked ‘104’.
 
 ***Insert the capacitor marked ‘104’ between***
-- ***the top left leg of the chip (pin 1, immediately anticlockwise from the half-moon shape)***
-- ***the empty row immediately above that***
+- ***d3, the top left leg of the chip (pin 1, immediately anticlockwise from the half-moon shape)***
+- ***d2, the empty row immediately above that***
+
+<!-- How far does it slide in, for every component ? -->
 
 ##10 kiloOhm ‘pull-up’ resistor
 
 ![10kOhm resistor][step03]
 
-Look for a brown or blue cylinder with a wire at each end, with stripes of Brown, Black and Orange. Resistors have no orientation, so you can't wire them backwards.
+Look for a brown cylinder with a wire at each end, with stripes of Brown, Black and Orange. Resistors have no orientation, so you can't wire them backwards.
 
 This will be used as a pull-up resistor. A positive voltage, usually 5V, ‘pulls up’ the reboot pin (Pin 1) through this resistor. The ATMEGA will keep running so long as it gets a high voltage on this pin. When reprogramming, the brown wire is briefly connected directly to 0V, (a stronger signal than the flow from 5V limited by the resistor). Pin 1 therefore gets pulled to 0V which causes the chip to reboot. After rebooting the ATMEGA listens for a new program sent over the orange wire. If nothing is sent, it runs the last program.
 
@@ -66,7 +70,7 @@ The colored stripes are decoded just like the '104' capacitor earlier, but color
 
 ![9-pin header][step04]
 
-A series of copper pins will be used to program and provide power to the Shrimp. Find the line of 9 pins encased in black plastic, keeping the strip intact as you slide the 9 pins in. Not all of the 9 pins be used in this circuit, but having all 9 in the right place helps you position everything else.
+A series of copper <!-- not copper? --> pins will be used to program and provide power to the Shrimp. Find the line of 9 pins encased in black plastic, keeping the strip intact as you slide the 9 pins in. Not all of the 9 pins be used in this circuit, but having all 9 in the right place helps you position everything else.
 
 ***Push the 9-pin header strip into the top left corner of the board, leaving just one empty row at the top of the board***
 
@@ -87,7 +91,7 @@ The 16.000 indicates the number of back-and-forth movements this crystal generat
 ![Power and Ground][step06]
 
 Look for one Red and one Green wire, stripped to show silver at each end.
-The ATMEGA chip is broken up internally into separate parts, each of which needs a stable power supply. Power and ground wires will soon be attached to the 9-pin header. Two wires are needed to connect power and ground across to the correct legs on the right-hand half of the microcontroller.
+The ATMEGA chip is broken up internally into separate parts, each of which needs a stable power supply. Power and ground wires will soon be attached to the 9-pin header. Two wires are needed to connect power and ground across to the correct legs on the right-hand half of the microcontroller. <!-- May have to remove/strip insulation at the endsa -->
 ***Connect a Green wire to the last pin of the 9-pin header, across the chip and up one row.***
 ***Connect a Red wire to the second-to-last pin of the 9-pin header, across the chip and down two rows.***
 
@@ -98,7 +102,7 @@ The ATMEGA chip is broken up internally into separate parts, each of which needs
 Look for a red or clear dome having two wire legs.
 A diode only allows electrical current to flow in one direction. Electricity should flow into the long leg and out of the short leg. Round LEDs also have one slightly flatter side, which corresponds with the short, negative leg of the LED.
 
-***Insert an LED, inserting the long leg to the row below the Red line on the right hand side of the chip (power, or 5Volts) and the short leg in the first empty row below the microcontroller.***
+***Insert an LED, inserting the long leg to the row below the Red wire (on the right hand side of the chip - power, or 5Volts) and the short leg in the first empty row below the microcontroller.***
 
 ## 100 Ohm ‘current-limiting’ resistor
 
@@ -121,7 +125,9 @@ Look for a green or blue-coloured circuit board with a USB connector at one end 
 
 This device enables your desktop or laptop machine to communicate with the Shrimp, for example to send new programs to it with the free Arduino IDE, or to exchange other information with a program when it’s running on the Shrimp.
 
-***For the latest Baite CP2102 modules, (with DTR as sixth pin on the front) attach the rainbow wires from the 9pin header to the CP2102's labelled pins like…***
+Do not separate the rainbow coloured wires in the pack - they are easier to work with when still bonded together.
+
+***For the latest Baite CP2102 modules, (with DTR as the sixth label in a row) attach the rainbow wires from the 9pin header to the CP2102's labelled pins like…***
 
 * Red -> 5V
 * Orange -> RXD
@@ -129,7 +135,7 @@ This device enables your desktop or laptop machine to communicate with the Shrim
 * Green -> GND
 * Brown -> DTR
 
-***For older Baite CP2102 modules (with DTR pin labelled on the back) exchange TX and RX to be like…***
+***For older Baite CP2102 modules (with DTR label hidden away on the back and pin attached on the side) exchange TX and RX to be like…***
 
 * Orange -> TXD
 * Yellow -> RXD
