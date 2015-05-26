@@ -1,15 +1,3 @@
-# Bagging Service
-
-As an open procurement project, we provide full information of our wholesale suppliers and their pricing, and we invite you to source your own kits if you wish. 
-
-However, buying [pre-bagged retail kits from us](./kit/) helps to support us producing more @ShrimpingIt projects and supporting material for educators.
-
-Components are prepared and combined with color graphic printouts in our distinctive pink anti-static bags in Morecambe, UK before shipping at cost to customers in UK, Europe and the US.
-
-## Our Pricing Policy 
-
-To help adopters decide whether to buy bagged kits from us, or to source their own, we have adopted a simple and equitable pricing policy; a percentage profit on the wholesale price, plus a charge per hour for the time we spend preparing the bagged kits. At the time of writing we charge 200% of the wholesale sourcing cost, plus 200% of the UK [living wage](http://www.livingwage.org.uk/) for our labour per kit.
-
 ## Choosing to self-source
 
 Our projects use low-cost commodity electronics components which can be sourced directly from wholesale far-east suppliers on Aliexpress or eBay. However, sourcing your own kits is worthwhile only if you...
