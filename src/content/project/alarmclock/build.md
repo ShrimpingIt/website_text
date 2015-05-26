@@ -26,7 +26,7 @@ We are planning to deploy this circuit in the real world for a long time. We wou
 
 If the voltage drops too low, the Shrimp's ATMEGA328P-PU microcontroller will reset itself. Adding a decoupling capacitor provides a very short-term reservoir, *decoupling* the microcontroller from temporary dips in supply voltage.
 
-The [S.I. unit](../topic/unit.html) of capacitance is the Farad, indicating how much charge can be stored at a given voltage. Capacitors are labelled with the number of picoFarads capacitance, with the last figure indicating the number of zeroes to tack onto the number. We will be using a small ceramic capacitor labelled 104. This means it's 10(0000) picoFarads. There are 1000 picoFarads in a nanoFarad, so that's equivalent to 100 nanoFarads. Ceramic capacitors are symmetrical and can be inserted either way around.
+The [S.I. unit](../topic/siunit.html) of capacitance is the Farad, indicating how much charge can be stored at a given voltage. Capacitors are labelled with the number of picoFarads capacitance, with the last figure indicating the number of zeroes to tack onto the number. We will be using a small ceramic capacitor labelled 104. This means it's 10(0000) picoFarads. There are 1000 picoFarads in a nanoFarad, so that's equivalent to 100 nanoFarads. Ceramic capacitors are symmetrical and can be inserted either way around.
 
 ***Insert a capacitor labelled 104 between the 5V and GND Power rows D9 and D10***
 
@@ -150,7 +150,7 @@ We want the Piezo to experience a voltage across the material, so it will need t
 
 ![Piezo Control wire][step12]
 
-We will be varying Arduino pin 6 on the ATMEGA chip between 0V and 5V using its special [PWM capabilities](../../pwm.html)  to cause the Piezo to flex back and forth, making sound.
+We will be varying Arduino pin 6 on the ATMEGA chip between 0V and 5V using its special [PWM capabilities](../../topic/pwm.html)  to cause the Piezo to flex back and forth, making sound.
 
 ***Attach a wire between d14 and j26, connecting the Piezo to the pin we'll use to generate audible waves; Arduino pin 6***
 
