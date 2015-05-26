@@ -2,6 +2,8 @@
 
 ![A persistence of vision circuit][header]
 
+<!-- TODO: Add a second red wire and attach battery to power rails -->
+
 This guide provides details for learners to wire, program and configure a @ShrimpingIt Persistence of Vision (POV) project. For general orientation, see the [POV](./index.html) project page. The completed build should replicate the image shown on the left.
 
 For convenience, [pre-bagged kits](../../kit/pov.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/pov.html#bom) for you to source commodity parts direct from electronics wholesalers.
@@ -58,14 +60,22 @@ Now the circuit is complete, you should be able to visit the [programming page f
 
 ![Kit showing battery wiring][header]
 
+<!-- TODO: Note 'bottom' LED not on, or add exclamation mark to sketch -->
+
+<!-- TODO: Mention insulation of pins on battery pack (reference breadboarding rules) -->
+
+<!-- TODO: Mention switch should be on when battery inserted -->
+
+<!-- TODO: Graphic has (spurious?) 104 capacitor -->
+
 After programming, you are ready to demo your Persistence of Vision circuit. You can grip the battery pack behind the breadboard to provide power as you wave it in the air.
 
 It can be convenient to have both the battery pack and the USB module wired in at the same time so you can program, then test, then reprogram and retest. However make sure ***only one*** is actually powered up. This means; switch off the battery pack before plugging USB into the computer, unplug USB from the computer before switching on the battery pack.
 
-*** Upload the Pov01Paint program. ***
-*** Unplug the USB module from your computer ***
-*** Attach the battery pack with the Black ground lead to i9 and the Red +4.5V lead to i11 and switch it on***
-*** Grip the battery pack behind the breadboard as you wave it in the air ***
+***Upload the Pov01Paint program.***
+***Unplug the USB module from your computer***
+***Attach the battery pack with the Black ground lead to i9 and the Red +4.5V lead to i11 and switch it on***
+***Grip the battery pack behind the breadboard as you wave it in the air ***
 
 [header]: kit.png
 [step00]: ./sequence/00_blink.png
