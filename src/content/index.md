@@ -87,7 +87,7 @@
                     Finally, learners can reinforce the success of any of their prototypes by completing a
                     <a href="#stripboard">Stripboard build</a> and deploying it permanently with its own power supply
                     in a housing they have designed.
-                    <a class="read-more" href="project/blink/">More about this Project</a>
+                    <a class="read-more" href="project/blink/build.html">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -99,7 +99,7 @@
                     Once you've completed <a href="#project-blink">Blink</a>, just another 7 LEDs and a battery pack and you can paint your name
                     in the air with our <a href="project/pov/">Persistence of Vision</a> project. After changing the text, a more advanced lesson plan incorporates learning binary
                     and designing your own 8-pixel-high glyphs to replace characters in the original Commodore 64
-                    font provided with your own icon designs. <a class="read-more" href="project/pov/">More about this Project</a>
+                    font provided with your own icon designs. <a class="read-more" href="project/pov/build.html">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -110,7 +110,7 @@
                 <p>
                     The <a href="project/keyboard/">Conductive Keyboard</a> project allows human touch of conductive objects, like bananas, foil, pencil drawings and other people
                     to trigger USB keystrokes, substituting for the popular <a target="_blank" href="http://makeymakey.com/">MakeyMakey</a>
-                    for high-impact interactive classroom projects and game controllers. <a class="read-more" href="project/keyboard/">More about this Project</a>
+                    for high-impact interactive classroom projects and game controllers. <a class="read-more" href="project/keyboard/build.html">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -120,7 +120,7 @@
                 <img src="project/alarmclock/kit.png" alt="Build diagram for Alarm Clock"/>
                 <p>
                     Our <a href="project/alarmclock/">Alarm Clock</a> circuit demonstrates a simple use for a clock module with backup watch battery, allowing
-                    remixes which trigger arbitrary events according to time of day, week, month, year and epoch. <a class="read-more" href="project/alarmclock/">More about this Project</a>
+                    remixes which trigger arbitrary events according to time of day, week, month, year and epoch. <a class="read-more" href="project/alarmclock/build.html">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -130,7 +130,7 @@
                 <img src="project/ledclock/kit.png" alt="Build diagram for LED Clock"/>
                 <p>
                     Our <a href="project/ledclock/">LED Clock</a> circuit builds on the Alarm Clock project, adding a display of the time with two rows of 12 LEDs - one row for hours and one row for minutes. 
-                    It allows remixes which change the way the lights are used to represent the time in different ways. It has enough controllable LEDs to make a <a href="http://www.amazon.com/Princess-AAAD7312-LED-Word-Clock/dp/B00JPNWR3G" target="_blank">Word Clock</a>, which lights words to tell the time, such as <em>[It's] [twelve] [thirty] [five].</em> <a class="read-more" href="project/ledclock/">More about this Project</a>
+                    It allows remixes which change the way the lights are used to represent the time in different ways. It has enough controllable LEDs to make a <a href="http://www.amazon.com/Princess-AAAD7312-LED-Word-Clock/dp/B00JPNWR3G" target="_blank">Word Clock</a>, which lights words to tell the time, such as <em>[It's] [twelve] [thirty] [five].</em> <a class="read-more" href="project/ledclock/build.html">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -141,7 +141,7 @@
                 <p>
                     Our <a href="project/pov/">Memory Game</a> project has backlit buttons, and plays
                     tunes through a small Piezo transducer, challenging you to recall melody sequences,
-                    just like M.B.Games' <a target="_blank" href="http://en.wikipedia.org/wiki/Simon_%28game%29">Simon</a> from the 80s. <a class="read-more" href="project/memory/">More about this Project</a>
+                    just like M.B.Games' <a target="_blank" href="http://en.wikipedia.org/wiki/Simon_%28game%29">Simon</a> from the 80s. <a class="read-more" href="project/memory/build.html">More about this Project</a>
                 </p>
             </div>
         </li>
@@ -152,12 +152,11 @@
                 <p>
                     Try building a <a href="project/pov/">Stripboard</a> project! You can make any of your Shrimp
                     projects permanent by soldering the same components in an identical layout onto copper stripboard.
-                    <a class="read-more" href="project/stripboard/">More about this Project</a>
+                    <a class="read-more" href="project/stripboard/build.html">More about this Project</a>
                 </p>
             </div>
         </li>
     </ul>
-    
 </section>
 <section id="kit">
     <h2 class="line-behind"><span>Kits Already Bagged</span></h2>
