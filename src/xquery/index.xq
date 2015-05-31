@@ -92,13 +92,19 @@ declare function local:rewrite-body($body){
                                             <li><a href="index.html">Introducing It</a></li>
                                             <li><a href="build.html">Wiring It</a></li>
                                             <li><a href="program.html">Programming It</a></li>
-                                            <li><a href="debug.html">Debugging It</a></li>
-                                            <li><a href="teach.html">Teaching It</a></li>
-                                            {
-                                                if($projectid) then
-                                                    <li><a href="../../kit/{$projectid}.html">Buying It</a></li>
-                                                else
-                                                    ()
+                                            {if($projectid=()) then
+                                                <li><a href="teach.html">Teaching It</a></li> else ()
+                                            }
+                                            {if($projectid=('pov')) then
+                                                <li><a href="debug.html">Debugging It</a></li> else ()
+                                            }
+                                            {if($projectid) then
+                                                let $kitid :=
+                                                    if($projectid='blink') then 'shrimp' else
+                                                    if($projectid='protected') then 'shrimp' else
+                                                    $projectid
+                                                return
+                                                <li><a href="../../kit/{$kitid}.html">Buying It</a></li> else ()
                                             }
                                         </ul>
                                     </li>
@@ -116,46 +122,46 @@ declare function local:rewrite-body($body){
                             </ul>
                         </li>
                         <li class="nav-link more">
-                            <a href="{$serverroot}kit/">Buying</a>
-                            <ul class="submenu">
-                                <li><a class="scroll-on-page-link" href="{$serverroot}index.html#kit">How to Choose</a></li>
-                                <li class="more">
-                                    <a href="javascript:void(0)">Kit List</a>
-                                    <ul class="submenu wide">
-                                        <li><a href="{$serverroot}kit/shrimp.html">Shrimp Bundle</a></li>
-                                        <li><a href="{$serverroot}kit/pov.html">Persistence of Vision</a></li>
-                                        <li><a href="{$serverroot}kit/keyboard.html">Conductive Keyboard</a></li>
-                                        <li><a href="{$serverroot}kit/memory.html">'Simon' Memory Game</a></li>
-                                        <li><a href="{$serverroot}kit/alarmclock.html">Alarm Clock</a></li>
-                                        <li><a href="{$serverroot}kit/ledclock.html">LED Clock</a></li>
-                                    </ul>
-                                </li>
+                            <a href="{$serverroot}kit/">Kits</a>
+                            <ul class="submenu wide">
+                                <li><a href="{$serverroot}kit/shrimp.html">Shrimp Parts</a></li>
+                                <li><a href="{$serverroot}kit/pov.html">Persistence of Vision Addon</a></li>
+                                <li><a href="{$serverroot}kit/keyboard.html">Conductive Keyboard Addon</a></li>
+                                <li><a href="{$serverroot}kit/memory.html">Memory Game Addon [Simon]</a></li>
+                                <li><a href="{$serverroot}kit/alarmclock.html">Alarm Clock Addon</a></li>
+                                <li><a href="{$serverroot}kit/ledclock.html">LED Clock Addon</a></li>
+                                <li><a href="{$serverroot}kit/stripboard.html">Stripboard Addon</a></li>
+                                <li><a href="{$serverroot}kit/breadboard400.html">400 point Breadboard</a></li>
+                                <li><a href="{$serverroot}kit/breadboard170.html">170 point Breadboard</a></li>
+                                <li><a href="{$serverroot}kit/power3xAAA.html">3xAAA Battery Pack</a></li>
+                                <li><a href="{$serverroot}kit/cp2102.html">USB UART module</a></li>
                             </ul>
                         </li>
+                        <!--
                         <li class="nav-link more">
                             <a href="javascript:void(0)">Teaching</a>
                             <ul class="submenu">
                                 <li class="nav-link"><a href="{$serverroot}/#workshop">Workshops</a></li>
-                            <!--
-                                <li class="nav-link"><a href="{$serverroot}about.html">Resources</a></li>
                                 <li class="nav-link"><a href="{$serverroot}index.html#testimonials" class="scroll-on-page-link" >Testimonials</a></li>
-                            -->
-                                <li class="nav-link"><a href="{$serverroot}offer.html" >Special Offers</a></li>
                             </ul>
                         </li>
+                        -->
                         <li class="nav-link more">
                             <a href="javascript:void(0)">Contributing</a>
                             <ul class="submenu">
                                 <li class="nav-link"><a href="{$serverroot}contribute.html#feedback">Feedback</a></li>
                                 <li class="nav-link"><a href="{$serverroot}contribute.html#donate">Donating</a></li>
-                                <li class="nav-link"><a href="{$serverroot}bagging.html">Buying</a></li>
+                                <li class="nav-link"><a href="{$serverroot}index.html#kit" class="scroll-on-page-link" >Buying</a></li>
                             </ul>
                         </li>
                         <li class="nav-link more">
                             <a href="javascript:void(0)">More</a>
                             <ul class="submenu">
                                 <li class="nav-link"><a href="{$serverroot}index.html#about" class="scroll-on-page-link" >About Us</a></li>
+                                <!--
                                 <li class="nav-link"><a href="{$serverroot}license.html">Licensing</a></li>
+                                -->
+                                <li class="nav-link"><a href="{$serverroot}offer.html" >Special Offers</a></li>
                                 <li class="nav-link"><a href="{$serverroot}contact.html">Contact</a></li>
                             </ul>
                         </li>
@@ -195,20 +201,24 @@ declare function local:rewrite-body($body){
                 <ul>
                     <li><h3>Community</h3></li>
                     <li><a href="{$serverroot}project/">Projects</a></li>
+                    <!--
                     <li><a href="{$serverroot}support.html">Support</a></li>
                     <li><a href="{$serverroot}license.html">Licensing</a></li>
+                    -->
                 </ul>
                 <ul>
                     <li><h3>Commercial</h3></li>
-                    <li><a href="{$serverroot}kit/">Kits</a></li>
-                    <li><a href="{$serverroot}workshop/">Workshops</a></li>
+                    <li><a href="{$serverroot}/#kit">Kits</a></li>
+                    <li><a href="{$serverroot}/#workshop">Workshops</a></li>
+                    <!--
                     <li><a href="{$serverroot}workshop/cpd.html">Training</a></li>
+                    -->
                 </ul>
                 <ul>
                     <li><h3>More</h3></li>
                     <li><a href="{$serverroot}contact.html">Contact Us</a></li>
-                    <li><a href="{$serverroot}social.html">Follow Us</a></li>
-                    <li><a href="{$serverroot}">About Us</a></li>
+                    <li><a href="{$serverroot}contact.html#social">Follow Us</a></li>
+                    <li><a href="{$serverroot}#what">About Us</a></li>
                 </ul>
             </div>
             <hr/>
@@ -217,6 +227,16 @@ declare function local:rewrite-body($body){
                 Thanks to <a href="http://fritzing.org">Fritzing</a> for vector graphics elements. Flickr user <a href="https://www.flickr.com/photos/randomskk/">Adam Greig</a> for cover image.
             </p>
         </footer>
+        <script>
+            //<!--
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-36299759-2', 'auto');
+            ga('send', 'pageview');
+            //-->
+        </script>
     </body>
 };
 
@@ -296,6 +316,9 @@ declare function local:filter-items($items as node()*) as node()* {
                                 local:rewrite-body($item/body)
                             }
                         </html>
+                    )
+                    else if($name='a' and contains($item/@href,'/topic/')) then (
+                        local:filter-items($item/node()) (: omit links to topic web just include link children :)
                     )
                     else
                         element {$name} {
