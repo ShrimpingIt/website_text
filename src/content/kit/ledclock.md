@@ -10,7 +10,16 @@ This is a bagged kit of the project-specific components to build a @ShrimpingIt 
 
 ## Project Bundle
 
-To make the project, you need the following @ShrimpingIt kits (or equivalent parts you have sourced yourself)...
+The component and wholesaler information for this project are linked below. Click the ***Add To Cart*** button above for pre-bagged kits from our [retail bagging service](../kit/) to avoid the hassle of self-sourcing.
+
+Our £1.50 ***LED Clock Addon*** includes...
+
+* 2x [DM134 Constant Current LED Driver chips](http://www.aliexpress.com/snapshot/6656454499.html?orderId=67153989449252)
+* 2x [680Ω 1/2W Carbon Film Resistor](http://www.taydaelectronics.com/catalogsearch/result/?q=680+OHM+1%2F2W+5%25+Carbon+Film+Resistor)
+* 25x [Water Clear Ultrabright Red LEDs](http://www.taydaelectronics.com/led-5mm-red-water-clear-ultra-bright.html)
+* 4xRed 4xGreen 2xYellow 2xPurple 2xBlue stripped [22AWG solid core wire](http://www.rapidonline.com/cables-connectors/rapid-1-0-6mm-single-core-equipment-wire-on-100m-reels-62317)
+
+Our £13.80 ***LED Clock Bundle*** includes.
 
 * This LED Clock Addon kit
 * An [Alarm Clock Addon](alarmclock.html) kit
@@ -18,4 +27,4 @@ To make the project, you need the following @ShrimpingIt kits (or equivalent par
 * <u>Two</u> [400-point breadboards](breadboard400.html)
 * A [USB UART](cp2102.html) kit
 
-At the time of writing prepared bundles for the LED Clock project have been priced at £13.80 according to the standard [pricing scheme](../kit/) for our bagging service.
+See the [pathways map](/#kit) for a pricing breakdown and to find accessories to build other [@ShrimpingIt projects](/#project) reusing the same components.
