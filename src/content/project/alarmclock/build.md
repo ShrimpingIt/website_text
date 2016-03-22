@@ -1,5 +1,11 @@
 # Wiring the Alarm Clock
 
+<!-- 
+TODO all project builds which show only the 9-pin-header need to reference information about UART attachment
+Rethink if Piezo should be first, since this is good for lesson dynamics (ringtones)
+Consider if wires should go in before components when fiddly (e.g. battery holder)
+-->
+
 ![An alarm clock][header]
 
 This guide provides details for learners to wire, program and configure their first @ShrimpingIt digital clock project. For general orientation, see the [Alarm Clock](./index.html) project page. The completed build should replicate the image shown on the left.
@@ -84,8 +90,8 @@ The DS1307 chip needs power for it to run. Now the right hand power rails are co
 
 The Shrimp's microcontroller and the RTC chip communicate using a protocol known as "Inter-Integrated Circuit" or I2C. This is also known as the 'Two Wire Interface" as bidirectional communication between multiple ICs can be sent along just two wires, one wire which pulses on when binary data should be read, and another wire which sends binary data (as ons and offs) timed to the pulses. 
 
-***Connect the Purple SCL wire from h3 to h23, connecting the ATMEGA's SCL pin to the DS1307 SCL pin***
-***Connect the Yellow SDA wire from i4 to i22, connecting the ATMEGA's SDA pin to the DS1307 SDA pin***
+***Connect the Purple SCL wire from i3 to h22, connecting the ATMEGA's SCL pin to the DS1307 SCL pin***
+***Connect the Yellow SDA wire from i4 to i23, connecting the ATMEGA's SDA pin to the DS1307 SDA pin***
 
 ## I2C Pull-up Resistors
 
@@ -105,11 +111,11 @@ Resistors are labelled with colored stripes instead of numbers, but using the sa
 
 ![DS1307 Crystal][step08]
 
-The crystal is a small silver cylinder with two wires coming out of one end, probably marked "32.768Hz". 
+The crystal is a small silver cylinder with two wires coming out of one end, probably marked "32.768kHz". 
 
 The DS1307 Real Time Clock chip needs a special piece of electrically oscillating material, known as a crystal to use as a pendulum for the clock. This material is coupled to a circuit inside the DS1307 which causes the material to resonate, generating high and low voltages, just like a pendulum swinging backwards and forwards driven by clockwork.
 
-Hz is a measure of how many times a second something happens so we would expect this crystal to oscillate 32.768 times every second.
+Hz is a measure of how many times a second something happens, and ***k*** means kilo, or 1000, so we would expect this crystal to oscillate 32.768 thousand times every second.
 
 ## Backup Battery Holder
 
@@ -166,7 +172,7 @@ A workaround to ground DS1307 Pin 3, which avoids battery shorting, is to remove
 
 For any clock behaviours to work (such as playing chimes) you must attach a reliable power supply of 3.6V to 5V, which you can get by plugging into USB or by wiring in a 3xAAA battery pack.
 
-***Check the circuit, then add the coin battery.***
+***Check the circuit, then add the coin battery, with the plus-sign upwards, placing the edge under the two lugs, and pressing until the silver catch clicks.***
 
 ## Upload Code
 
