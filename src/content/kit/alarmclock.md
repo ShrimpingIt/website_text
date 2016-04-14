@@ -10,7 +10,7 @@ The *Alarm Clock Addon* is a pre-bagged kit containing the extra components need
 
 The Addon combines with the @ShrimpingIt kits described below (or equivalent parts) enabling learners to follow our [step-by-step wiring guide](../project/alarmclock/build.html), and then to upload our [software examples](../project/alarmclock/program.html) using the free Arduino IDE.
 
-## Sourcing Kits and Bundles
+## Sourcing Kits and Bundles <a id="bom"></a>
 
 The component and wholesaler information for this project are linked below. Click the ***Add To Cart*** button above for pre-bagged kits from our [retail bagging service](../kit/) to avoid the hassle of self-sourcing.
 

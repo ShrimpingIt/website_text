@@ -8,7 +8,7 @@
 
 The *Stripboard Addon* is a pre-bagged kit containing the extra components needed to transform breadboarded @ShrimpingIt projects into more robust, soldered [Stripboard versions](../project/stripboard/build.html) project. 
 
-## Sourcing Kits and Bundles
+## Sourcing Kits and Bundles <a id="bom"></a>
 
 The component and wholesaler information for this project are linked below. Click the ***Add To Cart*** button above for pre-bagged kits from our [retail bagging service](../kit/) to avoid the hassle of self-sourcing.
 

@@ -8,7 +8,7 @@
 
 This is a bagged kit of the project-specific components to build a @ShrimpingIt [LED Clock](../project/ledclock/) following our [step by step build instructions](../project/ledclock/build.html).
 
-## Project Bundle
+## Sourcing Kits and Bundles <a id="bom"></a>
 
 The component and wholesaler information for this project are linked below. Click the ***Add To Cart*** button above for pre-bagged kits from our [retail bagging service](../kit/) to avoid the hassle of self-sourcing.
 
