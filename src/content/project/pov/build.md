@@ -54,7 +54,8 @@ After adding all the LEDs, arrange the heads touching each other and in a straig
 
 ![Completed circuit][step04]
 
-Now the circuit is complete, you should be able to visit the [programming page for this project ](./program.html)  to upload some test programs including those which can paint your name or your icon design in the air.
+Now the circuit is complete, you should be able to visit the [programming page for this project ](./program.html)  to upload some test programs.  This includes a step-by-step programming progression with six increasingly complex test examples, but you can skip to the next step for the high-impact demo at the end, painting your name or your icon design in the air.
+
 
 ## POV Demo 
 
@@ -72,7 +73,7 @@ After programming, you are ready to demo your Persistence of Vision circuit. You
 
 It can be convenient to have both the battery pack and the USB module wired in at the same time so you can program, then test, then reprogram and retest. However make sure ***only one*** is actually powered up. This means; switch off the battery pack before plugging USB into the computer, unplug USB from the computer before switching on the battery pack.
 
-***Upload the Pov01Paint program.***
+***Upload the Pov07PaintText program.***
 ***Unplug the USB module from your computer***
 ***Attach the battery pack with the Black ground lead to i9 and the Red +4.5V lead to i11 and switch it on***
 ***Grip the battery pack behind the breadboard as you wave it in the air ***
