@@ -16,6 +16,7 @@ declare function local:rewrite-head($head){
             <title>{string((root($head)//*[local:is-header(.)])[1])}&#160;</title>
             <meta charset="utf-8"/>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="google-site-verification" content="plo81K3pJKsnzIVI5_O4Ug7ewR52af_-pxoKMTDTJYY" />
             <script type="text/javascript" src="{$serverroot}style/require/require.js" >&#160;</script>
             <script>
                 require.config({{
@@ -23,6 +24,8 @@ declare function local:rewrite-head($head){
                 }});
             </script>
             <script type="text/javascript" src="{$serverroot}style/index.js" >&#160;</script>
+            <link rel="alternate" hreflang="en-gb" href="http://start.shrimping.it"/>
+            <link rel="alternate" hreflang="en-us" href="http://start.shrimping.it"/>
             <link href="http://fonts.googleapis.com/css?family=Oswald:400,300,700|Lusitana:400,700|Open+Sans:400,800" rel='stylesheet' type='text/css' />
             <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'/>
             <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,300italic,400italic,700italic,700,800,800italic' rel='stylesheet' type='text/css'/>
@@ -76,7 +79,7 @@ declare function local:rewrite-body($body){
         }
         <header class="navigation" role="banner">
             <div class="navigation-wrapper">
-                <a href="/" class="logo">
+                <a href="{$serverroot}/index.html" class="logo">
                     <img src="{$serverroot}style/brand/logomenu.png" alt="Logo Image"/>
                 </a>
                 <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
@@ -122,15 +125,15 @@ declare function local:rewrite-body($body){
                             </ul>
                         </li>
                         <li class="nav-link more">
-                            <a href="{$serverroot}kit/">Kits</a>
+                            <a href="{$serverroot}kit/">Buy Kits</a>
                             <ul class="submenu wide">
                                 <li><a href="{$serverroot}kit/shrimp.html">Shrimp Parts</a></li>
-                                <li><a href="{$serverroot}kit/pov.html">Persistence of Vision Addon</a></li>
-                                <li><a href="{$serverroot}kit/keyboard.html">Conductive Keyboard Addon</a></li>
-                                <li><a href="{$serverroot}kit/memory.html">Memory Game Addon [Simon]</a></li>
-                                <li><a href="{$serverroot}kit/alarmclock.html">Alarm Clock Addon</a></li>
-                                <li><a href="{$serverroot}kit/ledclock.html">LED Clock Addon</a></li>
-                                <li><a href="{$serverroot}kit/stripboard.html">Stripboard Addon</a></li>
+                                <li><a href="{$serverroot}kit/pov.html">Persistence of Vision</a></li>
+                                <li><a href="{$serverroot}kit/keyboard.html">Conductive Keyboard</a></li>
+                                <li><a href="{$serverroot}kit/memory.html">Memory Game [Simon]</a></li>
+                                <li><a href="{$serverroot}kit/alarmclock.html">Alarm Clock</a></li>
+                                <li><a href="{$serverroot}kit/ledclock.html">LED Clock</a></li>
+                                <li><a href="{$serverroot}kit/stripboard.html">Stripboard</a></li>
                                 <li><a href="{$serverroot}kit/breadboard400.html">400 point Breadboard</a></li>
                                 <li><a href="{$serverroot}kit/breadboard170.html">170 point Breadboard</a></li>
                                 <li><a href="{$serverroot}kit/power3xAAA.html">3xAAA Battery Pack</a></li>
@@ -185,7 +188,7 @@ declare function local:rewrite-body($body){
         </header>
         <section class="content">
             {
-                if(('project'=$classes) and ('build'=$classes)) then (
+                if(('project'=$classes) and (('build','teach')=$classes)) then (
                     local:filter-project-body($body)
                 )
                 else (
@@ -236,6 +239,10 @@ declare function local:rewrite-body($body){
             ga('create', 'UA-36299759-2', 'auto');
             ga('send', 'pageview');
             //-->
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/minicart/3.0.6/minicart.min.js"></script>
+        <script>
+            paypal.minicart.render();
         </script>
     </body>
 };
