@@ -2,25 +2,27 @@
 
 ![A Minimal Shrimp][header]
 
-This guide provides details for learners to wire and program a minimal Arduino-compatible Shrimp from scratch. 
+This guide provides step-by-step instructions for learners to wire and program a minimal Arduino-compatible Shrimp from scratch.
 
-For general orientation, see the [Blink](../blink/index.html) project page. The completed build should replicate the image shown on the left.
+For orientation, see the [Blink](../blink/index.html) project page. The completed build should look like the diagram on the left. A successful build will flash its LED rhymically on for a second then off for a second, forever. This proves your core circuit is a good foundation for [our other projects](../../index.html#project) or any other project [from the Arduino community](../../arduino.html).
 
-For convenience, [pre-bagged kits](../../kit/shrimp.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/shrimp.html#bom) for you to source commodity parts direct from electronics wholesalers.
+To source parts, order [pre-bagged kits](../../kit/shrimp.html) from @ShrimpingIt online, or raw components in bulk [direct from our wholesalers](../../kit/shrimp.html#bom).
 
-***Get hold of your Shrimp components and a breadboard, sit down with your laptop and favourite beverage, then click 'Next' at the top right corner of this page***
+If you think we can improve our guide, please [report an issue](https://github.com/ShrimpingIt/website_text/issues) or [email us](../../contact.html).
+
+***Get your breadboard and Shrimp components, your laptop and favourite beverage, and click on the next step***
 
 ## Meet your breadboard
 
 ![400 point Breadboard][step00]
 
-A solderless breadboard allows you to make circuits by pushing wires into holes, instead of soldering.
+With a solderless breadboard you make circuits by pushing wires into holes, instead of soldering.
 
-A gap from top to bottom separates it in two halves. A metal rail behind each 5-hole row grips the legs of inserted components, connecting them. Components in other rows above, below or across the gap remain separate.
+A metal rail behind each 5-hole row grips the legs of inserted components, connecting the 5 holes electrically. Note the central gap from top to bottom. Components in rows above, below or across the gap are separate from each other.
 
-A 400 tie-point solderless breadboard is shown, which has 'power rails', four full-height metal rails visible as columns down the sides. Although these holes are also grouped into 5, everything in each single column is connected to everything else inserted in that column. They are called power rails as they are usually wired to 5V (plus, or power) and 0V (minus, or ground), two connections which are used a lot throughout a typical circuit.
+The 400 tie-point solderless breadboard shown has four 'power rails' as columns down the sides. Power rails' holes are misleadingly *also* grouped into 5, yet holes in a single column are actually all connected to each other. The columns are usually wired Red to 5V (plus, or power) and Blue to 0V (minus, or ground); two very commonly-used connections.
 
-The Shrimp layout works on a mini-breadboard or soldered onto stripboard without changes. Our breadboards have readable column letters and row numbers, but even if you bought your own, this guide can be used positioning the components by eye relative to each other.
+Our guide uses the column letters and row numbers from the [breadboards we supply](../../kit/breadboard400.html), but any 400pt breadboard should do. The layout also works on a mini-breadboard or soldered on stripboard. 
 
 ***Place the breadboard with its central spine vertically, and with row numbers starting from 1 at the top, (if your rows and columns are labelled)***
 
@@ -28,11 +30,11 @@ The Shrimp layout works on a mini-breadboard or soldered onto stripboard without
 
 ![ATmega Chip][step01]
 
-The ATmega microcontroller is a black oblong with numbers printed on it, and 28 silver legs, looking a bit like an insect. It is the computer at the heart of a Shrimp, and has inputs and outputs – sensing or triggering things out there in the world.
+The ATmega microcontroller is a black oblong with printed numbers and 28 silver legs. It is the computer at the heart of our <a href="../../index.html#project">Shrimp projects</a>, with inputs and outputs sensing or triggering things in the real world.
 
-Check the legs don’t splay out too much. It can break the legs if you force the chip in. If the legs are not at right angles to the chip, ease them into position by gently pressing one side of the chip against the table top (14 pins at a time). Check the pins are lined up well on the correct holes before pushing down softly to slide them in, then finally push down hard to ensure a good connection.
+The legs can break if you force them in. If they splay out too much, gently press one side of the chip against the table top (14 legs at a time). When the legs are lined up on the correct holes push down softly to slide them in, then finally push down hard to ensure a good connection.
 
-***Carefully align the chip, checking the half-moon shape is at the top, with two empty breadboard rows above the chip. Check the legs are cleanly aligned with the breadboard below. Once the legs are all aligned, press down until the chip slides fully into the board (about 3mm movement).***
+***Carefully orient the chip with the half-moon shape at the top, and two empty rows above. Check the legs are aligned with the right breadboard holes. Once aligned, press down so the chip slides fully into the board (about 3mm movement).***
 
 <!-- TODO: Add arrow pointing to half-moon -->
 
@@ -40,11 +42,11 @@ Check the legs don’t splay out too much. It can break the legs if you force th
 
 ![Decoupling capacitor][step02]
 
-Look for the 100 nanoFarad (nF) ceramic capacitor, a small disc with two thin wires coming out of it marked '104'. These have no orientation, each leg is the same as the other.
+Look for a 100 nanoFarad (nF) ceramic capacitor, a small disc with two thin wires coming out of it marked '104'. These have no orientation, each leg is the same as the other.
 
-This ‘decoupling’ capacitor smooths electrical spikes, so that the reboot signal sent through to Pin 1 is stable and reliably detected. The chip should reboot only when you request it (e.g. when you’re reprogramming the microcontroller).
+This ‘decoupling’ capacitor smooths electrical spikes, so the reboot signal sent through to Pin 1 is reliably detected. The chip should reboot only when you request it (e.g. when you’re reprogramming the microcontroller).
 
-The digits 104 indicate capacitance in picoFarads using scientific notation. The last figure '4' tells us how many zeroes to add, so the capacitance starts ‘10’ and then continues with a further 4 zeroes - 100,000 picoFarads. Since 1 nanoFarad is 1000 picoFarads, there’s 100 nanoFarads in a capacitor marked ‘104’.
+The digits 104 show its capacitance in picoFarads in scientific notation. The last figure '4' tells us how many zeroes to add. The capacitance starts ‘10’ and then continues with a further 4 zeroes - 100,000 picoFarads. Since 1000 picoFarads is 1 nanoFarads, there’s 100 nanoFarads in a capacitor marked ‘104’.
 
 ***Insert the capacitor marked ‘104’ between***
 - ***d3, the top left leg of the chip (pin 1, immediately anticlockwise from the half-moon shape)***
@@ -52,15 +54,15 @@ The digits 104 indicate capacitance in picoFarads using scientific notation. The
 
 <!-- How far does it slide in, for every component ? -->
 
-##10 kiloOhm ‘pull-up’ resistor
+##10 kiloOhm pull-up resistor
 
 ![10kOhm resistor][step03]
 
-Look for a brown cylinder with a wire at each end, with stripes of Brown, Black and Orange. Resistors have no orientation, so you can't wire them backwards.
+Look for a cylinder with Brown, Black and Orange stripes. Resistors have no orientation. You can't wire them backwards.
 
-This will be used as a pull-up resistor. A positive voltage, usually 5V, ‘pulls up’ the reboot pin (Pin 1) through this resistor. The ATMEGA will keep running so long as it gets a high voltage on this pin. When reprogramming, the brown wire is briefly connected directly to 0V, (a stronger signal than the flow from 5V limited by the resistor). Pin 1 therefore gets pulled to 0V which causes the chip to reboot. After rebooting the ATMEGA listens for a new program sent over the orange wire. If nothing is sent, it runs the last program.
+The ATMEGA keeps running as long as Pin 1 senses 5 volts. This resistor will be connected to the 5 volt power supply, weakly 'pulling up' Pin 1 to 5 volts. Later, when we connect Pin 1 to 0V without a resistor, (a strong signal) the chip will reboot. On reboot it listens for a new program being uploaded over the orange wire (on power-up if nothing new is sent, it runs the last program sent).
 
-The colored stripes are decoded just like the '104' capacitor earlier, but colors are used instead of digits. Decoding the colors Brown=1, Black=0, Orange=3 gives us the number 103. That means the resistance in Ohms starts ‘10’ and continues with a further 3 zeroes - 10,000 Ohms or 10 kiloOhms.
+Decode the colored stripes like the '104' capacitor, but with colors instead of digits. Reading Brown=1, Black=0, Orange=3 gives us the number 103. The resistance in Ohms starts ‘10’ with 3 zeroes after - 10,000 Ohms or 10 kiloOhms.
 
 ***Attach the resistor with Brown, Black and Orange stripes between...***
 - ***row 9 on the breadboard (will be the positive power line, approx. 5 Volts)***
@@ -70,7 +72,11 @@ The colored stripes are decoded just like the '104' capacitor earlier, but color
 
 ![9-pin header][step04]
 
-A series of copper <!-- not copper? --> pins will be used to program and provide power to the Shrimp. Find the line of 9 pins encased in black plastic, keeping the strip intact as you slide the 9 pins in. Not all of the 9 pins be used in this circuit, but having all 9 in the right place helps you position everything else.
+Find the line of 9 pins encased in black plastic, 
+
+A series of wires from our USB module will be used to program and provide power to the Shrimp. This strip of pins is just a convenience to help us get the wiring right.
+
+If you can, keep the strip intact as you slide the 9 pins in. Not all of the 9 pins be used in this circuit, but having all 9 in the right place helps you position everything else.
 
 ***Push the 9-pin header strip into the top left corner of the board, leaving just one empty row at the top of the board***
 
@@ -78,7 +84,7 @@ A series of copper <!-- not copper? --> pins will be used to program and provide
 
 ![16MHz Crystal][step05]
 
-A silver box with rounded ends, and two wires, marked 16.000.
+A silver box with rounded ends, and two wires, marked 16.000. Both the legs are the same - you can't wire it backwards.
 
 A computer is a bit like clockwork. The first ever digital computer was built using clock-making techniques, with cogs representing numbers! This quartz crystal acts like the clock's pendulum, causing the mechanism to tick along.
 
@@ -91,7 +97,9 @@ The 16.000 indicates the number of back-and-forth movements this crystal generat
 ![Power and Ground][step06]
 
 Look for one Red and one Green wire, stripped to show silver at each end.
-The ATMEGA chip is broken up internally into separate parts, each of which needs a stable power supply. Power and ground wires will soon be attached to the 9-pin header. Two wires are needed to connect power and ground across to the correct legs on the right-hand half of the microcontroller. <!-- May have to remove/strip insulation at the endsa -->
+
+The ATMEGA chip is broken up internally into separate parts, each of which needs a stable power supply. Power and ground wires will soon be attached to the 9-pin header. A red and green wire are needed to connect power and ground across to the correct legs on the right-hand half of the microcontroller.
+
 ***Connect a Green wire to the last pin of the 9-pin header, across the chip and up one row.***
 ***Connect a Red wire to the second-to-last pin of the 9-pin header, across the chip and down two rows.***
 
@@ -100,11 +108,12 @@ The ATMEGA chip is broken up internally into separate parts, each of which needs
 ![the LED][step07]
 
 Look for a red or clear dome having two wire legs.
+
 A diode only allows electrical current to flow in one direction. Electricity should flow into the long leg and out of the short leg. Round LEDs also have one slightly flatter side, which corresponds with the short, negative leg of the LED.
 
 ***Insert an LED, inserting the long leg to the row below the Red wire (on the right hand side of the chip - power, or 5Volts) and the short leg in the first empty row below the microcontroller.***
 
-## 100 Ohm ‘current-limiting’ resistor
+## 100 Ohm 'current-limiting' resistor
 
 ![LED resistor][step08]
 
@@ -117,17 +126,15 @@ For an explanation of the coloured stripes, see the earlier section describing t
 ***Insert the resistor between the short leg of the LED, and the row containing the Green wire on the right hand side of the chip (ground or 0Volts)***
 
 
-## USB to UART, (CP2102 module)
+## USB to UART, (CP2102)
 
 ![Rainbow cable][step09]
 
-Look for a green or blue-coloured circuit board with a USB connector at one end and 6 pins at the other end.
+Look for a green or blue-coloured circuit board with a USB connector at one end and 6 pins at the other end. *For ease-of-use, leave the rainbow coloured wires bonded together.*
 
-This device enables your desktop or laptop machine to communicate with the Shrimp, for example to send new programs to it with the free Arduino IDE, or to exchange other information with a program when it’s running on the Shrimp.
+This device enables your laptop to communicate with the Shrimp, e.g. to upload your code with the free Arduino IDE, or to send and receive data while the Shrimp is running your code.
 
-Do not separate the rainbow coloured wires in the pack - they are easier to work with when still bonded together.
-
-***For the latest Baite CP2102 modules, (with DTR as the sixth label in a row) attach the rainbow wires from the 9pin header to the CP2102's labelled pins like…***
+***Attach the rainbow wires from the 9pin header to the CP2102's labelled pins like…***
 
 * Red -> 5V
 * Orange -> RXD
@@ -135,44 +142,38 @@ Do not separate the rainbow coloured wires in the pack - they are easier to work
 * Green -> GND
 * Brown -> DTR
 
-***For older Baite CP2102 modules (with DTR label hidden away on the back and pin attached on the side) exchange TX and RX to be like…***
-
-* Orange -> TXD
-* Yellow -> RXD
+***N.B. For ancient Baite CP2102 modules (with DTR label hidden away on the back and pin attached on the side) exchange TXD and RXD***
 
 ## Upload the ‘Blink’ program
 
 ![Arduino IDE][step10]
 
-To configure your computer for Shrimp development, visit <a href="../shrimp/program.html" target="_blank">this page</a> first. It will guide you through installing the Arduino IDE, the drivers for the CP2102 UART and getting the @ShrimpingIt example sketches (Arduino programs are called sketches.).
+Go to the <a href="../shrimp/program.html" target="_blank">system configuration page</a> to set up your laptop, installing the Arduino IDE, the drivers for the CP2102 UART and the @ShrimpingIt example sketches.
 
-Click on *File=>Examples=>Basics=>Blink* within the Arduino IDE, making the code for the 'Blink' *Sketch* appear in the editor. 'Blink' is actually a standard example distributed with the Arduino software itself, and is useful to test official Arduino boards as well. It simply turns on and off an LED with a delay in between.
+Click *File=>Examples=>Basics=>Blink* in the Arduino IDE to load the 'Blink' code. 'Blink' is a standard test for Arduino-compatible boards (and learners).
 
-To make the editor compile the code and upload it to your Shrimp, click the Upload icon (a right-pointing arrow), the menu item File=>Upload or press the CTRL+U key combination. These all do the same thing.
+To *compile* the code and *upload* it to your Shrimp, click the right-pointing arrow, the menu item File=>Upload or press the CTRL+U key combination (these all do the same thing)
+
+The circuit should be flashing on and off the LED with a delay of exactly one second. Otherwise, check your wiring steps, your <a href="../shrimp/program.html" target="_blank">laptop configuration</a> and finally our [troubleshooter](http://start.shrimping.it/project/blink/debug.html)
 
 ***<a href="../shrimp/program.html" target="_blank">Configure your machine</a> for Shrimp development***
 ***Load ‘Blink’ from File=>Examples=>Basics=>Blink***
 ***Choose File=>Upload to upload the program.***
+***You should see rhythmic blinking (e.g. if the lights do not flash, or flash irregularly and then go out, something hasn't worked).***
 
 ## Success: Start Coding!
 
 <a href="http://shrimping.it/blog/wp-content/uploads/2013/09/Photo0251_airbrushed.jpg"><img class="aligncenter size-medium wp-image-665" src="http://shrimping.it/blog/wp-content/uploads/2013/09/Photo0251_airbrushed-300x225.jpg" alt="Photo0251_airbrushed" width="300" height="225" /></a>
 
-You should now have a working Shrimp! The LED should be flashing on and off.
+You should now have a working Shrimp! The LED should be flashing on and off rhythmically once a second. Can you make sense of each line in the code to see how?
 
-You can change bits of your code to prove that your machine is able to send new behaviours to your microcontroller. Can you make sense of each line in the code?
+Change the code to prove you can send new behaviours to your microcontroller (CTRL+Z to reverse your changes). For example find a line with ```delay(1000); ``` (a 1000 milliseconds delay) and change it to ```delay(100);```. What happens after you *Upload* the new code? Change both delay commands to 100. What happens then?
 
-For example find **one** of the lines which say ```delay(1000); ``` (for a delay of 1000 milliseconds) and change it to read ```delay(100);```. What happens after you click upload to program your circuit with the new code? Why?
+Set both delay commands to 1 millisecond, and the LED flashes on and off so quickly you can't see it. However, it's off half the time, so it is 50% as bright. Can you make the LED appear with 25% brightness or 10% brightness? How?
 
-You could change both of the delay commands to use a value of 100. What happens then?
-
-If you decide to change both of the lines to 1, it appears to be on all the time, but it's actually flashing on and off so quickly you can't see it. As it's off half the time, you might notice it is 50% as bright as when it's fully on (e.g. choose a long delay before turning the LED off).
-
-Can you make the LED appear with 25% brightness or 10% brightness? How?
-
-* ***Next, why not attempt one of our [project walkthroughs](../../index.html#project) to build a functioning product or game*** 
-* ***You can solder it [on to stripboard](../../kit/stripboard.html) for a permanent Arduino substitute for deployment***
-* ***Also take a look at what [other people are building](http://shrimping.it/blog/arduino-community/) with Arduino-compatibles, now you have one of your own!***
+* ***Next, attempt our [project walkthroughs](../../index.html#project) to build a functioning product or game*** 
+* ***Solder it [on stripboard](../../kit/stripboard.html) for a permanent Arduino substitute for deployment***
+* ***Take a look at what [other people are building](../../arduino.html) with Arduino-compatible boards, now you have one of your own!***
 
 [header]: ../shrimp/minimal.png
 [step00]: ./sequence/00_breadboard.png
