@@ -12,7 +12,7 @@ Learners begin with the ultra-minimal [Blink](../project/blink/) which just cont
 
 For a more advanced example project to get started, combine it with one of our Addon kits to build a [Persistence of Vision](../project/pov/), [Alarm Clock](../project/alarmclock/), [Conductive Keyboard](../project/keyboard/), [Memory Game](../project/memory/) or [LED Clock](../project/ledclock/) following the step by step wiring guides and using our example programs.
 
-## Sourcing Kits and Bundles
+## Sourcing Kits and Bundles <a id="bom"></a>
 
 The ***Shrimp Parts*** kit is normally purchased along with a [solderless breadboard](breadboard400.html) to build the circuit and a [USB UART module](cp2102.html) to program the circuit from your computer using the free Arduino IDE.
 
