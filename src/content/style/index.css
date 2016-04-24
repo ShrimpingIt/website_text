@@ -929,7 +929,19 @@ header.navigation {
     text-align: center; }
 
 article.type-system-rounded, body.project section.content {
-  text-align: left; }
+  text-align: left;
+  /*
+  code {
+    background: #F7F7F7;
+    border-radius: $base-border-radius * 1.5;
+    border: 1px solid #E0E0E0;
+    font-family: monaco;
+    font-size: 0.7em;
+    font-style: normal;
+    padding: 0.1em 0.4em;
+    white-space: nowrap;
+  }
+  */ }
   article.type-system-rounded h1, body.project section.content h1, article.type-system-rounded h2, body.project section.content h2, article.type-system-rounded h3, body.project section.content h3, article.type-system-rounded p, body.project section.content p {
     margin: 0; }
   article.type-system-rounded hr, body.project section.content hr {
@@ -967,7 +979,7 @@ article.type-system-rounded, body.project section.content {
         font-size: 2.4em; } }
   article.type-system-rounded h2, body.project section.content h2 {
     font-family: "Varela Round", sans-serif;
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-weight: 400;
     line-height: 1.4em;
     margin-bottom: 0.9em; }
@@ -978,11 +990,7 @@ article.type-system-rounded, body.project section.content {
     background: #F7F7F7;
     border-radius: 4.5px;
     border: 1px solid #E0E0E0;
-    font-family: monaco;
-    font-size: 0.7em;
-    font-style: normal;
-    padding: 0.1em 0.4em;
-    white-space: nowrap; }
+    padding: 0.1em 0.4em; }
   article.type-system-rounded h3, body.project section.content h3 {
     font-family: "Varela Round", sans-serif;
     font-size: 1.2em;
