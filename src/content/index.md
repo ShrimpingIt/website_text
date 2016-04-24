@@ -139,7 +139,7 @@
             <div class="tab-content project memory">
                 <img src="project/memory/kit.png" alt="Build diagram for Memory Game"/>
                 <p>
-                    Our <a href="project/pov/">Memory Game</a> project has backlit buttons, and plays
+                    Our <a href="project/memory/">Memory Game</a> project has backlit buttons, and plays
                     tunes through a small Piezo transducer, challenging you to recall melody sequences,
                     just like M.B.Games' <a target="_blank" href="http://en.wikipedia.org/wiki/Simon_%28game%29">Simon</a> from the 80s. <a class="read-more" href="project/memory/build.html">More about this Project</a>
                 </p>
