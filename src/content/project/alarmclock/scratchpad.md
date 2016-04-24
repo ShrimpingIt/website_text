@@ -1,5 +1,18 @@
 # Alarm Clock Addon
 
+# Teaching notes
+
+* Alarm clock
+    - build alarm clock with buttons
+    - set up serial control
+    - show that buttons change the time
+    - show that time is retained when unplugged, replugged
+    - upload code which includes alarm
+    - upload code which includes low-power behaviour
+
+# Ideas
+
+
 Orrery, Beer/Butter fridge, Physical scheduler, Countdown, Werewolf, Full Moon, Space station tracker
 
 Sunset, sunrise
