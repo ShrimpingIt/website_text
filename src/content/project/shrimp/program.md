@@ -19,7 +19,7 @@ Once configured, sketches for all our projects should appear in the Arduino IDE 
 
 # 1) Download Our Sketches
 
-Visit the [@ShrimpingIt projects repository](https://github.com/ShrimpingIt/projects) to find a folder containing the programs and libraries for all our @ShrimpingIt projects, intended for the [Arduino IDE](http://www.arduino.cc/en/Main/Software)  version 1.6.3 or above. If you have never used *git* simply click on the Zip button to download a snapshot of the git repository and double-click on it to unzip the archive to a location of your choice.
+Visit the [@ShrimpingIt projects repository](https://github.com/ShrimpingIt/projects) to find a folder containing the programs and libraries for all our @ShrimpingIt projects, intended for the [Arduino IDE](http://www.arduino.cc/en/Main/Software)  version 1.6.3 or above. If you have never used *git* you can simply click on the 'Download Zip' button to download a snapshot of the git repository and double-click on it to open the zip. When you see the contents of the zip appear, ***drag the folder called project_master to a memorable location*** in your computer, such as the Desktop.
 
 # 2) Install USB module drivers
 
@@ -44,7 +44,7 @@ We use an unmodified Arduino IDE to upload programs to the Shrimp. Instructions 
 
 # 4) Select the right Sketchbook, Board and Serial Port
 
-Click on *File=>Preferences* in the menu of the Arduino IDE, then click 'Browse' to choose your "Sketchbook Location". Navigate to our projects repository you unzipped in step one and select the folder called 'sketchbook'. ***Then close all Arduino IDE windows, then restart the Arduino IDE***.
+Click on *File=>Preferences* in the menu of the Arduino IDE, then click 'Browse' to choose your "Sketchbook Location". Navigate to the memorable location you chose in step one to extract our sketches and drill down, selecting our folder called 'sketchbook'. ***After completing this step, close all Arduino IDE windows, then restart the Arduino IDE***.
 
 A Shrimp is binary- and pin-compatible with an Arduino Uno. Click on 'Arduino Uno' under *Tools=>Boards* in the Arduino IDE. A dot should appear next to 'Arduino Uno' to show the right configuration is selected.
 
