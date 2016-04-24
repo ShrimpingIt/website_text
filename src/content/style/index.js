@@ -11,4 +11,7 @@ require(['refills/scroll']);
 require(['refills/sliding-panel']);
 require(['refills/parallax']);
 
+require(['highlight']);
+
 require(['shrimpingit/hashhandler']);
+require(['shrimpingit/codeblocks']);
