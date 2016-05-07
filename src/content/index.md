@@ -72,11 +72,11 @@
                     <br/><br/>
                     The @ShrimpingIt projects all follow on from <a href="project/blink/">Blink</a>, with build
                     diagrams, software, bagged kits and teaching materials. For example you can build
-                    a <a href="#project-pov">Persistence of Vision</a> display to paint your name in the air,
-                    a <a href="#project-keyboard">Conductive Keyboard</a> for interactive games driven playfully by
+                    a <a href="project/pov/build.html">Persistence of Vision</a> display to paint your name in the air,
+                    a <a href="project/keyboard/build.html">Conductive Keyboard</a> for interactive games driven playfully by
                     touched objects just like a <a target="_blank" href="http://makeymakey.com/">MakeyMakey</a>,
-                    an <a href="#project-alarmclock">Alarm Clock</a> to explore time-driven applications,
-                    or a <a href="#project-memory">Memory Game</a> as a high-impact demonstrator of physical computing
+                    an <a href="project/alarmclock/build.html">Alarm Clock</a> to explore time-driven applications,
+                    or a <a href="project/memory/build.html">Memory Game</a> as a high-impact demonstrator of physical computing
                     to wow friends and family.
                     <br/><br/>
                     Since our layout is binary-
