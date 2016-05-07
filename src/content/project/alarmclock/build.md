@@ -8,7 +8,7 @@ Consider if wires should go in before components when fiddly (e.g. battery holde
 
 ![An alarm clock][header]
 
-This guide provides details for learners to wire, program and configure their first @ShrimpingIt digital clock project. For general orientation, see the [Alarm Clock](./index.html) project page. The completed build should replicate the image shown on the left.
+This guide provides details for learners to wire, program and configure their first @ShrimpingIt Arduino-compatible digital clock project. For general orientation, see the [Alarm Clock](./index.html) project page. The completed build should replicate the image shown on the left.
 
 For convenience, [pre-bagged kits](../../kit/alarmclock.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/alarmclock.html#bom) for you to source commodity parts direct from electronics wholesalers.
 
@@ -188,7 +188,7 @@ In later steps we add a special subcircuit allowing the Clock to be woken from a
 
 ![Serial Wake Wire][step14]
 
-This wire allows us to monitor activity on the Serial data in wire using Arduino pin 2, a pin which is capable of waking the chip from a low-power sleep mode. This is demonstrated by the [Clock02LowPowerSetTime](https://github.com/ShrimpingIt/projects/blob/master/sketchbook/shrimpingit/alarmclock/Clock02LowPowerSetTime/Clock02LowPowerSetTime.ino) sketch.
+This wire allows us to monitor activity on the Serial data in wire using Arduino pin 2, a pin which is capable of waking the chip from a low-power sleep mode. This is demonstrated by the [Alarm04LowPower](https://github.com/ShrimpingIt/projects/blob/master/sketchbook/shrimpingit/alarmclock/Alarm04LowPower/Alarm04LowPower.ino) sketch.
 
 ## Interactive Buttons 
 
