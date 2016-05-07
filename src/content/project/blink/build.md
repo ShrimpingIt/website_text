@@ -174,6 +174,7 @@ Set both delay commands to 1 millisecond, and the LED flashes on and off so quic
 * ***Next, attempt our [project walkthroughs](../../index.html#project) to build a functioning product or game*** 
 * ***Solder it [on stripboard](../../kit/stripboard.html) for a permanent Arduino substitute for deployment***
 * ***Take a look at what [other people are building](../../arduino.html) with Arduino-compatible boards, now you have one of your own!***
+* ***If you've found this free resource valuable, please consider [making a donation](../../contribute.html#donate) or [buying a kit](../../index.html#kit) to keep our project going.***
 
 [header]: ../shrimp/minimal.png
 [step00]: ./sequence/00_breadboard.png
