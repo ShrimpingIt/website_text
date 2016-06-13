@@ -13,7 +13,7 @@
             <div class="card-copy">
                 <p>
                     We design high-impact programmable electronics projects, freely documenting how to source, build and teach with them.
-                    Our builds are <a target="_blank" href="http://arduino.cc">Arduino-compatible</a> using cheap components on solderless breadboard.
+                    Our builds are <a target="_blank" href="http://arduino.cc">Arduino-compatible</a> using cheap prototyping components on solderless breadboard.
                     <a class="read-more scroll-on-page-link" href="#project">More about Projects</a>
                 </p>
             </div>
@@ -161,11 +161,13 @@
 <section id="kit">
     <h2 class="line-behind"><span>Kits Already Bagged</span></h2>
     <section id="combinations">
-        <img src="style/brand/combinations.png" />
+        <a href="style/brand/combinations.png" target="_blank" >
+            <img src="style/brand/combinations.png" alt="Pathways to ShrimpingIt Projects"/>
+        </a>
         <p>
             This table shows how our kits can be reused and recombined to make different projects.
             <br/><br/>
-            Complete project bundles are as low as £10-£12 pounds, but that only scratches the surface of the savings
+            Complete project bundles are as low as £11-£16 pounds, but that only scratches the surface of the savings
             you can make.
             <br/><br/>
             The Shrimp Bundle and breadboards can be reused between projects, making your second and
@@ -175,7 +177,7 @@
             tight, they can be held as a classroom resource, with learners taking programmed projects away which
             run from battery or hacked USB cables (allowing them to re-program at home is the ideal).
             <br/><br/>
-            Finally projects can be transferred from breadboard to stripboard from just £0.44 per circuit, freeing
+            Finally projects can be transferred from breadboard to stripboard from just £0.64 per circuit, freeing
             a classroom's solderless breadboards for the next year group.
             <a class="read-more scroll-on-page-link" href="./kit/">More about Kits</a>
         </p>
