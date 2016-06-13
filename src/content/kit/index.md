@@ -24,6 +24,8 @@ The <a href="../style/brand/combinations.png" target="_blank" >pathways map</a> 
 
 We invite you to source your own kits if you wish but pre-bagged retail kits are also available to avoid [sourcing hassle and delays](sourcing.html). If you choose to buy kits from us, it helps to support our design work. Components are prepared and combined with color graphic printouts in our distinctive pink anti-static bags in Morecambe, UK before shipping at cost to customers in UK, Europe and the US.
 
+<a name="pricing"></a>
+
 ## Our Pricing
 
 @ShrimpingIt project designs are built around widely-available affordable electronics prototyping components from wholesale electronics suppliers. Ours is an open procurement project, providing full information of components, wholesale suppliers and pricing.Our retail prices are 200% of the wholesale sourcing cost, plus 200% of the UK [living wage](http://www.livingwage.org.uk/) for our packing labour per kit.

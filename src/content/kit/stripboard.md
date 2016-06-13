@@ -12,7 +12,7 @@ The *Stripboard Addon* is a pre-bagged kit containing the extra components neede
 
 The component and wholesaler information for this project are linked below. Click the ***Add To Cart*** button above for pre-bagged kits from our [retail bagging service](../kit/) to avoid the hassle of self-sourcing.
 
-Our £1.30 ***Stripboard Addon*** includes...
+Our £1.90 ***Stripboard Addon*** includes...
 * A [copper stripboard 93x54mm](http://www.taydaelectronics.com/small-stripboard-94x53mm-copper.html)
 * A [40 pin male right angle header strip](http://www.aliexpress.com/item/100pcs-1x40-Pin-2-54mm-Right-Angle-Single-Row-Male-Pin-Header-Connector/595423471.html)
 * A [28 pin DIP IC Socket Adaptor](http://www.taydaelectronics.com/28-pin-dip-ic-socket-adaptor-solder-type.html)
