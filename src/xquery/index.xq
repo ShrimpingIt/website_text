@@ -31,6 +31,7 @@ declare function local:rewrite-head($head){
             <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,300italic,400italic,700italic,700,800,800italic' rel='stylesheet' type='text/css'/>
             <link rel="stylesheet" type="text/css" href="{$serverroot}style/normalize.css" />
             <link rel="stylesheet" type="text/css" href="{$serverroot}style/index.css" />
+            <link rel="stylesheet" type="text/css" href="{$serverroot}style/code.css" />
         </head>
     )
 };
@@ -52,11 +53,11 @@ declare function local:write-hero(){
             <div class="hero-inner">
                 <a href="" class="hero-logo"><img src="style/brand/logo.png" alt="Logo Image"/></a>
                 <div class="hero-copy">
-                    <h1>@ShrimpingIt - Programmable Electronics</h1>
+                    <h1>@ShrimpingIt - Learn Prototyping</h1>
                 </div>
                 <p>
-                    We document free project designs using prototyping materials<br/>
-                    supporting STEM teachers and hobbyists in the UK and worldwide.
+                    We document fun, cheap and easy-to-build projects using commodity programmable electronics,<br/>
+                    to stimulate gadget prototyping in STEM and Computing classrooms worldwide
                 </p>
                 <a class="button scroll-on-page-link" href="#what">Find Out More</a>
             </div>
