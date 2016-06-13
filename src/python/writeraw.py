@@ -13,11 +13,11 @@ class MarkdownExporter(Runner):
         parser.set_defaults(
             workingdirectory='../content',
             outputdirectory='../../build/raw',
-            shellcmd='echo {inputpath};'+
-                    'mkdir -p $(dirname {outputfiletemplate});'+
-                    'pandoc --from=markdown_github --to=html --standalone {inputpath}'+
-                    '|sed 1d'
-                    '> {outputfiletemplate}'
+            shellcmd='echo {inputpath};'+ # the .md source file path
+                    'mkdir -p $(dirname {outputfiletemplate});'+ # lazy-create containing directory
+                    'pandoc --from=markdown_github --to=html --standalone {inputpath}'+ # export via pandoc to stdout
+                    '|sed 1d' # removes XML declaration before writing
+                    '> {outputfiletemplate}' # write out to the .html file
         )
 
     def runcommand(self, inputdict):
