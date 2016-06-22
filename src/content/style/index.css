@@ -928,7 +928,7 @@ header.navigation {
     max-width: 35em;
     text-align: center; }
 
-article.type-system-rounded, body.project section.content {
+article.type-system-rounded, body.project section.content, body.training section.content {
   text-align: left;
   /*
   code {
@@ -942,25 +942,25 @@ article.type-system-rounded, body.project section.content {
     white-space: nowrap;
   }
   */ }
-  article.type-system-rounded h1, body.project section.content h1, article.type-system-rounded h2, body.project section.content h2, article.type-system-rounded h3, body.project section.content h3, article.type-system-rounded p, body.project section.content p {
+  article.type-system-rounded h1, body.project section.content h1, body.training section.content h1, article.type-system-rounded h2, body.project section.content h2, body.training section.content h2, article.type-system-rounded h3, body.project section.content h3, body.training section.content h3, article.type-system-rounded p, body.project section.content p, body.training section.content p {
     margin: 0; }
-  article.type-system-rounded hr, body.project section.content hr {
+  article.type-system-rounded hr, body.project section.content hr, body.training section.content hr {
     border-bottom: 1px solid #ddd;
     border-left: none;
     border-right: none;
     border-top: none;
     margin: 1.5em 0; }
-  article.type-system-rounded p, body.project section.content p {
+  article.type-system-rounded p, body.project section.content p, body.training section.content p {
     color: #333;
     line-height: 1.5; }
-  article.type-system-rounded a, body.project section.content a {
+  article.type-system-rounded a, body.project section.content a, body.training section.content a {
     color: #477DCA;
     text-decoration: none; }
-  article.type-system-rounded::after, body.project section.content::after {
+  article.type-system-rounded::after, body.project section.content::after, body.training section.content::after {
     clear: both;
     content: "";
     display: table; }
-  article.type-system-rounded .type, body.project section.content .type {
+  article.type-system-rounded .type, body.project section.content .type, body.training section.content .type {
     border-bottom: 1px solid;
     display: inline-block;
     font-family: "Nunito", sans-serif;
@@ -970,49 +970,49 @@ article.type-system-rounded, body.project section.content {
     padding: 0.3em 0;
     text-align: left;
     text-transform: uppercase; }
-  article.type-system-rounded h1, body.project section.content h1 {
+  article.type-system-rounded h1, body.project section.content h1, body.training section.content h1 {
     font-family: "Varela Round", sans-serif;
     font-size: 1.8em;
     margin-bottom: 0.5em; }
     @media screen and (min-width: 40em) {
-      article.type-system-rounded h1, body.project section.content h1 {
+      article.type-system-rounded h1, body.project section.content h1, body.training section.content h1 {
         font-size: 2.4em; } }
-  article.type-system-rounded h2, body.project section.content h2 {
+  article.type-system-rounded h2, body.project section.content h2, body.training section.content h2 {
     font-family: "Varela Round", sans-serif;
     font-size: 1.4em;
     font-weight: 400;
     line-height: 1.4em;
     margin-bottom: 0.9em; }
     @media screen and (min-width: 40em) {
-      article.type-system-rounded h2, body.project section.content h2 {
+      article.type-system-rounded h2, body.project section.content h2, body.training section.content h2 {
         font-size: 1.4em; } }
-  article.type-system-rounded code, body.project section.content code {
+  article.type-system-rounded code, body.project section.content code, body.training section.content code {
     background: #F7F7F7;
     border-radius: 4.5px;
     border: 1px solid #E0E0E0;
     padding: 0.1em 0.4em; }
-  article.type-system-rounded h3, body.project section.content h3 {
+  article.type-system-rounded h3, body.project section.content h3, body.training section.content h3 {
     font-family: "Varela Round", sans-serif;
     font-size: 1.2em;
     font-weight: 400;
     line-height: 1.3em;
     margin-bottom: 0.4em; }
-  article.type-system-rounded p.date, body.project section.content p.date {
+  article.type-system-rounded p.date, body.project section.content p.date, body.training section.content p.date {
     color: rgba(51, 51, 51, 0.4);
     font-family: "Nunito", sans-serif;
     font-size: 0.9em;
     margin-bottom: 0.3em; }
-  article.type-system-rounded p, body.project section.content p {
+  article.type-system-rounded p, body.project section.content p, body.training section.content p {
     font-family: "Nunito", sans-serif;
     font-size: 1.05em;
     font-weight: 300;
     line-height: 1.4em;
     margin-bottom: 1.5em; }
-    article.type-system-rounded p span, body.project section.content p span {
+    article.type-system-rounded p span, body.project section.content p span, body.training section.content p span {
       font-family: "Varela Round", sans-serif;
       font-size: 0.8em;
       text-transform: uppercase; }
-  article.type-system-rounded a.read-more, body.project section.content a.read-more {
+  article.type-system-rounded a.read-more, body.project section.content a.read-more, body.training section.content a.read-more {
     display: inline-block;
     font-family: "Varela Round", sans-serif;
     font-size: 0.8em;
@@ -1020,14 +1020,14 @@ article.type-system-rounded, body.project section.content {
     margin-left: 0.2em;
     position: relative;
     text-transform: uppercase; }
-    article.type-system-rounded a.read-more span, body.project section.content a.read-more span {
+    article.type-system-rounded a.read-more span, body.project section.content a.read-more span, body.training section.content a.read-more span {
       font-size: 1.5em;
       position: absolute;
       right: -12px;
       top: -1px; }
-  article.type-system-rounded hr, body.project section.content hr {
+  article.type-system-rounded hr, body.project section.content hr, body.training section.content hr {
     width: 3em; }
-  article.type-system-rounded p.author, body.project section.content p.author {
+  article.type-system-rounded p.author, body.project section.content p.author, body.training section.content p.author {
     font-family: "Nunito", sans-serif; }
 
 .ribbon-box {
@@ -1616,13 +1616,13 @@ section.content {
           padding-left: 1em;
           padding-right: 1em; }
 
-body.project {
+body.project, body.training {
   /*header.navigation{
       position:fixed;
       left:0;
       top:0;
     }*/ }
-  body.project .pagination {
+  body.project .pagination, body.training .pagination {
     text-align: right;
     font-size: 0.8em; }
 
