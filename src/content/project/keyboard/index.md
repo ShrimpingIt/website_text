@@ -1,7 +1,12 @@
 # Conductive Keyboard
 
-This project demonstrates how to build a substitute for the <a href="http://makeymakey.com/" target="_blank">MakeyMakey</a> USB conductive keyboard. It is based on Sjoerd-Dirk Meijer's original experiments with the *ShrimpKey*. See the MakeyMakey promotional video below for examples of what you can do with a conductive keyboard.
+<img src="real.jpg" />
+
+This project is based on Sjoerd-Dirk Meijer's experiments turning a [Shrimp](../shrimp/index.html) into a <a href="http://makeymakey.com/" target="_blank">MakeyMakey</a>-style USB conductive keyboard. It combines a Shrimp with a handful of resistors and diodes, a chopped USB cable and some jumper wires or crocodile clips. @ShrimpingIt provides a step-by-step [wiring guide](build.html), <!-- [example software](program.html) --> and detailed [sourcing information](../../kit/keyboard.html) for the components you need to make this project.
+
+
+Because it is constructed directly from component parts, it is cheaper and more educational than a MakeyMakey. See the MakeyMakey promotional video below for examples of what you can do with a conductive keyboard.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rfQqh7iCcOU" frameborder="0" allowfullscreen="true"></iframe>
 
-Because it is constructed directly from component parts, it is cheaper and arguably more educational than a MakeyMakey. You can build the project by combining a [Shrimp](../shrimp/index.html) with a handful of resistors and diodes, a hacked USB cable and some jumper wires or crocodile clips.
+###### *[Apple Piano Image [Pete Prodoehl](https://www.flickr.com/photos/raster/8419471503)]*
