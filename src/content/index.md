@@ -162,7 +162,7 @@
     <h2 class="line-behind"><span>Kits Already Bagged</span></h2>
     <section id="combinations">
         <a href="style/brand/combinations.png" target="_blank" >
-            <img src="style/brand/combinations.png" alt="Pathways to ShrimpingIt Projects"/>
+            <img style="margin:20px" src="style/brand/combinations.png" alt="Pathways to ShrimpingIt Projects"/>
         </a>
         <p>
             This table shows how our kits can be reused and recombined to make different projects.
