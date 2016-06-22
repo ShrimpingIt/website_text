@@ -19,7 +19,7 @@ The ***Shrimp Parts*** kit is normally purchased along with a [solderless breadb
 The component and wholesaler information for this project are linked below. Click ***Add To Cart*** above to buy kits from our [retail bagging service](../kit/). This avoids the hassle, delays and postage costs when sourcing your own.
 
 Our £4.60 ***Shrimp Parts*** kit includes...
-* Arduino-Uno-compatible [ATmega328P-PU](http://cpc.farnell.com/1/1/108471-mcu-8bit-avr-32k-flash-28pdip-cpu-speed-20mhz-controller-familyseries-atmega-embedded-interface-type-i2c-spi-uart-mcu-case-style-dip-msl-no-of-ios-23-no-of-pins-28-packaging-each-program-memory-size-32kb-ram-memory-size-2kb-svhc-n-atmega328p-pu-atmel.html) bootloaded microcontroller
+* Arduino-Uno-compatible ATmega328P-PU bootloaded microcontroller ([RS](http://uk.rs-online.com/web/p/microcontrollers/9222142P/),[eBay](http://www.ebay.co.uk/itm/272041592745?_trksid=p2057872.m2749.l2649&ssPageName=STRK%3AMEBIDX%3AIT))
 * 2x [22pF Ceramic Capacitor](http://www.taydaelectronics.com/10-x-22pf-50v-ceramic-disc-capacitor-pkg-of-10.html)
 * 4x [100nF Ceramic Capacitor](http://www.taydaelectronics.com/10-x-0-1uf-50v-ceramic-disc-capacitor-pkg-of-10.html)
 * A [10uF Electrolytic Capacitor](http://www.taydaelectronics.com/10uf-25v-105c-radial-electrolytic-capacitor-5x11mm.html)
