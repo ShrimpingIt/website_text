@@ -23,8 +23,8 @@ Our £2.90 ***Conductive Keyboard Addon*** includes...
 * 1x [2.2kΩ Resistor](http://www.taydaelectronics.com/10-x-resistor-2-2k-ohm-1-2w-5-carbon-film-pkg-of-10.html)
 * 2xGreen 2xRed stripped [22AWG solid core wire](http://www.rapidonline.com/cables-connectors/rapid-1-0-6mm-single-core-equipment-wire-on-100m-reels-62317)
 * Lengths of 2.54mm [male pin header strip](http://www.aliexpress.com/item/100PC-Lot-2-54mm-Pitch-Single-Row-Pin-Header-Pin-Male-Pin-Connector-Length-15mm-Free/688027713.html)
-* Male jumper wires 
-* Patches of aluminium conductive tape 
+* [Male jumper wires](http://www.aliexpress.com/snapshot/7755283082.html?orderId=75835044269252) 
+* Patches of conductive tape 
 
 Our £12.80 ***Conductive Keyboard Bundle*** includes.
 
