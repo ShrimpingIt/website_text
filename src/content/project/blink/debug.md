@@ -1,6 +1,6 @@
-# Debugging Blink
+# Troubleshooting Blink
 
-## Wiring
+# Wiring
 
 First, check that the circuit is exactly as shown in the <a href="build.html#step11" target="blank">last frame of the Blink build</a>. Click on the image shown if you need it to be bigger to read the numbers and follow the wires.
 
@@ -12,7 +12,7 @@ In the most extreme case, learners ignore all of the wiring in favour of shoving
 
 It is worth touring a workshop to sanity-check the position of the first few components to guide learners that it matters which row a component is inserted into, in case they were daydreaming through [meet your breadboard](http://start.shrimping.it/project/blink/build.html#step2).
 
-### Common Errors
+## Common Errors
 
 The following wiring errors will cause the Upload step to fail with 'not responding', just as if no Shrimp was attached at all...
 
@@ -29,9 +29,9 @@ If upload works, and the LED still doesn't blink...
 
 On the plus-side, every circuit we have debugged comes back to life when it is wired properly. The components are very robust. One exception is wiring an LED directly to the battery or USB power wires. That will blow them up, but LEDs are cheap!
 
-## Programming
+# Programming
 
-#### Debugging the programming sequence
+## The Reset/Upload sequence
 
 A Shrimp (or any Arduino-Uno-compatible circuit) is re-programmed as follows...
 
@@ -47,6 +47,8 @@ A Shrimp (or any Arduino-Uno-compatible circuit) is re-programmed as follows...
         - it runs the program
 	- **...no new program**, it
 		- runs the previously stored program
+	
+Understanding this can help identify what kind of error a learner has made. E.g. if the chip visibly restarts on Upload, (blinks a bit, before going out) then it's powered, and the reset circuit is working, but perhaps the TX and RX are switched, meaning the program isn't sent or acknowledged.
 
 ##### Types of failure
 
