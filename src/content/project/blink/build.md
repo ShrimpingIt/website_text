@@ -12,6 +12,8 @@ If you think we can improve our guide, please [report an issue](https://github.c
 
 ***Get your breadboard and Shrimp components, your laptop and favourite beverage, and click on the next step***
 
+<div style="page-break-after: always;"></div>
+
 ## Meet your breadboard
 
 ![400 point Breadboard][step00]
@@ -26,6 +28,8 @@ Our guide uses the column letters and row numbers from the [breadboards we suppl
 
 ***Place the breadboard with its central spine vertically, and with row numbers starting from 1 at the top, (if your rows and columns are labelled)***
 
+<div style="page-break-after: always;"></div>
+
 ## The ATmega chip
 
 ![ATmega Chip][step01]
@@ -37,6 +41,8 @@ The legs can break if you force them in. If they splay out too much, gently pres
 ***Carefully orient the chip with the half-moon shape at the top, and two empty rows above. Check the legs are aligned with the right breadboard holes. Once aligned, press down so the chip slides fully into the board (about 3mm movement).***
 
 <!-- TODO: Add arrow pointing to half-moon -->
+
+<div style="page-break-after: always;"></div>
 
 ## 100 nF ‘decoupling’ capacitor
 
@@ -54,7 +60,9 @@ The digits 104 show its capacitance in picoFarads in scientific notation. The la
 
 <!-- How far does it slide in, for every component ? -->
 
-##10 kiloOhm pull-up resistor
+<div style="page-break-after: always;"></div>
+
+## 10 kiloOhm pull-up resistor
 
 ![10kOhm resistor][step03]
 
@@ -68,6 +76,8 @@ Decode the colored stripes like the '104' capacitor, but with colors instead of 
 - ***row 9 on the breadboard (will be the positive power line, approx. 5 Volts)***
 - ***the top left leg of the chip (pin 1, immediately anticlockwise from the half-moon shape)*** 
 
+<div style="page-break-after: always;"></div>
+
 ## 9-pin programming header
 
 ![9-pin header][step04]
@@ -80,7 +90,9 @@ If you can, keep the strip intact as you slide the 9 pins in. Not all of the 9 p
 
 ***Push the 9-pin header strip into the top left corner of the board, leaving just one empty row at the top of the board***
 
-##16 MHz Crystal
+<div style="page-break-after: always;"></div>
+
+## 16 MHz Crystal
 
 ![16MHz Crystal][step05]
 
@@ -92,7 +104,9 @@ The 16.000 indicates the number of back-and-forth movements this crystal generat
 
 ***Insert the crystal with one leg in the row immediately below the 9-pin header, and the other leg in the row below that***
 
-##Power and Ground wires
+<div style="page-break-after: always;"></div>
+
+## Power and Ground wires
 
 ![Power and Ground][step06]
 
@@ -103,6 +117,8 @@ The ATMEGA chip is broken up internally into separate parts, each of which needs
 ***Connect a Green wire to the last pin of the 9-pin header, across the chip and up one row.***
 ***Connect a Red wire to the second-to-last pin of the 9-pin header, across the chip and down two rows.***
 
+<div style="page-break-after: always;"></div>
+
 ## Light Emitting Diode
 
 ![the LED][step07]
@@ -112,6 +128,8 @@ Look for a red or clear dome having two wire legs.
 A diode only allows electrical current to flow in one direction. Electricity should flow into the long leg and out of the short leg. Round LEDs also have one slightly flatter side, which corresponds with the short, negative leg of the LED.
 
 ***Insert an LED, inserting the long leg to the row below the Red wire (on the right hand side of the chip - power, or 5Volts) and the short leg in the first empty row below the microcontroller.***
+
+<div style="page-break-after: always;"></div>
 
 ## 100 Ohm 'current-limiting' resistor
 
@@ -125,6 +143,7 @@ For an explanation of the coloured stripes, see the earlier section describing t
 
 ***Insert the resistor between the short leg of the LED, and the row containing the Green wire on the right hand side of the chip (ground or 0Volts)***
 
+<div style="page-break-after: always;"></div>
 
 ## USB to UART, (CP2102)
 
@@ -144,6 +163,8 @@ This device enables your laptop to communicate with the Shrimp, e.g. to upload y
 
 ***N.B. For ancient Baite CP2102 modules (with DTR label hidden away on the back and pin attached on the side) exchange TXD and RXD***
 
+<div style="page-break-after: always;"></div>
+
 ## Upload the ‘Blink’ program
 
 ![Arduino IDE][step10]
@@ -159,7 +180,9 @@ The circuit should be flashing on and off the LED with a delay of exactly one se
 ***<a href="../shrimp/program.html" target="_blank">Configure your machine</a> for Shrimp development***
 ***Load ‘Blink’ from File=>Examples=>Basics=>Blink***
 ***Choose File=>Upload to upload the program.***
-***You should see rhythmic blinking (e.g. if the lights do not flash, or flash irregularly and then go out, something hasn't worked).***
+***See continuous rhythmic blinking (e.g. if lights flash irregularly or don't flash, something hasn't worked).***
+
+<div style="page-break-after: always;"></div>
 
 ## Success: Start Coding!
 
