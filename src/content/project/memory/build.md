@@ -6,6 +6,8 @@ This guide provides details for learners to wire, program and configure a @Shrim
 
 For convenience, [pre-bagged kits](../../kit/memory.html) are available to order from @ShrimpingIt online. If you do not wish to buy from us, [information is provided](../../kit/memory.html#bom) for you to source commodity parts direct from electronics wholesalers.
 
+<div style="page-break-after: always;"></div>
+
 ## Getting started
 
 ![Blink Layout][step00]
@@ -20,6 +22,8 @@ Once they are docked together, use the centre area to follow the [Blink](../blin
 ***Complete the [Blink build](../blink/build.html) placing the circuit at the centre of the breadboards as shown***
 ***Make sure you can [upload 'Blink'](../blink/program.html) to the circuit***
 
+<div style="page-break-after: always;"></div>
+
 ## Remove surplus parts
 
 ![Blink components to remove][step01]
@@ -27,6 +31,8 @@ Once they are docked together, use the centre area to follow the [Blink](../blin
 After you've tested Blink and proven you can upload code, you can remove the Blink LED and resistor as these are not used in the final circuit, and it will be easier to wire the circuit with them out of the way.
 
 ***Take out the 'Blink' LED and Resistor***
+
+<div style="page-break-after: always;"></div>
 
 ## Move 9-pin header
 
@@ -39,6 +45,8 @@ Since the five holes in each row are equivalent (they are connected together ins
 It will avoid errors and save you time later if you leave the UART ribbon cable wiring intact following your Blink testing.
 
 ***Move the 9-pin programming header across by two columns, placing its first pin in h2 and its last pin in h10***
+
+<div style="page-break-after: always;"></div>
 
 ## Buttons
 
@@ -53,6 +61,8 @@ As you slide in the button use long-nose pliers or a cocktail stick to ensure th
 ***Remove the black plastic nodules from the base of each backlit button and bend the switch legs to match diagram***
 ***Guide Buttons' switch pins and LED pins gently into alignment with the holes shown in the diagram, then push down firmly ***
 
+<div style="page-break-after: always;"></div>
+
 ## Current-limiting Resistors
 
 ![100 Ohm Series Resistors][step04]
@@ -62,6 +72,8 @@ The light-emitting diodes (LEDs) inside the backlit buttons are very small and a
 The resistors connect from a software-controllable pin in between the button legs, and connect to the positive side of the LEDs. The positive is the side of the LEDs *without* a red dot. The resistor wire must be inserted in the same row as the LED leg, but inserting it actually in the same hole can make contact more reliable.
 
 ***Attach four 100 Ohm resistors from f7->e4, g14->e17 on the left breadboard, and d7->f4, d14->f17 on the right breadboard***
+
+<div style="page-break-after: always;"></div>
 
 ## Button Ground Wires
 
@@ -73,6 +85,8 @@ To achieve this, we'll connect the two neighbouring rows containg LED ground pin
 
 ***Add green wires from c10->c11 on the left breadboard and h10->h11 on the right breadboard, connecting the LED ground pins together***
 ***Add green wires from d11->f10 and g11->e9 to connect the LED ground pins to a ground rail***  
+
+<div style="page-break-after: always;"></div>
 
 ## Piezo Circuit
 
@@ -90,6 +104,8 @@ A resistor will complete the circuit, providing a connection back to ground, but
 ***Add an orange wire from d12->a2***
 ***Add a 100 Ohm resistor from d12->a2***
 
+<div style="page-break-after: always;"></div>
+
 ## Rewiring the header
 
 ![Wire colors to attach to the header][step07]
@@ -97,6 +113,8 @@ A resistor will complete the circuit, providing a connection back to ground, but
 If your USB UART module is not currently wired in place, the color-coded circles on the 9-pin header in this diagram indicates the proper connections to make. 
 
 Refer to the [Blink build](../blink/build.html) for more details of the wiring colors for your UART module.
+
+<div style="page-break-after: always;"></div>
 
 ## Upload code
 
